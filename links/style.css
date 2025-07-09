@@ -1,0 +1,50 @@
+body {
+  background: #111;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 40px 20px;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+}
+
+h1 {
+  margin: 20px 0 10px;
+}
+
+.bio {
+  font-size: 14px;
+  margin-bottom: 30px;
+  color: #bbb;
+}
+
+.links a {
+  display: block;
+  background: #222;
+  color: #fff;
+  text-decoration: none;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.links a:hover {
+  background: #444;
+}
+
+footer {
+  margin-top: 50px;
+  font-size: 12px;
+  color: #666;
+}
