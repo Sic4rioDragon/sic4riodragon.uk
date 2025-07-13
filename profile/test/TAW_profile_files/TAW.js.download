@@ -1,0 +1,179 @@
+﻿(function ($) {
+
+    $TAW = function () { };
+    $TAW.jsonfactory = function (jOptions) {
+
+        var jDefaults = {
+            data: '{}',
+            success: ''
+        };
+
+        var jOptions = $.extend(jDefaults, jOptions);
+
+        if (typeof jOptions.data !== 'string') {
+            jOptions.data = $TAW.stringify(jOptions.data);
+        }
+
+        return $.ajax({
+            type: "POST",
+            url: sWebRoot + "/" + "services/JSONFactory.asmx/" + jOptions.method,
+            data: jDefaults.data,
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (data, textStatus, jqXHR) {
+                jOptions.success(data.d, textStatus, jqXHR);
+            }
+        });
+    };
+
+    $TAW.callPageMethod = function (jOptions) {
+
+        var jDefaults = {
+            data: '{}',
+            success: ''
+        }
+
+        var jOptions = $.extend(jDefaults, jOptions);
+
+        return $.ajax({
+            type: "POST",
+            url: window.location.protocol + "//" + window.location.host + document.location.pathname + '/' + jOptions.method,
+            data: jDefaults.data,
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (data, textStatus, jqXHR) {
+                jOptions.success($.parseJSON(data.d), textStatus, jqXHR);
+            }
+        });
+    };
+
+    $TAW.callFactory = function (jOptions) {
+
+        var jDefaults = {
+            method: '',
+            argNames: [],
+            argValues: [],
+            returns: [],
+            success: '',
+            levels: ''
+        };
+
+        jOptions = $.extend(jDefaults, jOptions);
+
+        var postData = {};
+
+        postData['FunctionName'] = jOptions.method;
+        postData['ArgNames'] = jOptions.argNames;
+        postData['ArgValues'] = jOptions.argValues;
+        postData['Returns'] = jOptions.returns;
+
+        var method;
+
+        if (jOptions.levels !== '') {
+            method = 'CallFactoryLimit';
+            postData['Levels'] = jOptions.levels;
+        } else {
+            method = 'CallFactory';
+        }
+
+        return $TAW.jsonfactory({
+            method: method,
+            data: $TAW.stringify(postData),
+            success: function (data, status, xhr) {
+                jOptions.success($.parseJSON(data), status, xhr);
+            }
+        });
+    };
+
+    var pageLoadCallbacks = $.Callbacks();
+    pageLoad = function () {
+        pageLoadCallbacks.fire();
+
+        pageLoadCodeBehindCallbacks.fire();
+        pageLoadCodeBehindCallbacks.empty();
+    };
+
+    $TAW.pageLoad = function (CallBackFunction) {
+        pageLoadCallbacks.add(CallBackFunction);
+    };
+
+    var pageLoadCodeBehindCallbacks = $.Callbacks();
+    $TAW.pageLoadCodeBehind = function (CallBackFunction) {
+        pageLoadCodeBehindCallbacks.add(CallBackFunction);
+    };
+
+    $TAW.queryString = function (key) {
+        var regex = new RegExp('(' + key + ')=([^&]*)');
+        var result = regex.exec(location.search.substring(1));
+        if (result !== null) {
+            return result[2];
+        } else {
+            return '';
+        }
+    };
+
+    var entityMap = {
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': '&quot;',
+        "'": '&#39;',
+        "/": '&#x2F;'
+    };
+
+    // this is a basic xss filter, may or may not catch all cases
+    $TAW.escapeString = function escapeString(input) {
+
+        return String(input).replace(/[&<>"'\/]/g,
+        function (s) {
+            return entityMap[s];
+        });
+
+    };
+
+    $TAW.stringify = function stringify(obj) {
+        if ("JSON" in window) {
+            return JSON.stringify(obj);
+        }
+
+        var t = typeof (obj);
+        if ((t != "object" && t != "function") || obj === null) {
+            // simple data type
+            if (t == "string") obj = '"' + obj + '"';
+
+            return String(obj);
+        } else {
+            // recurse array or object
+            var n, v, json = [], arr = (obj && obj.constructor == Array);
+
+            for (n in obj) {
+                v = obj[n];
+                t = typeof (v);
+                if (obj.hasOwnProperty(n)) {
+                    if (t == "string") {
+                        v = '"' + v + '"';
+                    } else if ((t == "object" || t == "function") && v !== null) {
+                        v = $TAW.stringify(v);
+                    }
+
+                    json.push((arr ? "" : '"' + n + '":') + String(v));
+                }
+            }
+
+            return (arr ? "[" : "{") + String(json) + (arr ? "]" : "}");
+        }
+    };
+
+    $TAW.utf8_to_b64 = function (str) {
+        return window.btoa(unescape(encodeURIComponent(str)));
+    };
+
+    $TAW.b64_to_utf8 = function (str) {
+        return decodeURIComponent(escape(window.atob(str)));
+    };
+
+    $TAW.defaultValue = function (value, defval) {
+        return (value === null || typeof value === 'undefined') ? defval : value;
+    };
+
+})(jQuery);
