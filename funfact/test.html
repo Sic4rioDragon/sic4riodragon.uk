@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fun Facts | Sic4rioDragon</title>
+  <meta name="description" content="A few fun facts about Sic4rioDragon">
+  <meta property="og:title" content="Fun Facts | Sic4rioDragon">
+  <meta property="og:description" content="A few fun facts about Sic4rioDragon">
+  <meta property="og:image" content="https://sic4riodragon.uk/assets/SicarioDragon.png">
+  <meta property="og:url" content="https://sic4riodragon.uk/funfact">
+  <link rel="icon" type="image/png" href="/assets/SicarioDragon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #00d4ff;
+      --secondary: #ff4c4c;
+      --bg-dark: #0a0a1a;
+      --bg-light: #1a1a2e;
+      --glow: rgba(0,212,255,0.5);
+      --radius: 10px;
+      --transition: 0.4s;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; font-size: clamp(16px, 2vw, 18px); }
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: url('../assets/general.png') center/cover fixed;
+      color: #eee;
+      line-height: 1.6;
+      padding: 40px 20px;
+    }
+    .back-btn {
+      display: inline-block;
+      margin-bottom: 20px;
+      padding: 8px 12px;
+      background: rgba(0,0,0,0.7);
+      color: #fff;
+      border-radius: 4px;
+      text-decoration: none;
+      font-family: 'Orbitron', sans-serif;
+      transition: background var(--transition);
+    }
+    .back-btn:hover { background: rgba(0,0,0,0.9); }
+    .container {
+      max-width: 700px;
+      margin: auto;
+      background: rgba(0,0,0,0.7);
+      padding: 30px;
+      border-radius: var(--radius);
+      box-shadow: 0 0 20px var(--glow);
+    }
+    .avatar {
+      display: block;
+      margin: 0 auto 20px;
+      width: 120px;
+      border-radius: 50%;
+      border: 2px solid var(--secondary);
+    }
+    h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(2rem, 5vw, 3rem);
+      color: var(--primary);
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .funfacts {
+      list-style: none;
+      padding-left: 0;
+    }
+    .funfacts li {
+      margin-bottom: 1.5rem;
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      line-height: 1.6;
+    }
+    .funfacts a {
+      color: var(--secondary);
+      text-decoration: none;
+      transition: color var(--transition);
+    }
+    .funfacts a:hover {
+      color: #fff;
+      text-shadow: 0 0 6px var(--glow);
+    }
+    footer {
+      text-align: center;
+      margin-top: 30px;
+      font-size: clamp(0.8rem, 2vw, 1rem);
+      color: #aaa;
+    }
+    @media (min-width: 600px) {
+      .container { padding: 40px; }
+    }
+  </style>
+</head>
+<body>
+  <a href="/test.html" class="back-btn">← Back to Home</a>
+  <div class="container">
+    <img src="../assets/SicarioDragon.png" alt="Badge" class="avatar">
+    <h1>Fun Facts</h1>
+    <ul class="funfacts">
+      <li>
+        I am in no way affiliated with <a href="https://open.spotify.com/artist/6QxD4IzAkhf1FyXk11O7Ty" target="_blank">Sic4rio</a> the Swiss rapper — but he is my favorite! 🎵
+        Check out my <a href="https://open.spotify.com/playlist/5wcT7G9abDvbIGzBnwiEK0?si=6f50155648df46b0" target="_blank">Sic4rio playlist</a>.
+      </li>
+      <li>
+        Since Sic4rio is my favorite rapper and I’ve called myself Dragon for years, I combined them into Sic4rioDragon because it sounds awesome!
+      </li>
+      <li>
+        I am Swiss — I just got the .uk domain because it was the cheapest!
+      </li>
+      <li>
+        This site is totally self-hosted for free via Cloudflare Pages &amp; GitHub — 
+        <a href="https://github.com/Sic4rioDragon/sic4riodragon.uk" target="_blank">view the repo</a>. 
+        Updates go live in under a minute.
+      </li>
+      <li>
+        Some of my favorite games are DayZ, TF2, Ark: Survival Evolved, Chivalry 2, Ghost Recon Wildlands, Ready or Not, and more!
+      </li>
+      <li>
+        I’m planning a Games page soon to show live Steam stats for my top games—integrated with my 
+        <a href="https://steamdb.info/calculator/76561198282423950/" target="_blank">SteamDB profile</a>.
+      </li>
+    </ul>
+    <footer>© 2025 Sic4rioDragon — Fun Facts</footer>
+  </div>
+</body>
+</html>
