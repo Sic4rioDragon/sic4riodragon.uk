@@ -3,73 +3,47 @@
 <head>
   <meta charset="UTF-8">
   <title>TAW Image Vault</title>
-  <meta name="robots" content="noindex, nofollow">
   <style>
     body {
-      background-color: #111;
-      color: #eee;
-      font-family: Arial, sans-serif;
-      padding: 30px;
-    }
-    h1 {
-      font-size: 24px;
-      margin-bottom: 10px;
-    }
-    .image {
-      margin: 20px 0;
+      background-color: #0d0d0d;
+      color: #fff;
+      font-family: sans-serif;
+      text-align: center;
+      padding: 40px;
     }
     img {
-      display: block;
-      max-width: 100%;
+      max-width: 90%;
       height: auto;
-      border: 2px solid #333;
-      background: #1a1a1a;
+      margin: 20px 0;
+      border: 2px solid #444;
+      border-radius: 8px;
     }
     a {
-      color: #77ccff;
-      font-size: 14px;
+      color: #4fc3f7;
+      text-decoration: none;
+    }
+    hr {
+      border: 1px solid #333;
+      margin: 40px 0;
     }
   </style>
 </head>
 <body>
-  <h1>🗂️ TAW Image Vault</h1>
-  <p>Right-click an image or the link below it to copy its URL. This page updates automatically with all images in this folder.</p>
-  <div id="image-container">Loading images...</div>
+  <h1>📁 TAW Image Vault</h1>
+  <p>Right-click an image or the link below to copy its URL. Add new images manually here.</p>
+  <hr>
 
-  <script>
-    const allowedExtensions = ['.png', '.jpg', '.jpeg', '.gif', '.webp'];
-    const container = document.getElementById('image-container');
+  <div>
+    <img src="taw_Claws.png" alt="taw_Claws.png">
+    <div><a href="taw_Claws.png" target="_blank">🔗 View taw_Claws.png</a></div>
+  </div>
 
-    fetch(window.location.href)
-      .then(response => response.text())
-      .then(html => {
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(html, 'text/html');
-        const links = [...doc.links];
-        const imageLinks = links
-          .map(link => link.href)
-          .filter(href => allowedExtensions.some(ext => href.toLowerCase().endsWith(ext)));
+  <hr>
 
-        container.innerHTML = '';
-        if (imageLinks.length === 0) {
-          container.innerHTML = '<p>No images found in this folder.</p>';
-        } else {
-          imageLinks.forEach(url => {
-            const fileName = url.split('/').pop();
-            const div = document.createElement('div');
-            div.classList.add('image');
-            div.innerHTML = `
-              <img src="${fileName}" alt="${fileName}">
-              <a href="${fileName}" target="_blank">${fileName}</a>
-            `;
-            container.appendChild(div);
-          });
-        }
-      })
-      .catch(err => {
-        container.innerHTML = '<p>Error loading image list.</p>';
-        console.error(err);
-      });
-  </script>
+  <div>
+    <img src="taw_R.png" alt="taw_R.png">
+    <div><a href="taw_R.png" target="_blank">🔗 View taw_R.png</a></div>
+  </div>
+
 </body>
 </html>
