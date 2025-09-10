@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="top">
 <head>
   <link rel="icon" type="image/png" href="/assets/SicarioDragon.png">
   <meta charset="UTF-8" />
@@ -7,44 +7,105 @@
   <title>Legal — Sic4rioDragon TAW Bots (ToS & Privacy)</title>
   <meta name="description" content="Terms of Service and Privacy Policy for TAW DayZ Division Bot and TAW Division Ticket Bot.">
   <meta property="og:title" content="Legal — Sic4rioDragon TAW Bots">
-  <meta property="og:description" content="ToS & Privacy for TAW DayZ Division Bot and TAW Division Ticket Bot.">
   <meta property="og:image" content="https://sic4riodragon.uk/assets/SicarioDragon.png">
   <meta property="og:url" content="https://sic4riodragon.uk/legal">
   <style>
-    body{font-family:Arial,system-ui,-apple-system,Segoe UI,Roboto; background:url('../assets/general.png') no-repeat center/cover fixed; color:#fff; margin:0; padding:40px 20px;}
-    .container{max-width:900px;margin:auto;text-align:left;background:rgba(0,0,0,.72);padding:24px;border-radius:8px;box-shadow:0 2px 10px rgba(0,0,0,.5);}
-    .avatar{width:70px;height:70px;border-radius:50%;vertical-align:middle;margin-right:12px}
-    h1{display:inline-block;vertical-align:middle;margin:0}
-    .bio{color:#ccc;margin:8px 0 18px}
-    .links a{display:inline-block;background:#222;color:#fff;text-decoration:none;padding:10px 12px;margin:0 8px 8px 0;border-radius:6px;transition:background .3s}
-    .links a:hover{background:#444}
-    h2{margin:18px 0 6px} h3{margin:16px 0 8px}
-    p{margin:8px 0} ul{margin:8px 0 8px 22px}
-    .muted{color:#bbb} .mono{font-family:ui-monospace,Consolas,Menlo,monospace}
-    .divider{height:1px;background:#2c2c2c;margin:18px 0}
-    .foot{margin-top:20px;font-size:14px;color:#aaa;text-align:center}
+    :root{
+      --bg:#000; --glass:rgba(0,0,0,.72); --muted:#bfc6cf; --text:#fff;
+      --bd:#2b2f36; --card:#0d0f12; --link:#9ad4ff;
+      --tos:#0b3557; --privacy:#0b3f36; --changelog:#2e2255;
+      --tos-glow:#0b355733; --privacy-glow:#0b3f3633; --changelog-glow:#2e225533;
+    }
+    html,body{margin:0;padding:0;background:url('../assets/general.png') center/cover fixed #000;color:var(--text);
+      font:16px/1.6 system-ui,Segoe UI,Roboto,Arial,sans-serif;scroll-behavior:smooth}
+    a{color:var(--link);text-decoration:none} a:hover{text-decoration:underline}
+    .wrap{max-width:1000px;margin:0 auto;padding:20px}
+
+.back{
+  position: fixed;
+  top: 14px;
+  left: 16px;   
+  right: auto;  
+  z-index: 60;
+  background: #1a1a1a;
+  border: 1px solid var(--bd);
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 8px;
+  box-shadow: 0 6px 20px rgba(0,0,0,.35);
+  text-decoration: none;
+  opacity: .95;
+  transition: transform .06s ease, opacity .2s;
+}
+.back:hover{ opacity:1; transform: translateY(-1px); }
+@media (max-width:640px){
+  .back{ top:10px; left:10px; right:auto; padding:7px 10px; font-size:14px; }
+}
+    .hero{background:var(--glass);border:1px solid var(--bd);border-radius:12px;padding:18px 20px;margin-bottom:14px;
+      display:flex;gap:12px;align-items:center;box-shadow:0 8px 30px rgba(0,0,0,.28)}
+    .hero img{width:56px;height:56px;border-radius:50%}
+    .hero h1{margin:0;font-size:22px}
+    .hero p{margin:2px 0 0;color:var(--muted)}
+    .switch{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0 4px}
+    .switch a{display:inline-flex;align-items:center;gap:6px;padding:8px 12px;border-radius:999px;border:1px solid var(--bd);
+      background:#0e1116;color:#e9f2ff;font-weight:600}
+    .switch a.active{outline:2px solid #2dd4bf33;box-shadow:0 0 0 4px #2dd4bf1a}
+    .card{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:22px;margin:18px 0;
+      box-shadow:0 8px 30px rgba(0,0,0,.25)}
+    .accent{height:4px;border-radius:6px;margin:-8px 0 14px;background:linear-gradient(90deg,#2dd4bf,transparent 60%)}
+    .muted{color:var(--muted)} .mono{font-family:ui-monospace,Consolas,Menlo,monospace}
+    h2{margin:0 0 8px;font-size:22px} h3{margin:18px 0 8px}
+    ul{margin:8px 0 8px 20px}
+
+    .tos{background:linear-gradient(0deg,var(--tos-glow),transparent 60%),var(--card)}
+    .privacy{background:linear-gradient(0deg,var(--privacy-glow),transparent 60%),var(--card)}
+    .changelog{background:linear-gradient(0deg,var(--changelog-glow),transparent 60%),var(--card)}
+
+    .sticky{position:sticky;top:0;z-index:20;background:rgba(0,0,0,.6);backdrop-filter:blur(6px);
+      border-bottom:1px solid var(--bd);padding:8px 0;margin:8px 0}
+
+    #toTop{position:fixed;right:18px;bottom:18px;display:none;padding:10px 12px;border-radius:10px;
+      background:#0e1116;border:1px solid var(--bd);color:#e9f2ff}
+    footer{color:var(--muted);text-align:center;margin:20px 0}
+
+.row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.grow { flex: 1 1 auto; }
+
+.miniBtn {
+  padding: 6px 10px;
+  font-size: 12px;
+  border-radius: 8px;
+  background: #0e1116;
+  border: 1px solid var(--bd);
+  color: #e9f2ff;
+  text-decoration: none;
+}
+.miniBtn:hover { text-decoration: underline; }
+
   </style>
 </head>
 <body>
-  <!-- Back button style copied from index.html -->
-  <a href="/" style="display:inline-block;margin-bottom:15px;color:#fff;background:#222;padding:8px 12px;border-radius:4px;text-decoration:none;">← Back to Home</a>
-
-  <div class="container">
-    <div>
-      <img src="../assets/SicarioDragon.png" alt="Sic4rioDragon" class="avatar">
-      <h1>Legal — TAW Bots</h1>
-      <p class="bio">Terms of Service & Privacy Policy for <b>TAW DayZ Division Bot</b> and <b>TAW Division Ticket Bot</b>.</p>
+  <div class="wrap">
+    <a class="back" href="/">← Back to Home</a>
+    <div class="hero">
+      <img src="../assets/SicarioDragon.png" alt="Sic4rioDragon">
+      <div>
+        <h1>Legal — TAW Bots</h1>
+        <p>Terms of Service &amp; Privacy Policy for <b>TAW DayZ Division Bot</b> and <b>TAW Division Ticket Bot</b>.</p>
+      </div>
     </div>
 
-    <div class="links">
-      <a href="#tos">#tos</a>
-      <a href="#privacy">#privacy</a>
-      <a href="#changelog">#changelog</a>
+    <div class="sticky">
+      <div class="switch mono" id="topSwitch">
+        <a href="#tos">#tos</a>
+        <a href="#privacy">#privacy</a>
+        <a href="#changelog">#changelog</a>
+        <a href="#top" title="Back to top">↑ top</a>
+      </div>
     </div>
-    <div class="divider"></div>
 
-    <!-- =================== TOS =================== -->
-    <section id="tos">
+    <section id="tos" class="card tos">
+      <div class="accent"></div>
       <h2>Terms of Service</h2>
       <p class="muted">Effective Date: <b>24 June 2025</b> · Last Updated: <b>10 September 2025</b></p>
       <p>By inviting and using our Discord bots (together, the “Service”), you agree to these Terms of Service. If you do not agree, do not use the bots.</p>
@@ -53,7 +114,6 @@
         <li><b>TAW DayZ Division Bot</b> (the “Activity Bot”) — formerly “TAW Activity Bot”</li>
         <li><b>TAW Division Ticket Bot</b> (the “Ticket Bot”)</li>
       </ul>
-
       <h3>1. Bot Usage</h3>
       <p><b>Activity Bot.</b> Tracks voice chat activity and can sync aggregated data to logs or external services (e.g., Google Sheets).</p>
       <p><b>Ticket Bot.</b> Enables support/recruit tickets in your server. By opening or participating in a ticket, you authorize the processing and storage of:</p>
@@ -64,17 +124,15 @@
       </ul>
       <p>Tickets may be auto-closed after a period of inactivity as configured by server admins.</p>
       <p><i>Misuse</i> (e.g., spamming, exploiting bugs, interfering with logging or ticket workflows) may result in removal of the bots from your server.</p>
-
       <h3>2. Deployment & Responsibility (Operator-Managed)</h3>
       <ul>
-        <li>The bots are installed and configured exclusively by the operator <b>Sic4rioDragon</b> (and any authorized members of the bot team).</li>
+        <li>The bots are installed and configured exclusively by the operator <b>Sic4rioDragon</b> (and any authorized bot team members).</li>
         <li>We decide which servers the bots run in and manage all configuration (permissions, channels, retention, integrations).</li>
         <li>If we also administer/own the server, we handle user notices, disclosure, and configuration in line with this ToS and the Privacy Policy.</li>
         <li>If the bots are deployed in a server we do not own (at that server’s request), that server’s owner remains responsible for any legal/user-notice obligations toward their members. We will provide links to this ToS/Privacy Policy and can supply template notices.</li>
         <li>The bots cannot verify individual user consent; we apply least-privilege configuration and limit collection to what’s necessary for bot features.</li>
         <li>Server owners may request removal of the bots by contacting us. We may also remove the bots at our discretion for safety, abuse, or operational reasons.</li>
       </ul>
-
       <h3>3. Acceptable Use</h3>
       <ul>
         <li>Illegal content, malware, or attempts to bypass security</li>
@@ -83,10 +141,8 @@
         <li>Spam or irrelevant advertising; unsafe or infringing attachments</li>
       </ul>
       <p>We may restrict or remove access to protect users and communities.</p>
-
       <h3>4. Bot Availability</h3>
       <p>The Service is provided “as is”, with no guarantee of uptime or uninterrupted operation. We may update, suspend, or discontinue features at any time without notice, including to respect Discord API changes, rate limits, or safety concerns.</p>
-
       <h3>5. Third-Party & Storage Services</h3>
       <ul>
         <li><b>Discord</b> APIs and CDN (message content, attachments, metadata)</li>
@@ -101,20 +157,15 @@
         <li>Bot functionality, troubleshooting, and abuse prevention</li>
       </ul>
       <p>You represent that you have the necessary rights to upload any content you submit.</p>
-
       <h3>7. Eligibility & Age Limits</h3>
       <p>The Service is not intended for children under 13 (or the minimum age required in your jurisdiction). The bots cannot verify individual user consent; server admins are responsible for appropriate configuration, transparency, and access controls.</p>
-
       <h3>8. Changes to the Terms</h3>
       <p>We may update these Terms from time to time. Continued use after changes take effect constitutes acceptance of the updated Terms. The Last Updated date reflects the latest revision.</p>
-
       <h3>9. Termination</h3>
       <p>We may suspend or terminate access to the Service at any time for violations, abuse, security concerns, or to comply with legal/Discord requirements. You can remove the bots from your server at any time.</p>
-
       <h3>10. Contact</h3>
       <p>Questions: contact the owner on Discord — <b>Sic4rioDragon</b> (ID <span class="mono">422423016849408017</span>).</p>
-
-      <h3>11. Operator Access & Audit (Invite Rights)</h3>
+      <h3>11. Operator Access &amp; Audit (Invite Rights)</h3>
       <p>To maintain safety, troubleshoot issues, and verify compliance with these Terms and the Privacy Policy, the Operator reserves the right to request an invite link or direct invite to any server where the bots are deployed. At the Operator’s discretion (including for operational, safety, or other legitimate reasons), failure to provide reasonable audit access may result in the bots being disabled or removed from that server.</p>
       <ul>
         <li>Use minimal, least-privilege access and limit review to channels/logs relevant to bot operation (e.g., ticket channels created by the Ticket Bot).</li>
@@ -124,10 +175,8 @@
       <p>If you prefer the bots to operate without Operator audit access, do not deploy the bots in your server.</p>
     </section>
 
-    <div class="divider"></div>
-
-    <!-- =================== PRIVACY =================== -->
-    <section id="privacy">
+    <section id="privacy" class="card privacy">
+      <div class="accent"></div>
       <h2>Privacy Policy</h2>
       <p class="muted">Effective Date: <b>24 June 2025</b> · Last Updated: <b>10 September 2025</b></p>
       <p>This Privacy Policy covers two Discord bots operated by <b>Sic4rioDragon</b> (the “Operator”):</p>
@@ -136,13 +185,11 @@
         <li><b>TAW Division Ticket Bot</b> (“Ticket Bot”)</li>
       </ul>
       <p>The bots are operator-managed. Only the Operator (and any authorized bot team members) deploys/configures them.</p>
-
       <h3>1) Who Controls Your Data</h3>
       <ul>
         <li>For processing performed directly by the bots and for storage on the Operator’s infrastructure, the Operator is the data controller.</li>
         <li>If a server admin requests exports (e.g., Google Sheets) or maintains their own copies/archives, that admin may act as an independent controller for that exported data.</li>
       </ul>
-
       <h3>2) What We Collect</h3>
       <p><i>Common (both bots)</i></p>
       <ul>
@@ -168,7 +215,6 @@
         <li><b>Contract / Requested service</b>: responding to support requests and providing bot functions you ask for.</li>
         <li><b>Legal obligations</b>: responding to valid law-enforcement requests when required by law.</li>
       </ul>
-
       <h3>4) How We Use Data</h3>
       <ul>
         <li>Provide, maintain, and improve bot functionality.</li>
@@ -179,7 +225,6 @@
         <li>Optional exports/sync (e.g., Google Sheets) or self-hosted storage if configured.</li>
       </ul>
       <p><b>We do not sell your data.</b> We share data only as described below.</p>
-
       <h3>5) Storage, Sharing, and Transfers</h3>
       <ul>
         <li><b>Storage</b>: local files/databases on the Operator’s server/infrastructure. Ticket attachments may reside on Discord CDN or self-hosted storage when configured.</li>
@@ -187,7 +232,6 @@
         <li><b>No advertising sharing</b>: we do not share with advertisers or data brokers.</li>
         <li><b>Transfers</b>: providers may process data outside your country. We rely on the providers’ contractual safeguards where applicable.</li>
       </ul>
-
       <h3>6) Retention</h3>
       <p>Defaults (may be adjusted per-server/config):</p>
       <ul>
@@ -197,23 +241,18 @@
         <li>Technical logs: up to <b>90 days</b>, unless needed longer for security/debugging.</li>
       </ul>
       <p>Minimal records may be kept to honor opt-out or deletion requests.</p>
-
       <h3>7) Your Rights</h3>
       <p>Depending on your location, you may have rights to access, rectify, erase, restrict, object, and port your data.</p>
       <ul>
         <li>Requests require verification via your Discord account (we may ask for your User ID and the server name/ID).</li>
         <li>If data is stored/exported by a server admin, we may direct you to that admin for those copies.</li>
       </ul>
-
       <h3>8) Security</h3>
       <p>We apply reasonable measures for a small, self-hosted project: token protection, least-privilege permissions, limited access, and logging controls. No system is 100% secure.</p>
-
       <h3>9) Children</h3>
       <p>The bots are not intended for users under 13 (or the minimum age required in your jurisdiction). If you believe we unintentionally processed such data, contact us to delete it.</p>
-
       <h3>10) Changes to this Policy</h3>
       <p>We may update this Policy. Material changes will be reflected by the Last Updated date above.</p>
-
       <h3>11) Contact</h3>
       <ul>
         <li>Discord: <b>sic4rio_</b></li>
@@ -225,22 +264,33 @@
       <p>If you are using the official Operator-managed deployment, you may request access/export/deletion by contacting us with your Discord User ID, the server, and what you want us to do (access, correct, delete, etc.).</p>
     </section>
 
-    <div class="divider"></div>
-
-    <!-- =================== CHANGELOG =================== -->
-    <section id="changelog">
+    <section id="changelog" class="card changelog">
+      <div class="accent"></div>
       <h2>Changelog</h2>
       <ul>
         <li><b>2025-09-10:</b> Renamed “TAW DayZ Division Ticket Bot” to <b>TAW Division Ticket Bot</b>.</li>
         <li><b>2025-09-10:</b> Merged ToS and Privacy Policy into this single public page with anchor links.</li>
         <li><b>2025-08-21:</b> Added explicit coverage for Ticket Bot (tickets, attachments, transcripts, retention windows).</li>
       </ul>
-      <p class="muted mono">Direct links for Discord Dev Portal: /legal#tos · /legal#privacy · /legal#changelog</p>
-    </section>
+      <div class="row">
+  <p class="mono grow">Direct links for Discord Dev Portal:
+    <a href="#tos">/legal#tos</a> · <a href="#privacy">/legal#privacy</a> · <a href="#changelog">/legal#changelog</a>
+  </p>
+  <a href="#top" class="miniBtn" title="Jump to page top">↑ Back to top</a>
+</div>
 
-    <footer class="foot">© <span id="y"></span> Sic4rioDragon — TAW DayZ Division Bot & TAW Division Ticket Bot.</footer>
-  </div>
+  <button id="toTop" onclick="location.hash='#top'">↑ Back to top</button>
+  <script>
 
-  <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+    document.getElementById('y').textContent=new Date().getFullYear();
+
+    const btn=document.getElementById('toTop');
+    const links=[...document.querySelectorAll('#topSwitch a')];
+    const secs=[...document.querySelectorAll('section')];
+    const spy=()=>{ const y=window.scrollY; btn.style.display=y>300?'block':'none';
+      let cur='#tos'; for(const s of secs){const top=s.getBoundingClientRect().top;
+        if(top<=120) cur='#'+s.id; } links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')===cur)); };
+    addEventListener('scroll',spy,{passive:true}); spy();
+  </script>
 </body>
 </html>
