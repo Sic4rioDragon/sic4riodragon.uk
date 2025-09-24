@@ -5,20 +5,63 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Now – Sic4rioDragon</title>
 
-  <!-- Meta / Sharing -->
+  <!-- Sharing / Rich Embeds -->
   <meta name="description" content="now – discord bots, websites, and DayZ servers." />
   <meta property="og:title" content="Now – Sic4rioDragon" />
   <meta property="og:description" content="now – discord bots, websites, and DayZ servers." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://sic4riodragon.uk/now" />
-  <meta property="og:image" content="https://sic4riodragon.uk/assets/sic4riodragon.png" />
+  <meta property="og:image" content="https://sic4riodragon.uk/assets/sic4riodragon.png?v=3" />
   <meta name="theme-color" content="#111111" />
 
-  <!-- Icons -->
-  <link rel="icon" type="image/png" href="/assets/sic4riodragon.png" />
+  <!-- Favicon (cache-busted) -->
+  <link rel="icon" type="image/png" href="/assets/sic4riodragon.png?v=3" />
 
-  <!-- IMPORTANT: root-absolute so it loads from /, not /now/ -->
-  <link rel="stylesheet" href="/style.css" />
+  <!-- Inline CSS so the page works even if external CSS fails -->
+  <style>
+    :root {
+      --box-bg: rgba(0,0,0,.78);
+      --text: #e7e7e7;
+      --muted: #b9b9b9;
+      --accent: #8dcff4;
+      --btn: #1f2937;
+      --border: #2a2a2a;
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body{
+      margin:0; color:var(--text); font-family: "Segoe UI", Roboto, Arial, sans-serif;
+      background: url("/assets/general.png") center / cover fixed no-repeat;
+      display:flex; flex-direction:column;
+    }
+    .top-left{ position:fixed; top:16px; left:16px; z-index:2; }
+    .back-button{
+      display:inline-block; padding:8px 14px; background:var(--btn); color:#fff; text-decoration:none;
+      border-radius:6px; border:1px solid var(--border);
+    }
+    .center-box{
+      width:min(820px, calc(100% - 32px));
+      margin: clamp(40px, 8vh, 80px) auto 24px auto;
+      background:var(--box-bg);
+      border-radius:12px;
+      box-shadow: 0 8px 30px rgba(0,0,0,.45);
+      padding:28px 26px;
+    }
+    h1{ text-align:center; margin:0 0 14px 0; }
+    p{ line-height:1.6; margin:10px 0; }
+    ul{ margin:8px 0 6px 20px; }
+    a{ color:var(--accent); text-decoration:none; }
+    a:hover{ text-decoration:underline; }
+    hr{ border:0; border-top:1px solid var(--border); margin:24px 0; }
+    .avatar{
+      width:84px; height:84px; border-radius:50%;
+      display:block; margin:0 auto 12px auto; border:1px solid var(--border);
+    }
+    footer{
+      margin-top:auto; color:var(--muted); text-align:center; padding:18px 10px;
+      border-top:1px solid var(--border); background:rgba(0,0,0,.6);
+    }
+  </style>
 </head>
 <body>
   <div class="top-left">
@@ -26,10 +69,9 @@
   </div>
 
   <div class="center-box">
-    <!-- optional top badge like on funfacts -->
-    <img src="/assets/sic4riodragon.png" alt="Sic4rioDragon" style="width:80px;height:80px;border-radius:50%;display:block;margin:0 auto 14px;opacity:.95" />
-
+    <img class="avatar" src="/assets/sic4riodragon.png?v=3" alt="Sic4rioDragon" />
     <h1>Now</h1>
+
     <p>Hey! I'm <strong>Sic4rioDragon</strong>, a Swiss gamer and developer.</p>
 
     <p>Right now I'm working on:</p>
@@ -45,14 +87,15 @@
       <li>Helping friends and communities with Discord bots</li>
     </ul>
 
-    <hr style="margin:24px 0" />
+    <hr />
 
-    <p>🎵 not affiliated with <a href="https://open.spotify.com/artist/5ZSvDbhtP0UymzJU7DR4KX" target="_blank">Sic4rio</a> the rapper — just a fan.
-       my Sic4rio playlist is <a href="https://open.spotify.com/playlist/1L9RZ9v54Bi5x0KzQ8S3od" target="_blank">here</a>.</p>
+    <p>🎵 not affiliated with <a href="https://open.spotify.com/artist/5ZSvDbhtP0UymzJU7DR4KX" target="_blank">Sic4rio</a> the rapper — just a fan. my Sic4rio playlist is
+      <a href="https://open.spotify.com/playlist/1L9RZ9v54Bi5x0KzQ8S3od" target="_blank">here</a>.
+    </p>
     <p>“Dragon” has been my nickname for years; combine it with Sic4rio and boom — <strong>Sic4rioDragon</strong>.</p>
     <p>fave games: DayZ, TF2, Ark Survival Evolved, Chivalry 2, Ghost Recon Wildlands, Ready or Not, and more.</p>
 
-    <hr style="margin:24px 0" />
+    <hr />
 
     <p><strong>Contact</strong></p>
     <ul>
@@ -64,8 +107,6 @@
     <p style="margin-top:18px">This page is part of the <a href="https://nownownow.com/about" target="_blank">Now movement</a>.</p>
   </div>
 
-  <footer>
-    <p>© 2025 Sic4rioDragon — Now</p>
-  </footer>
+  <footer>© 2025 Sic4rioDragon — Now</footer>
 </body>
 </html>
