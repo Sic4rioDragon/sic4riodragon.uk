@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Now – Sic4rioDragon</title>
 
-  <!-- Sharing / Rich Embeds -->
   <meta name="description" content="now – discord bots, websites, and DayZ servers." />
   <meta property="og:title" content="Now – Sic4rioDragon" />
   <meta property="og:description" content="now – discord bots, websites, and DayZ servers." />
@@ -17,7 +16,6 @@
   <meta name="theme-color" content="#111111" />
   <link rel="canonical" href="https://sic4riodragon.uk/now" />
 
-  <!-- Favicon -->
   <link rel="icon" type="image/png" href="/assets/SicarioDragon.png?v=4" />
   <link rel="apple-touch-icon" href="/assets/SicarioDragon.png?v=4" />
 
@@ -26,18 +24,20 @@
     *{box-sizing:border-box} html,body{height:100%}
     body{
       margin:0;color:var(--text);font-family:"Segoe UI",Roboto,Arial,sans-serif;
-      background:url("/assets/general.png") center / cover fixed no-repeat;
+      background:#0a0a0a url("/assets/general.png") center / cover no-repeat; /* no fixed -> removes rising bar */
       display:flex;flex-direction:column;
     }
     .top-left{position:fixed;top:16px;left:16px;z-index:2}
     .back-button{display:inline-block;padding:8px 14px;background:var(--btn);color:#fff;text-decoration:none;border-radius:6px;border:1px solid var(--border)}
     .center-box{
-      width:min(820px,calc(100% - 32px));margin:clamp(40px,8vh,80px) auto 24px;
+      width:min(820px,calc(100% - 32px));
+      margin:clamp(40px,8vh,80px) auto 24px;
       background:var(--box-bg);border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,.45);padding:28px 26px
     }
     h1{text-align:center;margin:0 0 14px} p{line-height:1.6;margin:10px 0}
     h2{margin:0 0 8px}
-    ul{margin:8px 0 6px 20px} a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
+    ul{margin:8px 0 6px 20px}
+    a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
     hr{border:0;border-top:1px solid var(--border);margin:24px 0}
     .avatar{width:84px;height:84px;border-radius:50%;display:block;margin:0 auto 12px;border:1px solid var(--border)}
     footer{margin-top:auto;color:var(--muted);text-align:center;padding:18px 10px;border-top:1px solid var(--border);background:rgba(0,0,0,.6)}
@@ -93,13 +93,12 @@
       const USER   = "dragonGRaf";
       const APIKEY = "a820e1c7c44a38d9a1903254af92551c";
 
-      // Local artist artwork (case-insensitive lookup)
+      // Local artist artwork fallbacks (case-insensitive keys)
       const LOCAL_ART = {
         "eaz": "/musicassets/eaz.png",
         "sic4rio": "/musicassets/sic4rio.png",
         "mio": "/musicassets/mio.png",
-        "rixon": "/musicassets/rixon.png",
-        // add more here, e.g. "sam": "/musicassets/sam.png"
+        "rixon": "/musicassets/rixon.png"
       };
 
       const RECENT = `https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${encodeURIComponent(USER)}&api_key=${APIKEY}&format=json&limit=1`;
@@ -107,8 +106,8 @@
       const ARTIST_INFO = (artist) => `https://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=${encodeURIComponent(artist)}&api_key=${APIKEY}&format=json`;
 
       const el = document.getElementById("nowPlaying");
-      const pick = imgs => (imgs?.at?.(-1)?.['#text']) || (imgs?.[2]?.['#text']) || "";
-      const ph  = () => `<div id="npArtPh" style="width:52px;height:52px;border-radius:6px;border:1px solid #2a2a2a;display:grid;place-items:center;opacity:.7">🎧</div>`;
+      const imgFrom = imgs => (imgs?.at?.(-1)?.['#text']) || (imgs?.[2]?.['#text']) || "";
+      const placeholder = () => `<div id="npArtPh" style="width:52px;height:52px;border-radius:6px;border:1px solid #2a2a2a;display:grid;place-items:center;opacity:.7">🎧</div>`;
 
       async function itunesArt(artist, track){
         try{
@@ -125,6 +124,16 @@
         return Array.isArray(t) ? t[0] : t || null;
       }
 
+      function labelFor(t){
+        if (t['@attr']?.nowplaying === "true") return "🎧 Now playing:";
+        const uts = Number(t?.date?.uts || 0);
+        if (uts){
+          const mins = Math.round((Date.now()/1000 - uts)/60);
+          if (mins <= 10) return "Just played:";
+        }
+        return "Last played:";
+      }
+
       async function load(){
         try{
           const r = await fetch(RECENT, { cache: "no-store" });
@@ -134,44 +143,39 @@
           const t = firstTrack(j);
           if(!t){ el.textContent = "No recent tracks."; return; }
 
-          const now    = t['@attr']?.nowplaying === "true";
           const artist = t.artist?.['#text'] || t.artist || "Unknown";
           const track  = t.name || "Unknown";
           const link   = t.url || "#";
+          const label  = labelFor(t);
 
-          // start with local art or Last.fm track images
-          let img = LOCAL_ART[(artist || "").toLowerCase()] || pick(t.image) || "";
+          let img = LOCAL_ART[(artist || "").toLowerCase()] || imgFrom(t.image) || "";
 
-          // render immediately
           el.innerHTML = `
             <div style="display:flex;align-items:center;gap:12px">
               ${img
                 ? `<img id="npArt" src="${img}" alt="" style="width:52px;height:52px;border-radius:6px;object-fit:cover;border:1px solid #2a2a2a">`
-                : ph()}
-              <div>${now ? "🎧 Now playing:" : "Last played:"}
+                : placeholder()}
+              <div>${label}
                 <strong><a href="${link}" target="_blank" rel="noopener">${track} — ${artist}</a></strong>
               </div>
             </div>`;
 
-          // If no art yet, try track info → artist info → iTunes (non-blocking)
           if(!img){
-            try {
+            try{
               const ti = await fetch(TRACK_INFO(artist, track)).then(x=>x.json());
-              img = pick(ti?.track?.album?.image) || "";
-            } catch {}
+              img = imgFrom(ti?.track?.album?.image) || "";
+            }catch{}
             if(!img){
-              try {
+              try{
                 const ai = await fetch(ARTIST_INFO(artist)).then(x=>x.json());
-                img = pick(ai?.artist?.image) || "";
-              } catch {}
+                img = imgFrom(ai?.artist?.image) || "";
+              }catch{}
             }
             if(!img) img = await itunesArt(artist, track);
 
             if(img){
-              const placeholder = document.getElementById("npArtPh");
-              if (placeholder) {
-                placeholder.outerHTML = `<img id="npArt" src="${img}" alt="" style="width:52px;height:52px;border-radius:6px;object-fit:cover;border:1px solid #2a2a2a">`;
-              }
+              const ph = document.getElementById("npArtPh");
+              if (ph) ph.outerHTML = `<img id="npArt" src="${img}" alt="" style="width:52px;height:52px;border-radius:6px;object-fit:cover;border:1px solid #2a2a2a">`;
             }
           }
         }catch(e){
@@ -213,7 +217,7 @@
     <p style="margin-top:18px">
       This page is part of the
       <a href="https://nownownow.com/about" target="_blank">Now movement</a> —
-      my directory profile: <a href="https://nownownow.com/p/sv3K" target="_blank">nownownow.com/p/sv3K</a>.
+      <span>My Now Page:</span> <a href="https://nownownow.com/p/sv3K" target="_blank">nownownow.com/p/sv3K</a>.
     </p>
 
     <p style="color:#b9b9b9;margin-top:10px">
