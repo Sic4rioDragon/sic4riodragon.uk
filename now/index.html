@@ -74,7 +74,7 @@
       <a href="https://open.spotify.com/playlist/1L9RZ9v54Bi5x0KzQ8S3od" target="_blank">here</a>.
     </p>
     <p>“Dragon” has been my nickname for years; combine it with Sic4rio and there you go — <strong>Sic4rioDragon</strong>.</p>
-    <p>fave games: DayZ, TF2, Ark Survival Evolved, Chivalry 2, Ghost Recon Wildlands, Ready or Not, and more.</p>
+    <p>My favorite games: DayZ, TF2, Ark Survival Evolved, Chivalry 2, Ghost Recon Wildlands, Ready or Not, and more.</p>
 
     <hr />
 
@@ -87,52 +87,59 @@
 
     <!-- Listening -->
     <hr />
-    <p><strong>Listening</strong></p>
-    <div id="nowPlaying" aria-live="polite">Connecting…</div>
-    <script>
-    (function () {
-      const USER = "dragonGRaf";                  // your Last.fm username
-      const API_KEY = "a820e1c7c44a38d9a1903254af92551c";  // API key only (safe to expose)
-      const URL = `https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${
-        encodeURIComponent(USER)}&api_key=${API_KEY}&format=json&limit=1`;
+<p><strong>Listening</strong></p>
+<div id="nowPlaying" aria-live="polite">Connecting…</div>
+<script>
+(function () {
+  const USER   = "dragonGRaf";               // <-- your Last.fm username (case-sensitive)
+  const APIKEY = "a820e1c7c44a38d9a1903254af92551c"; // <-- your personal API key (NOT the shared secret)
 
-      function imgOf(track) {
-        const arr = track?.image || [];
-        return (arr[arr.length - 1]?.['#text']) || (arr[2]?.['#text']) || "";
+  const URL = `https://ws.audioscrobbler.com/2.0/` +
+              `?method=user.getrecenttracks&user=${encodeURIComponent(USER)}` +
+              `&api_key=${APIKEY}&format=json&limit=1`;
+
+  const el = document.getElementById("nowPlaying");
+
+  function art(t){
+    const imgs = t?.image || [];
+    return (imgs.at(-1)?.['#text']) || (imgs[2]?.['#text']) || "";
+  }
+
+  async function load(){
+    try {
+      const r = await fetch(URL, { cache: "no-store" });
+      if(!r.ok){
+        const text = await r.text().catch(()=> "");
+        throw new Error(`HTTP ${r.status} ${r.statusText} ${text?.slice(0,160)}`);
       }
+      const j = await r.json();
+      if (j?.error) throw new Error(`API ${j.error}: ${j.message}`);
 
-      async function load() {
-        try {
-          const r = await fetch(URL);
-          if (!r.ok) throw new Error("HTTP " + r.status);
-          const j = await r.json();
-          const t = j?.recenttracks?.track?.[0];
-          const el = document.getElementById("nowPlaying");
-          if (!t) { el.textContent = "No recent tracks."; return; }
+      const t = j?.recenttracks?.track?.[0];
+      if(!t){ el.textContent = "No recent tracks."; return; }
 
-          const isNow = t['@attr']?.nowplaying === "true";
-          const track = `${t.name} — ${t.artist['#text']}`;
-          const link  = t.url || "#";
-          const art   = imgOf(t);
+      const isNow = t['@attr']?.nowplaying === "true";
+      const title = `${t.name} — ${t.artist['#text']}`;
+      const link  = t.url || "#";
+      const img   = art(t);
 
-          el.innerHTML = `
-            <div style="display:flex;align-items:center;gap:12px;">
-              ${art ? `<img src="${art}" alt="" style="width:52px;height:52px;border-radius:6px;object-fit:cover;border:1px solid #2a2a2a;">` : ""}
-              <div>
-                ${isNow ? "🎧 Now playing:" : "Last played:"}
-                <strong><a href="${link}" target="_blank" rel="noopener">${track}</a></strong>
-              </div>
-            </div>`;
-        } catch (e) {
-          document.getElementById("nowPlaying").textContent = "(could not load)";
-          console.error(e);
-        }
-      }
+      el.innerHTML = `
+        <div style="display:flex;align-items:center;gap:12px">
+          ${img ? `<img src="${img}" alt="" style="width:52px;height:52px;border-radius:6px;object-fit:cover;border:1px solid #2a2a2a">` : ""}
+          <div>${isNow ? "🎧 Now playing:" : "Last played:"}
+            <strong><a href="${link}" target="_blank" rel="noopener">${title}</a></strong>
+          </div>
+        </div>`;
+    } catch (e) {
+      console.error("Last.fm widget error:", e);
+      el.textContent = "Could not load ( " + (e?.message || "unknown error") + " )";
+    }
+  }
 
-      (window.requestIdleCallback||setTimeout)(load, 1);
-      setInterval(load, 60000); // refresh every 60s
-    })();
-    </script>
+  (window.requestIdleCallback || setTimeout)(load, 1);
+  setInterval(load, 60000);
+})();
+</script>
 
     <!-- Life -->
     <hr />
