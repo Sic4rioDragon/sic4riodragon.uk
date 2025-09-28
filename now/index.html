@@ -12,14 +12,13 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://sic4riodragon.uk/now" />
   <meta property="og:image" content="https://sic4riodragon.uk/assets/SicarioDragon.png?v=4" />
-  <meta name="theme-color" content="#111111" />
   <meta property="og:site_name" content="Sic4rioDragon" />
-  <link rel="canonical" href="https://sic4riodragon.uk/now" />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#111111" />
+  <link rel="canonical" href="https://sic4riodragon.uk/now" />
 
-  <!-- Favicon (correct file name + cache-bust) -->
+  <!-- Favicon -->
   <link rel="icon" type="image/png" href="/assets/SicarioDragon.png?v=4" />
-  <link rel="shortcut icon" href="/assets/SicarioDragon.png?v=4" />
   <link rel="apple-touch-icon" href="/assets/SicarioDragon.png?v=4" />
 
   <style>
@@ -86,63 +85,105 @@
     </ul>
 
     <!-- Listening -->
-     <hr />
-<p><strong>Listening</strong></p>
-<div id="nowPlaying" aria-live="polite">Connecting…</div>
+    <hr />
+    <p><strong>Listening</strong></p>
+    <div id="nowPlaying" aria-live="polite">Connecting…</div>
     <script>
-(function () {
-  const USER   = "dragonGRaf";
-  const APIKEY = "a820e1c7c44a38d9a1903254af92551c";
-  const URL = `https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${
-    encodeURIComponent(USER)}&api_key=${APIKEY}&format=json&limit=1`;
+    (function () {
+      const USER   = "dragonGRaf";
+      const APIKEY = "a820e1c7c44a38d9a1903254af92551c";
 
-  const el = document.getElementById("nowPlaying");
+      // Local artist artwork (case-insensitive lookup)
+      const LOCAL_ART = {
+        "eaz": "/musicassets/eaz.png",
+        "sic4rio": "/musicassets/sic4rio.png",
+        "mio": "/musicassets/mio.png",
+        "rixon": "/musicassets/rixon.png",
+        // add more here, e.g. "sam": "/musicassets/sam.png"
+      };
 
-  function art(t){
-    const imgs = t?.image || [];
-    return (imgs.at(-1)?.['#text']) || (imgs[2]?.['#text']) || "";
-  }
+      const RECENT = `https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${encodeURIComponent(USER)}&api_key=${APIKEY}&format=json&limit=1`;
+      const TRACK_INFO  = (artist, track) => `https://ws.audioscrobbler.com/2.0/?method=track.getInfo&artist=${encodeURIComponent(artist)}&track=${encodeURIComponent(track)}&autocorrect=1&username=${encodeURIComponent(USER)}&api_key=${APIKEY}&format=json`;
+      const ARTIST_INFO = (artist) => `https://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=${encodeURIComponent(artist)}&api_key=${APIKEY}&format=json`;
 
-  async function load(){
-    try {
-      const r = await fetch(URL, { cache: "no-store" });
-      if (!r.ok) {
-        const text = await r.text().catch(()=> "");
-        throw new Error(`HTTP ${r.status} ${r.statusText} ${text.slice(0,160)}`);
+      const el = document.getElementById("nowPlaying");
+      const pick = imgs => (imgs?.at?.(-1)?.['#text']) || (imgs?.[2]?.['#text']) || "";
+      const ph  = () => `<div id="npArtPh" style="width:52px;height:52px;border-radius:6px;border:1px solid #2a2a2a;display:grid;place-items:center;opacity:.7">🎧</div>`;
+
+      async function itunesArt(artist, track){
+        try{
+          const term = encodeURIComponent(`${artist} ${track}`);
+          const r = await fetch(`https://itunes.apple.com/search?media=music&entity=song&limit=1&term=${term}`);
+          const j = await r.json();
+          const u = j?.results?.[0]?.artworkUrl100 || "";
+          return u ? u.replace("100x100bb","600x600bb") : "";
+        }catch{ return ""; }
       }
-      const j = await r.json();
-      if (j?.error) throw new Error(`API ${j.error}: ${j.message}`);
 
-      const t = j?.recenttracks?.track?.[0];
-      if (!t) { el.textContent = "No recent tracks."; return; }
+      function firstTrack(json){
+        const t = json?.recenttracks?.track;
+        return Array.isArray(t) ? t[0] : t || null;
+      }
 
-      const isNow = t['@attr']?.nowplaying === "true";
-      const title = `${t.name} — ${t.artist['#text']}`;
-      const link  = t.url || "#";
-      const img   = art(t);
+      async function load(){
+        try{
+          const r = await fetch(RECENT, { cache: "no-store" });
+          const j = await r.json();
+          if (j?.error) throw new Error(`API ${j.error}: ${j.message}`);
 
-      el.innerHTML = `
-        <div style="display:flex;align-items:center;gap:12px">
-          ${img ? `<img src="${img}" alt="" style="width:52px;height:52px;border-radius:6px;object-fit:cover;border:1px solid #2a2a2a">` : ""}
-          <div>${isNow ? "🎧 Now playing:" : "Last played:"}
-            <strong><a href="${link}" target="_blank" rel="noopener">${title}</a></strong>
-          </div>
-        </div>`;
-    } catch (e) {
-      console.error("Last.fm widget error:", e);
-      el.textContent = "Could not load (" + (e?.message || "unknown error") + ")";
-    }
-  }
+          const t = firstTrack(j);
+          if(!t){ el.textContent = "No recent tracks."; return; }
 
-  // ✅ schedule correctly
-  const schedule = ('requestIdleCallback' in window)
-    ? () => window.requestIdleCallback(load)         // no numeric 2nd arg
-    : () => setTimeout(load, 1);
+          const now    = t['@attr']?.nowplaying === "true";
+          const artist = t.artist?.['#text'] || t.artist || "Unknown";
+          const track  = t.name || "Unknown";
+          const link   = t.url || "#";
 
-  schedule();
-  setInterval(load, 60000);
-})();
-</script>
+          // start with local art or Last.fm track images
+          let img = LOCAL_ART[(artist || "").toLowerCase()] || pick(t.image) || "";
+
+          // render immediately
+          el.innerHTML = `
+            <div style="display:flex;align-items:center;gap:12px">
+              ${img
+                ? `<img id="npArt" src="${img}" alt="" style="width:52px;height:52px;border-radius:6px;object-fit:cover;border:1px solid #2a2a2a">`
+                : ph()}
+              <div>${now ? "🎧 Now playing:" : "Last played:"}
+                <strong><a href="${link}" target="_blank" rel="noopener">${track} — ${artist}</a></strong>
+              </div>
+            </div>`;
+
+          // If no art yet, try track info → artist info → iTunes (non-blocking)
+          if(!img){
+            try {
+              const ti = await fetch(TRACK_INFO(artist, track)).then(x=>x.json());
+              img = pick(ti?.track?.album?.image) || "";
+            } catch {}
+            if(!img){
+              try {
+                const ai = await fetch(ARTIST_INFO(artist)).then(x=>x.json());
+                img = pick(ai?.artist?.image) || "";
+              } catch {}
+            }
+            if(!img) img = await itunesArt(artist, track);
+
+            if(img){
+              const placeholder = document.getElementById("npArtPh");
+              if (placeholder) {
+                placeholder.outerHTML = `<img id="npArt" src="${img}" alt="" style="width:52px;height:52px;border-radius:6px;object-fit:cover;border:1px solid #2a2a2a">`;
+              }
+            }
+          }
+        }catch(e){
+          el.textContent = "Could not load";
+          console.error("Listening widget:", e);
+        }
+      }
+
+      ("requestIdleCallback" in window) ? requestIdleCallback(load) : setTimeout(load, 1);
+      setInterval(load, 60000);
+    })();
+    </script>
 
     <!-- Life -->
     <hr />
@@ -168,18 +209,11 @@
       <li><em>Top Secret</em> series by Robert Muchamore.</li>
     </ul>
 
-    <h2 style="margin:16px 0 8px">Up next</h2>
-    <ul>
-      <li>Games page (Steam/Stats-style summary)</li>
-      <li>TAW-focused bot features → free alternatives</li>
-    </ul>
-
-    <!-- Now directory + last updated -->
+    <!-- Directory link + last updated -->
     <p style="margin-top:18px">
       This page is part of the
       <a href="https://nownownow.com/about" target="_blank">Now movement</a> —
-      my directory profile:
-      <a href="https://nownownow.com/p/sv3K" target="_blank">My Now Page</a>.
+      my directory profile: <a href="https://nownownow.com/p/sv3K" target="_blank">nownownow.com/p/sv3K</a>.
     </p>
 
     <p style="color:#b9b9b9;margin-top:10px">
