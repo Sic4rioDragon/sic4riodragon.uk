@@ -86,17 +86,15 @@
     </ul>
 
     <!-- Listening -->
-    <hr />
+     <hr />
 <p><strong>Listening</strong></p>
 <div id="nowPlaying" aria-live="polite">Connecting…</div>
-<script>
+    <script>
 (function () {
-  const USER   = "dragonGRaf";               // <-- your Last.fm username (case-sensitive)
-  const APIKEY = "a820e1c7c44a38d9a1903254af92551c"; // <-- your personal API key (NOT the shared secret)
-
-  const URL = `https://ws.audioscrobbler.com/2.0/` +
-              `?method=user.getrecenttracks&user=${encodeURIComponent(USER)}` +
-              `&api_key=${APIKEY}&format=json&limit=1`;
+  const USER   = "dragonGRaf";
+  const APIKEY = "a820e1c7c44a38d9a1903254af92551c";
+  const URL = `https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${
+    encodeURIComponent(USER)}&api_key=${APIKEY}&format=json&limit=1`;
 
   const el = document.getElementById("nowPlaying");
 
@@ -108,15 +106,15 @@
   async function load(){
     try {
       const r = await fetch(URL, { cache: "no-store" });
-      if(!r.ok){
+      if (!r.ok) {
         const text = await r.text().catch(()=> "");
-        throw new Error(`HTTP ${r.status} ${r.statusText} ${text?.slice(0,160)}`);
+        throw new Error(`HTTP ${r.status} ${r.statusText} ${text.slice(0,160)}`);
       }
       const j = await r.json();
       if (j?.error) throw new Error(`API ${j.error}: ${j.message}`);
 
       const t = j?.recenttracks?.track?.[0];
-      if(!t){ el.textContent = "No recent tracks."; return; }
+      if (!t) { el.textContent = "No recent tracks."; return; }
 
       const isNow = t['@attr']?.nowplaying === "true";
       const title = `${t.name} — ${t.artist['#text']}`;
@@ -132,11 +130,16 @@
         </div>`;
     } catch (e) {
       console.error("Last.fm widget error:", e);
-      el.textContent = "Could not load ( " + (e?.message || "unknown error") + " )";
+      el.textContent = "Could not load (" + (e?.message || "unknown error") + ")";
     }
   }
 
-  (window.requestIdleCallback || setTimeout)(load, 1);
+  // ✅ schedule correctly
+  const schedule = ('requestIdleCallback' in window)
+    ? () => window.requestIdleCallback(load)         // no numeric 2nd arg
+    : () => setTimeout(load, 1);
+
+  schedule();
   setInterval(load, 60000);
 })();
 </script>
@@ -169,7 +172,6 @@
     <ul>
       <li>Games page (Steam/Stats-style summary)</li>
       <li>TAW-focused bot features → free alternatives</li>
-      <li> G</li>
     </ul>
 
     <!-- Now directory + last updated -->
