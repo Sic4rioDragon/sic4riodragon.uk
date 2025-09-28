@@ -13,6 +13,9 @@
   <meta property="og:url" content="https://sic4riodragon.uk/now" />
   <meta property="og:image" content="https://sic4riodragon.uk/assets/SicarioDragon.png?v=4" />
   <meta name="theme-color" content="#111111" />
+  <meta property="og:site_name" content="Sic4rioDragon" />
+  <link rel="canonical" href="https://sic4riodragon.uk/now" />
+  <meta name="twitter:card" content="summary_large_image" />
 
   <!-- Favicon (correct file name + cache-bust) -->
   <link rel="icon" type="image/png" href="/assets/SicarioDragon.png?v=4" />
@@ -34,6 +37,7 @@
       background:var(--box-bg);border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,.45);padding:28px 26px
     }
     h1{text-align:center;margin:0 0 14px} p{line-height:1.6;margin:10px 0}
+    h2{margin:0 0 8px}
     ul{margin:8px 0 6px 20px} a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
     hr{border:0;border-top:1px solid var(--border);margin:24px 0}
     .avatar{width:84px;height:84px;border-radius:50%;display:block;margin:0 auto 12px;border:1px solid var(--border)}
@@ -46,7 +50,7 @@
   </div>
 
   <div class="center-box">
-    <img class="avatar" src="/assets/SicarioDragon.png?v=4" alt="Sic4rioDragon" />
+    <img class="avatar" src="/assets/SicarioDragon.png?v=4" alt="" />
     <h1>Now</h1>
 
     <p>Hey! I'm <strong>Sic4rioDragon</strong>, a Swiss gamer and developer.</p>
@@ -80,14 +84,100 @@
       <li>Email: <a href="mailto:sic4riodragon@gmail.com">sic4riodragon@gmail.com</a></li>
       <li>Server: <a href="https://discord.gg/gaJzGPSkZu" target="_blank">discord.gg/gaJzGPSkZu</a></li>
     </ul>
-<p style="color:#b9b9b9;margin-top:10px">
-  Last updated: <time datetime="2025-09-28">28 Sep 2025</time>
-</p>
 
-    <p style="margin-top:18px">This page is part of the <a href="https://nownownow.com/about" target="_blank">Now </a>.</p>
+    <!-- Listening -->
+    <hr />
+    <p><strong>Listening</strong></p>
+    <div id="nowPlaying" aria-live="polite">Connecting…</div>
+    <script>
+    (function () {
+      const USER = "dragonGRaf";                  // your Last.fm username
+      const API_KEY = "a820e1c7c44a38d9a1903254af92551c";  // API key only (safe to expose)
+      const URL = `https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${
+        encodeURIComponent(USER)}&api_key=${API_KEY}&format=json&limit=1`;
+
+      function imgOf(track) {
+        const arr = track?.image || [];
+        return (arr[arr.length - 1]?.['#text']) || (arr[2]?.['#text']) || "";
+      }
+
+      async function load() {
+        try {
+          const r = await fetch(URL);
+          if (!r.ok) throw new Error("HTTP " + r.status);
+          const j = await r.json();
+          const t = j?.recenttracks?.track?.[0];
+          const el = document.getElementById("nowPlaying");
+          if (!t) { el.textContent = "No recent tracks."; return; }
+
+          const isNow = t['@attr']?.nowplaying === "true";
+          const track = `${t.name} — ${t.artist['#text']}`;
+          const link  = t.url || "#";
+          const art   = imgOf(t);
+
+          el.innerHTML = `
+            <div style="display:flex;align-items:center;gap:12px;">
+              ${art ? `<img src="${art}" alt="" style="width:52px;height:52px;border-radius:6px;object-fit:cover;border:1px solid #2a2a2a;">` : ""}
+              <div>
+                ${isNow ? "🎧 Now playing:" : "Last played:"}
+                <strong><a href="${link}" target="_blank" rel="noopener">${track}</a></strong>
+              </div>
+            </div>`;
+        } catch (e) {
+          document.getElementById("nowPlaying").textContent = "(could not load)";
+          console.error(e);
+        }
+      }
+
+      (window.requestIdleCallback||setTimeout)(load, 1);
+      setInterval(load, 60000); // refresh every 60s
+    })();
+    </script>
+
+    <!-- Life -->
+    <hr />
+    <h2>Life</h2>
+    <ul>
+      <li>From <time datetime="2025-10-12">12 Oct 2025</time> I’m visiting my girlfriend in the US for ~6 months.</li>
+    </ul>
+
+    <!-- Movies & TV -->
+    <hr />
+    <h2>Movies & TV series</h2>
+    <ul>
+      <li>Favorite movie: <em>The Last Samurai</em>.</li>
+      <li>Favorite series: <em>Supernatural</em>, <em>Doctor Who</em>.</li>
+    </ul>
+
+    <!-- Books -->
+    <hr />
+    <h2>Favorite books</h2>
+    <ul>
+      <li><em>Young Samurai</em> by Chris Bradford.</li>
+      <li><em>Bodyguard</em> series by Chris Bradford</li>
+      <li><em>Top Secret</em> series by Robert Muchamore.</li>
+    </ul>
+
+    <h2 style="margin:16px 0 8px">Up next</h2>
+    <ul>
+      <li>Games page (Steam/Stats-style summary)</li>
+      <li>TAW-focused bot features → free alternatives</li>
+      <li> G</li>
+    </ul>
+
+    <!-- Now directory + last updated -->
+    <p style="margin-top:18px">
+      This page is part of the
+      <a href="https://nownownow.com/about" target="_blank">Now movement</a> —
+      my directory profile:
+      <a href="https://nownownow.com/p/sv3K" target="_blank">My Now Page</a>.
+    </p>
+
+    <p style="color:#b9b9b9;margin-top:10px">
+      Last updated: <time datetime="2025-09-28">28 Sep 2025</time>
+    </p>
   </div>
 
   <footer>© 2025 Sic4rioDragon — Now</footer>
 </body>
 </html>
-
