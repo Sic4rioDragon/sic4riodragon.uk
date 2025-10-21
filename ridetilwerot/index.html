@@ -1,102 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Scheduled Maintenance • Ride ’til We Rot Society</title>
-  <meta name="robots" content="noindex,nofollow" />
-  <style>
-    :root{
-      --brand:#111; --accent:#e11d48; --bg:#f7f7f7; --card:#fff;
-      --maxw:920px; --logo-max:220px;
-    }
-    *{box-sizing:border-box} html,body{height:100%}
-    body{margin:0;background:var(--bg);color:var(--brand);
-      font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,sans-serif;
-      display:grid;place-items:center;padding:24px}
-    .wrap{width:100%;max-width:var(--maxw)}
-    .card{background:var(--card);border:1px solid #e5e7eb;border-radius:20px;
-      box-shadow:0 10px 30px rgba(0,0,0,.06);padding:28px 26px}
-    header{display:flex;gap:24px;align-items:center;flex-wrap:wrap}
-    .logo img{max-width:var(--logo-max);height:auto;display:block}
-    h1{margin:0 0 6px;font-size:28px;line-height:1.2}
-    p{margin:0 0 10px}.sub{opacity:.9}
-    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px}
-    .btn{appearance:none;border:0;border-radius:999px;padding:11px 16px;
-      background:var(--accent);color:#fff;text-decoration:none;font-weight:700}
-    .btn.outline{background:#fff;color:var(--brand);border:2px solid var(--brand)}
-    .toolbar{display:flex;gap:10px;align-items:center;margin:6px 0 2px}
-    .tool{font:600 13px system-ui;border:1px solid #d1d5db;background:#fff;border-radius:999px;padding:6px 10px;cursor:pointer}
-    .hero{margin:14px 0 0;border-radius:16px;overflow:hidden}
-    .hero img{width:100%;height:auto;display:block}
-    footer{margin-top:14px;font-size:13px;opacity:.75;text-align:center}
-    @media (max-width:520px){h1{font-size:22px}.logo img{max-width:160px}}
-    /* Auto-logo swap for system dark mode (JS toggle also supported) */
-    @media (prefers-color-scheme: dark){
-      body{background:#0b0b0b;color:#eaeaea}
-      .card{background:#111;border-color:#222}
-      .btn.outline{background:transparent;color:#eaeaea;border-color:#eaeaea}
-    }
-  </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Ride ’til We Rot Society • Maintenance</title>
+<meta name="robots" content="noindex,nofollow" />
+<style>
+  :root{--brand:#111;--bg:#ffffff;--card:#ffffff;--maxw:980px;--logo:220px}
+  *{box-sizing:border-box} html,body{height:100%}
+  body{
+    margin:0;color:var(--brand);font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,sans-serif;
+    background:#000 url("rotters.jpg") center/cover no-repeat fixed;
+  }
+  .wrap{min-height:100%;display:grid;place-items:center;padding:32px}
+  .card{
+    width:100%;max-width:var(--maxw);background:var(--card);border:1px solid #e5e7eb;border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,.10);padding:26px 24px
+  }
+  header{display:flex;gap:24px;align-items:center;flex-wrap:wrap;margin-bottom:8px}
+  .logo img{max-width:var(--logo);height:auto;display:block}
+  h1{margin:0 0 6px;font-size:28px;line-height:1.2}
+  p{margin:0 0 10px}
+  .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
+  .btn{appearance:none;border:0;border-radius:999px;padding:10px 14px;font-weight:700;text-decoration:none}
+  .btn.primary{background:#111;color:#fff}
+  .btn.ghost{background:#fff;border:2px solid #111;color:#111}
+  .section{margin-top:18px}
+  .section h2{font-size:20px;margin:0 0 8px}
+  footer{margin-top:14px;font-size:13px;opacity:.8;text-align:center}
+  @media (max-width:520px){h1{font-size:22px}.logo img{max-width:160px}}
+</style>
 </head>
 <body>
   <main class="wrap">
-    <section class="card" id="card">
-      <div class="toolbar">
-        <button class="tool" id="themeBtn" aria-pressed="false" title="Toggle light/dark">Toggle Theme</button>
-      </div>
-
+    <section class="card">
       <header>
-        <div class="logo">
-          <!-- Uses white_logo by default; script swaps to dark_logo when dark -->
-          <img id="logo" src="white_logo.jpg" alt="Ride 'til We Rot Society logo"
-               data-light="white_logo.jpg" data-dark="dark_logo.jpg">
-        </div>
+        <div class="logo"><img src="white_logo.jpg" alt="Ride 'til We Rot Society logo"></div>
         <div>
           <h1>Website undergoing scheduled maintenance</h1>
-          <p class="sub">We’re in the process of re-setting everything. Thanks for your patience.</p>
+          <p>We’re in the process of re-setting everything. Thanks for your patience.</p>
           <p><strong>Sorry for the inconvenience.</strong> Please check back a little later — we’ll be ready soon!</p>
           <div class="actions">
-            <a class="btn" href="mailto:admin@ridetilwerot.org">Email: admin@ridetilwerot.org</a>
-            <a class="btn outline" target="_blank" rel="noopener"
-               href="https://www.instagram.com/ridetilwerot/">Instagram @ridetilwerot</a>
+            <a class="btn primary" href="mailto:admin@ridetilwerot.org">Email: admin@ridetilwerot.org</a>
+            <a class="btn ghost" target="_blank" rel="noopener" href="https://www.instagram.com/ridetilwerot/">Instagram @ridetilwerot</a>
           </div>
         </div>
       </header>
 
-      <div class="hero">
-        <img src="rotters.jpg" alt="Ride ’til We Rot banner artwork">
+      <div class="section">
+        <h2>Who we are</h2>
+        <p>Let us introduce ourselves, we are Ride ’til we Rot Society (RTWR/Rotters). We are a non-profit charity that exists to support bikers &amp; trikers who suffer with a varying degree of disabilities, irrespective of cause, be it illness, genetic or accident.</p>
+        <p>From humble beginnings RTWR has grown into an international support group. Initially started in Europe, we now exist in the USA, Australia, New Zealand and as far south as South Africa.</p>
+        <p>Our mission is to support &amp; assist members in their charitable needs. We organise social meets, fund-raising events and always offer a bit of tongue-in-cheek humour.</p>
+        <p>The Society is non-affiliated; we aim to support all Clubs &amp; organisations without competing with them. We have in the past offered support to MC’s &amp; MCC’s. We are not a Motorcycle club.</p>
+        <p>Our members come from all walks &amp; wheels of life from able-bodied, disabled all the way to severely disabled.</p>
+        <p>Got any questions? Just ask.</p>
       </div>
 
       <footer>© <span id="yr"></span> Ride ’til We Rot Society • All rights reserved</footer>
     </section>
   </main>
-
-  <script>
-    // Year stamp
-    document.getElementById('yr').textContent = new Date().getFullYear();
-
-    // Theme + logo swap (light/dark). Remembers choice for your friend.
-    const logo = document.getElementById('logo');
-    const btn  = document.getElementById('themeBtn');
-    const prefersDark = () => window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-    function applyTheme(mode){
-      document.documentElement.dataset.theme = mode;
-      const dark = mode === 'dark' || (mode === 'auto' && prefersDark());
-      logo.src = dark ? logo.dataset.dark : logo.dataset.light;
-    }
-    // Load saved mode or auto
-    const saved = localStorage.getItem('rtwr-theme') || 'auto';
-    applyTheme(saved);
-
-    btn.addEventListener('click', () => {
-      const current = localStorage.getItem('rtwr-theme') || 'auto';
-      const next = current === 'light' ? 'dark' : current === 'dark' ? 'auto' : 'light';
-      localStorage.setItem('rtwr-theme', next);
-      btn.setAttribute('aria-pressed', next !== 'auto');
-      applyTheme(next);
-    });
-  </script>
+  <script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
 </body>
 </html>
