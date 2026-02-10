@@ -1,29 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="icon" type="image/png" href="/deadbydaylight/assets/img/deadbydaylight_icon.png">
   <meta charset="UTF-8">
   <title>Dead by Daylight — Sic4rioDragon</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="/deadbydaylight/assets/img/deadbydaylight_icon.png">
+
+  <meta name="description" content="My Dead by Daylight collection — killers, loadouts, and clips.">
+  <meta property="og:title" content="Dead by Daylight • Sic4rioDragon">
+  <meta property="og:description" content="My Dead by Daylight killer collection — loadouts + clips.">
+  <meta property="og:image" content="https://sic4riodragon.uk/deadbydaylight/assets/img/deadbydaylight_icon.png">
+  <meta property="og:url" content="https://sic4riodragon.uk/deadbydaylight/">
+  <meta name="twitter:card" content="summary_large_image">
 </head>
+
 <body>
+  <div class="topbar">
+    <a class="back-btn" href="/">← Back to Home</a>
+    <div class="titleblock">
+      <h1>Dead by Daylight</h1>
+      <p>My killer collection</p>
+    </div>
+    <div style="width:140px;"></div>
+  </div>
 
-<header>
-  <h1>Dead by Daylight</h1>
-  <p>My killer collection</p>
-</header>
-<p class="subtitle">
-  All killers I own in Dead by Daylight (except Cenobite)
-</p>
+  <p class="subtitle">
+    All killers I own in Dead by Daylight (except Cenobite)
+  </p>
 
-<a href="/" class="back-link">← Back to Home</a>
+  <main id="killer-grid"></main>
 
-<main id="killer-grid"></main>
+  <footer>
+    <p id="updated"></p>
+  </footer>
 
-<footer>
-  <p id="updated"></p>
-</footer>
+  <!-- Modal -->
+  <div id="killerModal" class="modal hidden">
+    <div class="modal-card">
+      <button id="modalClose" class="modal-close">×</button>
+      <h2 id="modalName"></h2>
+      <div id="modalBody"></div>
+    </div>
+  </div>
 
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

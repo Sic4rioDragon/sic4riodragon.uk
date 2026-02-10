@@ -58,7 +58,17 @@
       "name": "The Huntress",
       "img": "assets/dbd/CharPortraits/DLC5/K08_TheHuntress_Portrait.png",
       "prestige": 0,
-      "owned": true
+      "owned": true,
+
+      "favLoadout": {
+        "perks": ["Perk 1", "Perk 2", "Perk 3", "Perk 4"],
+        "addons": ["Add-on 1", "Add-on 2"],
+        "offering": "Optional offering",
+        "notes": "Any notes you want (optional)"
+      },
+      "clips": [
+        { "title": "Cool hatchet snipe", "url": "https://clips.twitch.tv/..." }
+      ]
     },
     {
       "id": "cannibal",
@@ -215,68 +225,67 @@
       "owned": true
     },
     {
-  "id": "clown",
-  "name": "The Clown",
-  "img": "assets/dbd/CharPortraits/Guam/K12_TheClown_Portrait.png",
-  "prestige": 0,
-  "owned": true
-},
-{
-  "id": "spirit",
-  "name": "The Spirit",
-  "img": "assets/dbd/CharPortraits/Haiti/K13_TheSpirit_Portrait.png",
-  "prestige": 0,
-  "owned": true
-},
-{
-  "id": "deathslinger",
-  "name": "The Deathslinger",
-  "img": "assets/dbd/CharPortraits/Ukraine/K19_TheDeathslinger_Portrait.png",
-  "prestige": 0,
-  "owned": true
-},
-{
-  "id": "artist",
-  "name": "The Artist",
-  "img": "assets/dbd/CharPortraits/Ion/K26_TheArtist_Portrait.png",
-  "prestige": 0,
-  "owned": true
-},
-{
-  "id": "onryo",
-  "name": "The Onryo",
-  "img": "assets/dbd/CharPortraits/Kepler/K27_TheOnryo_Portrait.png",
-  "prestige": 0,
-  "owned": true
-},
-{
-  "id": "mastermind",
-  "name": "The Mastermind",
-  "img": "assets/dbd/CharPortraits/Orion/K29_TheMasterMind_Portrait.png",
-  "prestige": 0,
-  "owned": true
-},
-{
-  "id": "skullmerchant",
-  "name": "The Skullmerchant",
-  "img": "assets/dbd/CharPortraits/Saturn/K31_TheSkullMerchant_Portrait.png",
-  "prestige": 0,
-  "owned": true
-},
-{
-  "id": "singularity",
-  "name": "The Singularity",
-  "img": "assets/dbd/CharPortraits/Umbra/K32_TheSingularity_Portrait.png",
-  "prestige": 0,
-  "owned": true
-},
-{
-  "id": "goodguy",
-  "name": "The Good Guy",
-  "img": "assets/dbd/CharPortraits/Yerkes/K34_TheYerkes_Portrait.png",
-  "prestige": 0,
-  "owned": true
-}
-
+      "id": "clown",
+      "name": "The Clown",
+      "img": "assets/dbd/CharPortraits/Guam/K12_TheClown_Portrait.png",
+      "prestige": 0,
+      "owned": true
+    },
+    {
+      "id": "spirit",
+      "name": "The Spirit",
+      "img": "assets/dbd/CharPortraits/Haiti/K13_TheSpirit_Portrait.png",
+      "prestige": 0,
+      "owned": true
+    },
+    {
+      "id": "deathslinger",
+      "name": "The Deathslinger",
+      "img": "assets/dbd/CharPortraits/Ukraine/K19_TheDeathslinger_Portrait.png",
+      "prestige": 0,
+      "owned": true
+    },
+    {
+      "id": "artist",
+      "name": "The Artist",
+      "img": "assets/dbd/CharPortraits/Ion/K26_TheArtist_Portrait.png",
+      "prestige": 0,
+      "owned": true
+    },
+    {
+      "id": "onryo",
+      "name": "The Onryo",
+      "img": "assets/dbd/CharPortraits/Kepler/K27_TheOnryo_Portrait.png",
+      "prestige": 0,
+      "owned": true
+    },
+    {
+      "id": "mastermind",
+      "name": "The Mastermind",
+      "img": "assets/dbd/CharPortraits/Orion/K29_TheMasterMind_Portrait.png",
+      "prestige": 0,
+      "owned": true
+    },
+    {
+      "id": "skullmerchant",
+      "name": "The Skullmerchant",
+      "img": "assets/dbd/CharPortraits/Saturn/K31_TheSkullMerchant_Portrait.png",
+      "prestige": 0,
+      "owned": true
+    },
+    {
+      "id": "singularity",
+      "name": "The Singularity",
+      "img": "assets/dbd/CharPortraits/Umbra/K32_TheSingularity_Portrait.png",
+      "prestige": 0,
+      "owned": true
+    },
+    {
+      "id": "goodguy",
+      "name": "The Good Guy",
+      "img": "assets/dbd/CharPortraits/Yerkes/K34_TheYerkes_Portrait.png",
+      "prestige": 0,
+      "owned": true
+    }
   ]
 }
