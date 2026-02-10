@@ -1,0 +1,30 @@
+{
+  "updated": "2026-02-10",
+  "owned_except": ["The Cenobite"],
+  "killers": [
+    {
+      "id": "trapper",
+      "name": "The Trapper",
+      "prestige": 3,
+      "owned": true
+    },
+    {
+      "id": "wraith",
+      "name": "The Wraith",
+      "prestige": 1,
+      "owned": true
+    },
+    {
+      "id": "hillbilly",
+      "name": "The Hillbilly",
+      "prestige": 0,
+      "owned": true
+    },
+    {
+      "id": "cenobite",
+      "name": "The Cenobite",
+      "prestige": 0,
+      "owned": false
+    }
+  ]
+}

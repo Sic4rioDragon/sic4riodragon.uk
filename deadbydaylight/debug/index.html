@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>DBD Debug • Missing Images</title>
+  <style>
+    body { font-family: system-ui, Arial, sans-serif; background:#0b0b0f; color:#eaeaf2; margin:0; padding:24px; }
+    h1 { margin:0 0 6px; font-size:22px; }
+    p { margin:0 0 18px; opacity:.8; }
+    .row { display:flex; gap:10px; flex-wrap:wrap; margin:14px 0 18px; }
+    button { background:#1c1c28; color:#eaeaf2; border:1px solid #2a2a3a; padding:8px 12px; border-radius:10px; cursor:pointer; }
+    button:hover { filter:brightness(1.1); }
+    table { width:100%; border-collapse:collapse; overflow:hidden; border-radius:12px; }
+    th, td { padding:10px 12px; border-bottom:1px solid #24243a; text-align:left; }
+    th { background:#13131c; font-weight:700; }
+    tr:hover td { background:#10101a; }
+    code { background:#13131c; padding:2px 6px; border-radius:8px; }
+    .muted { opacity:.75; }
+    .empty { padding:14px; border:1px dashed #2a2a3a; border-radius:12px; }
+  </style>
+</head>
+<body>
+  <h1>Missing Images</h1>
+  <p class="muted">Shows any character images that failed to load and fell back to the placeholder.</p>
+
+  <div class="row">
+    <button id="btnRefresh">Refresh</button>
+    <button id="btnClear">Clear Log</button>
+    <button id="btnCopy">Copy as Text</button>
+  </div>
+
+  <div id="content"></div>
+
+  <script>
+    const key = "dbd_missing_images_v1";
+
+    function load() {
+      try { return JSON.parse(localStorage.getItem(key) || "[]"); }
+      catch { return []; }
+    }
+
+    function render() {
+      const list = load();
+      const el = document.getElementById("content");
+      if (!list.length) {
+        el.innerHTML = '<div class="empty">No missing images logged 🎉</div>';
+        return;
+      }
+
+      el.innerHTML = `
+        <table>
+          <thead>
+            <tr>
+              <th>When</th>
+              <th>Type</th>
+              <th>Name</th>
+              <th>Path</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${list.map(x => `
+              <tr>
+                <td>${new Date(x.ts).toLocaleString()}</td>
+                <td><code>${x.type}</code></td>
+                <td>${escapeHtml(x.name)}</td>
+                <td><code>${escapeHtml(x.path)}</code></td>
+              </tr>
+            `).join("")}
+          </tbody>
+        </table>
+      `;
+    }
+
+    function escapeHtml(s){
+      return String(s).replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+    }
+
+    document.getElementById("btnRefresh").onclick = render;
+    document.getElementById("btnClear").onclick = () => { localStorage.removeItem(key); render(); };
+    document.getElementById("btnCopy").onclick = async () => {
+      const list = load();
+      const txt = list.map(x => `${new Date(x.ts).toISOString()} | ${x.type} | ${x.name} | ${x.path}`).join("\n");
+      try { await navigator.clipboard.writeText(txt); alert("Copied!"); }
+      catch { alert("Clipboard blocked. (Try HTTPS or allow clipboard.)"); }
+    };
+
+    render();
+  </script>
+</body>
+</html>
