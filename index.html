@@ -1,28 +1,80 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Dead by Daylight — Sic4rioDragon</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="/assets/SicarioDragon.png">
+  <title>Sic4rioDragon | Gamer & Dev</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="test.css">
 </head>
 <body>
+  <nav id="mainnavigation">
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#community">Community</a></li>
+      <li><a href="#links">Contact</a></li>
+    </ul>
+  </nav>
 
-<header>
-  <h1>Dead by Daylight</h1>
-  <p>My killer collection</p>
-</header>
-<p class="subtitle">
-  All killers I own in Dead by Daylight (except Cenobite)
-</p>
+  <header>
+    <img src="./assets/tawbanner.png" alt="TAW Banner">
+    <h1>Sic4rioDragon</h1>
+    <p>Swiss Gamer • TAW.net DayZ Division • Server Admin &amp; Bot Dev</p>
+  </header>
 
-<a href="/" class="back-link">← Back to Home</a>
+  <main>
+    <section id="about" class="card">
+      <h2>About Me</h2>
+      <div class="profile">
+        <img src="./assets/SicarioDragon.png" alt="Badge">
+        <p>Hey! I’m <strong>Sic4rioDragon</strong>, a gamer and self-taught dev from Switzerland. I’m part of <a href="https://taw.net/" target="_blank">TAW.net</a>'s DayZ Division and run PopcornGaming with <a href="/Dusk/">Dusk</a>. I build Discord bots and self-host on my dedicated server.</p>
+      </div>
+      <p class="links"><a href="http://taw.net/member/Sic4rioDragon.aspx">TAW Profile</a> | <a href="/profile/">Public Snapshot</a></p>
+    </section>
 
-<main id="killer-grid"></main>
+    <section id="projects" class="card">
+      <h2>My Projects</h2>
+      <img src="./assets/tawdayzdivision.png" alt="DayZ Servers">
+      <ul>
+        <li><strong>DayZ Servers:</strong> Deathmatch &amp; Event servers</li>
+        <li><strong>Discord Bots:</strong> Custom utilities & moderation</li>
+      </ul>
+    </section>
 
-<footer>
-  <p id="updated"></p>
-</footer>
+    <section id="community" class="card">
+      <h2>Join the Community</h2>
+      <ul>
+        <li>🎮 <a href="https://discord.gg/uQkwAFKhaF">TAW DayZ Discord</a></li>
+        <li>🍿 <a href="https://discord.gg/popcorngaming">PopcornGaming</a></li>
+        <li>🌐 <a href="https://discord.gg/taw">Main TAW Discord</a></li>
+      </ul>
+    </section>
 
-<script src="script.js"></script>
+    <section id="links" class="card">
+      <h2>Contact</h2>
+      <ul>
+        <li>📹 <a href="https://www.youtube.com/@Sic4rioDragon">YouTube</a></li>
+        <li>📧 <a href="mailto:sic4riodragon@gmail.com">Email Me</a></li>
+      </ul>
+    </section>
+
+    <section id="site-links" class="card">
+      <h2>📌 Site Links</h2>
+      <ul>
+        <li><a href="/profile"><span>👤</span> View My TAW Profile</a></li>
+        <li><a href="/links/test.html"><span>🌐</span> Links Hub</a></li>
+        <li><a href="/about/test.html"><span>📜</span> About Me</a></li>
+        <li><a href="/funfact/test.html"><span>🎉</span> Fun Facts</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <img src="./assets/taw_logo.png" alt="TAW Logo">
+    <p>© 2025 Sic4rioDragon — Powered by Cloudflare Pages &amp; GitHub.</p>
+  </footer>
 </body>
 </html>
