@@ -1,30 +1,281 @@
 {
   "updated": "2026-02-10",
-  "owned_except": ["The Cenobite"],
+  "owned_except": [
+    "The Cenobite"
+  ],
   "killers": [
     {
       "id": "trapper",
       "name": "The Trapper",
+      "img": "assets/dbd/CharPortraits/K01_TheTrapper_Portrait.png",
       "prestige": 3,
       "owned": true
     },
     {
       "id": "wraith",
       "name": "The Wraith",
+      "img": "assets/dbd/CharPortraits/K02_TheWraith_Portrait.png",
       "prestige": 1,
       "owned": true
     },
     {
       "id": "hillbilly",
       "name": "The Hillbilly",
+      "img": "assets/dbd/CharPortraits/K03_TheHillbilly_Portrait.png",
+      "prestige": 0,
+      "owned": true
+    },
+    {
+      "id": "nurse",
+      "name": "The Nurse",
+      "img": "assets/dbd/CharPortraits/K04_TheNurse_Portrait.png",
+      "prestige": 0,
+      "owned": true
+    },
+    {
+      "id": "hag",
+      "name": "The Hag",
+      "img": "assets/dbd/CharPortraits/DLC3/K05_TheHag_Portrait.png",
+      "prestige": 0,
+      "owned": true
+    },
+    {
+      "id": "shape",
+      "name": "The Shape",
+      "img": "assets/dbd/CharPortraits/DLC2/K06_TheShape_Portrait.png",
+      "prestige": 0,
+      "owned": true
+    },
+    {
+      "id": "doctor",
+      "name": "The Doctor",
+      "img": "assets/dbd/CharPortraits/DLC4/K07_TheDoctor_Portrait.png",
+      "prestige": 0,
+      "owned": true
+    },
+    {
+      "id": "huntress",
+      "name": "The Huntress",
+      "img": "assets/dbd/CharPortraits/DLC5/K08_TheHuntress_Portrait.png",
+      "prestige": 0,
+      "owned": true
+    },
+    {
+      "id": "cannibal",
+      "name": "The Cannibal",
+      "img": "assets/dbd/CharPortraits/Cannibal/K09_TheCannibal_Portrait.png",
+      "prestige": 0,
+      "owned": true
+    },
+    {
+      "id": "nightmare",
+      "name": "The Nightmare",
+      "img": "assets/dbd/CharPortraits/England/K10_TheNightmare_Portrait.png",
+      "prestige": 0,
+      "owned": true
+    },
+    {
+      "id": "pig",
+      "name": "The Pig",
+      "img": "assets/dbd/CharPortraits/Finland/K11_ThePig_Portrait.png",
+      "prestige": 0,
+      "owned": true
+    },
+    {
+      "id": "clown",
+      "name": "The Clown",
+      "img": "assets/dbd/CharPortraits/Haiti/K12_TheClown_Portrait.png",
+      "prestige": 0,
+      "owned": true
+    },
+    {
+      "id": "spirit",
+      "name": "The Spirit",
+      "img": "assets/dbd/CharPortraits/Indonesia/K13_TheSpirit_Portrait.png",
+      "prestige": 0,
+      "owned": true
+    },
+    {
+      "id": "legion",
+      "name": "The Legion",
+      "img": "assets/dbd/CharPortraits/Kenya/K14_TheLegion_Portrait.png",
+      "prestige": 0,
+      "owned": true
+    },
+    {
+      "id": "plague",
+      "name": "The Plague",
+      "img": "assets/dbd/CharPortraits/Mali/K15_ThePlague_Portrait.png",
+      "prestige": 0,
+      "owned": true
+    },
+    {
+      "id": "ghostface",
+      "name": "The Ghost Face",
+      "img": "assets/dbd/CharPortraits/Oman/K16_TheGhostface_Portrait.png",
+      "prestige": 0,
+      "owned": true
+    },
+    {
+      "id": "demogorgon",
+      "name": "The Demogorgon",
+      "img": "assets/dbd/CharPortraits/Qatar/K17_TheDemogorgon_Portrait.png",
+      "prestige": 0,
+      "owned": true
+    },
+    {
+      "id": "oni",
+      "name": "The Oni",
+      "img": "assets/dbd/CharPortraits/Sweden/K18_TheOni_Portrait.png",
+      "prestige": 0,
+      "owned": true
+    },
+    {
+      "id": "deathslinger",
+      "name": "The Deathslinger",
+      "img": "assets/dbd/CharPortraits/Umbra/K19_TheDeathslinger_Portrait.png",
+      "prestige": 0,
+      "owned": true
+    },
+    {
+      "id": "executioner",
+      "name": "The Executioner",
+      "img": "assets/dbd/CharPortraits/Wales/K20_TheExecutioner_Portrait.png",
+      "prestige": 0,
+      "owned": true
+    },
+    {
+      "id": "blight",
+      "name": "The Blight",
+      "img": "assets/dbd/CharPortraits/Yemen/K21_TheBlight_Portrait.png",
+      "prestige": 0,
+      "owned": true
+    },
+    {
+      "id": "twins",
+      "name": "The Twins",
+      "img": "assets/dbd/CharPortraits/Aurora/K22_TheTwins_Portrait.png",
+      "prestige": 0,
+      "owned": true
+    },
+    {
+      "id": "trickster",
+      "name": "The Trickster",
+      "img": "assets/dbd/CharPortraits/Comet/K23_TheTrickster_Portrait.png",
+      "prestige": 0,
+      "owned": true
+    },
+    {
+      "id": "nemesis",
+      "name": "The Nemesis",
+      "img": "assets/dbd/CharPortraits/Eclipse/K24_TheNemesis_Portrait.png",
       "prestige": 0,
       "owned": true
     },
     {
       "id": "cenobite",
       "name": "The Cenobite",
+      "img": "assets/dbd/CharPortraits/Gemini/K25_TheCenobite_Portrait.png",
       "prestige": 0,
       "owned": false
+    },
+    {
+      "id": "artist",
+      "name": "The Artist",
+      "img": "assets/dbd/CharPortraits/Iceland/K26_TheArtist_Portrait.png",
+      "prestige": 0,
+      "owned": true
+    },
+    {
+      "id": "onryo",
+      "name": "The Onryo",
+      "img": "assets/dbd/CharPortraits/Koala/K27_TheOnryo_Portrait.png",
+      "prestige": 0,
+      "owned": true
+    },
+    {
+      "id": "dredge",
+      "name": "The Dredge",
+      "img": "assets/dbd/CharPortraits/Meteor/K28_TheDredge_Portrait.png",
+      "prestige": 0,
+      "owned": true
+    },
+    {
+      "id": "mastermind",
+      "name": "The Mastermind",
+      "img": "assets/dbd/CharPortraits/Orange/K29_TheMastermind_Portrait.png",
+      "prestige": 0,
+      "owned": true
+    },
+    {
+      "id": "knight",
+      "name": "The Knight",
+      "img": "assets/dbd/CharPortraits/Quantum/K30_TheKnight_Portrait.png",
+      "prestige": 0,
+      "owned": true
+    },
+    {
+      "id": "skullmerchant",
+      "name": "The Skullmerchant",
+      "img": "assets/dbd/CharPortraits/Redbeard/K31_TheSkullMerchant_Portrait.png",
+      "prestige": 0,
+      "owned": true
+    },
+    {
+      "id": "singularity",
+      "name": "The Singularity",
+      "img": "assets/dbd/CharPortraits/Saturn/K32_TheSingularity_Portrait.png",
+      "prestige": 0,
+      "owned": true
+    },
+    {
+      "id": "goodguy",
+      "name": "The Goodguy",
+      "img": "assets/dbd/CharPortraits/Titan/K33_TheGoodGuy_Portrait.png",
+      "prestige": 0,
+      "owned": true
+    },
+    {
+      "id": "unknown",
+      "name": "The Unknown",
+      "img": "assets/dbd/CharPortraits/Applepie/K35_TheUnknown_Portrait.png",
+      "prestige": 0,
+      "owned": true
+    },
+    {
+      "id": "lich",
+      "name": "The Lich",
+      "img": "assets/dbd/CharPortraits/Churros/K36_TheLich_Portrait.png",
+      "prestige": 0,
+      "owned": true
+    },
+    {
+      "id": "dracula",
+      "name": "The Dracula",
+      "img": "assets/dbd/CharPortraits/Eclair/K37_TheDracula_Portrait.png",
+      "prestige": 0,
+      "owned": true
+    },
+    {
+      "id": "houndmaster",
+      "name": "The Houndmaster",
+      "img": "assets/dbd/CharPortraits/Gelato/K38_TheHoundmaster_Portrait.png",
+      "prestige": 0,
+      "owned": true
+    },
+    {
+      "id": "ghoul",
+      "name": "The Ghoul",
+      "img": "assets/dbd/CharPortraits/Icecream/K39_TheGhoul_Portrait.png",
+      "prestige": 0,
+      "owned": true
+    },
+    {
+      "id": "animatronic",
+      "name": "The Animatronic",
+      "img": "assets/dbd/CharPortraits/Ketchup/K40_TheAnimatronic_Portrait.png",
+      "prestige": 0,
+      "owned": true
     }
   ]
 }

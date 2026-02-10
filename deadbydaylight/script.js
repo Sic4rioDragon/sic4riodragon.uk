@@ -1,20 +1,21 @@
-// --- DBD image fallback + missing tracker ---
-// Uses localStorage so your /deadbydaylight/debug page can list missing files.
+// ================== CONFIG ==================
+const DBD_BASE = "/deadbydaylight/"; // IMPORTANT: absolute base so pages in subfolders still work
+
 const DBD_IMG = {
-  // You are using placeholder.webp (recommended)
-  placeholder: "/deadbydaylight/assets/img/placeholder.webp",
+  placeholder: DBD_BASE + "assets/img/placeholder.webp",
+  // keep this if you want the debug page to show missing files:
+  // (this is NOT "caching the site", only logging missing images)
   missingLogKey: "dbd_missing_images_v1",
 };
 
+// ================== MISSING IMAGE LOG ==================
 function loadMissingLog() {
   try { return JSON.parse(localStorage.getItem(DBD_IMG.missingLogKey) || "[]"); }
   catch { return []; }
 }
-
 function saveMissingLog(list) {
   localStorage.setItem(DBD_IMG.missingLogKey, JSON.stringify(list.slice(0, 500)));
 }
-
 function addMissing(entry) {
   const list = loadMissingLog();
   const id = `${entry.type}:${entry.name}:${entry.path}`;
@@ -25,9 +26,7 @@ function addMissing(entry) {
 }
 
 /**
- * Call this AFTER you set <img src="..."> for a character.
- * It will replace broken images with placeholder + show a notice badge.
- *
+ * Replaces broken images with placeholder, logs them, and shows a badge.
  * @param {HTMLImageElement} imgEl
  * @param {{type:"survivor"|"killer", name:string, intendedSrc:string}} meta
  */
@@ -35,21 +34,14 @@ function attachImageFallback(imgEl, meta) {
   if (!imgEl) return;
 
   imgEl.addEventListener("error", () => {
-    // log
     addMissing({ type: meta.type, name: meta.name, path: meta.intendedSrc });
 
     // replace with placeholder
     const placeholderAbs = location.origin + DBD_IMG.placeholder;
-    if (imgEl.src !== placeholderAbs) {
-      imgEl.src = DBD_IMG.placeholder;
-    }
+    if (imgEl.src !== placeholderAbs) imgEl.src = DBD_IMG.placeholder;
 
-    // visual notice (adds a small "MISSING" tag near the image)
-    const wrap =
-      imgEl.closest(".dbd-char") ||
-      imgEl.closest(".killer") ||
-      imgEl.parentElement;
-
+    // badge
+    const wrap = imgEl.closest(".killer") || imgEl.closest(".dbd-char") || imgEl.parentElement;
     if (wrap && !wrap.querySelector(".missing-img-badge")) {
       const badge = document.createElement("div");
       badge.className = "missing-img-badge";
@@ -60,14 +52,27 @@ function attachImageFallback(imgEl, meta) {
   }, { once: true });
 }
 
-// Expose for debug page or future expansions
 window.DBD_attachImageFallback = attachImageFallback;
 window.DBD_loadMissingLog = loadMissingLog;
 window.DBD_clearMissingLog = () => localStorage.removeItem(DBD_IMG.missingLogKey);
 
+// ================== HELPERS ==================
+function toBasePath(p) {
+  // If json already has absolute "/deadbydaylight/..." or "http..." keep it.
+  if (!p) return p;
+  if (p.startsWith("http://") || p.startsWith("https://") || p.startsWith(DBD_BASE)) return p;
+  if (p.startsWith("/")) return p; // absolute from site root
+  // otherwise treat as relative to /deadbydaylight/
+  return DBD_BASE + p;
+}
 
-// -------------------- Existing page logic --------------------
-fetch("killers.json")
+function cacheBust(url, version) {
+  const sep = url.includes("?") ? "&" : "?";
+  return `${url}${sep}v=${encodeURIComponent(version || Date.now())}`;
+}
+
+// ================== PAGE LOGIC ==================
+fetch(cacheBust(DBD_BASE + "killers.json", Date.now()))
   .then(r => r.json())
   .then(data => {
     const grid = document.getElementById("killer-grid");
@@ -75,21 +80,28 @@ fetch("killers.json")
 
     updated.textContent = "Last updated: " + data.updated;
 
+    // Clear grid in case script runs twice / hot reload
+    grid.innerHTML = "";
+
     data.killers.forEach(k => {
       const div = document.createElement("div");
       div.className = "killer" + (k.owned ? "" : " locked");
 
-      // Keep your existing markup style (no unnecessary rewrites)
+      // Prefer k.img (CharPortraits), otherwise old fallback
+      const rawSrc = (k.img && String(k.img).trim().length)
+        ? k.img
+        : `assets/dbd/killers/${k.id}.jpg`;
+
+      // ✅ convert to absolute /deadbydaylight/... and add cache bust to avoid cached 404s
+      const src = cacheBust(toBasePath(rawSrc), data.updated);
+
       div.innerHTML = `
-        <img src="assets/dbd/killers/${k.id}.jpg" alt="${k.name}">
+        <img src="${src}" alt="${k.name}">
         <div class="killer-name">${k.name}</div>
         ${!k.owned ? `<div class="locked-label">Not owned</div>` : ""}
-        ${k.owned && k.prestige > 0
-          ? `<div class="prestige">P${k.prestige}</div>`
-          : ""}
+        ${k.owned && k.prestige > 0 ? `<div class="prestige">P${k.prestige}</div>` : ""}
       `;
 
-      // ✅ Hook the fallback + missing log
       const img = div.querySelector("img");
       if (img) {
         const intendedSrc = img.getAttribute("src") || img.src;
@@ -102,4 +114,7 @@ fetch("killers.json")
 
       grid.appendChild(div);
     });
+  })
+  .catch(err => {
+    console.error("Failed to load killers.json", err);
   });
