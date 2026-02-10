@@ -82,20 +82,6 @@
       "owned": true
     },
     {
-      "id": "clown",
-      "name": "The Clown",
-      "img": "assets/dbd/CharPortraits/Haiti/K12_TheClown_Portrait.png",
-      "prestige": 0,
-      "owned": true
-    },
-    {
-      "id": "spirit",
-      "name": "The Spirit",
-      "img": "assets/dbd/CharPortraits/Indonesia/K13_TheSpirit_Portrait.png",
-      "prestige": 0,
-      "owned": true
-    },
-    {
       "id": "legion",
       "name": "The Legion",
       "img": "assets/dbd/CharPortraits/Kenya/K14_TheLegion_Portrait.png",
@@ -127,13 +113,6 @@
       "id": "oni",
       "name": "The Oni",
       "img": "assets/dbd/CharPortraits/Sweden/K18_TheOni_Portrait.png",
-      "prestige": 0,
-      "owned": true
-    },
-    {
-      "id": "deathslinger",
-      "name": "The Deathslinger",
-      "img": "assets/dbd/CharPortraits/Umbra/K19_TheDeathslinger_Portrait.png",
       "prestige": 0,
       "owned": true
     },
@@ -180,20 +159,6 @@
       "owned": false
     },
     {
-      "id": "artist",
-      "name": "The Artist",
-      "img": "assets/dbd/CharPortraits/Iceland/K26_TheArtist_Portrait.png",
-      "prestige": 0,
-      "owned": true
-    },
-    {
-      "id": "onryo",
-      "name": "The Onryo",
-      "img": "assets/dbd/CharPortraits/Koala/K27_TheOnryo_Portrait.png",
-      "prestige": 0,
-      "owned": true
-    },
-    {
       "id": "dredge",
       "name": "The Dredge",
       "img": "assets/dbd/CharPortraits/Meteor/K28_TheDredge_Portrait.png",
@@ -201,37 +166,9 @@
       "owned": true
     },
     {
-      "id": "mastermind",
-      "name": "The Mastermind",
-      "img": "assets/dbd/CharPortraits/Orange/K29_TheMastermind_Portrait.png",
-      "prestige": 0,
-      "owned": true
-    },
-    {
       "id": "knight",
       "name": "The Knight",
       "img": "assets/dbd/CharPortraits/Quantum/K30_TheKnight_Portrait.png",
-      "prestige": 0,
-      "owned": true
-    },
-    {
-      "id": "skullmerchant",
-      "name": "The Skullmerchant",
-      "img": "assets/dbd/CharPortraits/Redbeard/K31_TheSkullMerchant_Portrait.png",
-      "prestige": 0,
-      "owned": true
-    },
-    {
-      "id": "singularity",
-      "name": "The Singularity",
-      "img": "assets/dbd/CharPortraits/Saturn/K32_TheSingularity_Portrait.png",
-      "prestige": 0,
-      "owned": true
-    },
-    {
-      "id": "goodguy",
-      "name": "The Goodguy",
-      "img": "assets/dbd/CharPortraits/Titan/K33_TheGoodGuy_Portrait.png",
       "prestige": 0,
       "owned": true
     },
@@ -276,6 +213,70 @@
       "img": "assets/dbd/CharPortraits/Ketchup/K40_TheAnimatronic_Portrait.png",
       "prestige": 0,
       "owned": true
-    }
+    },
+    {
+  "id": "clown",
+  "name": "The Clown",
+  "img": "assets/dbd/CharPortraits/Guam/K12_TheClown_Portrait.png",
+  "prestige": 0,
+  "owned": true
+},
+{
+  "id": "spirit",
+  "name": "The Spirit",
+  "img": "assets/dbd/CharPortraits/Haiti/K13_TheSpirit_Portrait.png",
+  "prestige": 0,
+  "owned": true
+},
+{
+  "id": "deathslinger",
+  "name": "The Deathslinger",
+  "img": "assets/dbd/CharPortraits/Ukraine/K19_TheDeathslinger_Portrait.png",
+  "prestige": 0,
+  "owned": true
+},
+{
+  "id": "artist",
+  "name": "The Artist",
+  "img": "assets/dbd/CharPortraits/Ion/K26_TheArtist_Portrait.png",
+  "prestige": 0,
+  "owned": true
+},
+{
+  "id": "onryo",
+  "name": "The Onryo",
+  "img": "assets/dbd/CharPortraits/Kepler/K27_TheOnryo_Portrait.png",
+  "prestige": 0,
+  "owned": true
+},
+{
+  "id": "mastermind",
+  "name": "The Mastermind",
+  "img": "assets/dbd/CharPortraits/Orion/K29_TheMasterMind_Portrait.png",
+  "prestige": 0,
+  "owned": true
+},
+{
+  "id": "skullmerchant",
+  "name": "The Skullmerchant",
+  "img": "assets/dbd/CharPortraits/Saturn/K31_TheSkullMerchant_Portrait.png",
+  "prestige": 0,
+  "owned": true
+},
+{
+  "id": "singularity",
+  "name": "The Singularity",
+  "img": "assets/dbd/CharPortraits/Umbra/K32_TheSingularity_Portrait.png",
+  "prestige": 0,
+  "owned": true
+},
+{
+  "id": "goodguy",
+  "name": "The Good Guy",
+  "img": "assets/dbd/CharPortraits/Yerkes/K34_TheYerkes_Portrait.png",
+  "prestige": 0,
+  "owned": true
+}
+
   ]
 }
