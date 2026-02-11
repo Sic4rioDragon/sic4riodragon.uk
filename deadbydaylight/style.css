@@ -62,6 +62,7 @@ header {
   font-size: 12px;
   border-radius: 4px;
 }
+
 .back-link {
   display: inline-block;
   margin-top: 10px;
@@ -69,10 +70,8 @@ header {
   text-decoration: none;
   font-size: 14px;
 }
+.back-link:hover { color: #fff; }
 
-.back-link:hover {
-  color: #fff;
-}
 .locked-label {
   position: absolute;
   top: 8px;
@@ -83,17 +82,20 @@ header {
   border-radius: 3px;
   color: #ccc;
 }
+
 .subtitle {
   font-size: 14px;
   color: #b5b5b5;
   margin-top: 6px;
 }
+
 @media (max-width: 500px) {
   #killer-grid {
     gap: 16px;
     padding: 20px;
   }
 }
+
 .missing-img-badge{
   position:absolute;
   top:8px;
@@ -108,6 +110,7 @@ header {
   z-index:5;
   user-select:none;
 }
+
 .topbar{
   max-width:1200px;
   margin: 24px auto 0;
@@ -141,6 +144,7 @@ header {
   color: #bdbdbd;
   letter-spacing: .3px;
 }
+
 .modal.hidden{ display:none; }
 .modal{
   position:fixed; inset:0;
@@ -169,6 +173,7 @@ header {
   cursor:pointer;
 }
 .modal-close:hover{ background:#333; }
+
 .modal-section { margin-top: 10px; }
 .modal-section h3 {
   margin: 12px 0 6px;
@@ -179,6 +184,7 @@ header {
 .modal-section a { color: #9bd1ff; text-decoration: none; }
 .modal-section a:hover { text-decoration: underline; }
 .muted { opacity: 0.75; }
+
 /* Title row with Yui / Huntress */
 .title-row{
   display:flex;
@@ -187,74 +193,40 @@ header {
   gap:18px;
 }
 .title-avatar{
-  width:54px;
-  height:54px;
-  object-fit:cover;
-  border-radius:14px;
+  width: 72px;
+  height: 96px;              /* tall box so full-body fits */
+  object-fit: contain;       /* IMPORTANT: no cropping */
+  object-position: center;
+  border-radius: 14px;
+  padding: 6px;              /* little breathing room */
+  background: rgba(0,0,0,0.35);
   box-shadow: 0 10px 30px rgba(0,0,0,.45);
-  border: 1px solid rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.10);
 }
+
 .title-text{ text-align:center; }
 
 /* Controls */
 .controls{
-  max-width:1200px;
+  max-width: 1200px;
   margin: 16px auto 0;
   padding: 0 30px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:12px;
-  flex-wrap:wrap;
-}
-.search{
-  flex:1;
-  min-width:260px;
-  padding:10px 12px;
-  border-radius:10px;
-  border:1px solid rgba(255,255,255,.10);
-  background:#111;
-  color:#eee;
-  outline:none;
-}
-.search:focus{
-  border-color: rgba(255,255,255,.22);
-}
-.toggle{
-  display:flex;
-  align-items:center;
-  gap:8px;
-  user-select:none;
-  opacity:.9;
+  display: flex;
+  justify-content: flex-end;  /* right */
 }
 
-/* Favorites */
-.killer.fav{
-  box-shadow:
-    0 0 0 2px rgba(255, 200, 60, 0.85),
-    0 18px 50px rgba(0,0,0,.55);
+.search{
+  width: 320px;              /* fixed size */
+  max-width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,.10);
+  background: #111;
+  color: #eee;
+  outline: none;
 }
-.fav-btn{
-  position:absolute;
-  top:8px;
-  left:8px;
-  z-index:6;
-  width:34px;
-  height:34px;
-  border-radius:10px;
-  border:1px solid rgba(255,255,255,.10);
-  background: rgba(0,0,0,.55);
-  color:#fff;
-  cursor:pointer;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-.fav-btn:hover{ background: rgba(0,0,0,.72); }
-.fav-btn.on{
-  background: rgba(255, 200, 60, 0.18);
-  border-color: rgba(255, 200, 60, 0.55);
-}
+.search:focus{ border-color: rgba(255,255,255,.22); }
+
 .perk-list{ list-style:none; padding-left:0; margin: 6px 0 10px; }
 .perk-item{
   display:flex;
@@ -271,6 +243,7 @@ header {
 }
 
 .clip-embed{ margin: 10px 0 16px; }
+
 /* Main highlight (dark red) */
 .killer.main{
   box-shadow:

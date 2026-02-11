@@ -1,42 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Dead by Daylight — Sic4rioDragon</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/png" href="/deadbydaylight/assets/img/deadbydaylight_icon.png">
+  <title>DBD Killers — Sic4rioDragon</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="/deadbydaylight/assets/img/deadbydaylight_icon.png" />
 
-  <meta name="description" content="My Dead by Daylight collection — killers, loadouts, and clips.">
-  <meta property="og:title" content="Dead by Daylight • Sic4rioDragon">
-  <meta property="og:description" content="My Dead by Daylight killer collection — loadouts + clips.">
-  <meta property="og:image" content="https://sic4riodragon.uk/deadbydaylight/assets/img/deadbydaylight_icon.png">
-  <meta property="og:url" content="https://sic4riodragon.uk/deadbydaylight/">
-  <meta name="twitter:card" content="summary_large_image">
+  <meta name="description" content="My Dead by Daylight killer collection — builds + clips." />
+  <meta property="og:title" content="Dead by Daylight • Killers • Sic4rioDragon" />
+  <meta property="og:description" content="My killer collection — builds + clips." />
+  <meta property="og:image" content="https://sic4riodragon.uk/deadbydaylight/assets/img/deadbydaylight_icon.png" />
+  <meta property="og:url" content="https://sic4riodragon.uk/deadbydaylight/" />
+  <meta name="twitter:card" content="summary_large_image" />
 </head>
 
 <body>
-  <div class="titleblock">
-  <div class="title-row">
-    <a class="title-avatar-link" href="/deadbydaylight/survivors.html" title="Go to Survivors">
-  <img class="title-avatar" src="/deadbydaylight/assets/img/yui.png" alt="Yui">
-  </a>
-    <div class="title-text">
-      <h1>Dead by Daylight</h1>
-      <p>My killer collection</p>
+  <div class="topbar">
+    <a class="back-btn" href="/">← Back to Home</a>
+
+    <div class="titleblock">
+      <div class="title-row">
+        <a class="title-avatar-link" href="/deadbydaylight/survivors.html" title="Go to Survivors">
+          <img class="title-avatar" src="/deadbydaylight/assets/img/yui.png" alt="Yui">
+        </a>
+
+        <div class="title-text">
+          <h1>Dead by Daylight</h1>
+          <p>My killer collection</p>
+        </div>
+
+        <a class="title-avatar-link" href="/deadbydaylight/" title="Go to Killers">
+          <img class="title-avatar" src="/deadbydaylight/assets/img/huntress.png" alt="Huntress">
+        </a>
+      </div>
     </div>
-    <a class="title-avatar-link" href="/deadbydaylight/" title="Go to Killers">
-  <img class="title-avatar" src="/deadbydaylight/assets/img/huntress.png" alt="Huntress">
-  </a>
+
+    <div style="width:140px;"></div>
   </div>
-  </div>
+
   <div class="controls">
-  <input id="searchInput" class="search" type="search" placeholder="Search killers… (e.g. huntress, oni, spirit)" autocomplete="off">
-  <label class="toggle">
-    <input id="favOnlyToggle" type="checkbox">
-    <span>Favorites only</span>
-  </label>
+    <input id="searchInput" class="search" type="search" placeholder="Search killers… (e.g. huntress, oni, spirit)" autocomplete="off">
   </div>
 
   <main id="killer-grid"></main>

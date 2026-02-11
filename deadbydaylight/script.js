@@ -1,17 +1,13 @@
 // ================== CONFIG ==================
-const DBD_BASE = "/deadbydaylight/"; // absolute base so pages in subfolders still work
+const DBD_BASE = "/deadbydaylight/";
 
 const DBD_IMG = {
   placeholder: DBD_BASE + "assets/img/placeholder.webp",
   missingLogKey: "dbd_missing_images_v1",
 };
 
-// Perk icons (optional): put raw GitHub base here if you want.
 const PERK_ICON_BASE =
   "https://raw.githubusercontent.com/snoggles/dbd-perk-emoji/main/images/input/";
-
-// Favorites storage
-const FAV_KEY = "dbd_favs_v1";
 
 // ================== MISSING IMAGE LOG ==================
 function loadMissingLog() {
@@ -29,20 +25,15 @@ function addMissing(entry) {
     saveMissingLog(list);
   }
 }
-
-/**
- * Replaces broken images with placeholder, logs them, and shows a badge.
- */
 function attachImageFallback(imgEl, meta) {
   if (!imgEl) return;
-
   imgEl.addEventListener("error", () => {
     addMissing({ type: meta.type, name: meta.name, path: meta.intendedSrc });
 
     const placeholderAbs = location.origin + DBD_IMG.placeholder;
     if (imgEl.src !== placeholderAbs) imgEl.src = DBD_IMG.placeholder;
 
-    const wrap = imgEl.closest(".killer") || imgEl.closest(".dbd-char") || imgEl.parentElement;
+    const wrap = imgEl.closest(".killer") || imgEl.parentElement;
     if (wrap && !wrap.querySelector(".missing-img-badge")) {
       const badge = document.createElement("div");
       badge.className = "missing-img-badge";
@@ -64,13 +55,10 @@ function toBasePath(p) {
   if (p.startsWith("/")) return p;
   return DBD_BASE + p;
 }
-
 function cacheBust(url, version) {
   const sep = url.includes("?") ? "&" : "?";
   return `${url}${sep}v=${encodeURIComponent(version || Date.now())}`;
 }
-
-// safe HTML helpers
 function escapeHtml(s){
   return String(s).replace(/[&<>"']/g, m => ({
     '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'
@@ -79,23 +67,10 @@ function escapeHtml(s){
 function escapeAttr(s){
   return escapeHtml(s).replace(/"/g, "&quot;");
 }
-
-// Favorites
-function loadFavs() {
-  try { return new Set(JSON.parse(localStorage.getItem(FAV_KEY) || "[]")); }
-  catch { return new Set(); }
-}
-function saveFavs(favsSet) {
-  localStorage.setItem(FAV_KEY, JSON.stringify(Array.from(favsSet)));
-}
-
-// “In-game-ish” order using K## in filename
 function getKNumberFromImgPath(p) {
   const m = String(p || "").match(/\/K(\d+)_/i);
   return m ? parseInt(m[1], 10) : 9999;
 }
-
-// Deep-link modal as a “page” using ?k=huntress
 function getQueryK() {
   const u = new URL(location.href);
   return (u.searchParams.get("k") || "").trim();
@@ -109,18 +84,13 @@ function setQueryK(idOrEmpty) {
 
 // ================== CLIP EMBEDS ==================
 function normalizeMedalEmbedUrl(url) {
-  // supports: https://medal.tv/games/.../clips/<id>
-  // embed uses: https://medal.tv/clip/<id>
   const s = String(url || "");
   const m = s.match(/\/clips\/([A-Za-z0-9_-]+)/);
   if (m) return `https://medal.tv/clip/${m[1]}`;
   return s;
 }
-
 function renderClipEmbed(url) {
   const s = String(url || "");
-
-  // Medal
   if (s.includes("medal.tv/")) {
     const embed = normalizeMedalEmbedUrl(s);
     return `
@@ -137,8 +107,6 @@ function renderClipEmbed(url) {
       </div>
     `;
   }
-
-  // YouTube (basic)
   const yt = s.match(/(?:youtu\.be\/|youtube\.com\/watch\?v=)([A-Za-z0-9_-]{6,})/);
   if (yt) {
     const id = yt[1];
@@ -155,8 +123,6 @@ function renderClipEmbed(url) {
       </div>
     `;
   }
-
-  // fallback link
   return `<p><a href="${escapeAttr(s)}" target="_blank" rel="noopener noreferrer">${escapeHtml(s)}</a></p>`;
 }
 
@@ -166,51 +132,30 @@ const PERK_ALIASES = {
   "BBQ & Chilli": "BBQ and Chili.png",
   "BBQ & Chili": "BBQ and Chili.png",
   "Barbecue & Chili": "BBQ and Chili.png",
-
   "We're Gonna Live Forever": "We_re Gonna Live Forever.png"
 };
 
 function perkNameToFilename(perkName) {
   let name = String(perkName || "").trim();
-
-  // alias first
   if (PERK_ALIASES[name]) return PERK_ALIASES[name];
 
-  // normalize curly apostrophes
   name = name.replace(/’/g, "'");
+  name = name.replace(/:/g, "").replace(/'/g, "_");
 
-  // match pack rules
-  name = name
-    .replace(/:/g, "")      // remove colons
-    .replace(/'/g, "_");    // apostrophe -> underscore (We'll -> We_ll)
-
-  // common swap: "&" -> "and" (only if needed)
-  // (we don't force it because many perks don't use &)
   const andVersion = name.replace(/&/g, "and").replace(/\s+/g, " ").trim();
-
-  // return both candidates (primary first)
   return [name + ".png", andVersion + ".png"];
 }
 
 function renderPerkItem(perk) {
-  // perk can be:
-  //  - "Lethal Pursuer"
-  //  - { name: "Lethal Pursuer" }  (optional)
-  //  - { name: "...", icon: "Exact File.png" } (overrides)
   let name = "";
   let iconFile = "";
 
-  if (typeof perk === "string") {
-    name = perk;
-  } else if (perk && typeof perk === "object") {
-    name = perk.name || "";
-    iconFile = perk.icon || "";
-  }
+  if (typeof perk === "string") name = perk;
+  else if (perk && typeof perk === "object") { name = perk.name || ""; iconFile = perk.icon || ""; }
 
   name = String(name || "").trim();
   if (!name) return `<li>(invalid perk)</li>`;
 
-  // If user provided an exact filename, use it.
   if (iconFile) {
     const url = PERK_ICON_BASE + iconFile;
     return `
@@ -222,11 +167,8 @@ function renderPerkItem(perk) {
     `;
   }
 
-  // Otherwise, auto-resolve filename(s)
   const candidates = perkNameToFilename(name);
   const list = Array.isArray(candidates) ? candidates : [candidates];
-
-  // Use the first candidate; if it fails, swap to second; if that fails, hide icon
   const first = PERK_ICON_BASE + list[0];
   const second = list[1] ? (PERK_ICON_BASE + list[1]) : "";
 
@@ -236,14 +178,24 @@ function renderPerkItem(perk) {
 
   return `
     <li class="perk-item">
-      <img class="perk-icon" src="${escapeAttr(first)}" alt="${escapeAttr(name)}"
-           onerror="${onErr}">
+      <img class="perk-icon" src="${escapeAttr(first)}" alt="${escapeAttr(name)}" onerror="${onErr}">
       <span>${escapeHtml(name)}</span>
     </li>
   `;
 }
 
-// ================== MODAL ==================
+// ================== MODAL + KEYBOARD NAV ==================
+let CURRENT_LIST = [];
+let CURRENT_FILTERED = [];
+let CURRENT_OPEN_ID = "";
+
+function closeModal() {
+  const modal = document.getElementById("killerModal");
+  modal.classList.add("hidden");
+  setQueryK("");
+  CURRENT_OPEN_ID = "";
+}
+
 function openModalForKiller(k) {
   const modal = document.getElementById("killerModal");
   const nameEl = document.getElementById("modalName");
@@ -267,16 +219,12 @@ function openModalForKiller(k) {
     : `<p class="muted">(no add-ons set)</p>`;
 
   const clipsHtml = clips.length
-    ? clips.map(c => {
-        const title = c.title ? `<p><b>${escapeHtml(c.title)}</b></p>` : "";
-        return `${title}${renderClipEmbed(c.url)}`;
-      }).join("")
+    ? clips.map(c => `${c.title ? `<p><b>${escapeHtml(c.title)}</b></p>` : ""}${renderClipEmbed(c.url)}`).join("")
     : `<p class="muted">(no clips yet)</p>`;
 
   bodyEl.innerHTML = `
     <div class="modal-section">
       <h3>Favorite Loadout</h3>
-
       <p><b>Perks</b></p>
       ${perksHtml}
 
@@ -295,52 +243,79 @@ function openModalForKiller(k) {
 
   modal.classList.remove("hidden");
   setQueryK(k.id);
+  CURRENT_OPEN_ID = k.id;
 }
 
 function wireModalClose() {
   const modal = document.getElementById("killerModal");
   const closeBtn = document.getElementById("modalClose");
+  if (closeBtn) closeBtn.onclick = closeModal;
+  if (modal) modal.onclick = (e) => { if (e.target.id === "killerModal") closeModal(); };
+}
 
-  if (closeBtn) {
-    closeBtn.onclick = () => {
-      modal.classList.add("hidden");
-      setQueryK("");
-    };
-  }
-  if (modal) {
-    modal.onclick = (e) => {
-      if (e.target.id === "killerModal") {
-        modal.classList.add("hidden");
-        setQueryK("");
-      }
-    };
-  }
+function isModalOpen() {
+  const modal = document.getElementById("killerModal");
+  return modal && !modal.classList.contains("hidden");
+}
+
+function openByIndex(idx) {
+  if (!CURRENT_FILTERED.length) return;
+  const clamped = (idx + CURRENT_FILTERED.length) % CURRENT_FILTERED.length;
+  const k = CURRENT_FILTERED[clamped];
+  if (k) openModalForKiller(k);
+}
+
+function getOpenIndex() {
+  if (!CURRENT_OPEN_ID) return -1;
+  return CURRENT_FILTERED.findIndex(x => x.id === CURRENT_OPEN_ID);
+}
+
+function wireKeyboardNav() {
+  document.addEventListener("keydown", (e) => {
+    if (!isModalOpen()) return;
+
+    // ESC closes
+    if (e.key === "Escape") {
+      e.preventDefault();
+      closeModal();
+      return;
+    }
+
+    // avoid interfering while typing in inputs
+    const tag = (document.activeElement && document.activeElement.tagName) ? document.activeElement.tagName.toLowerCase() : "";
+    if (tag === "input" || tag === "textarea") return;
+
+    // left/right arrows
+    if (e.key === "ArrowLeft" || e.key === "ArrowRight") {
+      e.preventDefault();
+      const idx = getOpenIndex();
+      if (idx < 0) return;
+      if (e.key === "ArrowLeft") openByIndex(idx - 1);
+      else openByIndex(idx + 1);
+    }
+  });
 }
 
 // ================== PAGE LOGIC ==================
 wireModalClose();
+wireKeyboardNav();
 
 fetch(cacheBust(DBD_BASE + "killers.json", Date.now()))
   .then(r => r.json())
   .then(data => {
     const grid = document.getElementById("killer-grid");
     const updated = document.getElementById("updated");
+    const searchInput = document.getElementById("searchInput");
 
     updated.textContent = "Last updated: " + data.updated;
 
-    const favs = loadFavs();
-
-    // Owned first, then not-owned. Within each group, sort by K##
-    const owned = data.killers.filter(k => k.owned);
-    const notOwned = data.killers.filter(k => !k.owned);
+    const owned = (data.killers || []).filter(k => k.owned);
+    const notOwned = (data.killers || []).filter(k => !k.owned);
 
     owned.sort((a,b) => getKNumberFromImgPath(a.img) - getKNumberFromImgPath(b.img));
     notOwned.sort((a,b) => getKNumberFromImgPath(a.img) - getKNumberFromImgPath(b.img));
 
-    const currentList = [...owned, ...notOwned];
-
-    const searchInput = document.getElementById("searchInput");
-    const favOnlyToggle = document.getElementById("favOnlyToggle");
+    CURRENT_LIST = [...owned, ...notOwned];
 
     function renderGrid(list) {
       grid.innerHTML = "";
@@ -355,14 +330,8 @@ fetch(cacheBust(DBD_BASE + "killers.json", Date.now()))
           notOwnedHeaderAdded = true;
         }
 
-        const isFav = favs.has(k.id);
-
         const div = document.createElement("div");
-        div.className =
-        "killer" +
-        (k.owned ? "" : " locked") +
-        (isFav ? " fav" : "") +
-        (k.main ? " main" : "");
+        div.className = "killer" + (k.owned ? "" : " locked") + (k.main ? " main" : "");
 
         const rawSrc = (k.img && String(k.img).trim().length)
           ? k.img
@@ -371,33 +340,18 @@ fetch(cacheBust(DBD_BASE + "killers.json", Date.now()))
         const src = cacheBust(toBasePath(rawSrc), data.updated);
 
         div.innerHTML = `
-          <button class="fav-btn ${isFav ? "on" : ""}" title="Favorite">★</button>
           <img src="${src}" alt="${k.name}">
           <div class="killer-name">${k.name}</div>
           ${!k.owned ? `<div class="locked-label">Not owned</div>` : ""}
           ${k.owned && k.prestige > 0 ? `<div class="prestige">P${k.prestige}</div>` : ""}
         `;
 
-        // image fallback
         const img = div.querySelector("img");
         if (img) {
           const intendedSrc = img.getAttribute("src") || img.src;
           window.DBD_attachImageFallback(img, { type:"killer", name:k.name, intendedSrc });
         }
 
-        // favorite toggle
-        const favBtn = div.querySelector(".fav-btn");
-        favBtn.addEventListener("click", (e) => {
-          e.stopPropagation();
-          if (favs.has(k.id)) favs.delete(k.id);
-          else favs.add(k.id);
-          saveFavs(favs);
-          applyFiltersAndRender();
-        });
-
-        // click:
-        // normal click => modal
-        // ctrl/cmd click => open in new tab with deep link
         div.addEventListener("click", (e) => {
           const url = `${location.origin}${DBD_BASE}?k=${encodeURIComponent(k.id)}`;
           if (e.ctrlKey || e.metaKey) {
@@ -413,30 +367,22 @@ fetch(cacheBust(DBD_BASE + "killers.json", Date.now()))
 
     function applyFiltersAndRender() {
       const q = (searchInput?.value || "").toLowerCase().trim();
-      const favOnly = !!favOnlyToggle?.checked;
-
-      const filtered = currentList.filter(k => {
-        if (favOnly && !favs.has(k.id)) return false;
+      CURRENT_FILTERED = CURRENT_LIST.filter(k => {
         if (!q) return true;
         return (k.name || "").toLowerCase().includes(q) || (k.id || "").toLowerCase().includes(q);
       });
 
-      renderGrid(filtered);
+      renderGrid(CURRENT_FILTERED);
     }
 
     searchInput?.addEventListener("input", applyFiltersAndRender);
-    favOnlyToggle?.addEventListener("change", applyFiltersAndRender);
 
-    // First render
     applyFiltersAndRender();
 
-    // Open deep-linked killer if present
     const qk = getQueryK();
     if (qk) {
-      const found = currentList.find(x => x.id === qk);
+      const found = CURRENT_LIST.find(x => x.id === qk);
       if (found) openModalForKiller(found);
     }
   })
-  .catch(err => {
-    console.error("Failed to load killers.json", err);
-  });
+  .catch(err => console.error("Failed to load killers.json", err));
