@@ -17,18 +17,27 @@
 </head>
 
 <body>
-  <div class="topbar">
-    <a class="back-btn" href="/">← Back to Home</a>
-    <div class="titleblock">
+  <div class="titleblock">
+  <div class="title-row">
+    <a class="title-avatar-link" href="/deadbydaylight/survivors.html" title="Go to Survivors">
+  <img class="title-avatar" src="/deadbydaylight/assets/img/yui.png" alt="Yui">
+  </a>
+    <div class="title-text">
       <h1>Dead by Daylight</h1>
       <p>My killer collection</p>
     </div>
-    <div style="width:140px;"></div>
+    <a class="title-avatar-link" href="/deadbydaylight/" title="Go to Killers">
+  <img class="title-avatar" src="/deadbydaylight/assets/img/huntress.png" alt="Huntress">
+  </a>
   </div>
-
-  <p class="subtitle">
-    All killers I own in Dead by Daylight (except Cenobite)
-  </p>
+  </div>
+  <div class="controls">
+  <input id="searchInput" class="search" type="search" placeholder="Search killers… (e.g. huntress, oni, spirit)" autocomplete="off">
+  <label class="toggle">
+    <input id="favOnlyToggle" type="checkbox">
+    <span>Favorites only</span>
+  </label>
+  </div>
 
   <main id="killer-grid"></main>
 

@@ -1,0 +1,18 @@
+{
+  "updated": "2026-02-10",
+  "survivors": [
+    {
+      "id": "yui",
+      "name": "Yui Kimura",
+      "img": "assets/dbd/CharPortraits/S05_YuiKimura_Portrait.png",
+      "owned": true,
+      "main": true,
+      "favLoadout": {
+        "perks": [],
+        "addons": [],
+        "notes": ""
+      },
+      "clips": []
+    }
+  ]
+}

@@ -59,6 +59,7 @@
       "img": "assets/dbd/CharPortraits/DLC5/K08_TheHuntress_Portrait.png",
       "prestige": 0,
       "owned": true,
+      "main": true,
 
       "favLoadout": {
         "perks": ["Perk 1", "Perk 2", "Perk 3", "Perk 4"],
@@ -67,7 +68,7 @@
         "notes": "Any notes you want (optional)"
       },
       "clips": [
-        { "title": "Cool hatchet snipe", "url": "https://clips.twitch.tv/..." }
+        { "title": "Cool hatchet snipe", "url": "https://medal.tv/games/dead-by-daylight/clips/lCgZ93YwvKBuPfPts" }
       ]
     },
     {
@@ -268,7 +269,7 @@
     },
     {
       "id": "skullmerchant",
-      "name": "The Skullmerchant",
+      "name": "The Skull Merchant",
       "img": "assets/dbd/CharPortraits/Saturn/K31_TheSkullMerchant_Portrait.png",
       "prestige": 0,
       "owned": true
