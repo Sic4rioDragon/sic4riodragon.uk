@@ -62,9 +62,8 @@
       "main": true,
 
       "favLoadout": {
-        "perks": ["Perk 1", "Perk 2", "Perk 3", "Perk 4"],
-        "addons": ["Add-on 1", "Add-on 2"],
-        "offering": "Optional offering",
+        "perks": ["Deerstalker", "A Nurse's Calling", "Perk 3", "Perk 4"],
+        "addons": ["Flower Babushka", "Coarse Stone"],
         "notes": "Any notes you want (optional)"
       },
       "clips": [

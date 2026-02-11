@@ -113,7 +113,7 @@ header {
 
 .topbar{
   max-width:1200px;
-  margin: 24px auto 0;
+  margin: 42px auto 0;
   padding: 0 30px;
   display:flex;
   align-items:center;
@@ -127,6 +127,11 @@ header {
 }
 
 .back-btn{
+  position: fixed;
+  top: 18px;
+  left: 18px;
+  z-index: 10000;
+
   display:inline-block;
   color:#fff;
   background:#222;
@@ -193,12 +198,12 @@ header {
   gap:18px;
 }
 .title-avatar{
-  width: 72px;
-  height: 96px;              /* tall box so full-body fits */
-  object-fit: contain;       /* IMPORTANT: no cropping */
+  width: 140px;
+  height: 200px; 
+  object-fit: contain;
   object-position: center;
   border-radius: 14px;
-  padding: 6px;              /* little breathing room */
+  padding: 10px;
   background: rgba(0,0,0,0.35);
   box-shadow: 0 10px 30px rgba(0,0,0,.45);
   border: 1px solid rgba(255,255,255,.10);
@@ -216,7 +221,7 @@ header {
 }
 
 .search{
-  width: 320px;              /* fixed size */
+  width: 260px;
   max-width: 100%;
   padding: 10px 12px;
   border-radius: 10px;
@@ -225,6 +230,7 @@ header {
   color: #eee;
   outline: none;
 }
+
 .search:focus{ border-color: rgba(255,255,255,.22); }
 
 .perk-list{ list-style:none; padding-left:0; margin: 6px 0 10px; }
