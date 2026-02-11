@@ -4,7 +4,7 @@
     {
       "id": "yui",
       "name": "Yui Kimura",
-      "img": "assets/dbd/CharPortraits/Sweden/S05_YuiKimura_Portrait.png",
+      "img": "assets/dbd/CharPortraits/Sweden/S20_YuiKimura_Portrait",
       "owned": true,
       "main": true,
 
@@ -17,3 +17,4 @@
     }
   ]
 }
+
