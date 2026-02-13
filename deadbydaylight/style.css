@@ -40,12 +40,20 @@ header {
 
 .killer-name {
   position: absolute;
-  bottom: 0;
-  width: 100%;
-  padding: 10px;
-  background: linear-gradient(transparent, rgba(0,0,0,.85));
-  font-weight: 600;
-  font-size: 14px;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  width: auto;
+
+  padding: 6px 10px;
+  background: rgba(0,0,0,.72);
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: 10px;
+
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 1.2;
+  z-index: 6;
 }
 
 .killer.locked {
@@ -69,12 +77,11 @@ header {
   bottom: 10px;
   width: 44px;
   height: 44px;
+  z-index: 6;
 
-  background-image: url("assets/img/prestigecrests.png");
+  background-image: url("assets/img/prestige_1-25_grid.png");
   background-repeat: no-repeat;
-
-  /* 5 columns × 5 rows */
-  background-size: 500% 500%;
+  background-size: 500% 500%; /* 5 columns × 5 rows */
 
   filter: drop-shadow(0 2px 4px rgba(0,0,0,.6));
   pointer-events: none;
