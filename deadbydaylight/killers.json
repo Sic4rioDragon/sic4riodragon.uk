@@ -229,6 +229,7 @@
       "name": "The Clown",
       "img": "assets/dbd/CharPortraits/Guam/K12_TheClown_Portrait.png",
       "prestige": 3,
+      "nameshown": false,
       "owned": true
     },
     {
