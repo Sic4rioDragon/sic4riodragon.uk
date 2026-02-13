@@ -171,7 +171,7 @@ fetch(cacheBust(DBD_BASE + "survivors.json", Date.now()))
 
         div.innerHTML = `
         <img src="${src}" alt="${s.name}">
-        <div class="killer-name">${s.name}</div>
+        <div class="killer-name ${s.nameshown === false ? "is-hidden" : ""}">${s.name}</div>
         ${s.prestige > 0 ? `<div class="prestige-crest" data-p="${s.prestige}" title="Prestige ${s.prestige}"></div>` : ""}
         `;
         

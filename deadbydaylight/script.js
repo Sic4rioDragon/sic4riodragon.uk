@@ -461,7 +461,7 @@ fetch(cacheBust(DBD_BASE + "killers.json", Date.now()))
 
         div.innerHTML = `
           <img src="${src}" alt="${k.name}">
-          <div class="killer-name">${k.name}</div>
+          <div class="killer-name ${k.nameshown === false ? "is-hidden" : ""}">${k.name}</div>
           ${!k.owned ? `<div class="locked-label">Not owned</div>` : ""}
           ${k.owned && k.prestige > 0 ? `<div class="prestige-crest" data-p="${k.prestige}" title="Prestige ${k.prestige}"></div>` : ""}
         `;
@@ -507,3 +507,23 @@ fetch(cacheBust(DBD_BASE + "killers.json", Date.now()))
   })
   .catch(err => console.error("Failed to load killers.json", err));
 }
+(function initNameToggle(){
+  const KEY = "dbd_show_names";
+  const btn = document.getElementById("toggleNamesBtn");
+  if (!btn) return;
+
+  function apply(show){
+    document.body.classList.toggle("names-off", !show);
+    btn.textContent = show ? "Turn names off" : "Turn names on";
+  }
+
+  const saved = localStorage.getItem(KEY);
+  const show = saved === null ? true : saved === "1";
+  apply(show);
+
+  btn.addEventListener("click", () => {
+    const nowShow = document.body.classList.contains("names-off"); // if currently off, turn on
+    localStorage.setItem(KEY, nowShow ? "1" : "0");
+    apply(nowShow);
+  });
+})();

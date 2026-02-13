@@ -74,8 +74,8 @@ header {
   left: 10px;
   bottom: 10px;
 
-  width: 52px; 
-  height: 52px;
+  width: 104px; 
+  height: 104px;
 
   z-index: 7;
 
@@ -357,4 +357,25 @@ header {
   height: 260px;
   object-fit: cover;
   display: block;
+}
+/* Global toggle: hide all names */
+body.names-off .killer-name{
+  display: none !important;
+}
+
+/* Per-card toggle: hide name for specific portraits */
+.killer-name.is-hidden{
+  display: none !important;
+}
+
+.toggle-btn{
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.06);
+  color: #fff;
+  cursor: pointer;
+}
+.toggle-btn:hover{
+  background: rgba(255,255,255,.10);
 }
