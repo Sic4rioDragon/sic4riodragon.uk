@@ -312,7 +312,12 @@ fetch(cacheBust(DBD_BASE + "killers.json", Date.now()))
     const owned = (data.killers || []).filter(k => k.owned);
     const notOwned = (data.killers || []).filter(k => !k.owned);
 
-    owned.sort((a,b) => getKNumberFromImgPath(a.img) - getKNumberFromImgPath(b.img));
+    owned.sort((a,b) => {
+    const am = a.main ? 1 : 0;
+    const bm = b.main ? 1 : 0;
+    if (am !== bm) return bm - am;           // main first
+    return getKNumberFromImgPath(a.img) - getKNumberFromImgPath(b.img);
+    });
     notOwned.sort((a,b) => getKNumberFromImgPath(a.img) - getKNumberFromImgPath(b.img));
 
     CURRENT_LIST = [...owned, ...notOwned];

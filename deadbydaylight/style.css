@@ -283,10 +283,3 @@ header {
   object-fit: cover;
   display: block;
 }
-
-#survivor-grid .killer img{
-  width: 100%;
-  height: 260px !important;
-  object-fit: cover;
-  display: block;
-}

@@ -156,7 +156,7 @@
     {
       "id": "nancy",
       "name": "Nancy",
-      "img": "assets/dbd/CharPortraits/Poutine/T_UI_S19_NancyWheeler_Portrait",
+      "img": "assets/dbd/CharPortraits/Poutine/T_UI_S19_NancyWheeler_Portrait.png",
       "owned": true,
       "main": false,
       "favLoadout": { "perks": [], "addons": [] },
@@ -249,7 +249,7 @@
     {
       "id": "mikela",
       "name": "Mikaela",
-      "img": "assets/dbd/CharPortraits/Hubble/S28_MikaelaReid_Portrait",
+      "img": "assets/dbd/CharPortraits/Hubble/S28_MikaelaReid_Portrait.png",
       "owned": true,
       "main": false,
       "favLoadout": { "perks": [], "addons": [] },
