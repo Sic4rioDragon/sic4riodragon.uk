@@ -72,7 +72,7 @@ header {
 .prestige-crest{
   position: absolute;
   left: 6px;
-  bottom: 6px;
+  bottom: 0;
 
   width: 78px; 
   height: 78px;
