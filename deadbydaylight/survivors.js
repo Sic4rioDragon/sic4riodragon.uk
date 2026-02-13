@@ -171,6 +171,16 @@ fetch(cacheBust(DBD_BASE + "survivors.json", Date.now()))
           <img src="${src}" alt="${s.name}">
           <div class="killer-name">${s.name}</div>
         `;
+        
+        const imgEl = div.querySelector("img");
+        if (imgEl && window.DBD_attachImageFallback) {
+          const intendedSrc = imgEl.getAttribute("src") || imgEl.src;
+          window.DBD_attachImageFallback(imgEl, {
+            type: "survivor",
+            name: s.name,
+            intendedSrc
+          });
+        }
 
         div.addEventListener("click", (e) => {
           const url = `${location.origin}${DBD_BASE}survivors.html?s=${encodeURIComponent(s.id)}`;

@@ -119,7 +119,7 @@
     {
       "id": "kate",
       "name": "Kate",
-      "img": "assets/dbd/CharPortraits/Guam/S12_Kate_Portrait.png",
+      "img": "assets/dbd/CharPortraits/Guam/S13_KateDenson_Portrait.png",
       "owned": true,
       "main": false,
       "favLoadout": { "perks": [], "addons": [] },
@@ -200,16 +200,6 @@
       "clips": []
     },
     {
-      "id": "theobserver",
-      "name": "The Observer",
-      "img": "assets/dbd/CharPortraits/Zodiac/S22_TheObserver_Portrait.png",
-      "owned": true,
-      "main": false,
-      "favLoadout": { "perks": [], "addons": [] },
-      "clips": []
-    },
-
-    {
       "id": "jillvalentine",
       "name": "Jill Valentine",
       "img": "assets/dbd/CharPortraits/Eclipse/S26_JillValentine_Portrait.png",
@@ -240,7 +230,7 @@
     {
       "id": "leonkennedy",
       "name": "Leon Kennedy",
-      "img": "assets/dbd/CharPortraits/Eclipse/S27_LeonKennedy_Portrait.png",
+      "img": "assets/dbd/CharPortraits/Eclipse/S27_LeonSKennedy_Portrait.png",
       "owned": true,
       "main": false,
       "favLoadout": { "perks": [], "addons": [] },
@@ -470,7 +460,7 @@
     {
       "id": "dustin",
       "name": "Dustin",
-      "img": "assets/dbd/CharPortraits/Maple/T_UI_S50_DustinHenderson_Portrait.png",
+      "img": "assets/dbd/CharPortraits/Poutine/T_UI_S50_DustinHenderson_Portrait.png",
       "owned": true,
       "main": false,
       "favLoadout": { "perks": [], "addons": [] },
@@ -479,7 +469,7 @@
     {
       "id": "eleven",
       "name": "Eleven",
-      "img": "assets/dbd/CharPortraits/Maple/T_UI_S51_Eleven_Portrait.png",
+      "img": "assets/dbd/CharPortraits/Poutine/T_UI_S51_Eleven_Portrait.png",
       "owned": true,
       "main": false,
       "favLoadout": { "perks": [], "addons": [] },
