@@ -28,9 +28,8 @@ header {
   transition: transform .15s ease, box-shadow .15s ease;
 }
 
-.killer:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 30px rgba(0,0,0,.6);
+.killer:hover .prestige-crest{
+  transform: translateY(-4px) scale(1.05);
 }
 
 .killer img {
@@ -74,49 +73,53 @@ header {
   position: absolute;
   left: 10px;
   bottom: 10px;
-  width: 44px;
-  height: 44px;
-  z-index: 6;
 
-  background-image: url("assets/img/prestige_1-25_grid.png");
+  width: 52px; 
+  height: 52px;
+
+  z-index: 7;
+
+  background-image: url("assets/img/prestige_1-25_transparent.png");
   background-repeat: no-repeat;
-  background-size: 500% 500%; /* 5 columns × 5 rows */
 
-  filter: drop-shadow(0 2px 4px rgba(0,0,0,.6));
+  /* 5 columns × 5 rows */
+  background-size: 500% 500%;
+
+  filter: drop-shadow(0 3px 6px rgba(0,0,0,.8));
   pointer-events: none;
 }
 
 /* Map prestige 1–25 to cells in the 5x5 grid */
 
-/* Row 1 (1–5) */
+/* Row 1 */
 .prestige-crest[data-p="1"]  { background-position:   0%   0%; }
 .prestige-crest[data-p="2"]  { background-position:  25%   0%; }
 .prestige-crest[data-p="3"]  { background-position:  50%   0%; }
 .prestige-crest[data-p="4"]  { background-position:  75%   0%; }
 .prestige-crest[data-p="5"]  { background-position: 100%   0%; }
 
-/* Row 2 (6–10) */
+/* Row 2 */
 .prestige-crest[data-p="6"]  { background-position:   0%  25%; }
 .prestige-crest[data-p="7"]  { background-position:  25%  25%; }
 .prestige-crest[data-p="8"]  { background-position:  50%  25%; }
 .prestige-crest[data-p="9"]  { background-position:  75%  25%; }
 .prestige-crest[data-p="10"] { background-position: 100%  25%; }
 
-/* Row 3 (11–15) */
+/* Row 3 */
 .prestige-crest[data-p="11"] { background-position:   0%  50%; }
 .prestige-crest[data-p="12"] { background-position:  25%  50%; }
 .prestige-crest[data-p="13"] { background-position:  50%  50%; }
 .prestige-crest[data-p="14"] { background-position:  75%  50%; }
 .prestige-crest[data-p="15"] { background-position: 100%  50%; }
 
-/* Row 4 (16–20) */
+/* Row 4 */
 .prestige-crest[data-p="16"] { background-position:   0%  75%; }
 .prestige-crest[data-p="17"] { background-position:  25%  75%; }
 .prestige-crest[data-p="18"] { background-position:  50%  75%; }
 .prestige-crest[data-p="19"] { background-position:  75%  75%; }
 .prestige-crest[data-p="20"] { background-position: 100%  75%; }
 
-/* Row 5 (21–25) */
+/* Row 5 */
 .prestige-crest[data-p="21"] { background-position:   0% 100%; }
 .prestige-crest[data-p="22"] { background-position:  25% 100%; }
 .prestige-crest[data-p="23"] { background-position:  50% 100%; }
