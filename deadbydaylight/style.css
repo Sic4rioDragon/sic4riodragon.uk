@@ -38,24 +38,23 @@ header {
   display: block;
 }
 
-.killer-name {
+.killer-name{
   position: absolute;
   top: 10px;
   left: 10px;
   right: 10px;
-  width: auto;
 
-  padding: 6px 10px;
-  background: rgba(0,0,0,.72);
-  border: 1px solid rgba(255,255,255,.10);
-  border-radius: 10px;
+  padding: 0;
+  background: none;
+  border: none;
 
-  font-weight: 700;
-  font-size: 13px;
+  font-weight: 800;
+  font-size: 14px;
   line-height: 1.2;
   z-index: 6;
-}
 
+  text-shadow: 0 2px 6px rgba(0,0,0,.90);
+}
 .killer.locked {
   opacity: 0.35;
   filter: grayscale(1);
@@ -88,35 +87,41 @@ header {
 }
 
 /* Map prestige 1–25 to cells in the 5x5 grid */
+
+/* Row 1 (1–5) */
 .prestige-crest[data-p="1"]  { background-position:   0%   0%; }
-.prestige-crest[data-p="2"]  { background-position: -25%   0%; }
-.prestige-crest[data-p="3"]  { background-position: -50%   0%; }
-.prestige-crest[data-p="4"]  { background-position: -75%   0%; }
-.prestige-crest[data-p="5"]  { background-position:-100%   0%; }
+.prestige-crest[data-p="2"]  { background-position:  25%   0%; }
+.prestige-crest[data-p="3"]  { background-position:  50%   0%; }
+.prestige-crest[data-p="4"]  { background-position:  75%   0%; }
+.prestige-crest[data-p="5"]  { background-position: 100%   0%; }
 
-.prestige-crest[data-p="6"]  { background-position:   0% -25%; }
-.prestige-crest[data-p="7"]  { background-position: -25% -25%; }
-.prestige-crest[data-p="8"]  { background-position: -50% -25%; }
-.prestige-crest[data-p="9"]  { background-position: -75% -25%; }
-.prestige-crest[data-p="10"] { background-position:-100% -25%; }
+/* Row 2 (6–10) */
+.prestige-crest[data-p="6"]  { background-position:   0%  25%; }
+.prestige-crest[data-p="7"]  { background-position:  25%  25%; }
+.prestige-crest[data-p="8"]  { background-position:  50%  25%; }
+.prestige-crest[data-p="9"]  { background-position:  75%  25%; }
+.prestige-crest[data-p="10"] { background-position: 100%  25%; }
 
-.prestige-crest[data-p="11"] { background-position:   0% -50%; }
-.prestige-crest[data-p="12"] { background-position: -25% -50%; }
-.prestige-crest[data-p="13"] { background-position: -50% -50%; }
-.prestige-crest[data-p="14"] { background-position: -75% -50%; }
-.prestige-crest[data-p="15"] { background-position:-100% -50%; }
+/* Row 3 (11–15) */
+.prestige-crest[data-p="11"] { background-position:   0%  50%; }
+.prestige-crest[data-p="12"] { background-position:  25%  50%; }
+.prestige-crest[data-p="13"] { background-position:  50%  50%; }
+.prestige-crest[data-p="14"] { background-position:  75%  50%; }
+.prestige-crest[data-p="15"] { background-position: 100%  50%; }
 
-.prestige-crest[data-p="16"] { background-position:   0% -75%; }
-.prestige-crest[data-p="17"] { background-position: -25% -75%; }
-.prestige-crest[data-p="18"] { background-position: -50% -75%; }
-.prestige-crest[data-p="19"] { background-position: -75% -75%; }
-.prestige-crest[data-p="20"] { background-position:-100% -75%; }
+/* Row 4 (16–20) */
+.prestige-crest[data-p="16"] { background-position:   0%  75%; }
+.prestige-crest[data-p="17"] { background-position:  25%  75%; }
+.prestige-crest[data-p="18"] { background-position:  50%  75%; }
+.prestige-crest[data-p="19"] { background-position:  75%  75%; }
+.prestige-crest[data-p="20"] { background-position: 100%  75%; }
 
-.prestige-crest[data-p="21"] { background-position:   0% -100%; }
-.prestige-crest[data-p="22"] { background-position: -25% -100%; }
-.prestige-crest[data-p="23"] { background-position: -50% -100%; }
-.prestige-crest[data-p="24"] { background-position: -75% -100%; }
-.prestige-crest[data-p="25"] { background-position:-100% -100%; }
+/* Row 5 (21–25) */
+.prestige-crest[data-p="21"] { background-position:   0% 100%; }
+.prestige-crest[data-p="22"] { background-position:  25% 100%; }
+.prestige-crest[data-p="23"] { background-position:  50% 100%; }
+.prestige-crest[data-p="24"] { background-position:  75% 100%; }
+.prestige-crest[data-p="25"] { background-position: 100% 100%; }
 
 /* TEMP: hide if prestige is outside 1–25 until we have proper milestone assets */
 .prestige-crest[data-p]:not([data-p="1"]):not([data-p="2"]):not([data-p="3"]):not([data-p="4"]):not([data-p="5"])
@@ -126,6 +131,7 @@ header {
 :not([data-p="21"]):not([data-p="22"]):not([data-p="23"]):not([data-p="24"]):not([data-p="25"]) {
   display: none;
 }
+
 .killer{
   position: relative;
 }
