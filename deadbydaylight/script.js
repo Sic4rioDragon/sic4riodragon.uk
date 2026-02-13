@@ -320,7 +320,7 @@ function openModalForKiller(k) {
   const nameEl = document.getElementById("modalName");
   const bodyEl = document.getElementById("modalBody");
 
-  nameEl.textContent = k.name;
+  nameEl.textContent = `${k.name} — Prestige ${k.prestige || 0}`;
 
   const fav = k.favLoadout || { perks: [], addons: [] };
   const perks = fav.perks || [];
@@ -463,7 +463,7 @@ fetch(cacheBust(DBD_BASE + "killers.json", Date.now()))
           <img src="${src}" alt="${k.name}">
           <div class="killer-name">${k.name}</div>
           ${!k.owned ? `<div class="locked-label">Not owned</div>` : ""}
-          ${k.owned && k.prestige > 0 ? `<div class="prestige">P${k.prestige}</div>` : ""}
+          ${k.owned && k.prestige > 0 ? `<div class="prestige-crest" data-p="${k.prestige}" title="Prestige ${k.prestige}"></div>` : ""}
         `;
 
         const img = div.querySelector("img");

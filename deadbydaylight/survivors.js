@@ -108,7 +108,7 @@ function openModalForSurvivor(s) {
   const nameEl = document.getElementById("modalName");
   const bodyEl = document.getElementById("modalBody");
 
-  nameEl.textContent = s.name;
+  nameEl.textContent = `${s.name} — Prestige ${s.prestige || 0}`;
 
   const fav = s.favLoadout || { perks: [], addons: [] };
   const perks = fav.perks || [];
@@ -170,8 +170,9 @@ fetch(cacheBust(DBD_BASE + "survivors.json", Date.now()))
         const src = cacheBust(toBasePath(s.img), data.updated);
 
         div.innerHTML = `
-          <img src="${src}" alt="${s.name}">
-          <div class="killer-name">${s.name}</div>
+        <img src="${src}" alt="${s.name}">
+        <div class="killer-name">${s.name}</div>
+        ${s.prestige > 0 ? `<div class="prestige-crest" data-p="${s.prestige}" title="Prestige ${s.prestige}"></div>` : ""}
         `;
         
         const imgEl = div.querySelector("img");
