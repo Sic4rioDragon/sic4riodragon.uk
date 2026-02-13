@@ -14,6 +14,125 @@ function loadMissingLog() {
   try { return JSON.parse(localStorage.getItem(DBD_IMG.missingLogKey) || "[]"); }
   catch { return []; }
 }
+// ================== OFFICIAL IN-GAME ORDER (ids) ==================
+// Keep mains first via "main": true, but everyone else follows this order.
+// If a character isn't listed here (new chapter), they fall to the bottom.
+
+window.DBD_SURVIVOR_ORDER_IDS = [
+  "dwightfairfield",
+  "megthomas",
+  "claudettemorel",
+  "jakepark",
+  "neakarlsson",
+  "williambilloverbeck",
+  "lauriestrode",
+  "acevisconti",
+  "fengmin",
+  "davidking",
+  "quentinsmith",
+  "detectivedavidtapp",
+  "kate",
+  "adamfrancis",
+  "jeffjohansen",
+  "janeromero",
+  "ashleyjwilliams",
+  "nancy",
+  "steveharrington",
+  "yui",
+  "zarinalkassir",
+  "cherylmason",
+  "felixrichter",
+  "elodierakoto",
+  "yunjinlee",
+  "jillvalentine",
+  "leonkennedy",
+  "mikela",
+  "jonahvasquez",
+  "yoichiasakawa",
+  "haddiekaur",
+  "ada",
+  "rebeccachambers",
+  "vittoriotoscano",
+  "thalitalyra",
+  "renatolyra",
+  "gabrielsoma",
+  "nicolascage",
+  "ellenripley",
+  "alanwake",
+  "sableward",
+  "thetroupe",        // Aestri (The Troupe)
+  "laracroft",
+  "trevor",
+  "tauriecain",
+  "orela",
+  "rickgrimes",
+  "michonnegrimes",
+  "VeeBoonyasak",
+  "dustin",
+  "eleven"
+];
+
+window.DBD_KILLER_ORDER_IDS = [
+  "trapper",
+  "wraith",
+  "hillbilly",
+  "nurse",
+  "shape",
+  "hag",
+  "doctor",
+  "cannibal",
+  "huntress",
+  "nightmare",
+  "pig",
+  "clown",
+  "spirit",
+  "legion",
+  "plague",
+  "ghostface",
+  "demogorgon",
+  "oni",
+  "deathslinger",
+  "executioner",
+  "blight",
+  "twins",
+  "trickster",
+  "nemesis",
+  "artist",
+  "onryo",
+  "dredge",
+  "mastermind",
+  "knight",
+  "skullmerchant",
+  "singularity",
+  "xenomorph",
+  "goodguy",
+  "unknown",
+  "lich",
+  "dracula",           // Dark Lord
+  "houndmaster",
+  "ghoul",
+  "animatronic",
+  "krasue",
+  "first", 
+  "cenobite"           //I dont have cenobite so will keep him here
+];
+
+// Shared sorter: mains first, then in-game order, then alphabetical fallback
+window.DBD_sortByMainThenOrder = function(list, orderIds) {
+  const idx = new Map(orderIds.map((id, i) => [String(id), i]));
+  return [...(list || [])].sort((a, b) => {
+    const am = a && a.main ? 1 : 0;
+    const bm = b && b.main ? 1 : 0;
+    if (am !== bm) return bm - am;
+
+    const ai = idx.has(a?.id) ? idx.get(a.id) : 999999;
+    const bi = idx.has(b?.id) ? idx.get(b.id) : 999999;
+    if (ai !== bi) return ai - bi;
+
+    // stable fallback for unknown/new ids
+    return String(a?.name || a?.id || "").localeCompare(String(b?.name || b?.id || ""));
+  });
+};
 function saveMissingLog(list) {
   localStorage.setItem(DBD_IMG.missingLogKey, JSON.stringify(list.slice(0, 500)));
 }
@@ -312,14 +431,8 @@ fetch(cacheBust(DBD_BASE + "killers.json", Date.now()))
     const owned = (data.killers || []).filter(k => k.owned);
     const notOwned = (data.killers || []).filter(k => !k.owned);
 
-    owned.sort((a,b) => {
-    const am = a.main ? 1 : 0;
-    const bm = b.main ? 1 : 0;
-    if (am !== bm) return bm - am;           // main first
-    return getKNumberFromImgPath(a.img) - getKNumberFromImgPath(b.img);
-    });
-    notOwned.sort((a,b) => getKNumberFromImgPath(a.img) - getKNumberFromImgPath(b.img));
-
+    owned = window.DBD_sortByMainThenOrder(owned, window.DBD_KILLER_ORDER_IDS);
+    notOwned = window.DBD_sortByMainThenOrder(notOwned, window.DBD_KILLER_ORDER_IDS);
     CURRENT_LIST = [...owned, ...notOwned];
 
     function renderGrid(list) {

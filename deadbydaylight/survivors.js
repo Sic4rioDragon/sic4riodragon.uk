@@ -156,6 +156,7 @@ fetch(cacheBust(DBD_BASE + "survivors.json", Date.now()))
     updated.textContent = "Last updated: " + data.updated;
 
     const list = data.survivors || [];
+    const ordered = window.DBD_sortByMainThenOrder(list, window.DBD_SURVIVOR_ORDER_IDS);
     const searchInput = document.getElementById("searchInput");
 
     function renderGrid(arr) {
@@ -197,7 +198,7 @@ fetch(cacheBust(DBD_BASE + "survivors.json", Date.now()))
 
     function applyFiltersAndRender() {
       const q = (searchInput?.value || "").toLowerCase().trim();
-      const filtered = list.filter(s => {
+      const filtered = ordered.filter(s => {
         if (!q) return true;
         return (s.name || "").toLowerCase().includes(q) || (s.id || "").toLowerCase().includes(q);
       });
@@ -210,7 +211,7 @@ fetch(cacheBust(DBD_BASE + "survivors.json", Date.now()))
 
     const qs = getQueryS();
     if (qs) {
-      const found = list.find(x => x.id === qs);
+      const found = ordered.find(x => x.id === qs);
       if (found) openModalForSurvivor(found);
     }
   })

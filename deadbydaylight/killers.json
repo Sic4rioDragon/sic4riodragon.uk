@@ -286,6 +286,27 @@
       "img": "assets/dbd/CharPortraits/Yerkes/K34_TheYerkes_Portrait.png",
       "prestige": 0,
       "owned": true
+    },
+    {
+      "id": "xenomorph",
+      "name": "The Xenomorph",
+      "img": "assets/dbd/CharPortraits/Wormhole/K33_TheXenomorph_Portrait.png",
+      "prestige": 0,
+      "owned": true
+    },
+    {
+      "id": "krasue",
+      "name": "The Krasue",
+      "img": "assets/dbd/CharPortraits/Maple/T_UI_K41_TheKrasue_Portrait.png",
+      "prestige": 0,
+      "owned": true
+    },
+    {
+      "id": "first",
+      "name": "The First",
+      "img": "assets/dbd/CharPortraits/Poutine/T_UI_K42_TheFirst_Portrait.png",
+      "prestige": 0,
+      "owned": true
     }
   ]
 }
