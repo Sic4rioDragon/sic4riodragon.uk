@@ -1,3 +1,4 @@
+(() => {
 const DBD_BASE = "/deadbydaylight/";
 
 const PERK_ICON_BASE =
@@ -216,3 +217,4 @@ fetch(cacheBust(DBD_BASE + "survivors.json", Date.now()))
     }
   })
   .catch(err => console.error("Failed to load survivors.json", err));
+})();

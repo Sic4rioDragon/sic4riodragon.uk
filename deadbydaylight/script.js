@@ -418,7 +418,9 @@ function wireKeyboardNav() {
 // ================== PAGE LOGIC ==================
 wireModalClose();
 wireKeyboardNav();
-
+if (!document.getElementById("killer-grid")) {
+  // Not on the killers page; don't run killers logic here.
+} else {
 fetch(cacheBust(DBD_BASE + "killers.json", Date.now()))
   .then(r => r.json())
   .then(data => {
@@ -428,8 +430,8 @@ fetch(cacheBust(DBD_BASE + "killers.json", Date.now()))
 
     updated.textContent = "Last updated: " + data.updated;
 
-    const owned = (data.killers || []).filter(k => k.owned);
-    const notOwned = (data.killers || []).filter(k => !k.owned);
+    let owned = (data.killers || []).filter(k => k.owned);
+    let notOwned = (data.killers || []).filter(k => !k.owned);
 
     owned = window.DBD_sortByMainThenOrder(owned, window.DBD_KILLER_ORDER_IDS);
     notOwned = window.DBD_sortByMainThenOrder(notOwned, window.DBD_KILLER_ORDER_IDS);
@@ -504,3 +506,4 @@ fetch(cacheBust(DBD_BASE + "killers.json", Date.now()))
     }
   })
   .catch(err => console.error("Failed to load killers.json", err));
+}
