@@ -71,11 +71,11 @@ header {
 /* Prestige Crest (sprite 1–25) */
 .prestige-crest{
   position: absolute;
-  left: 10px;
-  bottom: 10px;
+  left: 6px;
+  bottom: 6px;
 
-  width: 104px; 
-  height: 104px;
+  width: 78px; 
+  height: 78px;
 
   z-index: 7;
 
