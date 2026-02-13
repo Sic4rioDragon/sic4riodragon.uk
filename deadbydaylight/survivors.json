@@ -119,7 +119,7 @@
     {
       "id": "kate",
       "name": "Kate",
-      "img": "assets/dbd/CharPortraits/Finland/S12_Kate_Portrait.png",
+      "img": "assets/dbd/CharPortraits/Guam/S12_Kate_Portrait.png",
       "owned": true,
       "main": false,
       "favLoadout": { "perks": [], "addons": [] },
@@ -128,7 +128,7 @@
     {
       "id": "adamfrancis",
       "name": "Adam Francis",
-      "img": "assets/dbd/CharPortraits/Kenya/S13_AdamFrancis_Portrait.png",
+      "img": "assets/dbd/CharPortraits/Haiti/S14_AdamFrancis_Portrait.png",
       "owned": true,
       "main": false,
       "favLoadout": { "perks": [], "addons": [] },
@@ -137,7 +137,7 @@
     {
       "id": "janeromero",
       "name": "Jane Romero",
-      "img": "assets/dbd/CharPortraits/Mali/S14_JaneRomero_Portrait.png",
+      "img": "assets/dbd/CharPortraits/Mali/S16_JaneRomero_Portrait.png",
       "owned": true,
       "main": false,
       "favLoadout": { "perks": [], "addons": [] },
@@ -147,16 +147,16 @@
     {
       "id": "steveharrington",
       "name": "Steve Harrington",
-      "img": "assets/dbd/CharPortraits/Qatar/S15_SteveHarrington_Portrait.png",
+      "img": "assets/dbd/CharPortraits/Qatar/S18_SteveHarrington_Portrait.png",
       "owned": true,
       "main": false,
       "favLoadout": { "perks": [], "addons": [] },
       "clips": []
     },
     {
-      "id": "nancypc",
-      "name": "Nancy PC",
-      "img": "assets/dbd/CharPortraits/Qatar/S16_NancyPC_Portrait.png",
+      "id": "nancy",
+      "name": "Nancy",
+      "img": "assets/dbd/CharPortraits/Poutine/T_UI_S19_NancyWheeler_Portrait",
       "owned": true,
       "main": false,
       "favLoadout": { "perks": [], "addons": [] },
@@ -174,7 +174,7 @@
     {
       "id": "zarinalkassir",
       "name": "Zarina L Kassir",
-      "img": "assets/dbd/CharPortraits/Sweden/S18_ZarinaLKassir_Portrait.png",
+      "img": "assets/dbd/CharPortraits/Ukraine/S21_ZarinaKassir_Portrait.png",
       "owned": true,
       "main": false,
       "favLoadout": { "perks": [], "addons": [] },
@@ -183,7 +183,7 @@
     {
       "id": "cherylmason",
       "name": "Cheryl Mason",
-      "img": "assets/dbd/CharPortraits/Wales/S19_CherylMason_Portrait.png",
+      "img": "assets/dbd/CharPortraits/Wales/S22_CherylMason_Portrait.png",
       "owned": true,
       "main": false,
       "favLoadout": { "perks": [], "addons": [] },
@@ -193,7 +193,7 @@
     {
       "id": "felixrichter",
       "name": "Felix Richter",
-      "img": "assets/dbd/CharPortraits/Yemen/S21_FelixRichter_Portrait.png",
+      "img": "assets/dbd/CharPortraits/Yemen/S23_FelixRichter_Portrait.png",
       "owned": true,
       "main": false,
       "favLoadout": { "perks": [], "addons": [] },
@@ -212,7 +212,7 @@
     {
       "id": "jillvalentine",
       "name": "Jill Valentine",
-      "img": "assets/dbd/CharPortraits/Eclipse/S23_JillValentine_Portrait.png",
+      "img": "assets/dbd/CharPortraits/Eclipse/S26_JillValentine_Portrait.png",
       "owned": true,
       "main": false,
       "favLoadout": { "perks": [], "addons": [] },
@@ -240,7 +240,7 @@
     {
       "id": "leonkennedy",
       "name": "Leon Kennedy",
-      "img": "assets/dbd/CharPortraits/Eclipse/S26_LeonKennedy_Portrait.png",
+      "img": "assets/dbd/CharPortraits/Eclipse/S27_LeonKennedy_Portrait.png",
       "owned": true,
       "main": false,
       "favLoadout": { "perks": [], "addons": [] },
@@ -248,8 +248,8 @@
     },
     {
       "id": "mikela",
-      "name": "Mikela",
-      "img": "assets/dbd/CharPortraits/Fog/S27_Mikela_Portrait.png",
+      "name": "Mikaela",
+      "img": "assets/dbd/CharPortraits/Hubble/S28_MikaelaReid_Portrait",
       "owned": true,
       "main": false,
       "favLoadout": { "perks": [], "addons": [] },
@@ -258,7 +258,7 @@
     {
       "id": "jonahvasquez",
       "name": "Jonah Vasquez",
-      "img": "assets/dbd/CharPortraits/Hubble/S28_JonahVasquez_Portrait.png",
+      "img": "assets/dbd/CharPortraits/Ion/S29_JonahVasquez_Portrait.png",
       "owned": true,
       "main": false,
       "favLoadout": { "perks": [], "addons": [] },
@@ -266,8 +266,8 @@
     },
     {
       "id": "yoichiasakawa",
-      "name": "Yoichi Asakawa",
-      "img": "assets/dbd/CharPortraits/Kepler/S29_YoichiAsakawa_Portrait.png",
+      "name": "Yoichi",
+      "img": "assets/dbd/CharPortraits/Kepler/S30_YoichiAsakawa_Portrait.png",
       "owned": true,
       "main": false,
       "favLoadout": { "perks": [], "addons": [] },
@@ -277,7 +277,7 @@
     {
       "id": "haddiekaur",
       "name": "Haddie Kaur",
-      "img": "assets/dbd/CharPortraits/Meteor/S30_HaddieKaur_Portrait.png",
+      "img": "assets/dbd/CharPortraits/Meteor/S31_HaddieKaur_Portrait.png",
       "owned": true,
       "main": false,
       "favLoadout": { "perks": [], "addons": [] },
@@ -285,17 +285,17 @@
     },
     {
       "id": "ada",
-      "name": "Ada",
-      "img": "assets/dbd/CharPortraits/Orion/S31_AdaWong_Portrait.png",
+      "name": "Ada Wong",
+      "img": "assets/dbd/CharPortraits/Orion/S32_AdaWong_Portrait.png",
       "owned": true,
       "main": false,
       "favLoadout": { "perks": [], "addons": [] },
       "clips": []
     },
     {
-      "id": "rebeca",
-      "name": "Rebeca",
-      "img": "assets/dbd/CharPortraits/Orion/S32_RebeccaChambers_Portrait.png",
+      "id": "rebeccachambers",
+      "name": "Rebecca Chambers",
+      "img": "assets/dbd/CharPortraits/Orion/S33_RebeccaChambers_Portrait.png",
       "owned": true,
       "main": false,
       "favLoadout": { "perks": [], "addons": [] },
@@ -305,25 +305,25 @@
     {
       "id": "vittoriotoscano",
       "name": "Vittorio Toscano",
-      "img": "assets/dbd/CharPortraits/Quantum/S33_VittorioToscano_Portrait.png",
+      "img": "assets/dbd/CharPortraits/Quantum/S34_VittorioToscano_Portrait.png",
       "owned": true,
       "main": false,
       "favLoadout": { "perks": [], "addons": [] },
       "clips": []
     },
     {
-      "id": "thalita",
-      "name": "Thalita",
-      "img": "assets/dbd/CharPortraits/Saturn/S34_ThalitaLyra_Portrait.png",
+      "id": "thalitalyra",
+      "name": "Thalita Lyra",
+      "img": "assets/dbd/CharPortraits/Saturn/S35_ThalitaLyra_Portrait.png",
       "owned": true,
       "main": false,
       "favLoadout": { "perks": [], "addons": [] },
       "clips": []
     },
     {
-      "id": "renato",
-      "name": "Renato",
-      "img": "assets/dbd/CharPortraits/Saturn/S35_RenatoLyra_Portrait.png",
+      "id": "renatolyra",
+      "name": "Renato Lyra",
+      "img": "assets/dbd/CharPortraits/Saturn/S36_RenatoLyra_Portrait.png",
       "owned": true,
       "main": false,
       "favLoadout": { "perks": [], "addons": [] },
@@ -333,16 +333,16 @@
     {
       "id": "gabrielsoma",
       "name": "Gabriel Soma",
-      "img": "assets/dbd/CharPortraits/Umbra/S36_GabrielSoma_Portrait.png",
+      "img": "assets/dbd/CharPortraits/Umbra/S37_GabrielSoma_Portrait.png",
       "owned": true,
       "main": false,
       "favLoadout": { "perks": [], "addons": [] },
       "clips": []
     },
     {
-      "id": "nicolas",
-      "name": "Nicolas",
-      "img": "assets/dbd/CharPortraits/Ukraine/S37_NicolasCage_Portrait.png",
+      "id": "nicolascage",
+      "name": "Nicolas Cage",
+      "img": "assets/dbd/CharPortraits/Venus/S38_NicolasCage_Portrait.png",
       "owned": true,
       "main": false,
       "favLoadout": { "perks": [], "addons": [] },
@@ -352,7 +352,7 @@
     {
       "id": "ellenripley",
       "name": "Ellen Ripley",
-      "img": "assets/dbd/CharPortraits/Wormhole/S38_EllenRipley_Portrait.png",
+      "img": "assets/dbd/CharPortraits/Wormhole/S39_EllenRipley_Portrait.png",
       "owned": true,
       "main": false,
       "favLoadout": { "perks": [], "addons": [] },
@@ -361,7 +361,7 @@
     {
       "id": "alanwake",
       "name": "Alan Wake",
-      "img": "assets/dbd/CharPortraits/Xeno/S39_AlanWake_Portrait.png",
+      "img": "assets/dbd/CharPortraits/Zodiac/S40_AlanWake_Portrait.png",
       "owned": true,
       "main": false,
       "favLoadout": { "perks": [], "addons": [] },
@@ -399,6 +399,87 @@
       "id": "tauriecain",
       "name": "Taurie Cain",
       "img": "assets/dbd/CharPortraits/Gelato/S45_TaurieCain_Portrait.png",
+      "owned": true,
+      "main": false,
+      "favLoadout": { "perks": [], "addons": [] },
+      "clips": []
+    },
+    {
+      "id": "trevor",
+      "name": "Trevor Belmont",
+      "img": "assets/dbd/CharPortraits/Eclair/S44_TrevorBelmont_Portrait.png",
+      "owned": true,
+      "main": false,
+      "favLoadout": { "perks": [], "addons": [] },
+      "clips": []
+    },
+    {
+      "id": "detectivedavidtapp",
+      "name": "Detective Tapp",
+      "img": "assets/dbd/CharPortraits/Finland/S12_DetectiveDavidTapp_Portrait.png",
+      "owned": true,
+      "main": false,
+      "favLoadout": { "perks": [], "addons": [] },
+      "clips": []
+    },
+    {
+      "id": "orela",
+      "name": "Orela Rose",
+      "img": "assets/dbd/CharPortraits/Jerky/S46_OrelaRose_Portrait.png",
+      "owned": true,
+      "main": false,
+      "favLoadout": { "perks": [], "addons": [] },
+      "clips": []
+    },
+    {
+      "id": "jeffjohansen",
+      "name": "Jeff",
+      "img": "assets/dbd/CharPortraits/Kenya/S15_JeffJohansen_Portrait.png",
+      "owned": true,
+      "main": false,
+      "favLoadout": { "perks": [], "addons": [] },
+      "clips": []
+    },
+    {
+      "id": "rickgrimes",
+      "name": "Rick",
+      "img": "assets/dbd/CharPortraits/Lasagna/S47_RickGrimes_Portrait.png",
+      "owned": true,
+      "main": false,
+      "favLoadout": { "perks": [], "addons": [] },
+      "clips": []
+    },
+    {
+      "id": "michonnegrimes",
+      "name": "Michonne",
+      "img": "assets/dbd/CharPortraits/Lasagna/S48_MichonneGrimes_Portrait.png",
+      "owned": true,
+      "main": false,
+      "favLoadout": { "perks": [], "addons": [] },
+      "clips": []
+    },
+    {
+      "id": "VeeBoonyasak",
+      "name": "Vee",
+      "img": "assets/dbd/CharPortraits/Maple/T_UI_S49_VeeBoonyasak_Portrait.png",
+      "owned": true,
+      "main": false,
+      "favLoadout": { "perks": [], "addons": [] },
+      "clips": []
+    },
+    {
+      "id": "dustin",
+      "name": "Dustin",
+      "img": "assets/dbd/CharPortraits/Maple/T_UI_S50_DustinHenderson_Portrait.png",
+      "owned": true,
+      "main": false,
+      "favLoadout": { "perks": [], "addons": [] },
+      "clips": []
+    },
+    {
+      "id": "eleven",
+      "name": "Eleven",
+      "img": "assets/dbd/CharPortraits/Maple/T_UI_S51_Eleven_Portrait.png",
       "owned": true,
       "main": false,
       "favLoadout": { "perks": [], "addons": [] },
