@@ -15,21 +15,21 @@
       "id": "wraith",
       "name": "The Wraith",
       "img": "assets/dbd/CharPortraits/K02_TheWraith_Portrait.png",
-      "prestige": 1,
+      "prestige": 5,
       "owned": true
     },
     {
       "id": "hillbilly",
       "name": "The Hillbilly",
       "img": "assets/dbd/CharPortraits/K03_TheHillbilly_Portrait.png",
-      "prestige": 0,
+      "prestige": 3,
       "owned": true
     },
     {
       "id": "nurse",
       "name": "The Nurse",
       "img": "assets/dbd/CharPortraits/K04_TheNurse_Portrait.png",
-      "prestige": 0,
+      "prestige": 4,
       "owned": true
     },
     {
@@ -57,7 +57,7 @@
       "id": "huntress",
       "name": "The Huntress",
       "img": "assets/dbd/CharPortraits/DLC5/K08_TheHuntress_Portrait.png",
-      "prestige": 0,
+      "prestige": 5,
       "owned": true,
       "main": true,
 
@@ -74,14 +74,14 @@
       "id": "cannibal",
       "name": "The Cannibal",
       "img": "assets/dbd/CharPortraits/Cannibal/K09_TheCannibal_Portrait.png",
-      "prestige": 0,
+      "prestige": 9,
       "owned": true
     },
     {
       "id": "nightmare",
       "name": "The Nightmare",
       "img": "assets/dbd/CharPortraits/England/K10_TheNightmare_Portrait.png",
-      "prestige": 0,
+      "prestige": 3,
       "owned": true
     },
     {
@@ -95,14 +95,14 @@
       "id": "legion",
       "name": "The Legion",
       "img": "assets/dbd/CharPortraits/Kenya/K14_TheLegion_Portrait.png",
-      "prestige": 0,
+      "prestige": 3,
       "owned": true
     },
     {
       "id": "plague",
       "name": "The Plague",
       "img": "assets/dbd/CharPortraits/Mali/K15_ThePlague_Portrait.png",
-      "prestige": 0,
+      "prestige": 3,
       "owned": true
     },
     {
@@ -116,7 +116,7 @@
       "id": "demogorgon",
       "name": "The Demogorgon",
       "img": "assets/dbd/CharPortraits/Qatar/K17_TheDemogorgon_Portrait.png",
-      "prestige": 0,
+      "prestige": 3,
       "owned": true
     },
     {
@@ -151,14 +151,14 @@
       "id": "trickster",
       "name": "The Trickster",
       "img": "assets/dbd/CharPortraits/Comet/K23_TheTrickster_Portrait.png",
-      "prestige": 0,
+      "prestige": 3,
       "owned": true
     },
     {
       "id": "nemesis",
       "name": "The Nemesis",
       "img": "assets/dbd/CharPortraits/Eclipse/K24_TheNemesis_Portrait.png",
-      "prestige": 0,
+      "prestige": 3,
       "owned": true
     },
     {
@@ -172,28 +172,28 @@
       "id": "dredge",
       "name": "The Dredge",
       "img": "assets/dbd/CharPortraits/Meteor/K28_TheDredge_Portrait.png",
-      "prestige": 0,
+      "prestige": 1,
       "owned": true
     },
     {
       "id": "knight",
       "name": "The Knight",
       "img": "assets/dbd/CharPortraits/Quantum/K30_TheKnight_Portrait.png",
-      "prestige": 0,
+      "prestige": 3,
       "owned": true
     },
     {
       "id": "unknown",
       "name": "The Unknown",
       "img": "assets/dbd/CharPortraits/Applepie/K35_TheUnknown_Portrait.png",
-      "prestige": 0,
+      "prestige": 3,
       "owned": true
     },
     {
       "id": "lich",
       "name": "The Lich",
       "img": "assets/dbd/CharPortraits/Churros/K36_TheLich_Portrait.png",
-      "prestige": 0,
+      "prestige": 3,
       "owned": true
     },
     {
@@ -207,28 +207,28 @@
       "id": "houndmaster",
       "name": "The Houndmaster",
       "img": "assets/dbd/CharPortraits/Gelato/K38_TheHoundmaster_Portrait.png",
-      "prestige": 0,
+      "prestige": 3,
       "owned": true
     },
     {
       "id": "ghoul",
       "name": "The Ghoul",
       "img": "assets/dbd/CharPortraits/Icecream/K39_TheGhoul_Portrait.png",
-      "prestige": 0,
+      "prestige": 3,
       "owned": true
     },
     {
       "id": "animatronic",
       "name": "The Animatronic",
       "img": "assets/dbd/CharPortraits/Ketchup/K40_TheAnimatronic_Portrait.png",
-      "prestige": 0,
+      "prestige": 3,
       "owned": true
     },
     {
       "id": "clown",
       "name": "The Clown",
       "img": "assets/dbd/CharPortraits/Guam/K12_TheClown_Portrait.png",
-      "prestige": 0,
+      "prestige": 3,
       "owned": true
     },
     {
@@ -249,28 +249,28 @@
       "id": "artist",
       "name": "The Artist",
       "img": "assets/dbd/CharPortraits/Ion/K26_TheArtist_Portrait.png",
-      "prestige": 0,
+      "prestige": 2,
       "owned": true
     },
     {
       "id": "onryo",
       "name": "The Onryo",
       "img": "assets/dbd/CharPortraits/Kepler/K27_TheOnryo_Portrait.png",
-      "prestige": 0,
+      "prestige": 3,
       "owned": true
     },
     {
       "id": "mastermind",
       "name": "The Mastermind",
       "img": "assets/dbd/CharPortraits/Orion/K29_TheMasterMind_Portrait.png",
-      "prestige": 0,
+      "prestige": 3,
       "owned": true
     },
     {
       "id": "skullmerchant",
       "name": "The Skull Merchant",
       "img": "assets/dbd/CharPortraits/Saturn/K31_TheSkullMerchant_Portrait.png",
-      "prestige": 0,
+      "prestige": 3,
       "owned": true
     },
     {
@@ -284,7 +284,7 @@
       "id": "goodguy",
       "name": "The Good Guy",
       "img": "assets/dbd/CharPortraits/Yerkes/K34_TheYerkes_Portrait.png",
-      "prestige": 0,
+      "prestige": 3,
       "owned": true
     },
     {
@@ -298,14 +298,14 @@
       "id": "krasue",
       "name": "The Krasue",
       "img": "assets/dbd/CharPortraits/Maple/T_UI_K41_TheKrasue_Portrait.png",
-      "prestige": 0,
+      "prestige": 3,
       "owned": true
     },
     {
       "id": "first",
       "name": "The First",
       "img": "assets/dbd/CharPortraits/Poutine/T_UI_K42_TheFirst_Portrait.png",
-      "prestige": 0,
+      "prestige": 5,
       "owned": true
     }
   ]
