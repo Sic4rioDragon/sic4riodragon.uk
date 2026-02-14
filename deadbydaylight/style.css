@@ -68,72 +68,48 @@ header {
   font-size: 12px;
   border-radius: 4px;
 }
-/* Prestige Crest (sprite 1–25) */
+
+/* Prestige Crest (layered images: fill + border + number) */
 .prestige-crest{
   position: absolute;
-  left: 0;
-  bottom: 0;
+  left: 6px;
+  bottom: 6px;
 
-  width: 70px; 
-  height: 70px;
-
+  width: 78px;
+  height: 78px;
   z-index: 7;
 
-  background-image: url("assets/img/prestige_1-25_transparent.png");
-  background-repeat: no-repeat;
-
-  /* 5 columns × 5 rows */
-  background-size: 500% 500%;
-
-  filter: drop-shadow(0 3px 6px rgba(0,0,0,.8));
   pointer-events: none;
+  filter: drop-shadow(0 3px 6px rgba(0,0,0,.8));
 }
 
-/* Map prestige 1–25 to cells in the 5x5 grid */
-
-/* Row 1 */
-.prestige-crest[data-p="1"]  { background-position:   0%   0%; }
-.prestige-crest[data-p="2"]  { background-position:  25%   0%; }
-.prestige-crest[data-p="3"]  { background-position:  50%   0%; }
-.prestige-crest[data-p="4"]  { background-position:  75%   0%; }
-.prestige-crest[data-p="5"]  { background-position: 100%   0%; }
-
-/* Row 2 */
-.prestige-crest[data-p="6"]  { background-position:   0%  25%; }
-.prestige-crest[data-p="7"]  { background-position:  25%  25%; }
-.prestige-crest[data-p="8"]  { background-position:  50%  25%; }
-.prestige-crest[data-p="9"]  { background-position:  75%  25%; }
-.prestige-crest[data-p="10"] { background-position: 100%  25%; }
-
-/* Row 3 */
-.prestige-crest[data-p="11"] { background-position:   0%  50%; }
-.prestige-crest[data-p="12"] { background-position:  25%  50%; }
-.prestige-crest[data-p="13"] { background-position:  50%  50%; }
-.prestige-crest[data-p="14"] { background-position:  75%  50%; }
-.prestige-crest[data-p="15"] { background-position: 100%  50%; }
-
-/* Row 4 */
-.prestige-crest[data-p="16"] { background-position:   0%  75%; }
-.prestige-crest[data-p="17"] { background-position:  25%  75%; }
-.prestige-crest[data-p="18"] { background-position:  50%  75%; }
-.prestige-crest[data-p="19"] { background-position:  75%  75%; }
-.prestige-crest[data-p="20"] { background-position: 100%  75%; }
-
-/* Row 5 */
-.prestige-crest[data-p="21"] { background-position:   0% 100%; }
-.prestige-crest[data-p="22"] { background-position:  25% 100%; }
-.prestige-crest[data-p="23"] { background-position:  50% 100%; }
-.prestige-crest[data-p="24"] { background-position:  75% 100%; }
-.prestige-crest[data-p="25"] { background-position: 100% 100%; }
-
-/* TEMP: hide if prestige is outside 1–25 until we have proper milestone assets */
-.prestige-crest[data-p]:not([data-p="1"]):not([data-p="2"]):not([data-p="3"]):not([data-p="4"]):not([data-p="5"])
-:not([data-p="6"]):not([data-p="7"]):not([data-p="8"]):not([data-p="9"]):not([data-p="10"])
-:not([data-p="11"]):not([data-p="12"]):not([data-p="13"]):not([data-p="14"]):not([data-p="15"])
-:not([data-p="16"]):not([data-p="17"]):not([data-p="18"]):not([data-p="19"]):not([data-p="20"])
-:not([data-p="21"]):not([data-p="22"]):not([data-p="23"]):not([data-p="24"]):not([data-p="25"]) {
-  display: none;
+.prestige-crest img{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
 }
+
+.prestige-crest .prestige-num{
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+
+  font-weight: 900;
+  color: #fff;
+  text-shadow:
+    0 2px 6px rgba(0,0,0,.95),
+    0 0 2px rgba(0,0,0,.95);
+  line-height: 1;
+  user-select: none;
+}
+
+/* Number size tuning by digits */
+.prestige-crest[data-d="1"] .prestige-num{ font-size: 30px; }
+.prestige-crest[data-d="2"] .prestige-num{ font-size: 24px; }
+.prestige-crest[data-d="3"] .prestige-num{ font-size: 20px; }
 
 .killer{
   position: relative;

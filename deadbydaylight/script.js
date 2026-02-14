@@ -1,6 +1,69 @@
 // ================== CONFIG ==================
 const DBD_BASE = "/deadbydaylight/";
+// ================== PRESTIGE CRESTS (Layered Assets) ==================
+const DBD_PRESTIGE = {
+  crestsDir: DBD_BASE + "assets/dbd/Prestige/Crests/",
+  bordersDir: DBD_BASE + "assets/dbd/Prestige/Crest%20Borders/",
+};
 
+// Map a prestige number to the “base” crest asset we should use.
+// Ranges exist for 1–25; after that, use milestone bases (30,35,...,99) and reuse between milestones.
+function DBD_prestigeBaseKey(p) {
+  if (!p || p <= 0) return null;
+
+  // 1–25 uses grouped ranges
+  if (p <= 5)  return "1 to 5";
+  if (p <= 10) return "6 to 10";
+  if (p <= 15) return "11 to 15";
+  if (p <= 20) return "16 to 20";
+  if (p <= 25) return "21 to 25";
+
+  // 26–29 still look like the 21–25 tier in-game, just higher number
+  if (p < 30) return "21 to 25";
+
+  // Milestone bases after 30
+  const milestones = [30,35,40,45,50,55,60,65,70,75,80,85,90,95,99,100];
+
+  if (p >= 100) return "100";
+
+  for (let i = 0; i < milestones.length; i++) {
+    if (p < milestones[i]) return String(milestones[i - 1]);
+  }
+  return "99";
+}
+
+function DBD_prestigeAssets(p) {
+  const base = DBD_prestigeBaseKey(p);
+  if (!base) return null;
+
+  const isRange = base.includes("to");
+  const is100 = base === "100";
+
+  const fill = DBD_PRESTIGE.crestsDir + encodeURIComponent(base) + ".png";
+
+  // 100 usually doesn't need a border; everything else does (including 99)
+  const border = is100
+    ? null
+    : (DBD_PRESTIGE.bordersDir + encodeURIComponent(base) + "%20Border.png");
+
+  return { fill, border };
+}
+
+function DBD_renderPrestigeBadge(p) {
+  if (!p || p <= 0) return "";
+  const assets = DBD_prestigeAssets(p);
+  if (!assets) return "";
+
+  const digits = String(p).length;
+
+  return `
+    <div class="prestige-crest" data-d="${digits}" title="Prestige ${p}">
+      <img class="prestige-fill" src="${assets.fill}" alt="">
+      ${assets.border ? `<img class="prestige-border" src="${assets.border}" alt="">` : ""}
+      <span class="prestige-num">${p}</span>
+    </div>
+  `;
+}
 const DBD_IMG = {
   placeholder: DBD_BASE + "assets/img/placeholder.webp",
   missingLogKey: "dbd_missing_images_v1",
@@ -463,7 +526,7 @@ fetch(cacheBust(DBD_BASE + "killers.json", Date.now()))
           <img src="${src}" alt="${k.name}">
           <div class="killer-name ${k.nameshown === false ? "is-hidden" : ""}">${k.name}</div>
           ${!k.owned ? `<div class="locked-label">Not owned</div>` : ""}
-          ${k.owned && k.prestige > 0 ? `<div class="prestige-crest" data-p="${k.prestige}" title="Prestige ${k.prestige}"></div>` : ""}
+          ${k.owned && k.prestige > 0 ? DBD_renderPrestigeBadge(k.prestige) : ""}
         `;
 
         const img = div.querySelector("img");

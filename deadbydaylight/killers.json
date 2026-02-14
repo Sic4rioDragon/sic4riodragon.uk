@@ -57,7 +57,8 @@
       "id": "huntress",
       "name": "The Huntress",
       "img": "assets/dbd/CharPortraits/DLC5/K08_TheHuntress_Portrait.png",
-      "prestige": 5,
+      "prestige": 6,
+      "nameshown": false,
       "owned": true,
       "main": true,
 
@@ -89,6 +90,7 @@
       "name": "The Pig",
       "img": "assets/dbd/CharPortraits/Finland/K11_ThePig_Portrait.png",
       "prestige": 0,
+      "nameshown": false,
       "owned": true
     },
     {
@@ -109,7 +111,7 @@
       "id": "ghostface",
       "name": "The Ghost Face",
       "img": "assets/dbd/CharPortraits/Oman/K16_TheGhostface_Portrait.png",
-      "prestige": 0,
+      "prestige": 2,
       "owned": true
     },
     {
@@ -130,7 +132,7 @@
       "id": "executioner",
       "name": "The Executioner",
       "img": "assets/dbd/CharPortraits/Wales/K20_TheExecutioner_Portrait.png",
-      "prestige": 0,
+      "prestige": 2,
       "owned": true
     },
     {
@@ -159,6 +161,7 @@
       "name": "The Nemesis",
       "img": "assets/dbd/CharPortraits/Eclipse/K24_TheNemesis_Portrait.png",
       "prestige": 3,
+      "nameshown": false,
       "owned": true
     },
     {
@@ -172,7 +175,7 @@
       "id": "dredge",
       "name": "The Dredge",
       "img": "assets/dbd/CharPortraits/Meteor/K28_TheDredge_Portrait.png",
-      "prestige": 1,
+      "prestige": 3,
       "owned": true
     },
     {
@@ -201,6 +204,7 @@
       "name": "The Dark Lord",
       "img": "assets/dbd/CharPortraits/Eclair/K37_TheDracula_Portrait.png",
       "prestige": 0,
+      "nameshown": false,
       "owned": true
     },
     {
@@ -237,6 +241,7 @@
       "name": "The Spirit",
       "img": "assets/dbd/CharPortraits/Haiti/K13_TheSpirit_Portrait.png",
       "prestige": 0,
+      "nameshown": false,
       "owned": true
     },
     {
@@ -244,13 +249,15 @@
       "name": "The Deathslinger",
       "img": "assets/dbd/CharPortraits/Ukraine/K19_TheDeathslinger_Portrait.png",
       "prestige": 0,
+      "nameshown": false,
       "owned": true
     },
     {
       "id": "artist",
       "name": "The Artist",
       "img": "assets/dbd/CharPortraits/Ion/K26_TheArtist_Portrait.png",
-      "prestige": 2,
+      "prestige": 3,
+      "nameshown": false,
       "owned": true
     },
     {
@@ -258,6 +265,7 @@
       "name": "The Onryo",
       "img": "assets/dbd/CharPortraits/Kepler/K27_TheOnryo_Portrait.png",
       "prestige": 3,
+      "nameshown": false,
       "owned": true
     },
     {
@@ -265,6 +273,7 @@
       "name": "The Mastermind",
       "img": "assets/dbd/CharPortraits/Orion/K29_TheMasterMind_Portrait.png",
       "prestige": 3,
+      "nameshown": false,
       "owned": true
     },
     {
@@ -278,7 +287,8 @@
       "id": "singularity",
       "name": "The Singularity",
       "img": "assets/dbd/CharPortraits/Umbra/K32_TheSingularity_Portrait.png",
-      "prestige": 0,
+      "prestige": 2,
+      "nameshown": false,
       "owned": true
     },
     {
