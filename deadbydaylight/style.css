@@ -104,20 +104,15 @@ header {
     0 0 2px rgba(0,0,0,.95);
   line-height: 1;
   user-select: none;
+  font-family: "Bebas Neue", system-ui, sans-serif;
+  letter-spacing: 0.5px;
 }
 
 /* Number size tuning by digits */
-.prestige-crest[data-d="1"] .prestige-num{ font-size: 30px; }
-.prestige-crest[data-d="2"] .prestige-num{ font-size: 24px; }
-.prestige-crest[data-d="3"] .prestige-num{ font-size: 20px; }
+.prestige-crest[data-d="1"] .prestige-num{ font-size: 22px; }
+.prestige-crest[data-d="2"] .prestige-num{ font-size: 18px; }
+.prestige-crest[data-d="3"] .prestige-num{ font-size: 16px; }
 
-.prestige-number {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 1px;
-  color: white;
-  text-shadow: 0 0 4px black;
-  letter-spacing: 1px;
-}
 .killer{
   position: relative;
 }
