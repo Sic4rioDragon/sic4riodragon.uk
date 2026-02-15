@@ -75,8 +75,8 @@ header {
   left: 0px;
   bottom: 0px;
 
-  width: 66px;
-  height: 66px;
+  width: 48px;
+  height: 48px;
   z-index: 7;
 
   pointer-events: none;
@@ -111,6 +111,13 @@ header {
 .prestige-crest[data-d="2"] .prestige-num{ font-size: 24px; }
 .prestige-crest[data-d="3"] .prestige-num{ font-size: 20px; }
 
+.prestige-number {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 18px;
+  color: white;
+  text-shadow: 0 0 4px black;
+  letter-spacing: 1px;
+}
 .killer{
   position: relative;
 }
