@@ -380,11 +380,16 @@ function closeModal() {
 function DBD_displayPrestige(entry) {
   const real = Number(entry?.prestige || 0);
 
-  if (entry?.main === true || entry?.rotation === true) return real;
+  if (entry?.main === true || entry?.rotation === true) {
+    return real;
+  }
+
+  if (real <= 3) {
+    return real;
+  }
 
   return 3;
 }
-
 function openModalForKiller(k) {
   const modal = document.getElementById("killerModal");
   const nameEl = document.getElementById("modalName");
