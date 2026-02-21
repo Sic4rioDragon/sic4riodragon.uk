@@ -108,7 +108,7 @@ function openModalForSurvivor(s) {
   const nameEl = document.getElementById("modalName");
   const bodyEl = document.getElementById("modalBody");
 
-  nameEl.textContent = `${s.name} — Prestige ${s.prestige || 0}`;
+  nameEl.textContent = `${s.name} — Prestige ${DBD_displayPrestige(s) || 0}`;
 
   const fav = s.favLoadout || { perks: [], addons: [] };
   const perks = fav.perks || [];
@@ -172,7 +172,7 @@ fetch(cacheBust(DBD_BASE + "survivors.json", Date.now()))
         div.innerHTML = `
         <img src="${src}" alt="${s.name}">
         <div class="killer-name ${s.nameshown === false ? "is-hidden" : ""}">${s.name}</div>
-        ${s.prestige > 0 ? DBD_renderPrestigeBadge(s.prestige) : ""}
+        ${DBD_displayPrestige(s) > 0 ? DBD_renderPrestigeBadge(DBD_displayPrestige(s)) : ""}
         `;
         
         const imgEl = div.querySelector("img");

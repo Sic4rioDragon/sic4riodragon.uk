@@ -16,7 +16,8 @@
       "name": "The Wraith",
       "img": "assets/dbd/CharPortraits/K02_TheWraith_Portrait.png",
       "prestige": 5,
-      "owned": true
+      "owned": true,
+      "rotation": true
     },
     {
       "id": "hillbilly",
@@ -50,24 +51,23 @@
       "id": "doctor",
       "name": "The Doctor",
       "img": "assets/dbd/CharPortraits/DLC4/K07_TheDoctor_Portrait.png",
-      "prestige": 0,
+      "prestige": 3,
       "owned": true
     },
     {
       "id": "huntress",
       "name": "The Huntress",
       "img": "assets/dbd/CharPortraits/DLC5/K08_TheHuntress_Portrait.png",
-      "prestige": 6,
+      "prestige": 9,
       "nameshown": false,
       "owned": true,
       "main": true,
 
       "favLoadout": {
-        "perks": ["Deerstalker", "A Nurse's Calling", "Perk 3", "Perk 4"],
-        "addons": ["Flower Babushka", "Coarse Stone"],
-        "notes": "Any notes you want (optional)"
+        "perks": ["Deerstalker", "A Nurse's Calling", "No Where to Hide", "Spies from the Shadows"],
+        "addons": ["Flower Babushka", "Coarse Stone"]
       },
-      "clips": [
+      "clips": [ 
         { "title": "Cool hatchet snipe", "url": "https://medal.tv/games/dead-by-daylight/clips/lCgZ93YwvKBuPfPts" }
       ]
     },
@@ -76,7 +76,12 @@
       "name": "The Cannibal",
       "img": "assets/dbd/CharPortraits/Cannibal/K09_TheCannibal_Portrait.png",
       "prestige": 9,
-      "owned": true
+      "owned": true,
+      "rotation": true,
+      "favLoadout": {
+        "perks": ["Deerstalker", "Barbecue & Chilli", "Infectious Fright", "Discordance"],
+        "addons": ["Iridescent Flesh", "Depth Gauge Rake"]
+      }
     },
     {
       "id": "nightmare",
@@ -111,7 +116,7 @@
       "id": "ghostface",
       "name": "The Ghost Face",
       "img": "assets/dbd/CharPortraits/Oman/K16_TheGhostface_Portrait.png",
-      "prestige": 2,
+      "prestige": 3,
       "owned": true
     },
     {
@@ -125,21 +130,21 @@
       "id": "oni",
       "name": "The Oni",
       "img": "assets/dbd/CharPortraits/Sweden/K18_TheOni_Portrait.png",
-      "prestige": 0,
+      "prestige": 3,
       "owned": true
     },
     {
       "id": "executioner",
       "name": "The Executioner",
       "img": "assets/dbd/CharPortraits/Wales/K20_TheExecutioner_Portrait.png",
-      "prestige": 2,
+      "prestige": 3,
       "owned": true
     },
     {
       "id": "blight",
       "name": "The Blight",
       "img": "assets/dbd/CharPortraits/Yemen/K21_TheBlight_Portrait.png",
-      "prestige": 0,
+      "prestige": 3,
       "owned": true
     },
     {
@@ -203,7 +208,7 @@
       "id": "dracula",
       "name": "The Dark Lord",
       "img": "assets/dbd/CharPortraits/Eclair/K37_TheDracula_Portrait.png",
-      "prestige": 0,
+      "prestige": 3,
       "nameshown": false,
       "owned": true
     },
@@ -248,7 +253,7 @@
       "id": "deathslinger",
       "name": "The Deathslinger",
       "img": "assets/dbd/CharPortraits/Ukraine/K19_TheDeathslinger_Portrait.png",
-      "prestige": 0,
+      "prestige": 3,
       "nameshown": false,
       "owned": true
     },
@@ -266,15 +271,17 @@
       "img": "assets/dbd/CharPortraits/Kepler/K27_TheOnryo_Portrait.png",
       "prestige": 3,
       "nameshown": false,
-      "owned": true
+      "owned": true,
+      "rotation": true
     },
     {
       "id": "mastermind",
-      "name": "The Mastermind",
+      "name": "The Mastermind Wesker",
       "img": "assets/dbd/CharPortraits/Orion/K29_TheMasterMind_Portrait.png",
       "prestige": 3,
       "nameshown": false,
-      "owned": true
+      "owned": true,
+      "rotation": true
     },
     {
       "id": "skullmerchant",
@@ -287,7 +294,7 @@
       "id": "singularity",
       "name": "The Singularity",
       "img": "assets/dbd/CharPortraits/Umbra/K32_TheSingularity_Portrait.png",
-      "prestige": 2,
+      "prestige": 3,
       "nameshown": false,
       "owned": true
     },
@@ -302,7 +309,7 @@
       "id": "xenomorph",
       "name": "The Xenomorph",
       "img": "assets/dbd/CharPortraits/Wormhole/K33_TheXenomorph_Portrait.png",
-      "prestige": 0,
+      "prestige": 3,
       "owned": true
     },
     {
@@ -317,7 +324,13 @@
       "name": "The First",
       "img": "assets/dbd/CharPortraits/Poutine/T_UI_K42_TheFirst_Portrait.png",
       "prestige": 5,
-      "owned": true
+      "owned": true,
+      "rotation": true,
+
+      "favLoadout": {
+        "perks": ["Deerstalker", "A Nurse's Calling", "No Where to Hide", "Barbecue & Chilli"],
+        "addons": ["Shattered Wrist Rocket", "Electrode Cap"]
+      }
     }
   ]
 }

@@ -377,13 +377,20 @@ function closeModal() {
   setQueryK("");
   CURRENT_OPEN_ID = "";
 }
+function DBD_displayPrestige(entry) {
+  const real = Number(entry?.prestige || 0);
+
+  if (entry?.main === true || entry?.rotation === true) return real;
+
+  return 3;
+}
 
 function openModalForKiller(k) {
   const modal = document.getElementById("killerModal");
   const nameEl = document.getElementById("modalName");
   const bodyEl = document.getElementById("modalBody");
 
-  nameEl.textContent = `${k.name} — Prestige ${k.prestige || 0}`;
+  nameEl.textContent = `${k.name} — Prestige ${DBD_displayPrestige(k)}`;
 
   const fav = k.favLoadout || { perks: [], addons: [] };
   const perks = fav.perks || [];
@@ -526,7 +533,7 @@ fetch(cacheBust(DBD_BASE + "killers.json", Date.now()))
           <img src="${src}" alt="${k.name}">
           <div class="killer-name ${k.nameshown === false ? "is-hidden" : ""}">${k.name}</div>
           ${!k.owned ? `<div class="locked-label">Not owned</div>` : ""}
-          ${k.owned && k.prestige > 0 ? DBD_renderPrestigeBadge(k.prestige) : ""}
+          ${k.owned ? DBD_renderPrestigeBadge(DBD_displayPrestige(k)) : ""}
         `;
 
         const img = div.querySelector("img");
@@ -570,6 +577,8 @@ fetch(cacheBust(DBD_BASE + "killers.json", Date.now()))
   })
   .catch(err => console.error("Failed to load killers.json", err));
 }
+
+
 (function initNameToggle(){
   const KEY = "dbd_show_names";
   const btn = document.getElementById("toggleNamesBtn");
