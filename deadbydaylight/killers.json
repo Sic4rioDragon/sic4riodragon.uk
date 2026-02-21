@@ -245,7 +245,7 @@
       "id": "spirit",
       "name": "The Spirit",
       "img": "assets/dbd/CharPortraits/Haiti/K13_TheSpirit_Portrait.png",
-      "prestige": 0,
+      "prestige": 3,
       "nameshown": false,
       "owned": true
     },
@@ -333,4 +333,5 @@
       }
     }
   ]
+
 }
