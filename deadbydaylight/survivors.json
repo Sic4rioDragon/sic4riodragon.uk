@@ -7,7 +7,7 @@
       "img": "assets/dbd/CharPortraits/Sweden/S20_YuiKimura_Portrait.png",
       "owned": true,
       "nameshown": false,
-      "prestige": 13,
+      "prestige": 10,
       "main": true,
 
       "favLoadout": {
@@ -23,7 +23,7 @@
       "img": "assets/dbd/CharPortraits/S01_DwightFairfield_Portrait.png",
       "owned": true,
       "nameshown": false,
-      "prestige": 6,
+      "prestige": 1,
       "main": false,
       "rotation": true,
       "favLoadout": { "perks": [], "addons": [] },
@@ -35,7 +35,7 @@
       "img": "assets/dbd/CharPortraits/S02_MegThomas_Portrait.png",
       "owned": true,
       "nameshown": false,
-      "prestige": 7,
+      "prestige": 3,
       "main": false,
       "rotation": true,
       "favLoadout": { "perks": [], "addons": [] },
@@ -47,7 +47,7 @@
       "img": "assets/dbd/CharPortraits/S03_ClaudetteMorel_Portrait.png",
       "owned": true,
       "nameshown": false,
-      "prestige": 7,
+      "prestige": 1,
       "main": false,
       "favLoadout": { "perks": [], "addons": [] },
       "clips": []
@@ -58,7 +58,7 @@
       "img": "assets/dbd/CharPortraits/S04_JakePark_Portrait.png",
       "owned": true,
       "nameshown": false,
-      "prestige": 3,
+      "prestige": 1,
       "main": false,
       "favLoadout": { "perks": [], "addons": [] },
       "clips": []
@@ -69,7 +69,7 @@
       "img": "assets/dbd/CharPortraits/S05_NeaKarlsson_Portrait.png",
       "owned": true,
       "nameshown": false,
-      "prestige": 5,
+      "prestige": 1,
       "main": false,
       "favLoadout": { "perks": [], "addons": [] },
       "clips": []
@@ -81,7 +81,7 @@
       "img": "assets/dbd/CharPortraits/DLC2/S06_LaurieStrode_Portrait.png",
       "owned": true,
       "nameshown": false,
-      "prestige": 3,
+      "prestige": 1,
       "main": false,
       "favLoadout": { "perks": [], "addons": [] },
       "clips": []
@@ -92,7 +92,7 @@
       "img": "assets/dbd/CharPortraits/DLC3/S07_AceVisconti_Portrait.png",
       "owned": true,
       "nameshown": false,
-      "prestige": 3,
+      "prestige": 1,
       "main": false,
       "favLoadout": { "perks": [], "addons": [] },
       "clips": []
@@ -102,7 +102,7 @@
       "name": "William Bill Overbeck",
       "img": "assets/dbd/CharPortraits/L4D/S08_WilliamBillOverbeck_Portrait.png",
       "owned": true,
-      "prestige": 3,
+      "prestige": 1,
       "main": false,
       "favLoadout": { "perks": [], "addons": [] },
       "clips": []
@@ -113,7 +113,7 @@
       "img": "assets/dbd/CharPortraits/DLC4/S09_FengMin_Portrait.png",
       "owned": true,
       "nameshown": false,
-      "prestige": 7,
+      "prestige": 1,
       "main": false,
       "favLoadout": { "perks": [], "addons": [] },
       "clips": []
@@ -124,7 +124,7 @@
       "img": "assets/dbd/CharPortraits/DLC5/S10_DavidKing_Portrait.png",
       "owned": true,
       "nameshown": false,
-      "prestige": 3,
+      "prestige": 1,
       "main": false,
       "favLoadout": { "perks": [], "addons": [] },
       "clips": []
@@ -135,7 +135,7 @@
       "name": "Quentin Smith",
       "img": "assets/dbd/CharPortraits/England/S11_QuentinSmith_Portrait.png",
       "owned": true,
-      "prestige": 4,
+      "prestige": 1,
       "main": false,
       "favLoadout": { "perks": [], "addons": [] },
       "clips": []
@@ -146,7 +146,7 @@
       "img": "assets/dbd/CharPortraits/Guam/S13_KateDenson_Portrait.png",
       "owned": true,
       "nameshown": false,
-      "prestige": 7,
+      "prestige": 3,
       "main": false,
       "rotation": true,
       "favLoadout": { "perks": [], "addons": [] },
@@ -158,7 +158,7 @@
       "img": "assets/dbd/CharPortraits/Haiti/S14_AdamFrancis_Portrait.png",
       "owned": true,
       "nameshown": false,
-      "prestige": 4,
+      "prestige": 1,
       "main": false,
       "favLoadout": { "perks": [], "addons": [] },
       "clips": []
@@ -169,7 +169,7 @@
       "img": "assets/dbd/CharPortraits/Mali/S16_JaneRomero_Portrait.png",
       "owned": true,
       "nameshown": false,
-      "prestige": 3,
+      "prestige": 1,
       "main": false,
       "favLoadout": { "perks": [], "addons": [] },
       "clips": []
@@ -180,7 +180,7 @@
       "img": "assets/dbd/CharPortraits/Ash/S17_AshleyJWilliams_Portrait.png",
       "owned": true,
       "nameshown": false,
-      "prestige": 4,
+      "prestige": 1,
       "main": false,
       "favLoadout": { "perks": [], "addons": [] },
       "clips": []
@@ -190,7 +190,7 @@
       "name": "Steve Harrington",
       "img": "assets/dbd/CharPortraits/Qatar/S18_SteveHarrington_Portrait.png",
       "owned": true,
-      "prestige": 6,
+      "prestige": 1,
       "main": false,
       "favLoadout": { "perks": [], "addons": [] },
       "clips": []
@@ -200,7 +200,7 @@
       "name": "Nancy",
       "img": "assets/dbd/CharPortraits/Poutine/T_UI_S19_NancyWheeler_Portrait.png",
       "owned": true,
-      "prestige": 5,
+      "prestige": 1,
       "main": false,
       "favLoadout": { "perks": [], "addons": [] },
       "clips": []
@@ -211,7 +211,7 @@
       "img": "assets/dbd/CharPortraits/Ukraine/S21_ZarinaKassir_Portrait.png",
       "owned": true,
       "nameshown": false,
-      "prestige": 6,
+      "prestige": 1,
       "main": false,
       "favLoadout": { "perks": [], "addons": [] },
       "clips": []
@@ -221,7 +221,7 @@
       "name": "Cheryl Mason",
       "img": "assets/dbd/CharPortraits/Wales/S22_CherylMason_Portrait.png",
       "owned": true,
-      "prestige": 7,
+      "prestige": 1,
       "main": false,
       "favLoadout": { "perks": [], "addons": [] },
       "clips": []
@@ -232,7 +232,7 @@
       "name": "Felix Richter",
       "img": "assets/dbd/CharPortraits/Yemen/S23_FelixRichter_Portrait.png",
       "owned": true,
-      "prestige": 3,
+      "prestige": 1,
       "main": false,
       "favLoadout": { "perks": [], "addons": [] },
       "clips": []
@@ -243,7 +243,7 @@
       "img": "assets/dbd/CharPortraits/Eclipse/S26_JillValentine_Portrait.png",
       "owned": true,
       "nameshown": false,
-      "prestige": 5,
+      "prestige": 1,
       "main": false,
       "favLoadout": { "perks": [], "addons": [] },
       "clips": []
@@ -254,7 +254,7 @@
       "img": "assets/dbd/CharPortraits/Aurora/S24_ElodieRakoto_Portrait.png",
       "owned": true,
       "nameshown": false,
-      "prestige": 3,
+      "prestige": 1,
       "main": false,
       "favLoadout": { "perks": [], "addons": [] },
       "clips": []
@@ -265,7 +265,7 @@
       "img": "assets/dbd/CharPortraits/Comet/S25_YunJinLee_Portrait.png",
       "owned": true,
       "nameshown": false,
-      "prestige": 4,
+      "prestige": 1,
       "main": false,
       "favLoadout": { "perks": [], "addons": [] },
       "clips": []
@@ -277,7 +277,7 @@
       "img": "assets/dbd/CharPortraits/Eclipse/S27_LeonSKennedy_Portrait.png",
       "owned": true,
       "nameshown": false,
-      "prestige": 6,
+      "prestige": 1,
       "main": false,
       "favLoadout": { "perks": [], "addons": [] },
       "clips": []
@@ -288,7 +288,7 @@
       "img": "assets/dbd/CharPortraits/Hubble/S28_MikaelaReid_Portrait.png",
       "owned": true,
       "nameshown": false,
-      "prestige": 4,
+      "prestige": 3,
       "main": false,
       "favLoadout": { "perks": [], "addons": [] },
       "clips": []
@@ -299,7 +299,7 @@
       "img": "assets/dbd/CharPortraits/Ion/S29_JonahVasquez_Portrait.png",
       "owned": true,
       "nameshown": false,
-      "prestige": 3,
+      "prestige": 1,
       "main": false,
       "favLoadout": { "perks": [], "addons": [] },
       "clips": []
@@ -310,7 +310,7 @@
       "img": "assets/dbd/CharPortraits/Kepler/S30_YoichiAsakawa_Portrait.png",
       "owned": true,
       "nameshown": false,
-      "prestige": 6,
+      "prestige": 1,
       "main": false,
       "favLoadout": { "perks": [], "addons": [] },
       "clips": []
@@ -321,7 +321,7 @@
       "name": "Haddie Kaur",
       "img": "assets/dbd/CharPortraits/Meteor/S31_HaddieKaur_Portrait.png",
       "owned": true,
-      "prestige": 3,
+      "prestige": 1,
       "main": false,
       "favLoadout": { "perks": [], "addons": [] },
       "clips": []
@@ -331,7 +331,7 @@
       "name": "Ada Wong",
       "img": "assets/dbd/CharPortraits/Orion/S32_AdaWong_Portrait.png",
       "owned": true,
-      "prestige": 6,
+      "prestige": 1,
       "main": false,
       "favLoadout": { "perks": [], "addons": [] },
       "clips": []
@@ -342,7 +342,7 @@
       "img": "assets/dbd/CharPortraits/Orion/S33_RebeccaChambers_Portrait.png",
       "owned": true,
       "nameshown": false,
-      "prestige": 5,
+      "prestige": 1,
       "main": false,
       "favLoadout": { "perks": [], "addons": [] },
       "clips": []
@@ -354,7 +354,7 @@
       "img": "assets/dbd/CharPortraits/Quantum/S34_VittorioToscano_Portrait.png",
       "owned": true,
       "nameshown": false,
-      "prestige": 3,
+      "prestige": 1,
       "main": false,
       "favLoadout": { "perks": [], "addons": [] },
       "clips": []
@@ -365,7 +365,7 @@
       "img": "assets/dbd/CharPortraits/Saturn/S35_ThalitaLyra_Portrait.png",
       "owned": true,
       "nameshown": false,
-      "prestige": 5,
+      "prestige": 1,
       "main": false,
       "favLoadout": { "perks": [], "addons": [] },
       "clips": []
@@ -376,7 +376,7 @@
       "img": "assets/dbd/CharPortraits/Saturn/S36_RenatoLyra_Portrait.png",
       "owned": true,
       "nameshown": false,
-      "prestige": 6,
+      "prestige": 1,
       "main": false,
       "favLoadout": { "perks": [], "addons": [] },
       "clips": []
@@ -388,7 +388,7 @@
       "img": "assets/dbd/CharPortraits/Umbra/S37_GabrielSoma_Portrait.png",
       "owned": true,
       "nameshown": false,
-      "prestige": 5,
+      "prestige": 1,
       "main": false,
       "favLoadout": { "perks": [], "addons": [] },
       "clips": []
@@ -398,7 +398,7 @@
       "name": "Nicolas Cage",
       "img": "assets/dbd/CharPortraits/Venus/S38_NicolasCage_Portrait.png",
       "owned": true,
-      "prestige": 5,
+      "prestige": 1,
       "main": false,
       "favLoadout": { "perks": [], "addons": [] },
       "clips": []
@@ -410,7 +410,7 @@
       "img": "assets/dbd/CharPortraits/Wormhole/S39_EllenRipley_Portrait.png",
       "owned": true,
       "nameshown": false,
-      "prestige": 4,
+      "prestige": 1,
       "main": false,
       "favLoadout": { "perks": [], "addons": [] },
       "clips": []
@@ -421,7 +421,7 @@
       "img": "assets/dbd/CharPortraits/Zodiac/S40_AlanWake_Portrait.png",
       "owned": true,
       "nameshown": false,
-      "prestige": 5,
+      "prestige": 1,
       "main": false,
       "favLoadout": { "perks": [], "addons": [] },
       "clips": []
@@ -432,7 +432,7 @@
       "name": "Lara Croft",
       "img": "assets/dbd/CharPortraits/Donut/S43_LaraCroft_Portrait.png",
       "owned": true,
-      "prestige": 5,
+      "prestige": 1,
       "main": false,
       "favLoadout": { "perks": [], "addons": [] },
       "clips": []
@@ -443,7 +443,7 @@
       "img": "assets/dbd/CharPortraits/Applepie/S41_SableWard_Portrait.png",
       "owned": true,
       "nameshown": false,
-      "prestige": 5,
+      "prestige": 1,
       "main": false,
       "favLoadout": { "perks": [], "addons": [] },
       "clips": []
@@ -454,7 +454,7 @@
       "img": "assets/dbd/CharPortraits/Churros/S42_TheTroupe_Portrait.png",
       "owned": true,
       "nameshown": false,
-      "prestige": 5,
+      "prestige": 1,
       "main": false,
       "favLoadout": { "perks": [], "addons": [] },
       "clips": []
@@ -465,7 +465,7 @@
       "img": "assets/dbd/CharPortraits/Gelato/S45_TaurieCain_Portrait.png",
       "owned": true,
       "nameshown": false,
-      "prestige": 5,
+      "prestige": 1,
       "main": false,
       "favLoadout": { "perks": [], "addons": [] },
       "clips": []
@@ -476,7 +476,7 @@
       "img": "assets/dbd/CharPortraits/Eclair/S44_TrevorBelmont_Portrait.png",
       "owned": true,
       "nameshown": false,
-      "prestige": 3,
+      "prestige": 1,
       "main": false,
       "favLoadout": { "perks": [], "addons": [] },
       "clips": []
@@ -487,7 +487,7 @@
       "img": "assets/dbd/CharPortraits/Finland/S12_DetectiveDavidTapp_Portrait.png",
       "owned": true,
       "nameshown": false,
-      "prestige": 3,
+      "prestige": 1,
       "main": false,
       "favLoadout": { "perks": [], "addons": [] },
       "clips": []
@@ -498,7 +498,7 @@
       "img": "assets/dbd/CharPortraits/Jerky/S46_OrelaRose_Portrait.png",
       "owned": true,
       "nameshown": false,
-      "prestige": 4,
+      "prestige": 1,
       "main": false,
       "favLoadout": { "perks": [], "addons": [] },
       "clips": []
@@ -508,7 +508,7 @@
       "name": "Jeff",
       "img": "assets/dbd/CharPortraits/Kenya/S15_JeffJohansen_Portrait.png",
       "owned": true,
-      "prestige": 3,
+      "prestige": 1,
       "main": false,
       "favLoadout": { "perks": [], "addons": [] },
       "clips": []
@@ -518,7 +518,7 @@
       "name": "Rick",
       "img": "assets/dbd/CharPortraits/Lasagna/S47_RickGrimes_Portrait.png",
       "owned": true,
-      "prestige": 4,
+      "prestige": 1,
       "main": false,
       "favLoadout": { "perks": [], "addons": [] },
       "clips": []
@@ -528,7 +528,7 @@
       "name": "Michonne",
       "img": "assets/dbd/CharPortraits/Lasagna/S48_MichonneGrimes_Portrait.png",
       "owned": true,
-      "prestige": 4,
+      "prestige": 1,
       "main": false,
       "favLoadout": { "perks": [], "addons": [] },
       "clips": []
@@ -538,7 +538,7 @@
       "name": "Vee",
       "img": "assets/dbd/CharPortraits/Maple/T_UI_S49_VeeBoonyasak_Portrait.png",
       "owned": true,
-      "prestige": 4,
+      "prestige": 1,
       "main": false,
       "favLoadout": { "perks": [], "addons": [] },
       "clips": []
@@ -548,7 +548,7 @@
       "name": "Dustin",
       "img": "assets/dbd/CharPortraits/Poutine/T_UI_S50_DustinHenderson_Portrait.png",
       "owned": true,
-      "prestige": 6,
+      "prestige": 1,
       "main": false,
       "favLoadout": { "perks": [], "addons": [] },
       "clips": []
@@ -558,7 +558,7 @@
       "name": "Eleven",
       "img": "assets/dbd/CharPortraits/Poutine/T_UI_S51_Eleven_Portrait.png",
       "owned": true,
-      "prestige": 6,
+      "prestige": 1,
       "main": false,
       "favLoadout": { "perks": [], "addons": [] },
       "clips": []
