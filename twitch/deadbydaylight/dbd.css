@@ -34,15 +34,6 @@
   outline: none;
 }
 
-#grid, .dbdGrid{
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: 24px;
-  padding: 30px;
-  max-width: 1200px;
-  margin: 0 auto;
-  isolation: isolate;
-}
 .charCard:hover{
   transform: translateY(-2px);
   z-index: 2;
@@ -125,4 +116,64 @@
   font-size: 12px;
   opacity: .75;
   line-height: 1.35;
+}
+
+.grid-divider{
+  grid-column: 1 / -1;
+  margin: 18px 0 8px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255,255,255,.10);
+  color: rgba(255,255,255,.75);
+  font-weight: 700;
+  letter-spacing: .4px;
+}
+
+
+.killer img{
+  height: 260px;
+  width: 100%;
+  object-fit: cover;
+  display:block;
+}
+
+#killer-grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 24px;
+  padding: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.why-badge{
+  position:absolute;
+  right:10px;
+  bottom:10px;
+  width:22px;
+  height:22px;
+  border-radius:999px;
+  display:grid;
+  place-items:center;
+  font-weight:800;
+  font-size:13px;
+  background: rgba(0,0,0,.55);
+  border: 1px solid rgba(255,255,255,.14);
+}
+.challengeLinks{
+  display:flex;
+  gap:10px;
+  justify-content:flex-end;
+  flex-wrap:wrap;
+}
+.challengeLinks .pillBtn{
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.10);
+  text-decoration: none;
+  color: rgba(255,255,255,0.92);
+  font-weight: 700;
+  font-size: 13px;
+}
+.challengeLinks .pillBtn:hover{
+  background: rgba(255,255,255,0.10);
 }

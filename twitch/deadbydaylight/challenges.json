@@ -7,20 +7,21 @@
       "enabled": true,
       "killerWhitelist": [],
       "killerBlacklist": [],
-      "notes": "Use the NightLight button if you want a generator."
+      "notes": "Use the NightLight button if you want a generator. (i have every perk except for cenobite)"
     },
     {
       "id": "no-perks",
       "name": "No perks",
-      "enabled": true,
+      "enabled": false,
       "killerWhitelist": [],
-      "killerBlacklist": ["nurse"],
-      "notes": "Too sweaty on Nurse (for now)."
+      "killerBlacklist": [],
+      "notes": ""
     },
     { "id": "only-brown-addons", "name": "Only brown add-ons", "enabled": true, "killerWhitelist": [], "killerBlacklist": [] },
     { "id": "only-m1", "name": "M1 only (no power unless required)", "enabled": true, "killerWhitelist": [], "killerBlacklist": [] },
     { "id": "only-m2", "name": "M2 only", "enabled": true, "killerWhitelist": [], "killerBlacklist": [] },
     { "id": "obsession-focus", "name": "Obsession focus", "enabled": true, "killerWhitelist": [], "killerBlacklist": [] },
+    { "id": "tunnel", "name": "Tunnel somebody", "enabled": true, "killerWhitelist": [], "killerBlacklist": [] },
     {
       "id": "basement-only-hooks",
       "name": "Basement-only hooks (if possible)",
