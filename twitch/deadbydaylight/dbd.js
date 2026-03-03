@@ -14,17 +14,20 @@ function renderChallenges(data) {
   const external = (data.external || []).find(x => x.id === "nightlight-buildchallenge");
   if (external && NIGHTLIGHT_LINK) NIGHTLIGHT_LINK.href = external.url;
 
-  CHALLENGE_LIST.innerHTML = (data.challenges || []).map(c => {
+  const list = [...(data.challenges || [])]
+    .sort((a, b) => (a.enabled === false) - (b.enabled === false)); // enabled first
+
+  CHALLENGE_LIST.innerHTML = list.map(c => {
     const disabled = c.enabled === false;
     const metaBits = [];
 
     if (c.notes) metaBits.push(c.notes);
     if (disabled && c.why) metaBits.push(`Disabled: ${c.why}`);
 
-    // show compatibility note only if you set any lists
     const wl = (c.killerWhitelist || []).length;
     const bl = (c.killerBlacklist || []).length;
     if (wl || bl) metaBits.push(`Works with some killers (rules apply)`);
+
     return `
       <div class="challengeItem ${disabled ? "disabled" : ""}">
         <div class="name">${c.name}</div>
