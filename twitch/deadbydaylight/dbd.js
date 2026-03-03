@@ -24,8 +24,7 @@ function renderChallenges(data) {
     // show compatibility note only if you set any lists
     const wl = (c.killerWhitelist || []).length;
     const bl = (c.killerBlacklist || []).length;
-    if (wl || bl) metaBits.push(`Compatibility: ${wl ? "whitelist" : "all"}${bl ? " + blacklist" : ""}`);
-
+    if (wl || bl) metaBits.push(`Works with some killers (rules apply)`);
     return `
       <div class="challengeItem ${disabled ? "disabled" : ""}">
         <div class="name">${c.name}</div>
@@ -33,6 +32,26 @@ function renderChallenges(data) {
       </div>
     `;
   }).join("");
+}
+async function loadKillersMerged() {
+  // absolute paths = no relative path headaches on GitHub Pages
+  const [baseRes, overlayRes] = await Promise.all([
+    fetch("/deadbydaylight/killers.json", { cache: "no-store" }),
+    fetch("/twitch/deadbydaylight/killers.json", { cache: "no-store" })
+  ]);
+
+  if (!baseRes.ok) throw new Error(`Base killers.json failed: ${baseRes.status}`);
+  if (!overlayRes.ok) throw new Error(`Overlay killers.json failed: ${overlayRes.status}`);
+
+  const base = await baseRes.json();       // { killers: [...] }
+  const overlay = await overlayRes.json(); // { killers: [...] }
+
+  const overlayMap = new Map((overlay.killers || []).map(k => [k.id, k]));
+
+  return (base.killers || []).map(k => ({
+    ...k,
+    ...(overlayMap.get(k.id) || {})
+  }));
 }
 function isSupported(k) {
   // supported unless explicitly false
@@ -69,7 +88,7 @@ function render(killers, query = "") {
     return `
       <article class="charCard ${disabled ? "disabled" : ""}" aria-label="${k.name}">
         <div class="charImgWrap">
-          <img class="charImg" src="../../${k.img}" alt="${k.name}" loading="lazy">
+          <img class="charImg" src="/deadbydaylight/${k.img}" alt="${k.name}" loading="lazy">
         </div>
         <div class="charName">${k.name}</div>
         ${why ? `<div class="why">${why}</div>` : ""}
