@@ -94,10 +94,8 @@ function renderKillers(killers, query = "") {
             ? "Unowned"
             : (k.why || (k.support === false ? "Not supported right now" : ""));
 
-        // IMPORTANT:
-        // base killers.json has img like "assets/dbd/CharPortraits/..."
-        // we want that to resolve from site root:
-        const imgSrc = "/" + String(k.img || "").replace(/^\/+/, "");
+
+        const imgSrc = "/deadbydaylight/" + String(k.img || "").replace(/^\/+/, "");
 
         return `
           <article class="charCard ${off ? "disabled" : ""}" aria-label="${escapeHtml(k.name || "")}">
