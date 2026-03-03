@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sic4rioDragon — DBD Requests</title>
+
+  <link rel="stylesheet" href="../../deadbydaylight/style.css" />
+  <link rel="stylesheet" href="./dbd.css" />
+</head>
+<body>
+  <div class="pageWrap">
+
+    <header class="topHeader">
+      <a class="backBtn" href="../">← Back to Twitch</a>
+
+      <div class="titleWrap">
+        <h1 class="pageTitle">DBD Requests</h1>
+        <p class="pageSub">Killers viewers can request (disabled = unowned or not supported)</p>
+      </div>
+
+      <div class="headerActions">
+        <input id="searchInput" class="searchBox" placeholder="Search killers..." />
+      </div>
+    </header>
+
+    <main>
+  <!-- Challenges FIRST -->
+  <section class="challengeSection" aria-label="DBD Challenges">
+    <div class="challengeHeader">
+      <h2 class="challengeTitle">Challenges</h2>
+
+      <div class="challengeLinks">
+        <a id="nightlightLink" class="pillBtn" href="https://nightlight.gg/buildchallenge" target="_blank" rel="noopener">
+          Open NightLight Build Challenge
+        </a>
+      </div>
+    </div>
+
+    <div id="challengeList" class="challengeList"></div>
+
+    <div class="nightlightEmbedWrap">
+      <div class="nightlightNote">
+        If the embed is blank/blocked, use the button above (some sites don’t allow embeds).
+      </div>
+
+      <iframe
+        id="nightlightFrame"
+        class="nightlightFrame"
+        src="https://nightlight.gg/buildchallenge"
+        loading="lazy"
+        referrerpolicy="no-referrer"
+        title="NightLight Build Challenge (embed)">
+      </iframe>
+    </div>
+  </section>
+
+  <div id="grid" class="dbdGrid" aria-label="DBD Requestable Killers"></div>
+  </main>
+
+    <footer class="siteFooter">
+      <div class="footerLeft">© Sic4rioDragon</div>
+      <div class="footerRight">
+        <a href="https://www.twitch.tv/Sic4rioDragon" target="_blank" rel="noopener">Twitch</a>
+      </div>
+    </footer>
+
+  </div>
+
+  <script src="./dbd.js"></script>
+</body>
+</html>

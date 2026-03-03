@@ -1,0 +1,42 @@
+{
+  "updated": "2026-03-03",
+  "challenges": [
+    {
+      "id": "random-perks",
+      "name": "Random perks",
+      "enabled": true,
+      "killerWhitelist": [],
+      "killerBlacklist": [],
+      "notes": "Use NightLight below if you want a generator."
+    },
+    {
+      "id": "no-perks",
+      "name": "No perks",
+      "enabled": true,
+      "killerWhitelist": [],
+      "killerBlacklist": ["nurse"],
+      "notes": "Too sweaty on Nurse (for now)."
+    },
+    { "id": "only-brown-addons", "name": "Only brown add-ons", "enabled": true, "killerWhitelist": [], "killerBlacklist": [] },
+    { "id": "only-m1", "name": "M1 only (no power unless required)", "enabled": true, "killerWhitelist": [], "killerBlacklist": [] },
+    { "id": "only-m2", "name": "M2 only", "enabled": true, "killerWhitelist": [], "killerBlacklist": [] },
+    { "id": "obsession-focus", "name": "Obsession focus", "enabled": true, "killerWhitelist": [], "killerBlacklist": [] },
+    {
+      "id": "basement-only-hooks",
+      "name": "Basement-only hooks (if possible)",
+      "enabled": false,
+      "why": "Too RNG for now",
+      "killerWhitelist": [],
+      "killerBlacklist": []
+    },
+    { "id": "two-hooks-then-let-go", "name": "2-hook everyone then chill", "enabled": true, "killerWhitelist": [], "killerBlacklist": [] },
+    { "id": "meme-build", "name": "Meme build (viewer picks theme)", "enabled": true, "killerWhitelist": [], "killerBlacklist": [] }
+  ],
+  "external": [
+    {
+      "id": "nightlight-buildchallenge",
+      "name": "NightLight Build Challenge",
+      "url": "https://nightlight.gg/buildchallenge"
+    }
+  ]
+}
