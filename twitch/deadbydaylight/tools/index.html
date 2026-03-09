@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>DBD Tools</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../assets/nightlight-base.css">
+<link rel="stylesheet" href="../assets/tools.css">
+</head>
+<body class="nl-skin" data-page="tools">
+  <div class="page-shell _mainContainer_7rqgy_250" id="main">
+    <div class="topnav">
+      <a class="brand" href="/twitch/deadbydaylight/">Dead by Daylight</a>
+      <a class="navpill active" href="/twitch/deadbydaylight/tools/">Tools</a>
+      <a class="navpill" href="/twitch/deadbydaylight/unlocks/">Unlocks</a>
+    </div>
+
+    <div class="_card_1ohwe_288 hero-card mb-3">
+      <div class="hero-inner">
+        <h1 class="hero-title">Random Build Generator</h1>
+        <div class="hero-sub">Dead by Daylight random builds with survivor and killer loadouts.</div>
+      </div>
+    </div>
+
+    <div class="row g-3 mt-0">
+      <div class="col-12 col-xl-8">
+        <div class="row g-3">
+          <div class="col-12 col-lg-6">
+            <div class="_card_1ohwe_288">
+              <div class="_header_1ohwe_302"><h5>Unique Survivor Build</h5></div>
+              <div class="_cardBody_1ohwe_316 pt-0 cb-card d-flex flex-column">
+                <div class="d-flex flex-column flex-grow-1" id="survivor-build"></div>
+                <div class="text-center mt-2"><button class="btn btn-sm w-100" id="refresh-survivor" type="button">Refresh</button></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-lg-6">
+            <div class="_card_1ohwe_288">
+              <div class="_header_1ohwe_302"><h5>Unique Killer Build</h5></div>
+              <div class="_cardBody_1ohwe_316 pt-0 cb-card d-flex flex-column">
+                <div class="d-flex flex-column flex-grow-1" id="killer-build"></div>
+                <div class="text-center mt-2"><button class="btn btn-sm w-100" id="refresh-killer" type="button">Refresh</button></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-xl-4">
+        <div class="panel-stack">
+          <div class="_card_1ohwe_288">
+            <div class="_header_1ohwe_302 d-flex justify-content-between"><h5 class="mb-0">Loaded Pool</h5><h5 class="mb-0" id="pool-total">0</h5></div>
+            <div class="_cardBody_1ohwe_316">
+              <div class="info-grid">
+                <div class="info-box"><div class="label">Survivor perks</div><div class="value" id="count-survivor">0</div></div>
+                <div class="info-box"><div class="label">Killer perks</div><div class="value" id="count-killer">0</div></div>
+                <div class="info-box"><div class="label">Characters owned</div><div class="value" id="count-owned-chars">0</div></div>
+              </div>
+              <div class="legend">
+                <span class="pill">T1 green</span>
+                <span class="pill">T2 blue</span>
+                <span class="pill">T3 purple</span>
+              </div>
+            </div>
+          </div>
+          <div class="_card_1ohwe_288">
+            <div class="_header_1ohwe_302"><h5 class="mb-0">Catalog</h5></div>
+            <div class="_cardBody_1ohwe_316">
+              <div class="info-grid">
+                <div class="info-box"><div class="label">General survivor</div><div class="value" id="count-general-survivor">0</div></div>
+                <div class="info-box"><div class="label">General killer</div><div class="value" id="count-general-killer">0</div></div>
+                <div class="info-box"><div class="label">Total perks</div><div class="value" id="count-total-perks">0</div></div>
+              </div>
+            </div>
+          </div>
+          <div class="_card_1ohwe_288">
+            <div class="_header_1ohwe_302"><h5 class="mb-0">Unlock Viewer</h5></div>
+            <div class="_cardBody_1ohwe_316">
+              <p class="helper mb-2">View survivors, killers, prestige, and perk tiers in one place.</p>
+              <a class="btn btn-sm w-100" href="/twitch/deadbydaylight/unlocks/">Open Unlock Viewer</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<script src="../assets/tools.js"></script>
+</body>
+</html>

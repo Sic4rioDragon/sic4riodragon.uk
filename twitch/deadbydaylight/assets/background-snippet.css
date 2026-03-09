@@ -1,0 +1,11 @@
+/* Drop this into the shared CSS used by /deadbydaylight and /twitch pages */
+body {
+  background-color: #000;
+  background-image:
+    linear-gradient(rgba(0,0,0,.72), rgba(0,0,0,.82)),
+    url('/assets/general.png');
+  background-position: center center, center center;
+  background-size: auto, cover;
+  background-repeat: repeat, no-repeat;
+  background-attachment: scroll, fixed;
+}

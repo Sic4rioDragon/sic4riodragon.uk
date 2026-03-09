@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>DBD Unlocks</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../assets/nightlight-base.css">
+<link rel="stylesheet" href="../assets/tools.css">
+</head>
+<body class="nl-skin" data-page="unlocks">
+  <div class="page-shell _mainContainer_7rqgy_250" id="main">
+    <div class="topnav">
+      <a class="brand" href="/twitch/deadbydaylight/">Dead by Daylight</a>
+      <a class="navpill" href="/twitch/deadbydaylight/tools/">Tools</a>
+      <a class="navpill active" href="/twitch/deadbydaylight/unlocks/">Unlocks</a>
+    </div>
+
+    <div class="mb-3 page-intro">
+      <h1>Unlocks</h1>
+      <span class="text-muted mb-3">Keep track of unlocked perks and characters.</span>
+    </div>
+
+    <div class="_card_1ohwe_288 mb-4">
+      <div class="_cardBody_1ohwe_316">
+        <div class="row g-3 mt-1">
+          <div class="col-12 col-lg-8"><input id="search-box" class="form-control" placeholder="Search character or perk"></div>
+          <div class="col-6 col-lg-2"><input id="prestige-min" class="form-control" type="number" min="0" max="100" placeholder="Prestige min"></div>
+          <div class="col-6 col-lg-2"><input id="prestige-max" class="form-control" type="number" min="0" max="100" placeholder="Prestige max"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-head">
+      <div>
+        <h2>General Survivor Perks</h2>
+        <div class="sub">General survivor perks.</div>
+      </div>
+    </div>
+    <div id="general-survivor-grid" class="grid-cards general-grid"></div>
+
+    <div class="section-head">
+      <div>
+        <h2>Survivors</h2>
+        <div class="sub" id="survivor-subline">Loading…</div>
+      </div>
+    </div>
+    <div id="survivor-grid" class="grid-cards"></div>
+
+    <div class="section-head">
+      <div>
+        <h2>General Killer Perks</h2>
+        <div class="sub">General killer perks.</div>
+      </div>
+    </div>
+    <div id="general-killer-grid" class="grid-cards general-grid"></div>
+
+    <div class="section-head">
+      <div>
+        <h2>Killers</h2>
+        <div class="sub" id="killer-subline">Loading…</div>
+      </div>
+    </div>
+    <div id="killer-grid" class="grid-cards"></div>
+  </div>
+<script src="../assets/tools.js"></script>
+</body>
+</html>
