@@ -1,104 +1,105 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dead by Daylight Achievements</title>
-  <meta name="description" content="Track locked Dead by Daylight survivor and killer achievements on sic4riodragon.uk." />
-  <link rel="stylesheet" href="./achievements.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Achievements • Dead by Daylight • Sic4rioDragon</title>
+  <meta name="description" content="Sic4rioDragon's Dead by Daylight achievements tracker.">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="./achievements.css">
 </head>
 <body>
-  <div class="bg"></div>
-  <div class="bg-overlay"></div>
+  <div class="page-bg"></div>
 
-  <main class="site-shell">
-    <header class="titleblock">
-      <div class="title-row">
-        <a class="title-avatar-link" href="/deadbydaylight/" title="Go to Dead by Daylight home">
-          <img class="title-avatar" src="/deadbydaylight/assets/img/yui.png" alt="Dead by Daylight survivor" loading="eager" />
-        </a>
-
-        <div class="title-text">
-          <p class="eyebrow">sic4riodragon.uk / deadbydaylight</p>
-          <h1>Achievements</h1>
-          <p>Locked achievements tracker for survivors and killers.</p>
-        </div>
-
-        <a class="title-avatar-link" href="/deadbydaylight/killers.html" title="Go to Killers">
-          <img class="title-avatar" src="/deadbydaylight/assets/img/huntress.png" alt="Dead by Daylight killer" loading="eager" />
-        </a>
+  <main class="page-shell">
+    <section class="hero">
+      <div class="hero-art hero-art-left" aria-hidden="true">
+        <img src="/deadbydaylight/assets/img/yui.png" alt="">
       </div>
 
-      <nav class="topnav" aria-label="Dead by Daylight navigation">
-        <a href="/deadbydaylight/">Home</a>
-        <a href="/deadbydaylight/survivors.html">Survivors</a>
-        <a href="/deadbydaylight/killers.html">Killers</a>
-        <a href="/deadbydaylight/challenges/">Challenges</a>
-        <a class="active" href="/deadbydaylight/achievements/">Achievements</a>
-      </nav>
-    </header>
+      <div class="hero-copy">
+        <div class="eyebrow">SIC4RIODRAGON.UK / DEADBYDAYLIGHT</div>
+        <h1>Achievements</h1>
+        <p class="subtitle">Sic4rioDragon's locked achievements</p>
 
-    <section class="notice cardish">
-      <p>
-        This page is built as a <strong>missing achievements tracker</strong>. Edit the JSON and change
-        <code>"unlocked": false</code> to <code>"unlocked": true</code> and that achievement will disappear from the page.
-      </p>
-    </section>
-
-    <section class="toolbar cardish">
-      <input id="search" type="search" placeholder="Search achievements, characters, descriptions..." />
-      <label class="toggle">
-        <input id="showProgress" type="checkbox" checked />
-        <span>Show progress</span>
-      </label>
-    </section>
-
-    <section class="section cardish">
-      <div class="section-head">
-        <div>
-          <p class="section-kicker">First section</p>
-          <h2>Survivor Achievements</h2>
-        </div>
-        <span id="survivorCount" class="count"></span>
+        <nav class="hero-nav" aria-label="Dead by Daylight">
+          <a href="/deadbydaylight/">Home</a>
+          <a href="/deadbydaylight/survivors.html">Survivors</a>
+          <a href="/deadbydaylight/">Killers</a>
+          <a href="/deadbydaylight/challenges/">Challenges</a>
+          <a class="active" href="/deadbydaylight/achievements/">Achievements</a>
+        </nav>
       </div>
-      <div id="survivorGroups" class="groups"></div>
+
+      <div class="hero-art hero-art-right" aria-hidden="true">
+        <img src="/deadbydaylight/assets/img/huntress.png" alt="">
+      </div>
     </section>
 
-    <section class="section cardish">
-      <div class="section-head">
-        <div>
-          <p class="section-kicker">Second section</p>
-          <h2>Killer Achievements</h2>
+    <section class="toolbar card">
+      <div class="stats">
+        <div class="stat">
+          <span class="stat-label">Unlocked</span>
+          <strong id="countUnlocked">0</strong>
         </div>
-        <span id="killerCount" class="count"></span>
+        <div class="stat">
+          <span class="stat-label">Locked</span>
+          <strong id="countLocked">0</strong>
+        </div>
+        <div class="stat">
+          <span class="stat-label">Shown</span>
+          <strong id="countShown">0</strong>
+        </div>
       </div>
-      <div id="killerGroups" class="groups"></div>
+
+      <div class="toolbar-actions">
+        <label class="search-wrap">
+          <span>Search</span>
+          <input id="searchInput" type="search" placeholder="achievement, chapter, adept...">
+        </label>
+
+        <label class="check">
+          <input id="toggleUnlocked" type="checkbox">
+          <span>Show unlocked</span>
+        </label>
+      </div>
+    </section>
+
+    <section class="summary-grid">
+      <article class="card summary-card">
+        <div class="summary-head">
+          <h2>Survivor summary</h2>
+          <span id="survivorSummaryCounts">0 locked</span>
+        </div>
+        <div id="survivorSummary" class="summary-list"></div>
+      </article>
+
+      <article class="card summary-card">
+        <div class="summary-head">
+          <h2>Killer summary</h2>
+          <span id="killerSummaryCounts">0 locked</span>
+        </div>
+        <div id="killerSummary" class="summary-list"></div>
+      </article>
+    </section>
+
+    <section class="content-area">
+      <article class="card">
+        <div class="section-head">
+          <h2>Survivor achievements</h2>
+        </div>
+        <div id="survivorSections" class="section-stack"></div>
+      </article>
+
+      <article class="card">
+        <div class="section-head">
+          <h2>Killer achievements</h2>
+        </div>
+        <div id="killerSections" class="section-stack"></div>
+      </article>
     </section>
   </main>
-
-  <template id="groupTemplate">
-    <section class="group">
-      <button class="group-title" type="button"></button>
-      <div class="cards"></div>
-    </section>
-  </template>
-
-  <template id="cardTemplate">
-    <article class="achievement-card">
-      <div class="card-top">
-        <div class="thumb fallback" aria-hidden="true"></div>
-        <div class="meta">
-          <p class="character"></p>
-          <h3></h3>
-          <p class="desc"></p>
-        </div>
-      </div>
-      <div class="progress-row">
-        <span class="progress-text"></span>
-        <div class="progress-bar"><div class="progress-fill"></div></div>
-      </div>
-    </article>
-  </template>
 
   <script src="./achievements.js"></script>
 </body>

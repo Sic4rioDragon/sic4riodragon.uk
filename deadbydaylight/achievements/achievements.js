@@ -1,145 +1,208 @@
-const survivorUrl = "./survivors.json";
-const killerUrl = "./killers.json";
+const survivorsUrl = './survivors.json';
+const killersUrl = './killers.json';
 
-const searchEl = document.getElementById("search");
-const showProgressEl = document.getElementById("showProgress");
-const survivorGroupsEl = document.getElementById("survivorGroups");
-const killerGroupsEl = document.getElementById("killerGroups");
-const survivorCountEl = document.getElementById("survivorCount");
-const killerCountEl = document.getElementById("killerCount");
-const groupTemplate = document.getElementById("groupTemplate");
-const cardTemplate = document.getElementById("cardTemplate");
+const els = {
+  countUnlocked: document.getElementById('countUnlocked'),
+  countLocked: document.getElementById('countLocked'),
+  countShown: document.getElementById('countShown'),
+  survivorSummary: document.getElementById('survivorSummary'),
+  killerSummary: document.getElementById('killerSummary'),
+  survivorSummaryCounts: document.getElementById('survivorSummaryCounts'),
+  killerSummaryCounts: document.getElementById('killerSummaryCounts'),
+  survivorSections: document.getElementById('survivorSections'),
+  killerSections: document.getElementById('killerSections'),
+  searchInput: document.getElementById('searchInput'),
+  toggleUnlocked: document.getElementById('toggleUnlocked')
+};
 
-let state = { survivors: null, killers: null };
+let state = {
+  search: '',
+  showUnlocked: false,
+  survivors: null,
+  killers: null
+};
 
-function escapeHtml(value) {
-  return String(value)
-    .replaceAll("&", "&amp;")
-    .replaceAll("<", "&lt;")
-    .replaceAll(">", "&gt;")
-    .replaceAll('"', "&quot;")
-    .replaceAll("'", "&#39;");
+function normalize(value) {
+  return String(value || '').toLowerCase();
 }
 
-function makeThumb(achievement) {
-  const image = achievement.image;
-  if (image) {
-    const img = document.createElement("img");
-    img.className = "thumb";
-    img.src = image;
-    img.alt = achievement.name;
-    img.onerror = () => img.replaceWith(makeFallbackThumb(achievement.name));
-    return img;
-  }
-  return makeFallbackThumb(achievement.name);
+function matchesSearch(item, search) {
+  if (!search) return true;
+  const haystack = [
+    item.title,
+    item.description,
+    item.chapter,
+    item.section,
+    item.progress?.label
+  ].join(' ').toLowerCase();
+  return haystack.includes(search);
 }
 
-function makeFallbackThumb(name) {
-  const div = document.createElement("div");
-  div.className = "thumb fallback";
-  div.textContent = (name || "?").trim().charAt(0).toUpperCase();
-  return div;
-}
-
-function makeEmptyState(text) {
-  const div = document.createElement("div");
-  div.className = "empty-state";
-  div.textContent = text;
-  return div;
-}
-
-function renderSide(data, mountEl, countEl) {
-  mountEl.innerHTML = "";
-  const query = searchEl.value.trim().toLowerCase();
-  const showProgress = showProgressEl.checked;
-
-  let visibleCount = 0;
-  let visibleGroups = 0;
-
-  data.groups.forEach(group => {
-    const visibleAchievements = group.achievements.filter(a => {
-      if (a.unlocked) return false;
-      const haystack = [
-        group.character,
-        a.character,
-        a.name,
-        a.description,
-        a.progress?.current,
-        a.progress?.target
-      ].join(" ").toLowerCase();
-      return !query || haystack.includes(query);
-    });
-
-    if (!visibleAchievements.length) return;
-    visibleGroups += 1;
-    visibleCount += visibleAchievements.length;
-
-    const groupNode = groupTemplate.content.firstElementChild.cloneNode(true);
-    const titleBtn = groupNode.querySelector(".group-title");
-    const cardsEl = groupNode.querySelector(".cards");
-    titleBtn.textContent = `${group.character} (${visibleAchievements.length})`;
-
-    visibleAchievements.forEach(a => {
-      const card = cardTemplate.content.firstElementChild.cloneNode(true);
-      card.querySelector(".thumb")?.remove();
-      card.querySelector(".card-top").prepend(makeThumb(a));
-      card.querySelector(".character").textContent = a.character || group.character || "Unknown";
-      card.querySelector("h3").textContent = a.name;
-      card.querySelector(".desc").textContent = a.description;
-
-      const progressText = a.progress
-        ? `${a.progress.percent}% — ${a.progress.current} / ${a.progress.target}`
-        : "No progress data";
-      card.querySelector(".progress-text").textContent = progressText;
-      card.querySelector(".progress-fill").style.width = `${Math.min(a.progress?.percent || 0, 100)}%`;
-
-      if (!showProgress) {
-        card.querySelector(".progress-row").classList.add("hidden");
+function getVisibleItems(data) {
+  const visible = [];
+  for (const section of data.sections) {
+    for (const item of section.items) {
+      const passesUnlocked = state.showUnlocked ? true : !item.unlocked;
+      if (passesUnlocked && matchesSearch(item, state.search)) {
+        visible.push(item);
       }
-
-      cardsEl.appendChild(card);
-    });
-
-    titleBtn.addEventListener("click", () => {
-      cardsEl.classList.toggle("hidden");
-    });
-
-    mountEl.appendChild(groupNode);
-  });
-
-  if (!visibleCount) {
-    mountEl.appendChild(makeEmptyState("No locked achievements match the current filters."));
+    }
   }
+  return visible;
+}
 
-  countEl.textContent = `${visibleCount} shown in ${visibleGroups} groups`;
+function countLocked(items) {
+  return items.filter(item => !item.unlocked).length;
+}
+
+function countUnlocked(items) {
+  return items.filter(item => item.unlocked).length;
+}
+
+function renderSummary(target, data, labelTarget) {
+  const items = data.sections.flatMap(section => section.items);
+  const locked = countLocked(items);
+
+  labelTarget.textContent = `${locked} locked`;
+
+  const rows = data.sections
+    .map(section => {
+      const lockedInSection = section.items.filter(item => !item.unlocked).length;
+      return { title: section.title, locked: lockedInSection };
+    })
+    .filter(row => row.locked > 0)
+    .sort((a, b) => {
+      if (a.title === 'Adept') return -1;
+      if (b.title === 'Adept') return 1;
+      return b.locked - a.locked;
+    });
+
+  target.innerHTML = rows.length
+    ? rows.map(row => `
+        <div class="summary-row">
+          <strong>${escapeHtml(row.title)}</strong>
+          <span>${row.locked} locked</span>
+        </div>
+      `).join('')
+    : '<div class="empty">No locked achievements.</div>';
+}
+
+function renderSections(target, data) {
+  const html = data.sections.map(section => {
+    const items = section.items.filter(item => {
+      const passesUnlocked = state.showUnlocked ? true : !item.unlocked;
+      return passesUnlocked && matchesSearch(item, state.search);
+    });
+
+    if (!items.length) return '';
+
+    const sortedItems = [...items].sort((a, b) => {
+      if (a.unlocked !== b.unlocked) return a.unlocked - b.unlocked;
+      return a.title.localeCompare(b.title);
+    });
+
+    return `
+      <section class="subsection">
+        <div class="subsection-head">
+          <h3>${escapeHtml(section.title)}</h3>
+          <span>${items.length} shown</span>
+        </div>
+
+        <div class="achievement-list">
+          ${sortedItems.map(renderAchievement).join('')}
+        </div>
+      </section>
+    `;
+  }).filter(Boolean).join('');
+
+  target.innerHTML = html || '<div class="empty">No achievements match the current filters.</div>';
+}
+
+function renderAchievement(item) {
+  const stateText = item.unlocked ? 'Unlocked' : 'Locked';
+  const progressText = item.progress?.label || (item.unlocked ? '1 / 1' : '0 / 1');
+  const icon = item.icon || '/deadbydaylight/assets/img/placeholder.png';
+
+  return `
+    <article class="achievement">
+      <img src="${escapeAttribute(icon)}" alt="${escapeAttribute(item.title)}" loading="lazy">
+      <div>
+        <h4 class="achievement-title">${escapeHtml(item.title)}</h4>
+        <p>${escapeHtml(item.description)}</p>
+        <div class="achievement-meta">
+          <span class="badge">${escapeHtml(item.chapter)}</span>
+          ${item.section !== 'General' ? `<span class="badge">${escapeHtml(item.section)}</span>` : ''}
+        </div>
+      </div>
+      <div class="achievement-side">
+        <div class="progress">${escapeHtml(progressText)}</div>
+        <div class="state">${stateText}</div>
+      </div>
+    </article>
+  `;
+}
+
+function updateTotals() {
+  const allItems = [
+    ...state.survivors.sections.flatMap(section => section.items),
+    ...state.killers.sections.flatMap(section => section.items)
+  ];
+
+  const visibleItems = [
+    ...getVisibleItems(state.survivors),
+    ...getVisibleItems(state.killers)
+  ];
+
+  els.countUnlocked.textContent = countUnlocked(allItems);
+  els.countLocked.textContent = countLocked(allItems);
+  els.countShown.textContent = visibleItems.length;
 }
 
 function render() {
-  if (!state.survivors || !state.killers) return;
-  renderSide(state.survivors, survivorGroupsEl, survivorCountEl);
-  renderSide(state.killers, killerGroupsEl, killerCountEl);
+  renderSummary(els.survivorSummary, state.survivors, els.survivorSummaryCounts);
+  renderSummary(els.killerSummary, state.killers, els.killerSummaryCounts);
+  renderSections(els.survivorSections, state.survivors);
+  renderSections(els.killerSections, state.killers);
+  updateTotals();
+}
+
+function escapeHtml(value) {
+  return String(value)
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&#39;');
+}
+
+function escapeAttribute(value) {
+  return escapeHtml(value);
 }
 
 async function init() {
   const [survivors, killers] = await Promise.all([
-    fetch(survivorUrl).then(r => {
-      if (!r.ok) throw new Error(`Failed to load survivors.json (${r.status})`);
-      return r.json();
-    }),
-    fetch(killerUrl).then(r => {
-      if (!r.ok) throw new Error(`Failed to load killers.json (${r.status})`);
-      return r.json();
-    })
+    fetch(survivorsUrl).then(r => r.json()),
+    fetch(killersUrl).then(r => r.json())
   ]);
 
   state.survivors = survivors;
   state.killers = killers;
+
+  els.searchInput.addEventListener('input', (event) => {
+    state.search = normalize(event.target.value.trim());
+    render();
+  });
+
+  els.toggleUnlocked.addEventListener('change', (event) => {
+    state.showUnlocked = event.target.checked;
+    render();
+  });
+
   render();
 }
 
-searchEl.addEventListener("input", render);
-showProgressEl.addEventListener("change", render);
-init().catch(err => {
-  survivorGroupsEl.innerHTML = `<p class="empty-state">Failed to load achievements JSON.</p>`;
-  killerGroupsEl.innerHTML = `<p class="empty-state">${escapeHtml(err.message || String(err))}</p>`;
+init().catch(error => {
+  console.error(error);
+  els.survivorSections.innerHTML = '<div class="empty">Failed to load survivors.json.</div>';
+  els.killerSections.innerHTML = '<div class="empty">Failed to load killers.json.</div>';
 });
