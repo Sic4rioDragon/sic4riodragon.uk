@@ -3,7 +3,6 @@
   const ROOT = window.location.origin;
   const SITE_BASE = '/twitch/deadbydaylight';
   const DATA_BASE = '/deadbydaylight';
-
   const params = new URLSearchParams(window.location.search);
   const originKey = (params.get('origin') || '').toLowerCase();
 
@@ -11,7 +10,7 @@
     mercuryfallen: {
       profileUrl: `${ROOT}${DATA_BASE}/unlocks.mercuryfallen.json`,
       backUrl: 'https://mercuryfallen.org/challenges/',
-      backLabel: 'Back to Mercuryfallen Challenges'
+      backLabel: 'Back to Challenges'
     },
     default: {
       profileUrl: `${ROOT}${DATA_BASE}/unlocks.json`,
@@ -22,6 +21,8 @@
 
   const originConfig = ORIGIN_CONFIG[originKey] || ORIGIN_CONFIG.default;
   const CATALOG_URL = `${ROOT}${DATA_BASE}/catalog.json`;
+  const SURVIVORS_URL = `${ROOT}${DATA_BASE}/survivors.json`;
+  const KILLERS_URL = `${ROOT}${DATA_BASE}/killers.json`;
 
   function withOrigin(path) {
     const url = new URL(`${ROOT}${path}`);
@@ -53,7 +54,87 @@
     }
   }
 
-  const [catalog, unlocks] = await Promise.all([
+  function normalizeName(value) {
+    return String(value || '')
+      .normalize('NFKD')
+      .replace(/[^\w\s.-]/g, '')
+      .replace(/\s+/g, '_')
+      .trim();
+  }
+
+  function normalizeCompare(value) {
+    return String(value || '')
+      .normalize('NFKD')
+      .replace(/[^\w\s]/g, '')
+      .replace(/\s+/g, ' ')
+      .trim()
+      .toLowerCase();
+  }
+
+  function absolutize(url) {
+    if (!url) return '';
+    if (/^https?:\/\//i.test(url)) return url;
+    if (url.startsWith('/')) return `${ROOT}${url}`;
+    return `${ROOT}/${url.replace(/^\.?\//, '')}`;
+  }
+
+  function collectPortraitMap(payload, type) {
+    const result = new Map();
+
+    const addEntry = (entry) => {
+      if (!entry || typeof entry !== 'object') return;
+
+      const rawName =
+        entry.name ||
+        entry.character ||
+        entry.title ||
+        entry.slug ||
+        entry.id ||
+        '';
+
+      const rawImg =
+        entry.img ||
+        entry.image ||
+        entry.icon ||
+        entry.portrait ||
+        entry.avatar ||
+        '';
+
+      if (!rawName || !rawImg) return;
+
+      const absolute = absolutize(rawImg);
+      const slugKey = normalizeName(rawName);
+      const compareKey = normalizeCompare(rawName);
+
+      if (slugKey) result.set(slugKey, absolute);
+      if (compareKey) result.set(compareKey, absolute);
+    };
+
+    if (Array.isArray(payload)) {
+      payload.forEach(addEntry);
+      return result;
+    }
+
+    if (payload && Array.isArray(payload[type])) {
+      payload[type].forEach(addEntry);
+      return result;
+    }
+
+    if (payload && Array.isArray(payload.characters)) {
+      payload.characters.forEach(addEntry);
+      return result;
+    }
+
+    if (payload && typeof payload === 'object') {
+      Object.values(payload).forEach(value => {
+        if (Array.isArray(value)) value.forEach(addEntry);
+      });
+    }
+
+    return result;
+  }
+
+  const [catalog, unlocks, survivorsData, killersData] = await Promise.all([
     fetch(CATALOG_URL).then(r => r.json()),
     fetch(originConfig.profileUrl, { cache: 'no-store' })
       .then(r => {
@@ -65,10 +146,26 @@
         displayName: 'Missing profile',
         characters: {},
         generalPerks: { survivor: {}, killer: {} }
-      }))
+      })),
+    fetch(SURVIVORS_URL).then(r => (r.ok ? r.json() : [])).catch(() => []),
+    fetch(KILLERS_URL).then(r => (r.ok ? r.json() : [])).catch(() => [])
   ]);
 
   const perkById = new Map(catalog.perks.map(p => [p.id, p]));
+
+  const portraitMap = new Map([
+    ['Yui_Kimura', 'https://sic4riodragon.uk/deadbydaylight/assets/img/yui.png'],
+    ['yui kimura', 'https://sic4riodragon.uk/deadbydaylight/assets/img/yui.png'],
+    ['Huntress', 'https://sic4riodragon.uk/deadbydaylight/assets/img/huntress.png'],
+    ['huntress', 'https://sic4riodragon.uk/deadbydaylight/assets/img/huntress.png']
+  ]);
+
+  for (const [key, value] of collectPortraitMap(survivorsData, 'survivors')) {
+    portraitMap.set(key, value);
+  }
+  for (const [key, value] of collectPortraitMap(killersData, 'killers')) {
+    portraitMap.set(key, value);
+  }
 
   function characterState(characterOrSlug) {
     const slug = typeof characterOrSlug === 'string' ? characterOrSlug : characterOrSlug?.slug;
@@ -92,27 +189,77 @@
     return Math.max(explicit, prestigeTier);
   }
 
-  function resolvePerkImage(perk, tier) {
-    if (tier >= 3 && perk.snogglesOutputUrl) return perk.snogglesOutputUrl;
-    if (perk.snogglesInputUrl) return perk.snogglesInputUrl;
-    return perk.nightlight85Url || '';
+  function resolvePerkImageSet(perk, tier) {
+    const sources = [];
+    if (tier >= 3 && perk.snogglesOutputUrl) sources.push(perk.snogglesOutputUrl);
+    if (perk.snogglesInputUrl) sources.push(perk.snogglesInputUrl);
+    if (perk.nightlight85Url) sources.push(perk.nightlight85Url);
+    return sources.filter(Boolean);
   }
+
+  function characterPortraitUrl(character) {
+    if (character.portraitUrl) return character.portraitUrl;
+
+    const slugKey = normalizeName(character.slug);
+    const nameKey = normalizeCompare(character.name);
+
+    if (portraitMap.has(slugKey)) return portraitMap.get(slugKey);
+    if (portraitMap.has(nameKey)) return portraitMap.get(nameKey);
+
+    return `${ROOT}${DATA_BASE}/assets/img/${encodeURIComponent(character.slug)}.png`;
+  }
+
+  window.handlePerkImageError = function handlePerkImageError(img) {
+    const fallbacks = (img.dataset.fallbacks || '').split('|').filter(Boolean);
+    const next = fallbacks.shift();
+    img.dataset.fallbacks = fallbacks.join('|');
+    if (next) {
+      img.src = next;
+    } else {
+      img.onerror = null;
+    }
+  };
+
+  window.handlePortraitError = function handlePortraitError(img) {
+    img.onerror = null;
+    img.closest('.char-portrait-wrap')?.classList.add('is-missing');
+    img.remove();
+  };
 
   function perkTierBadge(tier) {
     return `<span class="perk-tier-badge badge-t${tier}">T${tier}</span>`;
   }
 
   function perkOwnerLabel(perk) {
-    if (perk.general) return perk.role === 'survivor' ? 'General Survivor Perks' : 'General Killer Perks';
+    if (perk.general) {
+      return perk.role === 'survivor' ? 'General Survivor Perks' : 'General Killer Perks';
+    }
     return perk.characterName;
+  }
+
+  function escapeHtml(text) {
+    return String(text ?? '').replace(/[&<>"']/g, c => (
+      { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]
+    ));
+  }
+
+  function escapeAttr(text) {
+    return escapeHtml(text);
+  }
+
+  function perkImg(perk, tier) {
+    const sources = resolvePerkImageSet(perk, tier);
+    const primary = sources.shift() || '';
+    const fallbacks = sources.join('|');
+
+    return `<img class="perk-art t${tier}" src="${primary}" data-fallbacks="${fallbacks}" alt="${escapeHtml(perk.name)}" onerror="handlePerkImageError(this)">`;
   }
 
   function makePerkRow(perk) {
     const tier = tierOf(perk);
-    const imgSrc = resolvePerkImage(perk, tier);
     return `
       <div class="perk-row">
-        <img class="perk-art t${tier}" src="${imgSrc}" alt="${escapeHtml(perk.name)}" onerror="this.onerror=null;this.src='${perk.nightlight85Url || ''}'">
+        ${perkImg(perk, tier)}
         <div class="perk-meta">
           <span class="perk-name">${escapeHtml(perk.name)}</span>
           <span class="perk-owner">${escapeHtml(perkOwnerLabel(perk))}</span>
@@ -123,11 +270,10 @@
 
   function perkTile(perk) {
     const tier = tierOf(perk);
-    const imgSrc = resolvePerkImage(perk, tier);
     return `
       <div class="teachable_container">
-        <div class="teachable">
-          <img class="perk-art t${tier}" src="${imgSrc}" alt="${escapeHtml(perk.name)}" onerror="this.onerror=null;this.src='${perk.nightlight85Url || ''}'">
+        <div class="teachable t${tier}">
+          ${perkImg(perk, tier)}
         </div>
         <span class="teachable_label">${escapeHtml(perk.name)}<br><span class="small-note">T${tier}</span></span>
       </div>`;
@@ -142,7 +288,7 @@
           <span class="prestige-pill">${perks.length} perks</span>
         </div>
         <div class="_cardBody_1ohwe_316">
-          <div class="teachable_wrap">${items}</div>
+          <div class="teachable_wrap teachable_wrap--general">${items}</div>
         </div>
       </div>`;
   }
@@ -150,8 +296,18 @@
   function characterCard(character) {
     const state = characterState(character);
     const owned = characterOwned(character);
-    const perkNames = character.perkIds.map(id => (perkById.get(id) || {}).name || '').filter(Boolean);
-    const items = character.perkIds.map(id => perkById.get(id)).filter(Boolean).map(perkTile).join('');
+    const perkNames = character.perkIds
+      .map(id => (perkById.get(id) || {}).name || '')
+      .filter(Boolean);
+
+    const items = character.perkIds
+      .map(id => perkById.get(id))
+      .filter(Boolean)
+      .map(perkTile)
+      .join('');
+
+    const portrait = characterPortraitUrl(character);
+
     return `
       <div class="_card_1ohwe_288 h-100 char-card"
            data-char-name="${escapeAttr(character.name)}"
@@ -160,25 +316,21 @@
            data-prestige="${Number(state.prestige || 0)}">
         <div class="_header_1ohwe_302">
           <div class="char-header">
-            <span class="h5 mb-0 me-2">${escapeHtml(character.name)}</span>
-            <span class="${owned ? 'owned-pill is-on' : 'owned-pill'}">${owned ? 'Owned' : 'Locked'}</span>
+            <div class="char-title-wrap">
+              <span class="h5 mb-0 me-2">${escapeHtml(character.name)}</span>
+              <span class="${owned ? 'owned-pill is-on' : 'owned-pill'}">${owned ? 'Owned' : 'Locked'}</span>
+            </div>
             <span class="prestige-pill">Prestige: ${Number(state.prestige || 0)}</span>
           </div>
         </div>
-        <div class="_cardBody_1ohwe_316">
-          <div class="teachable_wrap">${items}</div>
+        <div class="_cardBody_1ohwe_316 char-card-body">
+          <div class="char-portrait-wrap" aria-hidden="true">
+            <img class="char-portrait" src="${portrait}" alt="${escapeHtml(character.name)}" onerror="handlePortraitError(this)">
+            <div class="char-portrait-fallback">${escapeHtml(character.name)}</div>
+          </div>
+          <div class="char-perks teachable_wrap teachable_wrap--char">${items}</div>
         </div>
       </div>`;
-  }
-
-  function escapeHtml(text) {
-    return String(text ?? '').replace(/[&<>"']/g, c => (
-      { '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[c]
-    ));
-  }
-
-  function escapeAttr(text) {
-    return escapeHtml(text);
   }
 
   function shuffle(arr) {
@@ -259,10 +411,18 @@
     applyFilters();
   }
 
-  document.querySelectorAll('a.brand').forEach(el => el.href = localHref(`${SITE_BASE}/`));
-  document.querySelectorAll('a.navpill[href$="/tools/"]').forEach(el => el.href = localHref(`${SITE_BASE}/tools/`));
-  document.querySelectorAll('a.navpill[href$="/unlocks/"]').forEach(el => el.href = localHref(`${SITE_BASE}/unlocks/`));
-  document.querySelectorAll('a[href="/twitch/deadbydaylight/unlocks/"]').forEach(el => el.href = localHref(`${SITE_BASE}/unlocks/`));
+  document.querySelectorAll('a.brand').forEach(el => {
+    el.href = localHref(`${SITE_BASE}/`);
+  });
+  document.querySelectorAll('a.navpill[href$="/tools/"]').forEach(el => {
+    el.href = localHref(`${SITE_BASE}/tools/`);
+  });
+  document.querySelectorAll('a.navpill[href$="/unlocks/"]').forEach(el => {
+    el.href = localHref(`${SITE_BASE}/unlocks/`);
+  });
+  document.querySelectorAll('a[href="/twitch/deadbydaylight/unlocks/"]').forEach(el => {
+    el.href = localHref(`${SITE_BASE}/unlocks/`);
+  });
 
   createBackButton();
   updateCounts();
@@ -270,8 +430,14 @@
   if (page === 'tools') {
     renderBuild('survivor', 'survivor-build');
     renderBuild('killer', 'killer-build');
-    document.getElementById('refresh-survivor')?.addEventListener('click', () => renderBuild('survivor', 'survivor-build'));
-    document.getElementById('refresh-killer')?.addEventListener('click', () => renderBuild('killer', 'killer-build'));
+
+    document.getElementById('refresh-survivor')?.addEventListener('click', () => {
+      renderBuild('survivor', 'survivor-build');
+    });
+
+    document.getElementById('refresh-killer')?.addEventListener('click', () => {
+      renderBuild('killer', 'killer-build');
+    });
   }
 
   if (page === 'unlocks') {
