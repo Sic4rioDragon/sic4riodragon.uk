@@ -1,1227 +1,2213 @@
 {
-  "title": "Dead by Daylight Survivor Achievements",
-  "profile": "sic4riodragon",
-  "source": "NightLight saved HTML",
-  "groups": [
+  "title": "Survivors",
+  "sections": [
     {
-      "character": "General",
-      "achievements": [
+      "title": "Adept",
+      "items": [
         {
-          "id": "escape-artist",
-          "name": "Escape Artist",
-          "description": "In a public match, successfully escape the hook and escape.",
-          "unlocked": false,
-          "progress": {
-            "percent": 0.0,
-            "current": 0,
-            "target": 1
-          },
-          "image": "/deadbydaylight/assets/achievements/5be4a757b5f658a7b89b3e00cea5eb8ca7cc76bc.jpg"
-        },
-        {
-          "id": "gifts-for-the-fog",
-          "name": "Gifts for the Fog",
-          "description": "In a public match, burn an Ultra rare offering.",
-          "unlocked": false,
-          "progress": {
-            "percent": 0.0,
-            "current": 0,
-            "target": 1
-          },
-          "image": "/deadbydaylight/assets/achievements/9b1fad75511df38b2e6d53d312f6f9bb4c2794d7.jpg"
-        },
-        {
-          "id": "hemophobia",
-          "name": "Hemophobia",
-          "description": "In a public match, escape the Disturbed Ward without losing a single drop of blood.",
-          "unlocked": false,
-          "progress": {
-            "percent": 0.0,
-            "current": 0,
-            "target": 1
-          },
-          "image": "/deadbydaylight/assets/achievements/f1512ba444845601ffa4196b753715f29da3b50b.jpg"
-        },
-        {
-          "id": "shock-therapy",
-          "name": "Shock Therapy",
-          "description": "In a public match, repair the generator on the second floor of the Disturbed Ward and escape.",
-          "unlocked": false,
-          "progress": {
-            "percent": 0.0,
-            "current": 0,
-            "target": 1
-          },
-          "image": "/deadbydaylight/assets/achievements/57c108f16a691c05255ab71d719e9efcd5b1e932.jpg"
-        },
-        {
-          "id": "item-of-obsession",
-          "name": "Item of Obsession",
-          "description": "In a public match, as the killer's obsession, escape as the last survivor without getting hit.",
-          "unlocked": false,
-          "progress": {
-            "percent": 0.0,
-            "current": 0,
-            "target": 1
-          },
-          "image": "/deadbydaylight/assets/achievements/f5adbf0203e7eb3c77359d20cef240b4354ac199.jpg"
-        },
-        {
-          "id": "deep-cleansing",
-          "name": "Deep Cleansing",
-          "description": "In public matches, cleanse 100 Hex totems.",
-          "unlocked": false,
-          "progress": {
-            "percent": 6.0,
-            "current": 6,
-            "target": 100
-          },
-          "image": "/deadbydaylight/assets/achievements/d87488af3ab511a5ae29ca29b71ebb82a1e45294.jpg"
-        },
-        {
-          "id": "left-for-dead",
-          "name": "Left For Dead",
-          "description": "As the last person still alive, activate the last generator and escape through the exit gate.",
-          "unlocked": false,
-          "progress": {
-            "percent": 0.0,
-            "current": 0,
-            "target": 1
-          },
-          "image": "/deadbydaylight/assets/achievements/814b1d50bc7e00a74715e35d40942dba743b6822.jpg"
-        },
-        {
-          "id": "cottage-owner",
-          "name": "Cottage Owner",
-          "description": "In a public match, repair the generator in the Mother's Dwelling and live to tell the story.",
-          "unlocked": false,
-          "progress": {
-            "percent": 0.0,
-            "current": 0,
-            "target": 1
-          },
-          "image": "/deadbydaylight/assets/achievements/5877973b87bc553db12a9f760dd1716f7e6ed673.jpg"
-        },
-        {
-          "id": "milk-n-cookies",
-          "name": "Milk 'n' Cookies",
-          "description": "In a public match, take the item from the chest in the basement in at least 30 different trials.",
-          "unlocked": false,
-          "progress": {
-            "percent": 40.0,
-            "current": 12,
-            "target": 30
-          },
-          "image": "/deadbydaylight/assets/achievements/c35bc221745f4df633483089c476bc90002d8278.jpg"
-        },
-        {
-          "id": "happy-holidays",
-          "name": "Happy Holidays",
-          "description": "Open at least 100 mystery boxes on the bloodweb (available during select special events).",
-          "unlocked": false,
-          "progress": {
-            "percent": 0.0,
-            "current": 0,
-            "target": 100
-          },
-          "image": "/deadbydaylight/assets/achievements/15eefa7ededc2d5aaeb22874b7806327d33db4c7.jpg"
-        },
-        {
-          "id": "ancestors-rite",
-          "name": "Ancestor's Rite",
-          "description": "In a public match, repair the generator in the Family Residence and live to tell the tale.",
-          "unlocked": false,
-          "progress": {
-            "percent": 0.0,
-            "current": 0,
-            "target": 1
-          },
-          "image": "/deadbydaylight/assets/achievements/9c150a67d3388db5a2a7f480c25656dedf9a8e75.jpg"
-        },
-        {
-          "id": "not-today",
-          "name": "Not Today",
-          "description": "In public matches, unhook yourself 50 times.",
-          "unlocked": false,
-          "progress": {
-            "percent": 2.0,
-            "current": 1,
-            "target": 50
-          },
-          "image": "/deadbydaylight/assets/achievements/170c18c7481c0b80f4fca73ae8d560279668e410.jpg"
-        },
-        {
-          "id": "dismantle",
-          "name": "Dismantle",
-          "description": "In public matches, break a total of 50 individual Hooks.",
-          "unlocked": false,
-          "progress": {
-            "percent": 12.0,
-            "current": 6,
-            "target": 50
-          },
-          "image": "/deadbydaylight/assets/achievements/4145b46a45ce07f82ad232ff099daf56763aa2a7.jpg"
-        },
-        {
-          "id": "shrine-apparatus",
-          "name": "Shrine Apparatus",
-          "description": "In a public match, repair the generator in the Temple basement and live to tell the tale.",
-          "unlocked": false,
-          "progress": {
-            "percent": 0.0,
-            "current": 0,
-            "target": 1
-          },
-          "image": "/deadbydaylight/assets/achievements/57ab581fc7570425692211326a38058fa1f28dff.jpg"
-        },
-        {
-          "id": "outrun-evil",
-          "name": "Outrun Evil",
-          "description": "In a public match, crawl your way out through the hatch.",
-          "unlocked": false,
-          "progress": {
-            "percent": 0.0,
-            "current": 0,
-            "target": 1
-          },
-          "image": "/deadbydaylight/assets/achievements/1cc3c5e28f58ebbd83200a4824d2f3274e03cdf0.jpg"
-        },
-        {
-          "id": "expert-generalist",
-          "name": "Expert Generalist",
-          "description": "Escape 8 times while repairing the equivalent of 1 generator with only 2 universal perks equipped.",
-          "unlocked": false,
-          "progress": {
-            "percent": 0.0,
-            "current": 0,
-            "target": 8
-          },
-          "image": "/deadbydaylight/assets/achievements/e89aa9b92ad4d41d35d92304b276efd8f230cc87.jpg"
-        },
-        {
-          "id": "skilled-generalist",
-          "name": "Skilled Generalist",
-          "description": "Escape 8 times while repairing the equivalent of 1 generator with only 3 universal perks equipped.",
-          "unlocked": false,
-          "progress": {
-            "percent": 0.0,
-            "current": 0,
-            "target": 8
-          },
-          "image": "/deadbydaylight/assets/achievements/8751c8647d7decd1ea6f406217c270a44f5226c2.jpg"
-        },
-        {
-          "id": "old-west-oasis",
-          "name": "Old West Oasis",
-          "description": "In a public match, repair the generator in the Saloon and escape.",
-          "unlocked": false,
-          "progress": {
-            "percent": 0.0,
-            "current": 0,
-            "target": 1
-          },
-          "image": "/deadbydaylight/assets/achievements/d6d7760845581d4b2aa0101c9e1dd48cc0b4e81a.jpg"
-        },
-        {
-          "id": "classy-act",
-          "name": "Classy Act",
-          "description": "In a public match, repair the generator in Midwich School's music room or chem lab and escape.",
-          "unlocked": false,
-          "progress": {
-            "percent": 0.0,
-            "current": 0,
-            "target": 1
-          },
-          "image": "/deadbydaylight/assets/achievements/721fdec9429673c97b2afec963841c0915250cd6.jpg"
-        },
-        {
-          "id": "bless-you",
-          "name": "Bless You",
-          "description": "Bless a Hex totem 20 times in public matches.",
-          "unlocked": false,
-          "progress": {
-            "percent": 0.0,
-            "current": 0,
-            "target": 20
-          },
-          "image": "/deadbydaylight/assets/achievements/9900472dd423ebb7c87c5c050d532712448e95a2.jpg"
-        },
-        {
-          "id": "flight-to-freedom",
-          "name": "Flight to Freedom",
-          "description": "In a public match, repair the generator in the eyrie and escape.",
-          "unlocked": false,
-          "progress": {
-            "percent": 0.0,
-            "current": 0,
-            "target": 1
-          },
-          "image": "/deadbydaylight/assets/achievements/4e36af2ae6a87c5022929eabafa4a87b7864a716.jpg"
-        },
-        {
-          "id": "fleet-of-foot",
-          "name": "Fleet of Foot",
-          "description": "Help other Survivors by increasing their movement speed 50 times.",
-          "unlocked": false,
-          "progress": {
-            "percent": 0.0,
-            "current": 0,
-            "target": 50
-          },
-          "image": "/deadbydaylight/assets/achievements/0c51041a64a009995e00e64113dd9193b7f880d7.jpg"
-        },
-        {
-          "id": "outrun-the-overlap",
-          "name": "Outrun the Overlap",
-          "description": "In a public match, repair the generator in the main house in the Garden of Joy and escape.",
-          "unlocked": false,
-          "progress": {
-            "percent": 0.0,
-            "current": 0,
-            "target": 1
-          },
-          "image": "/deadbydaylight/assets/achievements/b120f700d21e19857fa6f6e3febff5ab8f03be90.jpg"
-        },
-        {
-          "id": "hiding-seeker",
-          "name": "Hiding Seeker",
-          "description": "In a public match, end a chase against any Killer by hiding inside a locker 35 times.",
-          "unlocked": false,
-          "progress": {
-            "percent": 14.3,
-            "current": 5,
-            "target": 35
-          },
-          "image": "/deadbydaylight/assets/achievements/9c5c2c2653a311acae08b7a92edc83d8f0e10372.jpg"
-        },
-        {
-          "id": "outbreak-breakout",
-          "name": "Outbreak Breakout",
-          "description": "Open the exit gates and escape from Raccoon City Police Department 20 times in public matches.",
-          "unlocked": false,
-          "progress": {
-            "percent": 0.0,
-            "current": 0,
-            "target": 20
-          },
-          "image": "/deadbydaylight/assets/achievements/632d2a8925d9b097f96abefd2ad7c7d25ffb26a0.jpg"
-        },
-        {
-          "id": "rebuilding-the-borgo",
-          "name": "Rebuilding The Borgo",
-          "description": "In a public match, repair the generator in the main house in the Shattered Square and escape.",
-          "unlocked": false,
-          "progress": {
-            "percent": 0.0,
-            "current": 0,
-            "target": 1
-          },
-          "image": "/deadbydaylight/assets/achievements/3a434e4e0230d7cfdcda878cb429336af7aa3014.jpg"
-        },
-        {
-          "id": "movie-buff",
-          "name": "Movie Buff",
-          "description": "In a public match, complete the generator inside the movie theater in Greenville Square and escape.",
-          "unlocked": false,
-          "progress": {
-            "percent": 0.0,
-            "current": 0,
-            "target": 1
-          },
-          "image": "/deadbydaylight/assets/achievements/0a947bcbdc9a85ea02b6a0a090e64d6993f6dafc.jpg"
-        },
-        {
-          "id": "dungeon-crawler",
-          "name": "Dungeon Crawler",
-          "description": "In a public match, complete the generator inside the torture room in the Forgotten Ruins and escape.",
-          "unlocked": false,
-          "progress": {
-            "percent": 0.0,
-            "current": 0,
-            "target": 1
-          },
-          "image": "/deadbydaylight/assets/achievements/d9c527d58d813b075ed952fba6b428c5bf4495ed.jpg"
-        },
-        {
-          "id": "hand-eye-coordination",
-          "name": "Hand-Eye Coordination",
-          "description": "Find and use the Hand or Eye of Vecna and escape a Trial.",
-          "unlocked": false,
-          "progress": {
-            "percent": 0.0,
-            "current": 0,
-            "target": 1
-          },
-          "image": "/deadbydaylight/assets/achievements/9722328da0ede8e7be6142ad087eaae61c3acdeb.jpg"
-        },
-        {
-          "id": "break-for-it",
-          "name": "Break For It",
-          "description": "In public matches, escape a match while being Broken a total of 5 times.",
-          "unlocked": false,
-          "progress": {
-            "percent": 0.0,
-            "current": 0,
-            "target": 5
-          },
-          "image": "/deadbydaylight/assets/achievements/d193f95913b746ba6fe70b841eb3f5b7c1ed41eb.jpg"
-        },
-        {
-          "id": "bloodied-hands",
-          "name": "Bloodied Hands",
-          "description": "In public matches, safely unhook Survivors while being Broken a total of 10 times.",
-          "unlocked": false,
-          "progress": {
-            "percent": 0.0,
-            "current": 0,
-            "target": 10
-          },
-          "image": "/deadbydaylight/assets/achievements/61c7f905ce5483e7e81219758503743bacac0605.jpg"
-        },
-        {
-          "id": "dont-open-dead-inside",
-          "name": "Don’t Open, Dead Inside",
-          "description": "In a public match, complete the generator at the Fallen Refuge and escape.",
-          "unlocked": false,
-          "progress": {
-            "percent": 0.0,
-            "current": 0,
-            "target": 1
-          },
-          "image": "/deadbydaylight/assets/achievements/bb4d134a0bfc4c3c7752916f1a7f2af7954b2e52.jpg"
-        }
-      ]
-    },
-    {
-      "character": "Jake",
-      "achievements": [
-        {
-          "id": "adept-jake",
-          "name": "Adept Jake",
+          "title": "Adept Jake",
           "description": "In a public match, escape with Jake using only his 3 unique perks.",
+          "chapter": "",
+          "section": "Adept",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/e7371654470bd95e3393a9f79ebfd1278cc774f3(1).jpg",
           "unlocked": false,
           "progress": {
-            "percent": 0.0,
-            "current": 0,
-            "target": 1
-          },
-          "image": "/deadbydaylight/assets/achievements/e7371654470bd95e3393a9f79ebfd1278cc774f3.jpg"
-        }
-      ]
-    },
-    {
-      "character": "Dwight",
-      "achievements": [
+            "label": "0 / 1"
+          }
+        },
         {
-          "id": "adept-dwight",
-          "name": "Adept Dwight",
+          "title": "Adept Dwight",
           "description": "In a public match, escape with Dwight using only his 3 unique perks.",
+          "chapter": "",
+          "section": "Adept",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/f551af26211a1d8a5a003a141303affc55a39a3d(1).jpg",
           "unlocked": false,
           "progress": {
-            "percent": 0.0,
-            "current": 0,
-            "target": 1
-          },
-          "image": "/deadbydaylight/assets/achievements/f551af26211a1d8a5a003a141303affc55a39a3d.jpg"
-        }
-      ]
-    },
-    {
-      "character": "Claudette",
-      "achievements": [
+            "label": "0 / 1"
+          }
+        },
         {
-          "id": "adept-claudette",
-          "name": "Adept Claudette",
+          "title": "Adept Claudette",
           "description": "In a public match, escape with Claudette using only her 3 unique perks.",
+          "chapter": "",
+          "section": "Adept",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/405820506d9308893ab7cec28cc699e66ddb70b4(1).jpg",
           "unlocked": false,
           "progress": {
-            "percent": 0.0,
-            "current": 0,
-            "target": 1
-          },
-          "image": "/deadbydaylight/assets/achievements/405820506d9308893ab7cec28cc699e66ddb70b4.jpg"
-        }
-      ]
-    },
-    {
-      "character": "Meg",
-      "achievements": [
+            "label": "0 / 1"
+          }
+        },
         {
-          "id": "adept-meg",
-          "name": "Adept Meg",
+          "title": "Adept Meg",
           "description": "In a public match, escape with Meg using only her 3 unique perks.",
+          "chapter": "",
+          "section": "Adept",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/0dfcdd75009ff17fd952a5743bd65962902687c5(1).jpg",
           "unlocked": false,
           "progress": {
-            "percent": 0.0,
-            "current": 0,
-            "target": 1
-          },
-          "image": "/deadbydaylight/assets/achievements/0dfcdd75009ff17fd952a5743bd65962902687c5.jpg"
-        }
-      ]
-    },
-    {
-      "character": "Nea",
-      "achievements": [
+            "label": "0 / 1"
+          }
+        },
         {
-          "id": "adept-nea",
-          "name": "Adept Nea",
+          "title": "Adept Hillbilly",
+          "description": "In a public match, achieve a merciless victory with the Hillbilly using only his 3 unique perks.",
+          "chapter": "",
+          "section": "Adept",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/8e98629cad3ffef50ce2581b0034d6ed2a0a001a(1).jpg",
+          "unlocked": false,
+          "progress": {
+            "label": "0 / 1"
+          }
+        },
+        {
+          "title": "Adept Nea",
           "description": "In a public match, escape with Nea using only her 3 unique perks",
+          "chapter": "",
+          "section": "Adept",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/1694e4145f53dbdf9e0ae5facbf79ff33039a0ae(1).jpg",
           "unlocked": false,
           "progress": {
-            "percent": 0.0,
-            "current": 0,
-            "target": 1
-          },
-          "image": "/deadbydaylight/assets/achievements/1694e4145f53dbdf9e0ae5facbf79ff33039a0ae.jpg"
-        }
-      ]
-    },
-    {
-      "character": "Ace",
-      "achievements": [
+            "label": "0 / 1"
+          }
+        },
         {
-          "id": "adept-ace",
-          "name": "Adept Ace",
+          "title": "Adept Ace",
           "description": "In a public match, escape with Ace using only his 3 unique perks.",
+          "chapter": "",
+          "section": "Adept",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/b402a7d47ef2bd80dc77e6b8af4d0cad52f41855(1).jpg",
           "unlocked": false,
           "progress": {
-            "percent": 0.0,
-            "current": 0,
-            "target": 1
-          },
-          "image": "/deadbydaylight/assets/achievements/b402a7d47ef2bd80dc77e6b8af4d0cad52f41855.jpg"
-        }
-      ]
-    },
-    {
-      "character": "Bill",
-      "achievements": [
+            "label": "0 / 1"
+          }
+        },
         {
-          "id": "adept-bill",
-          "name": "Adept Bill",
+          "title": "Adept Bill",
           "description": "Escape with Bill using only his 3 unique perks.",
+          "chapter": "",
+          "section": "Adept",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/e4534b8bf7119407d61f9f367eb45173c430089e(1).jpg",
           "unlocked": false,
           "progress": {
-            "percent": 0.0,
-            "current": 0,
-            "target": 1
-          },
-          "image": "/deadbydaylight/assets/achievements/e4534b8bf7119407d61f9f367eb45173c430089e.jpg"
-        }
-      ]
-    },
-    {
-      "character": "Min",
-      "achievements": [
+            "label": "0 / 1"
+          }
+        },
         {
-          "id": "adept-min",
-          "name": "Adept Min",
-          "description": "In a public match, escape with Min using only her 3 unique perks.",
-          "unlocked": false,
-          "progress": {
-            "percent": 0.0,
-            "current": 0,
-            "target": 1
-          },
-          "image": "/deadbydaylight/assets/achievements/133ce915650256a883c257e3edf364ca5e7edcb4.jpg"
-        }
-      ]
-    },
-    {
-      "character": "David",
-      "achievements": [
-        {
-          "id": "adept-david",
-          "name": "Adept David",
+          "title": "Adept David",
           "description": "In a public match, escape with David using only his 3 unique perks.",
+          "chapter": "",
+          "section": "Adept",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/6698c436073dccbc0046f14c3684da52063e29dd(1).jpg",
           "unlocked": false,
           "progress": {
-            "percent": 0.0,
-            "current": 0,
-            "target": 1
-          },
-          "image": "/deadbydaylight/assets/achievements/6698c436073dccbc0046f14c3684da52063e29dd.jpg"
-        }
-      ]
-    },
-    {
-      "character": "Huntress",
-      "achievements": [
+            "label": "0 / 1"
+          }
+        },
         {
-          "id": "skilled-huntress",
-          "name": "Skilled Huntress",
-          "description": "In public matches, down survivors 20 times with The Huntress' Hatchets further than 24 meters.",
-          "unlocked": false,
-          "progress": {
-            "percent": 60.0,
-            "current": 12,
-            "target": 20
-          },
-          "image": "/deadbydaylight/assets/achievements/4eae19c389632308ba5167c6d02cdd291d1e910f.jpg"
-        }
-      ]
-    },
-    {
-      "character": "Quentin",
-      "achievements": [
-        {
-          "id": "adept-quentin",
-          "name": "Adept Quentin",
+          "title": "Adept Quentin",
           "description": "In a public match, escape with Quentin using only his 3 unique perks.",
+          "chapter": "",
+          "section": "Adept",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/2edf02ebfbe037a586d524a98a62c2c8fc1b5a5c(1).jpg",
           "unlocked": false,
           "progress": {
-            "percent": 0.0,
-            "current": 0,
-            "target": 1
-          },
-          "image": "/deadbydaylight/assets/achievements/2edf02ebfbe037a586d524a98a62c2c8fc1b5a5c.jpg"
-        }
-      ]
-    },
-    {
-      "character": "Tapp",
-      "achievements": [
+            "label": "0 / 1"
+          }
+        },
         {
-          "id": "adept-tapp",
-          "name": "Adept Tapp",
-          "description": "In a public match, escape with Detective Tapp using only his 3 unique perks.",
-          "unlocked": false,
-          "progress": {
-            "percent": 0.0,
-            "current": 0,
-            "target": 1
-          },
-          "image": "/deadbydaylight/assets/achievements/988a7ddd519b6a509aa4af44b2293681cb8dc197.jpg"
-        }
-      ]
-    },
-    {
-      "character": "Kate",
-      "achievements": [
-        {
-          "id": "adept-kate",
-          "name": "Adept Kate",
+          "title": "Adept Kate",
           "description": "In a public match, escape with Kate, using only her 3 unique perks.",
+          "chapter": "",
+          "section": "Adept",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/4916b37bf21369b87d476f49546c27007dec8724(1).jpg",
           "unlocked": false,
           "progress": {
-            "percent": 0.0,
-            "current": 0,
-            "target": 1
-          },
-          "image": "/deadbydaylight/assets/achievements/4916b37bf21369b87d476f49546c27007dec8724.jpg"
-        }
-      ]
-    },
-    {
-      "character": "Adam",
-      "achievements": [
+            "label": "0 / 1"
+          }
+        },
         {
-          "id": "adept-adam",
-          "name": "Adept Adam",
+          "title": "Adept Adam",
           "description": "In a public match, escape with Adam using only his 3 unique perks.",
+          "chapter": "",
+          "section": "Adept",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/e445f638477657a7ec1aa5f354b3614cea45cc5d(1).jpg",
           "unlocked": false,
           "progress": {
-            "percent": 0.0,
-            "current": 0,
-            "target": 1
-          },
-          "image": "/deadbydaylight/assets/achievements/e445f638477657a7ec1aa5f354b3614cea45cc5d.jpg"
-        }
-      ]
-    },
-    {
-      "character": "Jeff",
-      "achievements": [
+            "label": "0 / 1"
+          }
+        },
         {
-          "id": "adept-jeff",
-          "name": "Adept Jeff",
+          "title": "Adept Jeff",
           "description": "In a public match, escape with Jeff using only his 3 unique perks.",
+          "chapter": "",
+          "section": "Adept",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/924981f3c089bb95c7ea6fd95fe1b80a85b74f6d(1).jpg",
           "unlocked": false,
           "progress": {
-            "percent": 0.0,
-            "current": 0,
-            "target": 1
-          },
-          "image": "/deadbydaylight/assets/achievements/924981f3c089bb95c7ea6fd95fe1b80a85b74f6d.jpg"
-        }
-      ]
-    },
-    {
-      "character": "Jane",
-      "achievements": [
+            "label": "0 / 1"
+          }
+        },
         {
-          "id": "adept-jane",
-          "name": "Adept Jane",
+          "title": "Adept Jane",
           "description": "In a public match, escape with Jane using only her 3 unique perks.",
+          "chapter": "",
+          "section": "Adept",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/d8a1e68d4124b5867db0404531092d888492466c(1).jpg",
           "unlocked": false,
           "progress": {
-            "percent": 0.0,
-            "current": 0,
-            "target": 1
-          },
-          "image": "/deadbydaylight/assets/achievements/d8a1e68d4124b5867db0404531092d888492466c.jpg"
-        }
-      ]
-    },
-    {
-      "character": "Ash",
-      "achievements": [
+            "label": "0 / 1"
+          }
+        },
         {
-          "id": "adept-ash",
-          "name": "Adept Ash",
-          "description": "In a public match, escape with Ash using only his 3 unique perks.",
+          "title": "Adept Ghost Face",
+          "description": "In a public match, achieve a merciless victory with The Ghost Face using only his 3 unique perks.",
+          "chapter": "",
+          "section": "Adept",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/87193ea58196fc9cd8b19a395b4b6d31a3261a83(1).jpg",
           "unlocked": false,
           "progress": {
-            "percent": 0.0,
-            "current": 0,
-            "target": 1
-          },
-          "image": "/deadbydaylight/assets/achievements/90ddb2b496fda434acbe108749a9b2c03458b2b7.jpg"
-        }
-      ]
-    },
-    {
-      "character": "Yui",
-      "achievements": [
+            "label": "0 / 1"
+          }
+        },
         {
-          "id": "adept-yui",
-          "name": "Adept Yui",
+          "title": "Adept Yui",
           "description": "In a public match, escape with Yui Kimura using only her 3 unique perks.",
+          "chapter": "",
+          "section": "Adept",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/4c1a30483da64832eddaf265f3ee5764e5cd724d(1).jpg",
           "unlocked": false,
           "progress": {
-            "percent": 0.0,
-            "current": 0,
-            "target": 1
-          },
-          "image": "/deadbydaylight/assets/achievements/4c1a30483da64832eddaf265f3ee5764e5cd724d.jpg"
-        }
-      ]
-    },
-    {
-      "character": "Zarina",
-      "achievements": [
+            "label": "0 / 1"
+          }
+        },
         {
-          "id": "adept-zarina",
-          "name": "Adept Zarina",
+          "title": "Adept Zarina",
           "description": "Escape with Zarina Kassir using only her 3 unique perks in a public match.",
+          "chapter": "",
+          "section": "Adept",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/7a24f1fac5fab9bda8e26da0d8bd194844bcaa10(1).jpg",
           "unlocked": false,
           "progress": {
-            "percent": 0.0,
-            "current": 0,
-            "target": 1
-          },
-          "image": "/deadbydaylight/assets/achievements/7a24f1fac5fab9bda8e26da0d8bd194844bcaa10.jpg"
-        }
-      ]
-    },
-    {
-      "character": "Cheryl",
-      "achievements": [
+            "label": "0 / 1"
+          }
+        },
         {
-          "id": "adept-cheryl",
-          "name": "Adept Cheryl",
+          "title": "Adept Cheryl",
           "description": "Escape with Cheryl Mason using only her 3 unique perks in a public match.",
+          "chapter": "",
+          "section": "Adept",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/396bbf13a0710e76f5f3a91c8bfc23cb100cdd09(1).jpg",
           "unlocked": false,
           "progress": {
-            "percent": 0.0,
-            "current": 0,
-            "target": 1
-          },
-          "image": "/deadbydaylight/assets/achievements/396bbf13a0710e76f5f3a91c8bfc23cb100cdd09.jpg"
-        }
-      ]
-    },
-    {
-      "character": "Felix",
-      "achievements": [
+            "label": "0 / 1"
+          }
+        },
         {
-          "id": "adept-felix",
-          "name": "Adept Felix",
+          "title": "Adept Felix",
           "description": "Escape with Felix Richter using only his 3 unique perks in a public match.",
+          "chapter": "",
+          "section": "Adept",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/d570bc5e149aae61d13f66e5868b608a1560659b(1).jpg",
           "unlocked": false,
           "progress": {
-            "percent": 0.0,
-            "current": 0,
-            "target": 1
-          },
-          "image": "/deadbydaylight/assets/achievements/d570bc5e149aae61d13f66e5868b608a1560659b.jpg"
-        }
-      ]
-    },
-    {
-      "character": "Élodie",
-      "achievements": [
+            "label": "0 / 1"
+          }
+        },
         {
-          "id": "adept-elodie",
-          "name": "Adept Élodie",
+          "title": "Adept Élodie",
           "description": "Escape with Élodie using only her 3 unique perks in a public match.",
+          "chapter": "",
+          "section": "Adept",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/e70df6748b5a1e99ae41ed950a53ca17f028acb6(1).jpg",
           "unlocked": false,
           "progress": {
-            "percent": 0.0,
-            "current": 0,
-            "target": 1
-          },
-          "image": "/deadbydaylight/assets/achievements/e70df6748b5a1e99ae41ed950a53ca17f028acb6.jpg"
-        }
-      ]
-    },
-    {
-      "character": "Yun-Jin",
-      "achievements": [
+            "label": "0 / 1"
+          }
+        },
         {
-          "id": "adept-yun-jin",
-          "name": "Adept Yun-Jin",
+          "title": "Adept Trickster",
+          "description": "Achieve a merciless victory with The Trickster using only his 3 unique perks in a public match.",
+          "chapter": "",
+          "section": "Adept",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/2a1013c4b092cf5d565ad1dec30663f508513039(1).jpg",
+          "unlocked": false,
+          "progress": {
+            "label": "0 / 1"
+          }
+        },
+        {
+          "title": "Adept Yun-Jin",
           "description": "Escape with Yun-Jin using only her 3 unique perks in a public match.",
+          "chapter": "",
+          "section": "Adept",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/e39b0445bdef97510be54d5e3ba4d5c358a502d5(1).jpg",
           "unlocked": false,
           "progress": {
-            "percent": 0.0,
-            "current": 0,
-            "target": 1
-          },
-          "image": "/deadbydaylight/assets/achievements/e39b0445bdef97510be54d5e3ba4d5c358a502d5.jpg"
-        }
-      ]
-    },
-    {
-      "character": "Leon",
-      "achievements": [
+            "label": "0 / 1"
+          }
+        },
         {
-          "id": "adept-leon",
-          "name": "Adept Leon",
+          "title": "Adept Leon",
           "description": "Escape with Leon using only his 3 unique perks in a public match.",
+          "chapter": "",
+          "section": "Adept",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/b20f1d62684ed5750fd670ea1867e55d21a73946(1).jpg",
           "unlocked": false,
           "progress": {
-            "percent": 0.0,
-            "current": 0,
-            "target": 1
-          },
-          "image": "/deadbydaylight/assets/achievements/b20f1d62684ed5750fd670ea1867e55d21a73946.jpg"
-        }
-      ]
-    },
-    {
-      "character": "Jill",
-      "achievements": [
+            "label": "0 / 1"
+          }
+        },
         {
-          "id": "adept-jill",
-          "name": "Adept Jill",
+          "title": "Adept Jill",
           "description": "Escape with Jill using only her 3 unique perks in a public match.",
+          "chapter": "",
+          "section": "Adept",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/28148b158bdea4d346816fdac6919ef8e8cbd99c(1).jpg",
           "unlocked": false,
           "progress": {
-            "percent": 0.0,
-            "current": 0,
-            "target": 1
-          },
-          "image": "/deadbydaylight/assets/achievements/28148b158bdea4d346816fdac6919ef8e8cbd99c.jpg"
-        }
-      ]
-    },
-    {
-      "character": "Mikaela",
-      "achievements": [
+            "label": "0 / 1"
+          }
+        },
         {
-          "id": "adept-mikaela",
-          "name": "Adept Mikaela",
+          "title": "Adept Mikaela",
           "description": "Escape with Mikaela using only her 3 unique perks in a public match.",
+          "chapter": "",
+          "section": "Adept",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/1183f5e773a1a13108d7a00e3353814b50278c7b(1).jpg",
           "unlocked": false,
           "progress": {
-            "percent": 0.0,
-            "current": 0,
-            "target": 1
-          },
-          "image": "/deadbydaylight/assets/achievements/1183f5e773a1a13108d7a00e3353814b50278c7b.jpg"
-        }
-      ]
-    },
-    {
-      "character": "Jonah",
-      "achievements": [
+            "label": "0 / 1"
+          }
+        },
         {
-          "id": "adept-jonah",
-          "name": "Adept Jonah",
+          "title": "Adept Jonah",
           "description": "Escape with Jonah using only his 3 unique perks in a public match.",
+          "chapter": "",
+          "section": "Adept",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/7363310ecbee0d2f43e669acc6f40cf72839ac02(1).jpg",
           "unlocked": false,
           "progress": {
-            "percent": 0.0,
-            "current": 0,
-            "target": 1
-          },
-          "image": "/deadbydaylight/assets/achievements/7363310ecbee0d2f43e669acc6f40cf72839ac02.jpg"
-        }
-      ]
-    },
-    {
-      "character": "Yoichi",
-      "achievements": [
+            "label": "0 / 1"
+          }
+        },
         {
-          "id": "adept-yoichi",
-          "name": "Adept Yoichi",
+          "title": "Adept Yoichi",
           "description": "Escape with Yoichi using only his 3 unique perks in a public match.",
+          "chapter": "",
+          "section": "Adept",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/a52c28264955546313e6240c44d5e386ca68dd24(1).jpg",
           "unlocked": false,
           "progress": {
-            "percent": 0.0,
-            "current": 0,
-            "target": 1
-          },
-          "image": "/deadbydaylight/assets/achievements/a52c28264955546313e6240c44d5e386ca68dd24.jpg"
-        }
-      ]
-    },
-    {
-      "character": "Haddie",
-      "achievements": [
+            "label": "0 / 1"
+          }
+        },
         {
-          "id": "adept-haddie",
-          "name": "Adept Haddie",
+          "title": "Adept Haddie",
           "description": "Escape with Haddie Kaur using only her 3 unique perks in a public match.",
+          "chapter": "",
+          "section": "Adept",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/02eba15c018d6539a2f73fdebdd2f8b43f7aeffd(1).jpg",
           "unlocked": false,
           "progress": {
-            "percent": 0.0,
-            "current": 0,
-            "target": 1
-          },
-          "image": "/deadbydaylight/assets/achievements/02eba15c018d6539a2f73fdebdd2f8b43f7aeffd.jpg"
-        }
-      ]
-    },
-    {
-      "character": "Ada",
-      "achievements": [
+            "label": "0 / 1"
+          }
+        },
         {
-          "id": "adept-ada",
-          "name": "Adept Ada",
+          "title": "Adept Ada",
           "description": "Escape with Ada using only her 3 unique perks in a public match.",
+          "chapter": "",
+          "section": "Adept",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/d2d199d270b57681375b9a511bca045ec7a182a2(1).jpg",
           "unlocked": false,
           "progress": {
-            "percent": 0.0,
-            "current": 0,
-            "target": 1
-          },
-          "image": "/deadbydaylight/assets/achievements/d2d199d270b57681375b9a511bca045ec7a182a2.jpg"
-        }
-      ]
-    },
-    {
-      "character": "Rebecca",
-      "achievements": [
+            "label": "0 / 1"
+          }
+        },
         {
-          "id": "adept-rebecca",
-          "name": "Adept Rebecca",
+          "title": "Adept Rebecca",
           "description": "Escape with Rebecca using only her 3 unique perks in a public match.",
+          "chapter": "",
+          "section": "Adept",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/bce045e38163db9be7eea16cf422fd7f706143a4(1).jpg",
           "unlocked": false,
           "progress": {
-            "percent": 0.0,
-            "current": 0,
-            "target": 1
-          },
-          "image": "/deadbydaylight/assets/achievements/bce045e38163db9be7eea16cf422fd7f706143a4.jpg"
-        }
-      ]
-    },
-    {
-      "character": "Vittorio",
-      "achievements": [
+            "label": "0 / 1"
+          }
+        },
         {
-          "id": "adept-vittorio",
-          "name": "Adept Vittorio",
+          "title": "Adept Vittorio",
           "description": "Escape with Vittorio Toscano using only his 3 unique perks in a public match.",
+          "chapter": "",
+          "section": "Adept",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/b7b077bec488b5548f8b3e86ec8669d1eeebf6d8(1).jpg",
           "unlocked": false,
           "progress": {
-            "percent": 0.0,
-            "current": 0,
-            "target": 1
-          },
-          "image": "/deadbydaylight/assets/achievements/b7b077bec488b5548f8b3e86ec8669d1eeebf6d8.jpg"
-        }
-      ]
-    },
-    {
-      "character": "Thalita",
-      "achievements": [
+            "label": "0 / 1"
+          }
+        },
         {
-          "id": "adept-thalita",
-          "name": "Adept Thalita",
+          "title": "Adept Thalita",
           "description": "Escape with Thalita Lyra using only her 3 unique perks in a public match.",
+          "chapter": "",
+          "section": "Adept",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/697289561af63936f79da217e673555e15b94299(1).jpg",
           "unlocked": false,
           "progress": {
-            "percent": 0.0,
-            "current": 0,
-            "target": 1
-          },
-          "image": "/deadbydaylight/assets/achievements/697289561af63936f79da217e673555e15b94299.jpg"
-        }
-      ]
-    },
-    {
-      "character": "Renato",
-      "achievements": [
+            "label": "0 / 1"
+          }
+        },
         {
-          "id": "adept-renato",
-          "name": "Adept Renato",
+          "title": "Adept Renato",
           "description": "Escape with Renato Lyra using only his 3 unique perks in a public match.",
+          "chapter": "",
+          "section": "Adept",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/17b84b194b3bd5eedb27d80b4d92506253541150(1).jpg",
           "unlocked": false,
           "progress": {
-            "percent": 0.0,
-            "current": 0,
-            "target": 1
-          },
-          "image": "/deadbydaylight/assets/achievements/17b84b194b3bd5eedb27d80b4d92506253541150.jpg"
-        }
-      ]
-    },
-    {
-      "character": "Gabriel",
-      "achievements": [
+            "label": "0 / 1"
+          }
+        },
         {
-          "id": "adept-gabriel",
-          "name": "Adept Gabriel",
+          "title": "Adept Gabriel",
           "description": "Escape with Gabriel Soma using only his 3 unique perks in a public match.",
+          "chapter": "",
+          "section": "Adept",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/24b44c2b346420c6ebee1565d495789e60d14ed3(1).jpg",
           "unlocked": false,
           "progress": {
-            "percent": 0.0,
-            "current": 0,
-            "target": 1
-          },
-          "image": "/deadbydaylight/assets/achievements/24b44c2b346420c6ebee1565d495789e60d14ed3.jpg"
-        }
-      ]
-    },
-    {
-      "character": "Cage",
-      "achievements": [
+            "label": "0 / 1"
+          }
+        },
         {
-          "id": "adept-cage",
-          "name": "Adept Cage",
-          "description": "Escape with Nicolas Cage using only his 3 unique perks in a public match.",
-          "unlocked": false,
-          "progress": {
-            "percent": 0.0,
-            "current": 0,
-            "target": 1
-          },
-          "image": "/deadbydaylight/assets/achievements/9b0c981e85d73bcbb43986aa817299ce9c80368f.jpg"
-        }
-      ]
-    },
-    {
-      "character": "Ripley",
-      "achievements": [
-        {
-          "id": "adept-ripley",
-          "name": "Adept Ripley",
-          "description": "Escape with Ellen Ripley using only her 3 unique perks in a public match.",
-          "unlocked": false,
-          "progress": {
-            "percent": 0.0,
-            "current": 0,
-            "target": 1
-          },
-          "image": "/deadbydaylight/assets/achievements/1effafaee34a368a6092e826243745ea946d869a.jpg"
-        }
-      ]
-    },
-    {
-      "character": "Alan",
-      "achievements": [
-        {
-          "id": "adept-alan",
-          "name": "Adept Alan",
+          "title": "Adept Alan",
           "description": "Escape with Alan Wake using only his 3 unique perks in a public match.",
+          "chapter": "",
+          "section": "Adept",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/0a01d1326f612b1c2a7534e705514399c4fb76c8(1).jpg",
           "unlocked": false,
           "progress": {
-            "percent": 0.0,
-            "current": 0,
-            "target": 1
-          },
-          "image": "/deadbydaylight/assets/achievements/0a01d1326f612b1c2a7534e705514399c4fb76c8.jpg"
-        }
-      ]
-    },
-    {
-      "character": "Sable",
-      "achievements": [
+            "label": "0 / 1"
+          }
+        },
         {
-          "id": "adept-sable",
-          "name": "Adept Sable",
+          "title": "Adept Sable",
           "description": "Escape with Sable using only her 3 unique perks in a public match.",
+          "chapter": "",
+          "section": "Adept",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/99f28a1e690bde017529a6c8a80b7cd26bac4b2d(1).jpg",
           "unlocked": false,
           "progress": {
-            "percent": 0.0,
-            "current": 0,
-            "target": 1
-          },
-          "image": "/deadbydaylight/assets/achievements/99f28a1e690bde017529a6c8a80b7cd26bac4b2d.jpg"
-        }
-      ]
-    },
-    {
-      "character": "Troupe",
-      "achievements": [
+            "label": "0 / 1"
+          }
+        },
         {
-          "id": "adept-troupe",
-          "name": "Adept Troupe",
-          "description": "Escape with Aestri or Baermar using only their 3 unique perks in a public match.",
-          "unlocked": false,
-          "progress": {
-            "percent": 0.0,
-            "current": 0,
-            "target": 1
-          },
-          "image": "/deadbydaylight/assets/achievements/afeb3a329b6d2ea821a35a6a27ec74cab5260078.jpg"
-        }
-      ]
-    },
-    {
-      "character": "Lara",
-      "achievements": [
-        {
-          "id": "adept-lara",
-          "name": "Adept Lara",
+          "title": "Adept Lara",
           "description": "Escape with Lara using only her 3 unique perks in a public match.",
+          "chapter": "",
+          "section": "Adept",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/092d24374d1e4d93c0254007270d83cbd7cd5b51(1).jpg",
           "unlocked": false,
           "progress": {
-            "percent": 0.0,
-            "current": 0,
-            "target": 1
-          },
-          "image": "/deadbydaylight/assets/achievements/092d24374d1e4d93c0254007270d83cbd7cd5b51.jpg"
-        }
-      ]
-    },
-    {
-      "character": "Trevor",
-      "achievements": [
+            "label": "0 / 1"
+          }
+        },
         {
-          "id": "adept-trevor",
-          "name": "Adept Trevor",
+          "title": "Adept Trevor",
           "description": "Escape with Trevor using only his 3 unique perks in a public match.",
+          "chapter": "",
+          "section": "Adept",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/d6dfe70b8df9249bf1c7b35d8af9d66281aaaf1d(1).jpg",
           "unlocked": false,
           "progress": {
-            "percent": 0.0,
-            "current": 0,
-            "target": 1
-          },
-          "image": "/deadbydaylight/assets/achievements/d6dfe70b8df9249bf1c7b35d8af9d66281aaaf1d.jpg"
-        }
-      ]
-    },
-    {
-      "character": "Taurie",
-      "achievements": [
+            "label": "0 / 1"
+          }
+        },
         {
-          "id": "adept-taurie",
-          "name": "Adept Taurie",
+          "title": "Adept Taurie",
           "description": "Escape with Taurie Cain using only her 3 unique perks in a public match.",
+          "chapter": "",
+          "section": "Adept",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/7e82e26b9b89ba6b43bf287fa338f2705567e038(1).jpg",
           "unlocked": false,
           "progress": {
-            "percent": 0.0,
-            "current": 0,
-            "target": 1
-          },
-          "image": "/deadbydaylight/assets/achievements/7e82e26b9b89ba6b43bf287fa338f2705567e038.jpg"
-        }
-      ]
-    },
-    {
-      "character": "Orela",
-      "achievements": [
+            "label": "0 / 1"
+          }
+        },
         {
-          "id": "adept-orela",
-          "name": "Adept Orela",
+          "title": "Adept Orela",
           "description": "Escape with Orela Rose using only her 3 unique perks in a public match.",
+          "chapter": "",
+          "section": "Adept",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/53b10519e06093d3e8d02ac9ee3cab11fdfc1391(1).jpg",
           "unlocked": false,
           "progress": {
-            "percent": 0.0,
-            "current": 0,
-            "target": 1
-          },
-          "image": "/deadbydaylight/assets/achievements/53b10519e06093d3e8d02ac9ee3cab11fdfc1391.jpg"
-        }
-      ]
-    },
-    {
-      "character": "Rick",
-      "achievements": [
+            "label": "0 / 1"
+          }
+        },
         {
-          "id": "adept-rick",
-          "name": "Adept Rick",
+          "title": "Adept Rick",
           "description": "Escape with Rick Grimes using only his 3 unique perks in a public match.",
+          "chapter": "",
+          "section": "Adept",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/cedf9458daf59b88606d78107ed22e4ab5e7dcd6(1).jpg",
           "unlocked": false,
           "progress": {
-            "percent": 0.0,
-            "current": 0,
-            "target": 1
-          },
-          "image": "/deadbydaylight/assets/achievements/cedf9458daf59b88606d78107ed22e4ab5e7dcd6.jpg"
-        }
-      ]
-    },
-    {
-      "character": "Michonne",
-      "achievements": [
+            "label": "0 / 1"
+          }
+        },
         {
-          "id": "adept-michonne",
-          "name": "Adept Michonne",
+          "title": "Adept Michonne",
           "description": "Escape with Michonne Grimes using only her 3 unique perks in a public match.",
+          "chapter": "",
+          "section": "Adept",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/da7d202e25b765ea9ec33f77eea1c3a4ecb11ada(1).jpg",
           "unlocked": false,
           "progress": {
-            "percent": 0.0,
-            "current": 0,
-            "target": 1
-          },
-          "image": "/deadbydaylight/assets/achievements/da7d202e25b765ea9ec33f77eea1c3a4ecb11ada.jpg"
-        }
-      ]
-    },
-    {
-      "character": "Vee",
-      "achievements": [
+            "label": "0 / 1"
+          }
+        },
         {
-          "id": "adept-vee",
-          "name": "Adept Vee",
+          "title": "Adept Vee",
           "description": "Escape with Vee Boonyasak using only her 3 unique perks in a public match.",
+          "chapter": "",
+          "section": "Adept",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/ef4f7408452e103c64e043fbabfc6aa7288dfb02(1).jpg",
           "unlocked": false,
           "progress": {
-            "percent": 0.0,
-            "current": 0,
-            "target": 1
-          },
-          "image": "/deadbydaylight/assets/achievements/ef4f7408452e103c64e043fbabfc6aa7288dfb02.jpg"
-        }
-      ]
-    },
-    {
-      "character": "Dustin",
-      "achievements": [
+            "label": "0 / 1"
+          }
+        },
         {
-          "id": "adept-dustin",
-          "name": "Adept Dustin",
+          "title": "Adept Dustin",
           "description": "Escape with Dustin Henderson using only his 3 unique perks in a public match.",
+          "chapter": "",
+          "section": "Adept",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/de02afd3314c4454a49e3d43cf217d1e4b8842c1(1).jpg",
           "unlocked": false,
           "progress": {
-            "percent": 0.0,
-            "current": 0,
-            "target": 1
-          },
-          "image": "/deadbydaylight/assets/achievements/de02afd3314c4454a49e3d43cf217d1e4b8842c1.jpg"
+            "label": "0 / 1"
+          }
+        },
+        {
+          "title": "Adept Eleven",
+          "description": "Escape with Eleven using only her 3 unique perks in a public match.",
+          "chapter": "",
+          "section": "Adept",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/a093d46a5f12d6f869de4edb0fc7e0e17a5ad446(1).jpg",
+          "unlocked": false,
+          "progress": {
+            "label": "0 / 1"
+          }
         }
       ]
     },
     {
-      "character": "Eleven",
-      "achievements": [
+      "title": "General",
+      "items": [
         {
-          "id": "adept-eleven",
-          "name": "Adept Eleven",
-          "description": "Escape with Eleven using only her 3 unique perks in a public match.",
+          "title": "Made it out alive!",
+          "description": "In public matches, escape the match alive for a total of 100 times.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/2b73698f686b275cf0913c30523e5c94a91eae28(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "Backdoor Escape",
+          "description": "In a public match, escape through the hatch.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/2c52e2eded31f8a5037d141c804d2554db6a244c(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "The Key to Escape",
+          "description": "Escape through the Hatch using a Key in a public match.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/bcafb3d3833ca11106a5a7d9ac476897619ba83d(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "I've got your back",
+          "description": "In public matches, save a total of 50 survivors from death.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/04740b83fb74fe8d72e3146a6960dc0c65dc2e44(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "No one left behind",
+          "description": "In a public match, rescue someone after at least one gate has opened.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/df452644c5df45a09db5a3a4a6f1b540a89b6e54(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "Medic",
+          "description": "In public matches, heal others for a total of 100 health states.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/5f4bc7671b0d6fdf3739f9ee00a5ed1d0164a673(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "Handyman",
+          "description": "In public matches, repair generators for a total of 100 full repairs.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/6c59e716ebf92641dfd0a7488549a36bb1249148(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "Nerves of steel",
+          "description": "In public matches, get a total of 500 successful Skill-Checks.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/5505c2f2e868307eae06905c66a5bdf88a0a1c45(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "Perfect Escape",
+          "description": "In a public match, as a survivor, complete with at least 5000 blood points in each score category.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/aebba5de55ab1a6d0d3404eab922656fdecd8516(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "Perfect Killing",
+          "description": "In a public match, as a killer, complete with at least 5000 blood points in each score category.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/03a1c926a6888f51d8ad7bf47fef04315de0302f(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "Zealous",
+          "description": "In a public match, get more than 8K blood points in one scoring category.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/441bc9852d3d337655ec37db79394b14109f7488(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "It wakes",
+          "description": "Raise a character level to 10.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/e5ce5ab4788e3a17ae3c2ce8fee5e14dbc5b9afe(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "Not half bad",
+          "description": "Raise a character level to 25.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/71719d0b41c3ac1055a10ca00393a0583950644d(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "Bloody Millionaire",
+          "description": "Accumulate a total of 1 million blood points. (blood points can be spent before reaching the total)",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/a884de3aafb36c5a2590c698164d4aa1baff3357(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "Expert survivor",
+          "description": "Reach survivor online grade Silver I.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/6c9deca7cc043b2201a42bf36979097138cc427f(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "Master survivor",
+          "description": "Reach survivor online grade Gold I.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/337702f5c1af1cb7ea12a02bb480e4bdd523d615(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "Legendary survivor",
+          "description": "Reach survivor online grade Iridescent I.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/8f72f2903663e0891e879b48c141b4a389b6540c(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "Expert Killer",
+          "description": "Reach killer online grade Silver I.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/4962f40203138c1a1c4e634288233e5e947a0854(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "Master Killer",
+          "description": "Reach killer online grade Gold I.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/64bdbacfa58606d61b886b60c7154df2a4734904(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "Legendary Killer",
+          "description": "Reach Killer Iridescent I.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/57cf3d500c83523614c242610c0d17a408198f22(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "Apt Survivor",
+          "description": "Start a public match with a full survivor loadout.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/68c677a91f3f5ee62a8cbc39c2dca4b3f171dda1(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "Apt Killer",
+          "description": "Start a public match with a full killer loadout.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/7359bc527279cf0d137aec52778a2bb64cb1a04d(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "Risk it all",
+          "description": "In a public match, as a survivor, use a visceral item or add-on without using a protective ward.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/f0d1c2c839ac7299c2be32277d5f2e18506e0de1(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "Survival Treasures",
+          "description": "In a public match, escape while bringing a new item to the campfire.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/3c722b141dc38e9315fae8ef373700899e0544ee(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "Vulture",
+          "description": "In a public match, escape with an item that another player brought into the match.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/ca3256643babcf3b454a8e8e6c04ce0f7fb8a1d5(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "Skillful",
+          "description": "Boost any perk to level 3.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/aecb4084be494bf6fd8c0756683a744545353b03(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "I",
+          "description": "Reach prestige Level I with any character.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/83c1f0e318730c246e987d5a06ecd9a303cb2ba2(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "II",
+          "description": "Reach prestige Level II with any character.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/eadb36e4fc8ff61411ccefc55e82804d3ceef9a0(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "III",
+          "description": "Reach prestige Level III with any character.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/c8f212cfe4d65f35e045da3678aa672b87c735ce(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "III-50",
+          "description": "Reach prestige Level III-50 with any character.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/5daed300184d30fe60e51328373ee14187a52ab6(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "Key to Success",
+          "description": "In a public match, use a key to open a chest.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/241aa8be8b5336647f0d14076c547fa080754955(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "Working Overtime",
+          "description": "In a single public match, repair generators for at least 300 seconds.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/cc642f66b605d61b7c85015fdc232bf70abe42e7(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "All Aboard",
+          "description": "In a public match, activate the Foghorn by repairing the generator in the Steamboat and escape.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/91912fda0745c95e1144999d125015c0e7ded7ee(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "Taking One For The Team",
+          "description": "Protect a recently unhooked Survivor by taking a hit near them 250 times.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/1525cd4158ea459e40e371f770be00d69ce62792(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "Engineer",
+          "description": "In public matches, repair a Generator in the Damage state , 50 Times. One time per generator.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/7924d822d26d8e6b23935eb42e564c920f839029(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "Leapfrog",
+          "description": "In public matches, jump over a pallet or through a window during a chase, 200 times.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/28482c27ad37a9af401ad656a51fd614edb70936(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "Mad House",
+          "description": "In a public match, bring the 4 survivors to insanity Tier 3 at least once in the same match.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/dba8ad355c205fee83c2a0b1135a3a9028c667dc(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "Sorted",
+          "description": "In a public match, spend most of the trial injured (more than 50%) and live to tell the story.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/b81c8b7948e6a1c546005df3d4a6bd52ee839dd8(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "Swirling Death",
+          "description": "In public matches, throw 1000 Hatchets.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/20a503e0449227c15a12d6d3c405e7f2c3d384a0(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "Looter",
+          "description": "In public matches, unlock 100 chests.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/98ef9a10ec4b5ba1b0f2300df6dc7c3078be6422(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "Near-Death Experience",
+          "description": "In public matches, get downed only once and escape the match alive, 25 times.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/be84f748f5fbf099444b6ec0ab7ee9d921314376(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "Cherish your Life",
+          "description": "In a public match, repair the generator in The Game's Bathroom and live to tell the story.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/4fc30aafc55dc4192dce3a751b9933fb8320f10e(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "Campbell's Chapel Legacy",
+          "description": "In a public match, repair the generator in the chapel and live to tell the tale.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/4088aafdc3c8572844417e07d48ad12371184523(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "Whiffing to Success",
+          "description": "In public matches, cause the killer to miss an attack before taking a vault, 50 times.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/ef2354cd5e74cdea2cac4a1d47cd3d031e8d3fec(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "Outrage",
+          "description": "In public matches, during a chase, damage a Survivor who drops a Pallet within a chase, 100 times.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/4495719da024d42dafb96a9cf5650c9f3e6fce25(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "Unforgettable Getaway",
+          "description": "In a public match, repair the generator in the Chalet and live to tell the tale.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/214222e731545f1a78320b87e93d6fe2c2ea5e59(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "Heavy Burden",
+          "description": "In public matches, hit 25 different individual Survivors while carrying another Survivor.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/eae6c66dc63bf71ad2cbea0d8d83c4615396a584(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "Wounded Healer",
+          "description": "In public matches, heal other Survivors for a total of 50 health states while you are also injured.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/89fe79d044990b725e83673ab9bb13c6f11cbeeb(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "Devoted Gatekeeping",
+          "description": "In public matches, sacrifice all survivors before the last generator is repaired, 15 times.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/50890cde324d9e1900d12b36123c9bae59fe45d6(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "Cutting Out",
+          "description": "In public matches, while The Killer is carrying you, wiggle out of The Killer's grasp 10 times.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/8fb483d54773adf40c60b8d74ef520b2ccd32bea(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "Silent Approach",
+          "description": "In public matches, interrupt and grab 25 Survivors while they are repairing generators.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/c05d5a79bbf28dc50ce87134c1df8b21b1a59cab(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "Denied!",
+          "description": "In public matches, close the hatch 30 times.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/cb8c8a473f4dcec4735cbed20a33220f0d703dc7(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "Operation: Survival",
+          "description": "In a public match, repair the generator in the Treatment Theatre’s operation theatre and escape.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/acb089afd0e3842be1afa7675c6f171fc8191955(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "Grim Pilgrimage",
+          "description": "In a public match, repair the generator in the upper level of the Shrine and escape.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/6459c2daca972151019343b8f0b2a78b5de81405(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "Bodyguard",
+          "description": "In public matches, take a protection hit while the Killer is carrying a Survivor, 30 times.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/6c5e6e3a9566d5f3f2b47bf88f55900083aaadbe(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "Selfless Survival",
+          "description": "Heal a Survivor from the dying state to the injured state 30 times in public matches.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/2c310d0f8b46866e93072070c46b494d81971345(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "Death of Ignorance",
+          "description": "Down a Survivor suffering from the Oblivious status effect 15 times in public matches.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/0af71b78efad62b7a42e4873c8945310275d5ff3(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "Healthy Obsession",
+          "description": "Heal other Survivors marked as the Obsession for a total of 10 health states in public matches.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/0c24b398295b7b33b4b87e977b80470dd63d1433(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "I See You",
+          "description": "Down 30 Survivors suffering from the Exposed status effect in public matches.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/2cf3db62075cdcd4b7c50c6948bc1873ec3730f9(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "Every Last Drop",
+          "description": "Deplete 30 items in public matches.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/e2837caf3e0775859ef3dafbfd2a1c24ada3e159(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "Rescue Mission",
+          "description": "Stun the Killer with a pallet while they are carrying a Survivor 5 times.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/43af467af1533a2089d45824af48162f20abf154(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "Power Moves",
+          "description": "Equip 0 perks, repair generators for a total of 1 full repair and escape 8 times in public matches.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/d2f6a69d59a77ec5a02198455c4089af8f7bc454(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "Multi-tasker",
+          "description": "Down 30 Survivors while carrying another Survivor in public matches.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/bb85283cf74d4bf7a9da96191b5a27eae1e1a539(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "Insult and Injury",
+          "description": "Escape a chase 50 times after stunning the Killer with a pallet in public matches.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/2643be0f6319749864dfe6bdb80647d3eb4dc9e8(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "Close Shave",
+          "description": "Dodge basic attacks or projectiles 100 times in public matches.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/3d3d55da65f32cf7d765907eca929245c5cd3c78(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "Preemptive Strike",
+          "description": "Hook a Survivor in a public match before any generators have been fully repaired.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/c3318ca28dd5e59434c990bd186f0870ea810c22(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "Raccoon City Recruit",
+          "description": "In a public match, repair the generator on the 1st floor of the RPD station’s main hall and escape.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/b549f31c124f7dfe309db1001900f624bc58afb6(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "Neither Seen Nor Heard",
+          "description": "Apply the Oblivious status effect to Survivors 30 times in public matches.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/d9cf74850b6375a0a81f3616c390053d2809ab71(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "Lost All Hope",
+          "description": "Down a Survivor within the bounds of any Exit Gate.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/1b643a24e64b9dec81869afc0fb28d3bb5fb6f0f(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "Humanitarian",
+          "description": "Affect other Survivors with positive status effects 50 times in public matches.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/959936a00883d84a6a1e1a372b94d4cf86d244d9(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "With Scars to Show",
+          "description": "Go from healthy to injured during a chase and escape. Do this 50 times in public matches.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/9f699650bf96fb3c153c964804069e9305ae9d2b(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "Viral Video",
+          "description": "Apply Condemned on Survivors 30 times in public matches.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/27796bb16e10305de4ad9b6c0a555763504c9c48(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "Ghost in the Machine",
+          "description": "Damage 50 generators while Undetectable in public matches.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/5a4f92d29ec149d688f73d9a3e0ab42c03aad913(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "Triage",
+          "description": "When a Survivor is injured far away, heal them 30 times without travelling more than 16 meters.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/661da8bda0a717cb3cf5a2612825eae60d004ee2(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "From the Deep",
+          "description": "Grab a Survivor hiding inside a locker 25 times in public matches.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/7330822bbab5ec9adf74dde3437ad9b410246326(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "Collision Course",
+          "description": "Slam one Survivor into another 10 times in public matches.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/762bb8c98bb3383075ca507dbef259265bf2f971(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "A Fast Death",
+          "description": "Damage a Survivor with the Haste Status effect 8 times in public matches.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/e71a9d68651255bfd4689856bed77c106b1ef2a1(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "Lifting The Fog",
+          "description": "Reveal the Killer's aura 50 times in public matches.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/208bfac419ec47f36ddd65dae6715c6e27d468ed(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "Chorus of Chaos",
+          "description": "In public matches, make 30 unique survivors scream.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/f8073d6a7498ac79ce0b460edb6e5f434665091a(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "Hack the Mainframe",
+          "description": "In a public match, repair the generator by the command center on Shelter Woods and escape.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/d457cd872ff1628abbe623910c42b75dbc3b6230(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "Complete the Evolution",
+          "description": "In public matches, injure or down 3 Survivors who are Hindered.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/d8b8e33ada958afadcd3dde800ec2df578697728(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "Extraterrestrial",
+          "description": "In a public match, complete the generator at the base on Toba Landing and escape.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/5e291779d48f1d57e4c4905b39cb976a8dbdd1b7(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "One More Step",
+          "description": "In public matches, take a hit while you have the Endurance status effect 10 times.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/25a8b9426712a911d2bfecabd8291055878a2735(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "Second Act",
+          "description": "In public matches, recover from dying by yourself or with help 10 times.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/50c5545d417de906b856b14a1f8473853695e8a5(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "Make Some Noise",
+          "description": "In public matches, scream 50 times.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/932279209efbc51ec86da36758738b5e7776c4fd(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "Disarm and Dismember",
+          "description": "In public matches, hit 50 Survivors holding a Special Item.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/15ed7d98c54a4bdb0cec8c27d8a89b319c1065e3(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "MU/TH/UR Dearest",
+          "description": "In a public match, complete the generator at the mess hall in the Nostromo Wreckage and escape.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/a884fb83bb1862856cbe69d67f4c0aab87a8652b(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "Kitted Out",
+          "description": "In 35 different public matches, pick up and use at least one Special Item as a Survivor.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/3bd79b1622ceb0264ecea6db18091b86b38ff983(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "Outta Nowhere",
+          "description": "In public matches, hit 40 Survivors with a basic attack while you are Undetectable.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/d056e249d6823ad7db349eda0a45c435dcde7922(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "Under Pressure",
+          "description": "In public matches, perform 20 great skill checks while injured.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/fc5f46b62d667fb25b11117bc129861cc0de223e(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "Shine On",
+          "description": "In public matches, blind the Killer with a flashlight 30 times.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/2fea0c371d362364454b7f89be6db95dd85b135c(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "What Lurks Beneath",
+          "description": "In public matches, injure Survivors while in the Basement 25 times.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/330043feb20ee1b0caba924d8e5edbf6fef8d6b0(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "Fearless Healer",
+          "description": "In public matches, heal a total of 25 Health States while in the Basement.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/57e4a581506b0cd575d432e391e2d9843d6df52d(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "Tanuki in the Fog",
+          "description": "Discover a hidden guardian at the Yamaoka Estate.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/f961bb1a93c0c7870672758b5d71732a36d62a8e(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "Desperate Escape",
+          "description": "In public matches, perform a fast vault within 3 seconds of getting hit 15 times.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/db7bbf2a3bf05e25fc6fde71cfafe47069fb17ec(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "Resourceful",
+          "description": "In public matches, swap held Survivor items for new ones from chests 10 times (max once per chest).",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/3799988e002c408f444b7ca83b0a878dbc0b4661(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "Taste the Darkness",
+          "description": "In public matches, interrupt 10 Survivors while they are performing a vault.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/488927a4db0afc7d36d0dac41e399cd677bc169d(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "Honor the Bloodline",
+          "description": "In public matches, reveal the Killer's aura for a total of 60 seconds in a single trial.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/6108d03e3629edfd8c911e2d468e0e2277a1c55f(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "Hero of Wallachia",
+          "description": "In public matches, pallet stun the Killer 10 times while holding a rare, common, or uncommon item.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/b075e4fa75ea6bd01a8df3bfef0ce64b0e80c9c2(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "Deadly Plunge",
+          "description": "In public matches, as a Killer, fall a combined distance of 1000 meters.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/dcf96aafa691b0f86e16ad9faf4dfb1816237ce5(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "Awakened Anger",
+          "description": "In public matches, damage a Survivor who just blinded you within 30 seconds.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/e3011cfc77ef347a98974755cad09f3988390fd3(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "Final Days",
+          "description": "In public matches, take 10 protection hits during the Endgame Collapse.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/54b6610cbe77250047bb235d278790a280e1aaf6(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "Ever Vigilant",
+          "description": "In public matches, complete 20 healing actions on Survivors once all generators have been completed.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/f58d477c816998964aae066b25f438a82f6da2db(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "None the Wiser",
+          "description": "In public matches, hit 5 Survivors that are Oblivious.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/11e0376997b4587613953762ebf5aa0f7107f5f2(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "Death Flight",
+          "description": "Injure Survivors after you vaulted during a chase 20 times in public matches.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/01c0a6c8c38034754f625bdfa2ba4aeccd301089(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "The Show Must Go On",
+          "description": "In public matches, finish repairing 10 generators while injured.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/f9f127d9292e2b516d1922607f237e0d318421d5(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "Practice Makes Perfect",
+          "description": "In public matches, succeed in 100 healing or repair skill checks.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/598b47cb5a3e205b79e8679dbfa79d05c549259b(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "Torn Asunder",
+          "description": "In public matches, damage a Survivor using the Vine or Undergate Attacks 50 times.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/06073d26a7d375ccca77c81f544cefa43ab8595e(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "Master Manipulator",
+          "description": "In public matches, damage a Survivor while they are healing another or repairing 5 times.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/30c8b92c4ab3bfb61c21516b5220b1eca140df0e(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "Stranger Sightings",
+          "description": "Reveal or see the Killer's aura 11 times in a single trial in a public match.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/898dc83c5178e7a033d7711283c2ad6bcd81c864(1).jpg",
+          "unlocked": true,
+          "progress": {
+            "label": "1 / 1"
+          }
+        },
+        {
+          "title": "The Grind",
+          "description": "In public matches, with the Hillbilly, chainsaw a total of 100 survivors.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/4fcdd2b6fcb4195b88c744cead6a47c1c384582c(1).jpg",
           "unlocked": false,
           "progress": {
-            "percent": 0.0,
-            "current": 0,
-            "target": 1
-          },
-          "image": "/deadbydaylight/assets/achievements/a093d46a5f12d6f869de4edb0fc7e0e17a5ad446.jpg"
+            "label": "0 / 100"
+          }
+        },
+        {
+          "title": "Gifts for the Fog",
+          "description": "In a public match, burn a Visceral offering.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/9b1fad75511df38b2e6d53d312f6f9bb4c2794d7(1).jpg",
+          "unlocked": false,
+          "progress": {
+            "label": "0 / 1"
+          }
+        },
+        {
+          "title": "Hemophobia",
+          "description": "In a public match, escape the Disturbed Ward without losing a single drop of blood.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/f1512ba444845601ffa4196b753715f29da3b50b(1).jpg",
+          "unlocked": false,
+          "progress": {
+            "label": "0 / 1"
+          }
+        },
+        {
+          "title": "Shock Therapy",
+          "description": "In a public match, repair the generator on the second floor of the Disturbed Ward and escape.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/57c108f16a691c05255ab71d719e9efcd5b1e932(1).jpg",
+          "unlocked": false,
+          "progress": {
+            "label": "0 / 1"
+          }
+        },
+        {
+          "title": "Prized Possession",
+          "description": "As a Killer, finish a public match with at least one Hex totem standing.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/36fe0a840591e2dcd0260ba18b5de6177b336b25(1).jpg",
+          "unlocked": false,
+          "progress": {
+            "label": "0 / 1"
+          }
+        },
+        {
+          "title": "Item of Obsession",
+          "description": "In a public match, as the killer's obsession, escape as the last survivor without getting hit.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/f5adbf0203e7eb3c77359d20cef240b4354ac199(1).jpg",
+          "unlocked": false,
+          "progress": {
+            "label": "0 / 1"
+          }
+        },
+        {
+          "title": "Deep Cleansing",
+          "description": "In public matches, cleanse 100 Hex totems.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/d87488af3ab511a5ae29ca29b71ebb82a1e45294(1).jpg",
+          "unlocked": false,
+          "progress": {
+            "label": "6 / 100"
+          }
+        },
+        {
+          "title": "Even Punishment",
+          "description": "In a public match, teleport to your Phantasm traps and hit all 4 individual survivors at least once.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/a5b68233123199f3deff9e7ca0ed8055fc7ae68e(1).jpg",
+          "unlocked": false,
+          "progress": {
+            "label": "0 / 1"
+          }
+        },
+        {
+          "title": "Left For Dead",
+          "description": "As the last person still alive, activate the last generator and escape through the exit gate.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/814b1d50bc7e00a74715e35d40942dba743b6822(1).jpg",
+          "unlocked": false,
+          "progress": {
+            "label": "0 / 1"
+          }
+        },
+        {
+          "title": "Adept Min",
+          "description": "In a public match, escape with Min using only her 3 unique perks.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/133ce915650256a883c257e3edf364ca5e7edcb4(1).jpg",
+          "unlocked": false,
+          "progress": {
+            "label": "0 / 1"
+          }
+        },
+        {
+          "title": "Cottage Owner",
+          "description": "In a public match, repair the generator in the Mother's Dwelling and live to tell the story.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/5877973b87bc553db12a9f760dd1716f7e6ed673(1).jpg",
+          "unlocked": false,
+          "progress": {
+            "label": "0 / 1"
+          }
+        },
+        {
+          "title": "Dream Demon",
+          "description": "In public matches, pull 200 Survivors into the Dream World.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/8ab5d726fef91eb4778fe379f404f18c7325ed50(1).jpg",
+          "unlocked": false,
+          "progress": {
+            "label": "170 / 200"
+          }
+        },
+        {
+          "title": "Milk 'n' Cookies",
+          "description": "In a public match, take the item from the chest in the basement in at least 30 different trials.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/c35bc221745f4df633483089c476bc90002d8278(1).jpg",
+          "unlocked": false,
+          "progress": {
+            "label": "12 / 30"
+          }
+        },
+        {
+          "title": "Happy Holidays",
+          "description": "Open at least 100 mystery boxes on the bloodweb (available during select special events).",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/15eefa7ededc2d5aaeb22874b7806327d33db4c7(1).jpg",
+          "unlocked": false,
+          "progress": {
+            "label": "0 / 100"
+          }
+        },
+        {
+          "title": "Adept Tapp",
+          "description": "In a public match, escape with Detective Tapp using only his 3 unique perks.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/988a7ddd519b6a509aa4af44b2293681cb8dc197(1).jpg",
+          "unlocked": false,
+          "progress": {
+            "label": "0 / 1"
+          }
+        },
+        {
+          "title": "Ancestor's Rite",
+          "description": "In a public match, repair the generator in the Family Residence and live to tell the tale.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/9c150a67d3388db5a2a7f480c25656dedf9a8e75(1).jpg",
+          "unlocked": false,
+          "progress": {
+            "label": "0 / 1"
+          }
+        },
+        {
+          "title": "Not Today",
+          "description": "In public matches, unhook yourself 50 times.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/170c18c7481c0b80f4fca73ae8d560279668e410(1).jpg",
+          "unlocked": false,
+          "progress": {
+            "label": "1 / 50"
+          }
+        },
+        {
+          "title": "Shrine Apparatus",
+          "description": "In a public match, repair the generator in the Temple basement and live to tell the tale.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/57ab581fc7570425692211326a38058fa1f28dff(1).jpg",
+          "unlocked": false,
+          "progress": {
+            "label": "0 / 1"
+          }
+        },
+        {
+          "title": "Outrun Evil",
+          "description": "In a public match, crawl your way out through the hatch.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/1cc3c5e28f58ebbd83200a4824d2f3274e03cdf0(1).jpg",
+          "unlocked": false,
+          "progress": {
+            "label": "0 / 1"
+          }
+        },
+        {
+          "title": "Adept Ash",
+          "description": "In a public match, escape with Ash using only his 3 unique perks.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/90ddb2b496fda434acbe108749a9b2c03458b2b7(1).jpg",
+          "unlocked": false,
+          "progress": {
+            "label": "0 / 1"
+          }
+        },
+        {
+          "title": "Totally Vulnerable",
+          "description": "In public matches, with Ghost Face, down 50 Marked Survivors.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/709336f9954d3927658af5fce09f19489d336c50(1).jpg",
+          "unlocked": false,
+          "progress": {
+            "label": "29 / 50"
+          }
+        },
+        {
+          "title": "Expert Generalist",
+          "description": "Escape 8 times while repairing the equivalent of 1 generator with only 2 universal perks equipped.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/e89aa9b92ad4d41d35d92304b276efd8f230cc87(1).jpg",
+          "unlocked": false,
+          "progress": {
+            "label": "0 / 8"
+          }
+        },
+        {
+          "title": "Skilled Generalist",
+          "description": "Escape 8 times while repairing the equivalent of 1 generator with only 3 universal perks equipped.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/8751c8647d7decd1ea6f406217c270a44f5226c2(1).jpg",
+          "unlocked": false,
+          "progress": {
+            "label": "0 / 8"
+          }
+        },
+        {
+          "title": "Quick Draw",
+          "description": "Interrupt a Survivor cleansing a Totem 10 times in public matches.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/7294c03735152ec61c0b91ccaf8afc174256c2b0(1).jpg",
+          "unlocked": false,
+          "progress": {
+            "label": "2 / 10"
+          }
+        },
+        {
+          "title": "Old West Oasis",
+          "description": "In a public match, repair the generator in the Saloon and escape.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/d6d7760845581d4b2aa0101c9e1dd48cc0b4e81a(1).jpg",
+          "unlocked": false,
+          "progress": {
+            "label": "0 / 1"
+          }
+        },
+        {
+          "title": "Classy Act",
+          "description": "In a public match, repair the generator in Midwich School's music room or chem lab and escape.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/721fdec9429673c97b2afec963841c0915250cd6(1).jpg",
+          "unlocked": false,
+          "progress": {
+            "label": "0 / 1"
+          }
+        },
+        {
+          "title": "One Thousand Cuts",
+          "description": "Deal maximum Laceration on Survivors 50 times in public matches.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/34cf394a1f001f3770e43be70617a4040341a0eb(1).jpg",
+          "unlocked": false,
+          "progress": {
+            "label": "5 / 50"
+          }
+        },
+        {
+          "title": "Beyond Broken",
+          "description": "Injure a Survivor afflicted by the Broken Status Effect with a Basic Attack a total of 50 times.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/5f27e515504946eda3bc68bf6fc635e384b75bc0(1).jpg",
+          "unlocked": false,
+          "progress": {
+            "label": "43 / 50"
+          }
+        },
+        {
+          "title": "Bless You",
+          "description": "Bless a Hex totem 20 times in public matches.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/9900472dd423ebb7c87c5c050d532712448e95a2(1).jpg",
+          "unlocked": false,
+          "progress": {
+            "label": "0 / 20"
+          }
+        },
+        {
+          "title": "Flight to Freedom",
+          "description": "In a public match, repair the generator in the eyrie and escape.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/4e36af2ae6a87c5022929eabafa4a87b7864a716(1).jpg",
+          "unlocked": false,
+          "progress": {
+            "label": "0 / 1"
+          }
+        },
+        {
+          "title": "Fleet of Foot",
+          "description": "Help other Survivors by increasing their movement speed 50 times.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/0c51041a64a009995e00e64113dd9193b7f880d7(1).jpg",
+          "unlocked": false,
+          "progress": {
+            "label": "0 / 50"
+          }
+        },
+        {
+          "title": "Outrun the Overlap",
+          "description": "In a public match, repair the generator in the main house in the Garden of Joy and escape.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/b120f700d21e19857fa6f6e3febff5ab8f03be90(1).jpg",
+          "unlocked": false,
+          "progress": {
+            "label": "0 / 1"
+          }
+        },
+        {
+          "title": "Hiding Seeker",
+          "description": "In a public match, end a chase against any Killer by hiding inside a locker 35 times.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/9c5c2c2653a311acae08b7a92edc83d8f0e10372(1).jpg",
+          "unlocked": false,
+          "progress": {
+            "label": "6 / 35"
+          }
+        },
+        {
+          "title": "Outbreak Breakout",
+          "description": "Open the exit gates and escape from Raccoon City Police Department 20 times in public matches.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/632d2a8925d9b097f96abefd2ad7c7d25ffb26a0(1).jpg",
+          "unlocked": false,
+          "progress": {
+            "label": "0 / 20"
+          }
+        },
+        {
+          "title": "Rebuilding The Borgo",
+          "description": "In a public match, repair the generator in the main house in the Shattered Square and escape.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/3a434e4e0230d7cfdcda878cb429336af7aa3014(1).jpg",
+          "unlocked": false,
+          "progress": {
+            "label": "0 / 1"
+          }
+        },
+        {
+          "title": "Adept Cage",
+          "description": "Escape with Nicolas Cage using only his 3 unique perks in a public match.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/9b0c981e85d73bcbb43986aa817299ce9c80368f(1).jpg",
+          "unlocked": false,
+          "progress": {
+            "label": "0 / 1"
+          }
+        },
+        {
+          "title": "Adept Ripley",
+          "description": "Escape with Ellen Ripley using only her 3 unique perks in a public match.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/1effafaee34a368a6092e826243745ea946d869a(1).jpg",
+          "unlocked": false,
+          "progress": {
+            "label": "0 / 1"
+          }
+        },
+        {
+          "title": "Movie Buff",
+          "description": "In a public match, complete the generator inside the movie theater in Greenville Square and escape.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/0a947bcbdc9a85ea02b6a0a090e64d6993f6dafc(1).jpg",
+          "unlocked": false,
+          "progress": {
+            "label": "0 / 1"
+          }
+        },
+        {
+          "title": "Dungeon Crawler",
+          "description": "In a public match, complete the generator inside the torture room in the Forgotten Ruins and escape.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/f5301ecad390cd70c20a04f4dfba582d00ab04ad(1).jpg",
+          "unlocked": false,
+          "progress": {
+            "label": "0 / 1"
+          }
+        },
+        {
+          "title": "Hand-Eye Coordination",
+          "description": "Find and use the Hand or Eye of Vecna and escape a Trial.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/02a7069b09d12adaf5a34ee421580fe9b7919df7(1).jpg",
+          "unlocked": false,
+          "progress": {
+            "label": "0 / 1"
+          }
+        },
+        {
+          "title": "Adept Troupe",
+          "description": "Escape with Aestri or Baermar using only their 3 unique perks in a public match.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/c6cb995b83fa4922421ab1a79ea79f33516b1855(1).jpg",
+          "unlocked": false,
+          "progress": {
+            "label": "0 / 1"
+          }
+        },
+        {
+          "title": "Break For It",
+          "description": "In public matches, escape a match while being Broken a total of 5 times.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/d193f95913b746ba6fe70b841eb3f5b7c1ed41eb(1).jpg",
+          "unlocked": false,
+          "progress": {
+            "label": "0 / 5"
+          }
+        },
+        {
+          "title": "Bloodied Hands",
+          "description": "In public matches, safely unhook Survivors while being Broken a total of 10 times.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/61c7f905ce5483e7e81219758503743bacac0605(1).jpg",
+          "unlocked": false,
+          "progress": {
+            "label": "0 / 10"
+          }
+        },
+        {
+          "title": "Don’t Open, Dead Inside",
+          "description": "In a public match, complete the generator at the Fallen Refuge and escape.",
+          "chapter": "",
+          "section": "General",
+          "icon": "./Steam Community __ Dead by Daylight __ SicarioDragon_files/bb4d134a0bfc4c3c7752916f1a7f2af7954b2e52(1).jpg",
+          "unlocked": false,
+          "progress": {
+            "label": "0 / 1"
+          }
+        },
+        {
+          "title": "1 hidden achievement remaining",
+          "description": "Details for each achievement will be revealed once unlocked",
+          "chapter": "",
+          "section": "General",
+          "icon": "",
+          "unlocked": false,
+          "progress": {
+            "label": "0 / 1"
+          }
         }
       ]
     }
