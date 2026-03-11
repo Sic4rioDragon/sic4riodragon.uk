@@ -28,6 +28,7 @@ function normalize(value) {
 
 function matchesSearch(item, search) {
   if (!search) return true;
+
   const haystack = [
     item.title,
     item.description,
@@ -35,20 +36,19 @@ function matchesSearch(item, search) {
     item.section,
     item.progress?.label
   ].join(' ').toLowerCase();
+
   return haystack.includes(search);
 }
 
+function getAllItems(data) {
+  return data.sections.flatMap(section => section.items);
+}
+
 function getVisibleItems(data) {
-  const visible = [];
-  for (const section of data.sections) {
-    for (const item of section.items) {
-      const passesUnlocked = state.showUnlocked ? true : !item.unlocked;
-      if (passesUnlocked && matchesSearch(item, state.search)) {
-        visible.push(item);
-      }
-    }
-  }
-  return visible;
+  return getAllItems(data).filter(item => {
+    const passesUnlocked = state.showUnlocked ? true : !item.unlocked;
+    return passesUnlocked && matchesSearch(item, state.search);
+  });
 }
 
 function countLocked(items) {
@@ -59,8 +59,25 @@ function countUnlocked(items) {
   return items.filter(item => item.unlocked).length;
 }
 
+function normalizeIconPath(icon) {
+  if (!icon) {
+    return '/deadbydaylight/assets/img/placeholder.png';
+  }
+
+  if (/^https?:\/\//i.test(icon)) {
+    return icon;
+  }
+
+  const match = String(icon).match(/([a-f0-9]{40})(?:\(\d+\))?\.jpg/i);
+  if (match) {
+    return `https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/381210/${match[1]}.jpg`;
+  }
+
+  return '/deadbydaylight/assets/img/placeholder.png';
+}
+
 function renderSummary(target, data, labelTarget) {
-  const items = data.sections.flatMap(section => section.items);
+  const items = getAllItems(data);
   const locked = countLocked(items);
 
   labelTarget.textContent = `${locked} locked`;
@@ -121,17 +138,22 @@ function renderSections(target, data) {
 function renderAchievement(item) {
   const stateText = item.unlocked ? 'Unlocked' : 'Locked';
   const progressText = item.progress?.label || (item.unlocked ? '1 / 1' : '0 / 1');
-  const icon = item.icon || '/deadbydaylight/assets/img/placeholder.png';
+  const icon = normalizeIconPath(item.icon);
 
   return `
     <article class="achievement">
-      <img src="${escapeAttribute(icon)}" alt="${escapeAttribute(item.title)}" loading="lazy">
+      <img
+        src="${escapeAttribute(icon)}"
+        alt="${escapeAttribute(item.title)}"
+        loading="lazy"
+        onerror="this.onerror=null;this.src='/deadbydaylight/assets/img/placeholder.png';"
+      >
       <div>
         <h4 class="achievement-title">${escapeHtml(item.title)}</h4>
         <p>${escapeHtml(item.description)}</p>
         <div class="achievement-meta">
-          <span class="badge">${escapeHtml(item.chapter)}</span>
-          ${item.section !== 'General' ? `<span class="badge">${escapeHtml(item.section)}</span>` : ''}
+          ${item.section ? `<span class="badge">${escapeHtml(item.section)}</span>` : ''}
+          ${item.chapter ? `<span class="badge">${escapeHtml(item.chapter)}</span>` : ''}
         </div>
       </div>
       <div class="achievement-side">
@@ -144,8 +166,8 @@ function renderAchievement(item) {
 
 function updateTotals() {
   const allItems = [
-    ...state.survivors.sections.flatMap(section => section.items),
-    ...state.killers.sections.flatMap(section => section.items)
+    ...getAllItems(state.survivors),
+    ...getAllItems(state.killers)
   ];
 
   const visibleItems = [
@@ -167,7 +189,7 @@ function render() {
 }
 
 function escapeHtml(value) {
-  return String(value)
+  return String(value ?? '')
     .replaceAll('&', '&amp;')
     .replaceAll('<', '&lt;')
     .replaceAll('>', '&gt;')
