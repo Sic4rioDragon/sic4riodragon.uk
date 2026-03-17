@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>DBD Achievements — Sic4rioDragon</title>
-  <meta name="description" content="Sic4rioDragon's Dead by Daylight achievements tracker for survivors and killers.">
+  <meta name="description" content="Sic4rioDragon's Dead by Daylight achievements tracker for survivors, killers, and general achievements.">
   <meta name="theme-color" content="#07111d">
 
   <link rel="canonical" href="https://sic4riodragon.uk/deadbydaylight/achievements/">
@@ -18,14 +18,14 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Sic4rioDragon.uk">
   <meta property="og:title" content="Dead by Daylight • Achievements • Sic4rioDragon">
-  <meta property="og:description" content="My Dead by Daylight achievements — survivors + killers.">
+  <meta property="og:description" content="My Dead by Daylight achievements — survivors, killers, and general achievements.">
   <meta property="og:url" content="https://sic4riodragon.uk/deadbydaylight/achievements/">
   <meta property="og:image" content="https://sic4riodragon.uk/deadbydaylight/assets/img/banner1.png">
   <meta property="og:image:alt" content="Dead by Daylight banner featuring Yui and Huntress">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Dead by Daylight • Achievements • Sic4rioDragon">
-  <meta name="twitter:description" content="My Dead by Daylight achievements — survivors + killers.">
+  <meta name="twitter:description" content="My Dead by Daylight achievements — survivors, killers, and general achievements.">
   <meta name="twitter:image" content="https://sic4riodragon.uk/deadbydaylight/assets/img/banner1.png">
 </head>
 <body>
@@ -40,12 +40,12 @@
       <div class="hero-copy">
         <div class="eyebrow">SIC4RIODRAGON.UK / DEADBYDAYLIGHT</div>
         <h1>Achievements</h1>
-        <p class="subtitle">Sic4rioDragon's locked achievements</p>
+        <p class="subtitle">Locked Dead by Daylight achievements</p>
 
         <nav class="hero-nav" aria-label="Dead by Daylight">
           <a href="/deadbydaylight/">Home</a>
           <a href="/deadbydaylight/survivors.html">Survivors</a>
-          <a href="/deadbydaylight/">Killers</a>
+          <a href="/deadbydaylight/killers.html">Killers</a>
           <a href="/twitch/deadbydaylight/">Challenges</a>
           <a class="active" href="/deadbydaylight/achievements/">Achievements</a>
         </nav>
@@ -75,7 +75,7 @@
       <div class="toolbar-actions">
         <label class="search-wrap">
           <span>Search</span>
-          <input id="searchInput" type="search" placeholder="achievement, chapter, adept...">
+          <input id="searchInput" type="search" placeholder="achievement, adept, killer, survivor...">
         </label>
 
         <label class="check">
@@ -101,6 +101,14 @@
         </div>
         <div id="killerSummary" class="summary-list"></div>
       </article>
+
+      <article class="card summary-card">
+        <div class="summary-head">
+          <h2>General summary</h2>
+          <span id="generalSummaryCounts">0 locked</span>
+        </div>
+        <div id="generalSummary" class="summary-list"></div>
+      </article>
     </section>
 
     <section class="content-area">
@@ -116,6 +124,13 @@
           <h2>Killer achievements</h2>
         </div>
         <div id="killerSections" class="section-stack"></div>
+      </article>
+
+      <article class="card">
+        <div class="section-head">
+          <h2>General achievements</h2>
+        </div>
+        <div id="generalSections" class="section-stack"></div>
       </article>
     </section>
   </main>
