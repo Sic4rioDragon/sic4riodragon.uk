@@ -376,6 +376,14 @@
     "id": null
   },
   {
+    "achievement_id": "broken_bodies",
+    "title": "Broken Bodies",
+    "description": "In public matches, hook a Survivor while 3 other Survivors are injured, 10 times.",
+    "category": "killer",
+    "section": "general",
+    "id": null
+  },
+  {
     "achievement_id": "chorus_of_chaos",
     "title": "Chorus of Chaos",
     "description": "In public matches, make 30 unique survivors scream.",
@@ -1496,6 +1504,14 @@
     "id": null
   },
   {
+    "achievement_id": "escape_artist",
+    "title": "Escape Artist",
+    "description": "In a public match, successfully escape the hook and escape.",
+    "category": "survivor",
+    "section": "map",
+    "id": null
+  },
+  {
     "achievement_id": "extraterrestrial",
     "title": "Extraterrestrial",
     "description": "In a public match, complete the generator at the base on Toba Landing and escape.",
@@ -1621,14 +1637,6 @@
     "description": "In a public match, repair the generator in the Chalet and live to tell the tale.",
     "category": "survivor",
     "section": "map",
-    "id": null
-  },
-  {
-    "achievement_id": "hand_eye_coordination",
-    "title": "Hand-Eye Coordination",
-    "description": "Find and use the Hand or Eye of Vecna and escape a Trial. (lich)",
-    "category": "survivor",
-    "section": "general",
     "id": null
   },
   {
@@ -1795,6 +1803,14 @@
     "achievement_id": "fleet_of_foot",
     "title": "Fleet of Foot",
     "description": "Help other Survivors by increasing their movement speed 50 times.",
+    "category": "survivor",
+    "section": "general",
+    "id": null
+  },
+  {
+    "achievement_id": "hand_eye_coordination",
+    "title": "Hand-Eye Coordination",
+    "description": "Find and use the Hand or Eye of Vecna and escape a Trial. (lich)",
     "category": "survivor",
     "section": "general",
     "id": null
@@ -2056,6 +2072,14 @@
     "id": null
   },
   {
+    "achievement_id": "resurgence",
+    "title": "Resurgence",
+    "description": "Heal other Survivors for 10 health states while at least 3 Survivors are injured, dying or hooked.",
+    "category": "survivor",
+    "section": "general",
+    "id": null
+  },
+  {
     "achievement_id": "risk_it_all",
     "title": "Risk it all",
     "description": "In a public match, as a survivor, use a visceral item or add-on without using a protective ward.",
@@ -2192,9 +2216,33 @@
     "id": null
   },
   {
+    "achievement_id": "blood_in_your_mouth",
+    "title": "Blood in your mouth",
+    "description": "In public matches, kill a total of 25 survivors.",
+    "category": "general",
+    "section": "general",
+    "id": null
+  },
+  {
+    "achievement_id": "blood_on_your_face",
+    "title": "Blood on your face",
+    "description": "In a public match, kill 4 survivors in a single match.",
+    "category": "general",
+    "section": "general",
+    "id": null
+  },
+  {
     "achievement_id": "bloody_millionaire",
     "title": "Bloody Millionaire",
     "description": "Accumulate a total of 1 million blood points. (blood points can be spent before reaching the total)",
+    "category": "general",
+    "section": "general",
+    "id": null
+  },
+  {
+    "achievement_id": "first_to_the_punch",
+    "title": "First to the Punch",
+    "description": "Down 30 Survivors next to raised pallets in public matches.",
     "category": "general",
     "section": "general",
     "id": null
@@ -2219,6 +2267,14 @@
     "achievement_id": "happy_holidays",
     "title": "Happy Holidays",
     "description": "Open at least 100 mystery boxes on the bloodweb (available during select special events).",
+    "category": "general",
+    "section": "general",
+    "id": null
+  },
+  {
+    "achievement_id": "holiday_get_together",
+    "title": "Holiday Get-Together",
+    "description": "In a public match, have at least 3 survivors hooked in the basement at the same time.",
     "category": "general",
     "section": "general",
     "id": null
