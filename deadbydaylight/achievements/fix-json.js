@@ -2,7 +2,8 @@ const fs = require('fs');
 const path = require('path');
 
 const BASE_PATH = path.join(__dirname, 'achievements.base.json');
-const OUTPUT_PATH = path.join(__dirname, 'achievements.json');
+const STATE_PATH = path.join(__dirname, 'achievements.json');
+const ICONS_PATH = path.join(__dirname, 'achievements.icons.json');
 
 function normalizeText(text) {
   return String(text || '').replace(/\s+/g, ' ').trim();
@@ -32,11 +33,30 @@ function decodeHtml(text) {
 
 function tryFindNightLightHtml() {
   const files = fs.readdirSync(__dirname);
-  const html = files.find(name =>
-    name.toLowerCase().endsWith('.html') &&
-    name.toLowerCase().includes('nightlight')
+  const html = files.find(
+    name =>
+      name.toLowerCase().endsWith('.html') &&
+      name.toLowerCase().includes('nightlight')
   );
   return html ? path.join(__dirname, html) : null;
+}
+
+function steamIconFromSrc(src) {
+  const raw = decodeHtml(src || '').trim();
+  if (!raw) return '';
+
+  if (/^https?:\/\/steamcdn-a\.akamaihd\.net\/steamcommunity\/public\/images\/apps\/381210\//i.test(raw)) {
+    return raw;
+  }
+
+  const filename = raw.split('/').pop() || '';
+  const hashMatch = filename.match(/([a-f0-9]{40})/i);
+  if (!hashMatch) return '';
+
+  const extMatch = filename.match(/\.(jpg|jpeg|png|webp)/i);
+  const ext = extMatch ? extMatch[1].toLowerCase() : 'jpg';
+
+  return `https://steamcdn-a.akamaihd.net/steamcommunity/public/images/apps/381210/${hashMatch[1].toLowerCase()}.${ext}`;
 }
 
 function extractEntriesFromHtml(html) {
@@ -46,25 +66,19 @@ function extractEntriesFromHtml(html) {
   for (const block of blocks) {
     const titleMatch = block.match(/<p class="mb-0 fw-bold">([\s\S]*?)<\/p>/i);
     const descMatch = block.match(/<small>([\s\S]*?)<\/small>/i);
+    const imgMatch = block.match(/<img[^>]+src="([^"]+)"[^>]*>/i);
 
     if (!titleMatch || !descMatch) continue;
 
     const title = normalizeText(decodeHtml(titleMatch[1]));
     const description = normalizeText(decodeHtml(descMatch[1]));
     const unlocked = /_unlocked_info_179il_15/.test(block);
+    const icon = imgMatch ? steamIconFromSrc(imgMatch[1]) : '';
 
-    entries.push({ title, description, unlocked });
+    entries.push({ title, description, unlocked, icon });
   }
 
   return entries;
-}
-
-function buildUnlockedMap(entries) {
-  const map = new Map();
-  for (const item of entries) {
-    map.set(lower(item.title), !!item.unlocked);
-  }
-  return map;
 }
 
 function ensureGroup(target, a, b) {
@@ -201,21 +215,41 @@ function normalizeExistingState(existingState, base) {
   return output;
 }
 
+function loadJsonIfExists(filePath, fallback) {
+  if (!fs.existsSync(filePath)) return fallback;
+
+  const raw = fs.readFileSync(filePath, 'utf8').trim();
+  if (!raw) return fallback;
+
+  try {
+    return JSON.parse(raw);
+  } catch (err) {
+    console.warn(`Invalid JSON in ${path.basename(filePath)}. Using fallback instead.`);
+    return fallback;
+  }
+}
+
 function main() {
-  const base = JSON.parse(fs.readFileSync(BASE_PATH, 'utf8'));
+  const base = loadJsonIfExists(BASE_PATH, []);
+  const existingState = loadJsonIfExists(STATE_PATH, createEmptyGroupedState());
+  const existingIcons = loadJsonIfExists(ICONS_PATH, {});
   const htmlPath = tryFindNightLightHtml();
 
-  const existingState = fs.existsSync(OUTPUT_PATH)
-    ? JSON.parse(fs.readFileSync(OUTPUT_PATH, 'utf8'))
-    : createEmptyGroupedState();
-
-  let unlockedMap = null;
   let htmlEntries = [];
+  let unlockedMap = null;
+  let iconMap = null;
 
   if (htmlPath) {
     const html = fs.readFileSync(htmlPath, 'utf8');
     htmlEntries = extractEntriesFromHtml(html);
-    unlockedMap = buildUnlockedMap(htmlEntries);
+
+    unlockedMap = new Map();
+    iconMap = new Map();
+
+    for (const item of htmlEntries) {
+      unlockedMap.set(lower(item.title), !!item.unlocked);
+      if (item.icon) iconMap.set(lower(item.title), item.icon);
+    }
 
     const existingById = new Map(base.map(item => [item.achievement_id, item]));
     const existingByTitle = new Map(base.map(item => [lower(item.title), item]));
@@ -242,10 +276,9 @@ function main() {
 
   base.sort(compareItems);
 
-  let output;
-
+  let outputState;
   if (unlockedMap) {
-    output = createEmptyGroupedState();
+    outputState = createEmptyGroupedState();
 
     for (const item of base) {
       const [group, section] = stateBucketFor(item);
@@ -253,23 +286,45 @@ function main() {
         ? unlockedMap.get(lower(item.title))
         : !!existingState?.[group]?.[section]?.[item.achievement_id];
 
-      ensureGroup(output, group, section)[item.achievement_id] = !!unlocked;
+      ensureGroup(outputState, group, section)[item.achievement_id] = !!unlocked;
     }
   } else {
-    output = normalizeExistingState(existingState, base);
+    outputState = normalizeExistingState(existingState, base);
+  }
+
+  const outputIcons = { ...existingIcons };
+
+  if (iconMap) {
+    for (const item of base) {
+      const key = lower(item.title);
+      if (iconMap.has(key)) {
+        outputIcons[item.achievement_id] = iconMap.get(key);
+      } else if (!(item.achievement_id in outputIcons)) {
+        outputIcons[item.achievement_id] = '';
+      }
+    }
+  } else {
+    for (const item of base) {
+      if (!(item.achievement_id in outputIcons)) {
+        outputIcons[item.achievement_id] = '';
+      }
+    }
   }
 
   fs.writeFileSync(BASE_PATH, JSON.stringify(base, null, 2) + '\n');
-  fs.writeFileSync(OUTPUT_PATH, JSON.stringify(output, null, 2) + '\n');
+  fs.writeFileSync(STATE_PATH, JSON.stringify(outputState, null, 2) + '\n');
+  fs.writeFileSync(ICONS_PATH, JSON.stringify(outputIcons, null, 2) + '\n');
 
   console.log(`Sorted and updated ${BASE_PATH}`);
-  console.log(`Wrote ${OUTPUT_PATH}`);
+  console.log(`Wrote ${STATE_PATH}`);
+  console.log(`Wrote ${ICONS_PATH}`);
 
   if (htmlPath) {
     console.log(`Used NightLight HTML: ${path.basename(htmlPath)}`);
     console.log(`Parsed HTML achievements: ${htmlEntries.length}`);
+    console.log('Updated unlocks and Steam CDN icons from NightLight HTML.');
   } else {
-    console.log('No NightLight HTML found. Kept existing achievement unlock states and assumed no new achievements.');
+    console.log('No NightLight HTML found. Kept existing unlock states and icons.');
   }
 
   console.log(`Base count: ${base.length}`);

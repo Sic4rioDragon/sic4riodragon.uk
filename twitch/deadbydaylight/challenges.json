@@ -4,7 +4,7 @@
     {
       "id": "random-perks",
       "name": "Random perks",
-      "enabled": true,
+      "enabled": false,
       "killerWhitelist": [],
       "killerBlacklist": [],
       "notes": "Use the NightLight button if you want a generator. (i have every perk except for cenobite)"
@@ -18,9 +18,9 @@
       "notes": ""
     },
     { "id": "only-brown-addons", "name": "Only brown add-ons", "enabled": true, "killerWhitelist": [], "killerBlacklist": [] },
-    { "id": "only-m1", "name": "M1 only (no power unless required)", "enabled": true, "killerWhitelist": [], "killerBlacklist": [] },
-    { "id": "only-m2", "name": "M2 only", "enabled": true, "killerWhitelist": [], "killerBlacklist": [] },
-    { "id": "obsession-focus", "name": "Obsession focus", "enabled": true, "killerWhitelist": [], "killerBlacklist": [] },
+    { "id": "only-m1", "name": "M1 only (no power unless required)", "enabled": false, "killerWhitelist": [], "killerBlacklist": [] },
+    { "id": "only-m2", "name": "M2 only", "enabled": true, "killerWhitelist": ["Huntress"], "killerBlacklist": [] },
+    { "id": "obsession-focus", "name": "Obsession focus", "enabled": false, "killerWhitelist": [], "killerBlacklist": [] },
     { "id": "tunnel", "name": "Tunnel somebody", "enabled": true, "killerWhitelist": [], "killerBlacklist": [] },
     {
       "id": "basement-only-hooks",
@@ -30,8 +30,8 @@
       "killerWhitelist": [],
       "killerBlacklist": []
     },
-    { "id": "two-hooks-then-let-go", "name": "2-hook everyone then chill", "enabled": true, "killerWhitelist": [], "killerBlacklist": [] },
-    { "id": "meme-build", "name": "Meme build (viewer picks theme)", "enabled": true, "killerWhitelist": [], "killerBlacklist": [] }
+    { "id": "two-hooks-then-let-go", "name": "2-hook everyone then chill", "enabled": false, "killerWhitelist": [], "killerBlacklist": [] },
+    { "id": "meme-build", "name": "Meme build (viewer picks theme)", "enabled": false, "killerWhitelist": [], "killerBlacklist": [] }
   ],
   "external": [
     {

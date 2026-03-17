@@ -38,9 +38,8 @@
       </div>
 
       <div class="hero-copy">
-        <div class="eyebrow">SIC4RIODRAGON.UK / DEADBYDAYLIGHT</div>
         <h1>Achievements</h1>
-        <p class="subtitle">Locked Dead by Daylight achievements</p>
+        <p class="subtitle">My Dead by Daylight achievements</p>
 
         <nav class="hero-nav" aria-label="Dead by Daylight">
           <a href="/deadbydaylight/">Home</a>
@@ -56,7 +55,7 @@
       </div>
     </section>
 
-    <section class="toolbar card">
+    <section class="toolbar card compact">
       <div class="stats">
         <div class="stat">
           <span class="stat-label">Unlocked</span>
@@ -74,8 +73,20 @@
 
       <div class="toolbar-actions">
         <label class="search-wrap">
-          <span>Search</span>
-          <input id="searchInput" type="search" placeholder="achievement, adept, killer, survivor...">
+          <input id="searchInput" type="search" placeholder="Search achievements...">
+        </label>
+
+        <label class="select-wrap">
+          <select id="filterSelect">
+            <option value="all">All filters</option>
+            <option value="killer">Killer only</option>
+            <option value="survivor">Survivor only</option>
+            <option value="general">General only</option>
+            <option value="adept">Adept only</option>
+            <option value="map">Map only</option>
+            <option value="extra">Extra only</option>
+            <option value="general-section">General section only</option>
+          </select>
         </label>
 
         <label class="check">
@@ -86,47 +97,47 @@
     </section>
 
     <section class="summary-grid">
-      <article class="card summary-card">
-        <div class="summary-head">
-          <h2>Survivor summary</h2>
+      <details class="card mini-panel">
+        <summary class="mini-head">
+          <span>Survivor summary</span>
           <span id="survivorSummaryCounts">0 locked</span>
-        </div>
-        <div id="survivorSummary" class="summary-list"></div>
-      </article>
+        </summary>
+        <div id="survivorSummary" class="summary-list mini-body"></div>
+      </details>
 
-      <article class="card summary-card">
-        <div class="summary-head">
-          <h2>Killer summary</h2>
+      <details class="card mini-panel">
+        <summary class="mini-head">
+          <span>Killer summary</span>
           <span id="killerSummaryCounts">0 locked</span>
-        </div>
-        <div id="killerSummary" class="summary-list"></div>
-      </article>
+        </summary>
+        <div id="killerSummary" class="summary-list mini-body"></div>
+      </details>
 
-      <article class="card summary-card">
-        <div class="summary-head">
-          <h2>General summary</h2>
+      <details class="card mini-panel">
+        <summary class="mini-head">
+          <span>General summary</span>
           <span id="generalSummaryCounts">0 locked</span>
-        </div>
-        <div id="generalSummary" class="summary-list"></div>
-      </article>
+        </summary>
+        <div id="generalSummary" class="summary-list mini-body"></div>
+      </details>
     </section>
 
-    <section class="content-area">
-      <article class="card">
+    <section class="content-stack">
+      <article class="card category-card">
         <div class="section-head">
           <h2>Survivor achievements</h2>
         </div>
         <div id="survivorSections" class="section-stack"></div>
       </article>
 
-      <article class="card">
+      <article class="card category-card">
         <div class="section-head">
           <h2>Killer achievements</h2>
         </div>
         <div id="killerSections" class="section-stack"></div>
       </article>
 
-      <article class="card">
+      <article class="card category-card">
         <div class="section-head">
           <h2>General achievements</h2>
         </div>

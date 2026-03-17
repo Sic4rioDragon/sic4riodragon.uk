@@ -1,5 +1,6 @@
 const baseUrl = './achievements.base.json';
 const stateUrl = './achievements.json';
+const iconsUrl = './achievements.icons.json';
 
 const els = {
   countUnlocked: document.getElementById('countUnlocked'),
@@ -19,7 +20,8 @@ const els = {
   generalSections: document.getElementById('generalSections'),
 
   searchInput: document.getElementById('searchInput'),
-  toggleUnlocked: document.getElementById('toggleUnlocked')
+  toggleUnlocked: document.getElementById('toggleUnlocked'),
+  filterSelect: document.getElementById('filterSelect')
 };
 
 const SECTION_ORDER = {
@@ -31,9 +33,19 @@ const SECTION_ORDER = {
 let state = {
   search: '',
   showUnlocked: false,
-  items: []
+  filter: 'all',
+  items: [],
+  icons: {}
 };
-
+async function loadOptionalJson(url, fallback) {
+  try {
+    const res = await fetch(url, { cache: 'no-store' });
+    if (!res.ok) return fallback;
+    return await res.json();
+  } catch {
+    return fallback;
+  }
+}
 function normalize(value) {
   return String(value || '').toLowerCase();
 }
@@ -71,17 +83,30 @@ function matchesSearch(item, search) {
     item.description,
     item.category,
     item.section,
-    item.id || '',
     item.achievement_id
   ].join(' ').toLowerCase();
 
   return haystack.includes(search);
 }
 
+function matchesFilter(item, filter) {
+  if (!filter || filter === 'all') return true;
+  if (filter === 'killer' || filter === 'survivor' || filter === 'general') {
+    return item.category === filter;
+  }
+  if (filter === 'adept' || filter === 'map' || filter === 'extra') {
+    return item.section === filter;
+  }
+  if (filter === 'general-section') {
+    return item.section === 'general';
+  }
+  return true;
+}
+
 function getVisibleItems(items) {
   return items.filter(item => {
     const passesUnlocked = state.showUnlocked ? true : !item.unlocked;
-    return passesUnlocked && matchesSearch(item, state.search);
+    return passesUnlocked && matchesSearch(item, state.search) && matchesFilter(item, state.filter);
   });
 }
 
@@ -126,7 +151,7 @@ function renderSummary(container, items, category) {
   container.innerHTML = groups.map(group => `
     <div class="summary-row">
       <strong>${prettySectionName(group.section)}</strong>
-      <span>${countLocked(group.items)} locked / ${group.items.length} total</span>
+      <span>${countLocked(group.items)} locked / ${group.items.length}</span>
     </div>
   `).join('');
 }
@@ -149,28 +174,30 @@ function renderSections(container, items, category) {
   }
 
   container.innerHTML = groups.map(group => `
-    <section class="subsection">
-      <div class="subsection-head">
+    <details class="subsection">
+      <summary class="subsection-head">
         <h3>${prettySectionName(group.section)}</h3>
-        <span>${countLocked(group.items)} locked / ${group.items.length} total</span>
-      </div>
+        <span>${countLocked(group.items)} locked / ${group.items.length}</span>
+      </summary>
       <div class="achievement-list">
         ${group.items.map(renderAchievementCard).join('')}
       </div>
-    </section>
+    </details>
   `).join('');
 }
 
 function renderAchievementCard(item) {
   const progressLabel = item.unlocked ? '1 / 1' : '0 / 1';
-  const ownerLabel = item.id ? `<span class="achievement-owner">${escapeHtml(item.id)}</span>` : '';
+  const icon = state.icons[item.achievement_id] || '';
 
   return `
     <article class="achievement ${item.unlocked ? 'is-unlocked' : 'is-locked'}">
+      <div class="achievement-icon-wrap">
+        ${icon ? `<img class="achievement-icon" src="${escapeHtml(icon)}" alt="${escapeHtml(item.title)}">` : ''}
+      </div>
       <div class="achievement-copy">
         <div class="achievement-topline">
           <h4>${escapeHtml(item.title)}</h4>
-          ${ownerLabel}
         </div>
         <p>${escapeHtml(item.description)}</p>
       </div>
@@ -218,12 +245,14 @@ function render() {
 }
 
 async function init() {
-  const [base, groupedState] = await Promise.all([
+  const [base, groupedState, icons] = await Promise.all([
     fetch(baseUrl).then(r => r.json()),
-    fetch(stateUrl).then(r => r.json())
+    fetch(stateUrl).then(r => r.json()),
+    loadOptionalJson(iconsUrl, {})
   ]);
 
   const stateMap = flattenState(groupedState);
+  state.icons = icons || {};
 
   state.items = base.map(item => {
     const entry = stateMap.get(item.achievement_id) || {
@@ -245,6 +274,11 @@ async function init() {
 
   els.toggleUnlocked?.addEventListener('change', () => {
     state.showUnlocked = !!els.toggleUnlocked.checked;
+    render();
+  });
+
+  els.filterSelect?.addEventListener('change', () => {
+    state.filter = els.filterSelect.value;
     render();
   });
 
