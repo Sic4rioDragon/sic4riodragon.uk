@@ -33,9 +33,13 @@
 
   <main class="page-shell">
     <section class="hero">
-      <div class="hero-art hero-art-left" aria-hidden="true">
-        <img src="/deadbydaylight/assets/img/yui.png" alt="">
-      </div>
+      <a
+        class="hero-art hero-art-left hero-art-link"
+        href="/deadbydaylight/survivors.html"
+        aria-label="Go to survivors page"
+      >
+        <img src="/deadbydaylight/assets/img/yui.png" alt="Yui Kimura">
+      </a>
 
       <div class="hero-copy">
         <h1>Achievements</h1>
@@ -44,15 +48,19 @@
         <nav class="hero-nav" aria-label="Dead by Daylight">
           <a href="/deadbydaylight/">Home</a>
           <a href="/deadbydaylight/survivors.html">Survivors</a>
-          <a href="/deadbydaylight/killers.html">Killers</a>
+          <a href="/deadbydaylight/">Killers</a>
           <a href="/twitch/deadbydaylight/">Challenges</a>
           <a class="active" href="/deadbydaylight/achievements/">Achievements</a>
         </nav>
       </div>
 
-      <div class="hero-art hero-art-right" aria-hidden="true">
-        <img src="/deadbydaylight/assets/img/huntress.png" alt="">
-      </div>
+      <a
+        class="hero-art hero-art-right hero-art-link"
+        href="/deadbydaylight/"
+        aria-label="Go to killers page"
+      >
+        <img src="/deadbydaylight/assets/img/huntress.png" alt="The Huntress">
+      </a>
     </section>
 
     <section class="toolbar card compact">
@@ -99,18 +107,18 @@
     <section class="summary-grid">
       <details class="card mini-panel">
         <summary class="mini-head">
-          <span>Survivor summary</span>
-          <span id="survivorSummaryCounts">0 locked</span>
-        </summary>
-        <div id="survivorSummary" class="summary-list mini-body"></div>
-      </details>
-
-      <details class="card mini-panel">
-        <summary class="mini-head">
           <span>Killer summary</span>
           <span id="killerSummaryCounts">0 locked</span>
         </summary>
         <div id="killerSummary" class="summary-list mini-body"></div>
+      </details>
+
+      <details class="card mini-panel">
+        <summary class="mini-head">
+          <span>Survivor summary</span>
+          <span id="survivorSummaryCounts">0 locked</span>
+        </summary>
+        <div id="survivorSummary" class="summary-list mini-body"></div>
       </details>
 
       <details class="card mini-panel">
@@ -125,16 +133,16 @@
     <section class="content-stack">
       <article class="card category-card">
         <div class="section-head">
-          <h2>Survivor achievements</h2>
+          <h2>Killer achievements</h2>
         </div>
-        <div id="survivorSections" class="section-stack"></div>
+        <div id="killerSections" class="section-stack"></div>
       </article>
 
       <article class="card category-card">
         <div class="section-head">
-          <h2>Killer achievements</h2>
+          <h2>Survivor achievements</h2>
         </div>
-        <div id="killerSections" class="section-stack"></div>
+        <div id="survivorSections" class="section-stack"></div>
       </article>
 
       <article class="card category-card">

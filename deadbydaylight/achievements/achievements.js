@@ -37,6 +37,7 @@ let state = {
   items: [],
   icons: {}
 };
+
 async function loadOptionalJson(url, fallback) {
   try {
     const res = await fetch(url, { cache: 'no-store' });
@@ -46,8 +47,9 @@ async function loadOptionalJson(url, fallback) {
     return fallback;
   }
 }
+
 function normalize(value) {
-  return String(value || '').toLowerCase();
+  return String(value || '').toLowerCase().trim();
 }
 
 function flattenState(grouped) {
@@ -63,9 +65,11 @@ function flattenState(grouped) {
         out.set(achievementId, {
           unlocked: !!unlocked,
           category:
-            topKey === 'survivors' ? 'survivor' :
-            topKey === 'killers' ? 'killer' :
-            'general',
+            topKey === 'survivors'
+              ? 'survivor'
+              : topKey === 'killers'
+                ? 'killer'
+                : 'general',
           section: sectionKey
         });
       }
@@ -91,15 +95,19 @@ function matchesSearch(item, search) {
 
 function matchesFilter(item, filter) {
   if (!filter || filter === 'all') return true;
+
   if (filter === 'killer' || filter === 'survivor' || filter === 'general') {
     return item.category === filter;
   }
+
   if (filter === 'adept' || filter === 'map' || filter === 'extra') {
     return item.section === filter;
   }
+
   if (filter === 'general-section') {
     return item.section === 'general';
   }
+
   return true;
 }
 
@@ -174,7 +182,7 @@ function renderSections(container, items, category) {
   }
 
   container.innerHTML = groups.map(group => `
-    <details class="subsection">
+    <details class="subsection" open>
       <summary class="subsection-head">
         <h3>${prettySectionName(group.section)}</h3>
         <span>${countLocked(group.items)} locked / ${group.items.length}</span>
@@ -219,35 +227,35 @@ function render() {
   const allItems = state.items.slice();
   const visibleItems = getVisibleItems(allItems);
 
-  const survivorItems = visibleItems.filter(item => item.category === 'survivor');
   const killerItems = visibleItems.filter(item => item.category === 'killer');
+  const survivorItems = visibleItems.filter(item => item.category === 'survivor');
   const generalItems = visibleItems.filter(item => item.category === 'general');
 
   updateCounters(allItems, visibleItems);
 
-  if (els.survivorSummaryCounts) {
-    els.survivorSummaryCounts.textContent = `${countLocked(allItems.filter(i => i.category === 'survivor'))} locked`;
-  }
   if (els.killerSummaryCounts) {
     els.killerSummaryCounts.textContent = `${countLocked(allItems.filter(i => i.category === 'killer'))} locked`;
+  }
+  if (els.survivorSummaryCounts) {
+    els.survivorSummaryCounts.textContent = `${countLocked(allItems.filter(i => i.category === 'survivor'))} locked`;
   }
   if (els.generalSummaryCounts) {
     els.generalSummaryCounts.textContent = `${countLocked(allItems.filter(i => i.category === 'general'))} locked`;
   }
 
-  renderSummary(els.survivorSummary, survivorItems, 'survivor');
   renderSummary(els.killerSummary, killerItems, 'killer');
+  renderSummary(els.survivorSummary, survivorItems, 'survivor');
   renderSummary(els.generalSummary, generalItems, 'general');
 
-  renderSections(els.survivorSections, survivorItems, 'survivor');
   renderSections(els.killerSections, killerItems, 'killer');
+  renderSections(els.survivorSections, survivorItems, 'survivor');
   renderSections(els.generalSections, generalItems, 'general');
 }
 
 async function init() {
   const [base, groupedState, icons] = await Promise.all([
-    fetch(baseUrl).then(r => r.json()),
-    fetch(stateUrl).then(r => r.json()),
+    fetch(baseUrl, { cache: 'no-store' }).then(r => r.json()),
+    fetch(stateUrl, { cache: 'no-store' }).then(r => r.json()),
     loadOptionalJson(iconsUrl, {})
   ]);
 
@@ -289,7 +297,7 @@ init().catch(error => {
   console.error(error);
 
   const msg = '<div class="empty">Failed to load achievements data.</div>';
-  if (els.survivorSections) els.survivorSections.innerHTML = msg;
   if (els.killerSections) els.killerSections.innerHTML = msg;
+  if (els.survivorSections) els.survivorSections.innerHTML = msg;
   if (els.generalSections) els.generalSections.innerHTML = msg;
 });

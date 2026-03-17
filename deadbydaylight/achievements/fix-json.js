@@ -5,6 +5,76 @@ const BASE_PATH = path.join(__dirname, 'achievements.base.json');
 const STATE_PATH = path.join(__dirname, 'achievements.json');
 const ICONS_PATH = path.join(__dirname, 'achievements.icons.json');
 
+const MANUAL_KILLER_GENERAL = new Set([
+  'awakened anger',
+  'beyond broken',
+  'blood in your mouth',
+  'broken bodies',
+  'chorus of chaos',
+  'collision course',
+  'complete the evolution',
+  'death flight',
+  'death of ignorance',
+  'disarm and dismember',
+  'dream demon',
+  'first to the punch',
+  'from the deep',
+  'heavy burden',
+  'holiday get-together',
+  'i see you',
+  'lost all hope',
+  'mad house',
+  'master manipulator',
+  'multi-tasker',
+  'neither seen nor heard',
+  'none the wiser',
+  'one thousand cuts',
+  'outrage',
+  'outta nowhere',
+  'preemptive strike',
+  'quick draw',
+  'silent approach',
+  'taste the darkness',
+  'torn asunder',
+  'viral video',
+  'what lurks beneath'
+]);
+
+const MANUAL_MAP = new Set([
+  "ancestor's rite",
+  "campbell's chapel legacy",
+  'cherish your life',
+  'cottage owner',
+  'hemophobia',
+  'shrine apparatus',
+  'unforgettable getaway'
+]);
+
+const MANUAL_SURVIVOR_GENERAL = new Set([
+  'near-death experience',
+  'power moves',
+  'with scars to show',
+  'outrun evil',
+  'agonizing escape',
+  'dismantle'
+]);
+
+const MANUAL_GENERAL = new Set([
+  'tanuki in the fog',
+  'zealous',
+  'bloody millionaire',
+  'getting the hang of it',
+  'gifts for the fog',
+  'happy holidays',
+  'i',
+  'ii',
+  'iii',
+  'iii-50',
+  'it wakes',
+  'not half bad',
+  'skillful'
+]);
+
 function normalizeText(text) {
   return String(text || '').replace(/\s+/g, ' ').trim();
 }
@@ -16,6 +86,7 @@ function lower(text) {
 function makeAchievementId(title) {
   return lower(title)
     .normalize('NFKD')
+    .replace(/[\u0300-\u036f]/g, '')
     .replace(/['’]/g, '')
     .replace(/[^a-z0-9]+/g, '_')
     .replace(/^_+|_+$/g, '');
@@ -125,14 +196,45 @@ function classifyFallback(item) {
   const t = lower(item.title);
   const d = lower(item.description);
 
+  if (t === 'tools of the trade') {
+    return { category: 'killer', section: 'adept' };
+  }
+
+  if (t === 'battle caster') {
+    return { category: 'killer', section: 'extra' };
+  }
+
+  if (MANUAL_KILLER_GENERAL.has(t)) {
+    return { category: 'killer', section: 'general' };
+  }
+
+  if (MANUAL_MAP.has(t)) {
+    return { category: 'survivor', section: 'map' };
+  }
+
+  if (MANUAL_SURVIVOR_GENERAL.has(t)) {
+    return { category: 'survivor', section: 'general' };
+  }
+
+  if (MANUAL_GENERAL.has(t)) {
+    return { category: 'general', section: 'general' };
+  }
+
   if (d.includes('merciless victory')) {
     return { category: 'killer', section: 'adept' };
   }
 
   if (
     t.startsWith('adept ') &&
-    (d.includes('3 unique perks') || d.includes('repair the equivalent of 1 generator'))
+    (
+      d.includes('3 unique perks') ||
+      d.includes('repair the equivalent of 1 generator') ||
+      d.includes('escape with')
+    )
   ) {
+    if (d.includes('merciless victory')) {
+      return { category: 'killer', section: 'adept' };
+    }
     return { category: 'survivor', section: 'adept' };
   }
 
@@ -143,11 +245,15 @@ function classifyFallback(item) {
   if (
     d.includes('as a killer') ||
     d.includes('as the killer') ||
+    d.includes('with the ') ||
+    d.includes('sacrifice') ||
+    d.includes('kill a survivor') ||
+    d.includes('kill survivors') ||
+    d.includes('hook a survivor') ||
+    d.includes('hook survivors') ||
+    d.includes('down survivors') ||
     d.includes('damage a survivor') ||
     d.includes('injure a survivor') ||
-    d.includes('down a survivor') ||
-    d.includes('hook a survivor') ||
-    d.includes('kill a survivor') ||
     d.includes('survivors scream')
   ) {
     return { category: 'killer', section: 'general' };
