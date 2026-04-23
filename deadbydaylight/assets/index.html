@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Moved - Dead by Daylight</title>
+  <meta http-equiv="refresh" content="10;url=https://deadbydaylight.sic4riodragon.uk/" />
+  <link rel="icon" type="image/png" href="https://sic4riodragon.uk/assets/SicarioDragon.png" />
+  <style>
+    :root {
+      color-scheme: dark;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      font-family: Arial, sans-serif;
+      color: #ffffff;
+      text-align: center;
+      background:
+        linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url("https://sic4riodragon.uk/assets/general.png") center/cover no-repeat fixed;
+    }
+
+    .box {
+      max-width: 700px;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.72);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 14px;
+      padding: 32px 24px;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+    }
+
+    h1 {
+      margin: 0 0 16px;
+      font-size: 2rem;
+    }
+
+    p {
+      margin: 10px 0;
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }
+
+    a {
+      color: #9fd3ff;
+      word-break: break-word;
+    }
+
+    .countdown {
+      margin-top: 18px;
+      font-size: 1rem;
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h1>Dead by Daylight page moved</h1>
+    <p>
+      This page got moved to
+      <a href="https://deadbydaylight.sic4riodragon.uk/">https://deadbydaylight.sic4riodragon.uk/</a>
+    </p>
+    <p>You will be redirected in <span id="seconds">10</span> seconds.</p>
+    <p class="countdown">
+      If nothing happens, click the link above.
+    </p>
+  </div>
+
+  <script>
+    let seconds = 10;
+    const secondsEl = document.getElementById("seconds");
+
+    const timer = setInterval(() => {
+      seconds--;
+      if (secondsEl) secondsEl.textContent = seconds;
+
+      if (seconds <= 0) {
+        clearInterval(timer);
+        window.location.href = "https://deadbydaylight.sic4riodragon.uk/";
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
