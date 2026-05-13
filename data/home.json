@@ -151,15 +151,15 @@
   ],
   "communities": [
     {
-      "label": "TAW DayZ Division Discord",
-      "description": "TAW DayZ community Discord.",
-      "url": "https://discord.gg/uQkwAFKhaF",
-      "external": true
-    },
-    {
       "label": "PopcornGaming Discord",
       "description": "Community Discord.",
       "url": "https://discord.gg/popcorngaming",
+      "external": true
+    },
+    {
+      "label": "TAW DayZ Division Discord",
+      "description": "TAW DayZ community Discord.",
+      "url": "https://discord.gg/uQkwAFKhaF",
       "external": true
     },
     {
@@ -201,7 +201,7 @@
     },
     {
       "label": "Dusk",
-      "description": "Dusk page on the site.",
+      "description": "My Wifes page",
       "url": "/Dusk/"
     }
   ]
