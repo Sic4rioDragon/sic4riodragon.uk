@@ -1,76 +1,132 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon" type="image/png" href="/assets/SicarioDragon.png">
-<meta content="Sic4rioDragon" property="og:title"/>
-<meta content="Official site for Sic4rioDragon — TAW.net DayZ Division server admin, Discord bot developer." property="og:description"/>
-<meta content="https://sic4riodragon.uk/assets/SicarioDragon.png" property="og:image"/> <!-- or any banner image URL -->
-<meta content="https://sic4riodragon.uk/" property="og:url"/>
-<meta content="summary_large_image" name="twitter:card"/>
-<meta charset="utf-8">
-<meta content="width=device-width, initial-scale=1.0" name="viewport">
-<title>Sic4rioDragon | Gamer &amp; Dev</title>
-<link href="style.css" rel="stylesheet"/>
-</meta></meta></head>
-<body style="background: url('./assets/general.png') no-repeat center center fixed; background-size: cover;">
-<header style="background: rgba(0,0,0,0.7); padding: 2rem 0;">
-<img alt="TAW Banner" src="./assets/tawbanner.png" style="max-width: 100%; height: auto;"/>
-<h1>Sic4rioDragon</h1>
-<p>Swiss Gamer • TAW.net DayZ Division • Server Admin &amp; Bot Dev</p>
-</header>
-<main style="background: rgba(0,0,0,0.7); padding: 2rem; max-width: 900px; margin: auto; border-radius: 10px;">
-<section id="about">
-<h2>About Me</h2>
-<img alt="Sic4rioDragon Badge" src="./assets/SicarioDragon.png" style="border-radius: 50%; width: 150px; height: 150px; border: 3px solid #ff4c4c;"/>
-<p>Hey! I’m <strong>Sic4rioDragon</strong>, a gamer and self-taught dev from Switzerland.
-      I’m part of <a href="https://taw.net/" target="_blank">TAW.net</a> — a huge global gaming community — and work in the <strong>DayZ Division</strong> to keep our servers fun and fresh.
-      I also run PopcornGaming with my partner, 
-        <a href="/Dusk/" style="color: #8dcff4; text-decoration: none;">Dusk</a>.. I build Discord bots, manage servers, and self-host on my dedicated Windows server.</p>
-<p><a href="http://taw.net/member/SicarioDragon.aspx" target="_blank">View my TAW.net profile</a> | <a href="/profile/" target="_blank">Public profile snapshot</a></p>
-</section>
-<section id="projects">
-<h2>My Projects</h2>
-<img alt="TAW DayZ Division" src="./assets/tawdayzdivision.png" style="max-width: 100%; height: auto;"/>
-<ul>
-<li><strong>DayZ Servers:</strong> Deathmatch &amp; Event servers for TAW DayZ Division</li>
-<li><strong>Discord Bots:</strong> Custom bots for TAW and my own projects</li>
-</ul>
-</section>
-<section id="community">
-<h2>Join the Community</h2>
-<ul>
-<li>🎮 <a href="https://discord.gg/uQkwAFKhaF" target="_blank">TAW DayZ Division Discord</a></li>
-<li>🍿 <a href="https://discord.gg/popcorngaming" target="_blank">PopcornGaming Discord</a> (<a href="https://discord.gg/sqrPEY73EB" target="_blank">Backup Link</a>)</li>
-<li>🌐 <a href="https://discord.gg/taw" target="_blank">Main TAW Discord</a></li>
-</ul>
-</section>
-<section id="links">
-<h2>Links &amp; Contact</h2>
-<ul>
-<li>📹 <a href="https://www.youtube.com/@Sic4rioDragon" target="_blank">Main YouTube</a></li>
-<li>📧 Email: <a href="mailto:sic4riodragon@gmail.com">sic4riodragon@gmail.com</a></li>
-</ul>
-</section>
-<section id="site-links" style="margin-top: 50px; text-align: center;">
-  <h2>📌 Site Links</h2>
-  <ul style="list-style: none; padding: 0;">
-    <li style="margin: 10px 0;">
-      <a href="/profile/" style="color: #8dcff4; text-decoration: none; font-size: 18px;">👤 View My TAW Profile</a>
-    </li>
-    <li style="margin: 10px 0;">
-      <a href="/links/" style="color: #8dcff4; text-decoration: none; font-size: 18px;">🌍 Links Hub</a>
-    </li>
-    <li style="margin: 10px 0;">
-      <a href="/about/" style="color: #8dcff4; text-decoration: none; font-size: 18px;">📜 About Me</a>
-    </li>
-    <li style="margin: 10px 0;">
-  <a href="/funfact/" style="color: #8dcff4; text-decoration: none; font-size: 18px;">🎉 Fun Facts</a>
-</li>
-  </ul>
-</section>
-</main>
-<footer style="text-align: center; margin-top: 2rem; background: rgba(0,0,0,0.7); padding: 1rem;">
-<img alt="TAW Logo" src="./assets/taw_logo.png" style="height: 50px;"/>
-<p>© 2025 Sic4rioDragon — Powered by Cloudflare Pages &amp; GitHub.</p>
-</footer>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1020">
+  <meta property="og:title" content="Sic4rioDragon">
+  <meta property="og:description" content="Projects, tools, servers, bots, and experiments by Sic4rioDragon.">
+  <meta property="og:image" content="https://sic4riodragon.uk/assets/SicarioDragon.png">
+  <meta property="og:url" content="https://sic4riodragon.uk/">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" href="/assets/SicarioDragon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+  <title>Sic4rioDragon | Projects & Dev Hub</title>
+</head>
+<body>
+  <div class="page-bg"></div>
+
+  <nav class="top-nav" aria-label="Main navigation">
+    <a class="brand" href="/">
+      <img src="/assets/SicarioDragon.png" alt="" onerror="this.style.display='none'">
+      <span>Sic4rioDragon</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <div class="nav-links" data-nav-links>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#site-links">Sites</a>
+      <a href="#archive">Archive</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-card">
+      <img class="hero-banner" src="/assets/tawbanner.png" alt="TAW banner" onerror="this.remove()">
+      <p class="eyebrow">Personal site • project hub • random dev experiments</p>
+      <h1>Sic4rioDragon</h1>
+      <p class="hero-text" data-home-field="heroText">
+        Gamer, server admin, bot dev, and self-hosting chaos enjoyer. This is the hub for my public projects, tools, communities, and old pages I still want to keep around.
+      </p>
+      <div class="hero-actions" data-home-list="heroButtons"></div>
+    </div>
+  </header>
+
+  <main>
+    <section id="about" class="section two-col">
+      <article class="card about-card">
+        <div class="section-title">
+          <span>01</span>
+          <h2>About</h2>
+        </div>
+        <div class="profile-row">
+          <img src="/assets/SicarioDragon.png" alt="Sic4rioDragon badge" onerror="this.style.display='none'">
+          <div>
+            <p data-home-field="aboutText">
+              Hey, I’m Sic4rioDragon. I build small websites, Discord bots, game tools, server utilities, and whatever else I end up needing for my communities or games.
+            </p>
+            <p class="muted">Main focus lately: Dead by Daylight tools, DayZ / server projects, Discord automation, and moving projects into cleaner subdomains.</p>
+          </div>
+        </div>
+      </article>
+
+      <aside class="card quick-card">
+        <div class="section-title">
+          <span>02</span>
+          <h2>Quick status</h2>
+        </div>
+        <div class="stats-grid" data-home-list="stats"></div>
+      </aside>
+    </section>
+
+    <section id="projects" class="section">
+      <div class="section-heading">
+        <div class="section-title">
+          <span>03</span>
+          <h2>Projects</h2>
+        </div>
+        <p class="muted">Loaded from <code>/data/home.json</code>, so this can be updated without rebuilding the layout.</p>
+      </div>
+      <div class="project-grid" data-home-list="projects"></div>
+    </section>
+
+    <section id="site-links" class="section">
+      <div class="section-heading">
+        <div class="section-title">
+          <span>04</span>
+          <h2>Site links</h2>
+        </div>
+        <p class="muted">Main pages and project subdomains.</p>
+      </div>
+      <div class="link-grid" data-home-list="siteLinks"></div>
+    </section>
+
+    <section id="community" class="section two-col">
+      <article class="card">
+        <div class="section-title">
+          <span>05</span>
+          <h2>Communities</h2>
+        </div>
+        <div class="stack-list" data-home-list="communities"></div>
+      </article>
+
+      <article id="archive" class="card">
+        <div class="section-title">
+          <span>06</span>
+          <h2>Archive</h2>
+        </div>
+        <p class="muted">Old pages and removed test versions live here instead of being deleted.</p>
+        <div class="stack-list" data-home-list="archive"></div>
+      </article>
+    </section>
+
+    <section id="contact" class="section card contact-card">
+      <div class="section-title">
+        <span>07</span>
+        <h2>Contact / profiles</h2>
+      </div>
+      <div class="link-grid compact" data-home-list="contact"></div>
+    </section>
+  </main>
+
+  <footer>
+    <img src="/assets/taw_logo.png" alt="TAW logo" onerror="this.style.display='none'">
+    <p>© <span data-year></span> Sic4rioDragon — hosted with GitHub Pages / Cloudflare.</p>
+  </footer>
 </body>
-</html> 
+</html>

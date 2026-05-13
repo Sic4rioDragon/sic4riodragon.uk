@@ -1,0 +1,208 @@
+{
+  "heroText": "Gamer, server admin, bot dev, and self-hosting chaos enjoyer. This is the hub for my public projects, tools, communities, and old pages I still want to keep around.",
+  "aboutText": "Hey, I’m Sic4rioDragon. I build websites, Discord bots, game tools, server utilities, and smaller experiments for my own projects and communities.",
+  "heroButtons": [
+    {
+      "label": "View projects",
+      "url": "#projects",
+      "style": "primary"
+    },
+    {
+      "label": "Links hub",
+      "url": "/links/"
+    },
+    {
+      "label": "Archive",
+      "url": "/archive/"
+    }
+  ],
+  "stats": [
+    {
+      "value": "DBD",
+      "label": "tools, mini-games, and icon projects"
+    },
+    {
+      "value": "DayZ",
+      "label": "servers, backup tools, and map ideas"
+    },
+    {
+      "value": "Bots",
+      "label": "Discord automation and moderation tools"
+    },
+    {
+      "value": "Web",
+      "label": "GitHub Pages and Cloudflare subdomains"
+    }
+  ],
+  "projects": [
+    {
+      "title": "Dead by Daylight Hub",
+      "description": "DBD pages, unlock tracking, personal rulebook, tools, and mini-game ideas around perks, killers, survivors, achievements, and farming resources.",
+      "url": "https://deadbydaylight.sic4riodragon.uk/",
+      "icon": "🩸",
+      "status": "Live",
+      "tags": ["DBD", "Tools", "Static site"]
+    },
+    {
+      "title": "DBD Skillcheck Simulator",
+      "description": "A public skillcheck practice site with planned controller support, more perk-style skill checks, progress tracking, and a future/dev info tab.",
+      "url": "https://skillcheck.sic4riodragon.uk/",
+      "icon": "🎯",
+      "status": "Live",
+      "tags": ["DBD", "Cloudflare Pages", "Game tool"]
+    },
+    {
+      "title": "DayZ Guesser",
+      "description": "A GeoGuessr-style DayZ project, starting with Chernarus and local panorama/map experiments before party and account features later.",
+      "url": "https://dayzguesser.sic4riodragon.uk/",
+      "icon": "🧭",
+      "status": "WIP",
+      "tags": ["DayZ", "Map", "Guessing game"]
+    },
+    {
+      "title": "Discord Bots",
+      "description": "Custom bots for moderation, media workflows, transcripts, server utilities, and community automation across different projects.",
+      "icon": "🤖",
+      "status": "Active",
+      "tags": ["Discord", "Node.js", "Python"]
+    },
+    {
+      "title": "Twitch Tab Manager",
+      "description": "Chrome extension work for opening followed Twitch channels, respecting tab limits, recovering managed tabs, and cleaning up offline/raid tabs.",
+      "icon": "🟣",
+      "status": "WIP",
+      "tags": ["Chrome extension", "Twitch", "Automation"]
+    },
+    {
+      "title": "DBD Icon Pack Manager",
+      "description": "Desktop app idea for managing Dead by Daylight icon packs, comparing pack files, installing/reverting packs, and building mixed packs safely.",
+      "icon": "🧰",
+      "status": "WIP",
+      "tags": ["Electron", "DBD", "Desktop app"]
+    },
+    {
+      "title": "OBS DBD Map Overlay",
+      "description": "OCR overlay experiments for detecting the current DBD map from loading screen or in-match text and showing it in OBS.",
+      "icon": "📺",
+      "status": "Prototype",
+      "tags": ["OBS", "OCR", "Python"]
+    },
+    {
+      "title": "DayZ Server / OmegaManager Tools",
+      "description": "Server admin notes, backup scripts, config cleanup, and restore documentation for DayZ servers and OmegaManager-style setups.",
+      "icon": "🖥️",
+      "status": "Active",
+      "tags": ["DayZ", "Windows server", "Backups"]
+    },
+    {
+      "title": "Self-hosting / Mail Experiments",
+      "description": "Windows server, IIS, MailEnable/Roundcube experiments, domain mail setup, and notes for hosting services under my domains.",
+      "icon": "✉️",
+      "status": "WIP",
+      "tags": ["Hosting", "Mail", "Domains"]
+    }
+  ],
+  "siteLinks": [
+    {
+      "label": "Links Hub",
+      "description": "Main link collection.",
+      "url": "/links/"
+    },
+    {
+      "label": "About Me",
+      "description": "Longer about page.",
+      "url": "/about/"
+    },
+    {
+      "label": "TAW Profile Snapshot",
+      "description": "Public profile copy/snapshot.",
+      "url": "/profile/"
+    },
+    {
+      "label": "Fun Facts",
+      "description": "Older fun facts page.",
+      "url": "/funfact/"
+    },
+    {
+      "label": "Dead by Daylight",
+      "description": "DBD project hub.",
+      "url": "https://deadbydaylight.sic4riodragon.uk/"
+    },
+    {
+      "label": "Skillcheck Simulator",
+      "description": "DBD skillcheck practice.",
+      "url": "https://skillcheck.sic4riodragon.uk/"
+    },
+    {
+      "label": "DayZ Guesser",
+      "description": "DayZ guessing game project.",
+      "url": "https://dayzguesser.sic4riodragon.uk/"
+    },
+    {
+      "label": "Twitch Tools",
+      "description": "Twitch-related project area.",
+      "url": "https://twitch.sic4riodragon.uk/"
+    },
+    {
+      "label": "Archive",
+      "description": "Old removed/test pages.",
+      "url": "/archive/"
+    }
+  ],
+  "communities": [
+    {
+      "label": "TAW DayZ Division Discord",
+      "description": "TAW DayZ community Discord.",
+      "url": "https://discord.gg/uQkwAFKhaF",
+      "external": true
+    },
+    {
+      "label": "PopcornGaming Discord",
+      "description": "Community Discord.",
+      "url": "https://discord.gg/popcorngaming",
+      "external": true
+    },
+    {
+      "label": "Main TAW Discord",
+      "description": "The Art of Warfare main Discord.",
+      "url": "https://discord.gg/taw",
+      "external": true
+    }
+  ],
+  "archive": [
+    {
+        "label": "Old main page",
+        "description": "The previous main homepage version before the newer project-hub layout.",
+        "url": "/archive/old_mainpage/"
+    },
+    {
+        "label": "Old test homepage",
+        "description": "The previous test.html/test.css version moved here instead of deleted.",
+        "url": "/archive/test/test.html"
+    }
+    ],
+  "contact": [
+    {
+      "label": "YouTube",
+      "description": "@Sic4rioDragon",
+      "url": "https://www.youtube.com/@Sic4rioDragon",
+      "external": true
+    },
+    {
+      "label": "Email",
+      "description": "sic4riodragon@gmail.com",
+      "url": "mailto:sic4riodragon@gmail.com"
+    },
+    {
+      "label": "TAW.net Profile",
+      "description": "External TAW member profile.",
+      "url": "http://taw.net/member/SicarioDragon.aspx",
+      "external": true
+    },
+    {
+      "label": "Dusk",
+      "description": "Dusk page on the site.",
+      "url": "/Dusk/"
+    }
+  ]
+}

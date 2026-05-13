@@ -21,7 +21,7 @@ html {
 
 body {
   font-family: 'Roboto', sans-serif;
-  background: url('./assets/general.png') center/cover fixed;
+  background: url('/assets/general.png') center/cover fixed;
   color: #eee;
   line-height: 1.6;
   opacity: 0;
@@ -39,7 +39,6 @@ a:hover {
   text-decoration: underline;
 }
 
-/* NAVIGATION */
 #mainnavigation {
   background: linear-gradient(45deg, var(--bg-dark), var(--bg-light));
   box-shadow: 0 0 20px var(--glow);
@@ -49,11 +48,11 @@ a:hover {
 }
 
 #mainnavigation ul {
-  list-style: none;               /* remove bullets */
+  list-style: none;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1.5rem;                    /* keeps this on mobile */
+  gap: 1.5rem;
   padding: 1rem;
 }
 
@@ -85,7 +84,6 @@ a:hover {
   width: 100%;
 }
 
-/* HEADER */
 header {
   text-align: center;
   padding: clamp(1.5rem, 5vw, 3rem) 1rem;
@@ -109,19 +107,16 @@ header h1 {
 }
 
 header p {
- font-size: clamp(1.2rem, 3vw, 1.6rem);
+  font-size: clamp(1.2rem, 3vw, 1.6rem);
   font-weight: 500;
-  /* subtle glow to pop on the dark bg */
   text-shadow: 0 0 6px var(--glow);
-  /* a touch tighter letter spacing for premium feel */
   letter-spacing: 0.02em;
   margin-top: 0.5rem;
 }
 
-/* MAIN & CARDS */
 main {
-   max-width: 1600px;  /* ↓ down from 900px */
-  margin: 2rem auto; /* keep it centered */
+  max-width: 1600px;
+  margin: 2rem auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 2rem;
@@ -151,7 +146,6 @@ main {
   letter-spacing: 0.05em;
 }
 
-/* PROFILE */
 .profile {
   display: flex;
   flex-wrap: wrap;
@@ -171,7 +165,6 @@ main {
   margin-bottom: 1rem;
 }
 
-/* LIST ITEMS */
 .card ul {
   list-style: none;
   padding-left: 0;
@@ -194,14 +187,12 @@ main {
   line-height: 1;
 }
 
-/* CARD LINKS */
 .links {
   margin-top: 1rem;
   text-align: center;
   font-size: clamp(1rem, 3vw, 1.125rem);
 }
 
-/* FOOTER */
 footer {
   text-align: center;
   padding: clamp(1rem, 3vw, 2rem) 1rem;
@@ -222,36 +213,39 @@ footer p {
   color: #ccc;
 }
 
-/* DESKTOP-ONLY NAV GAP INCREASE */
 @media (min-width: 768px) {
   #mainnavigation ul {
-    gap: 3rem;  /* wider spacing on tablets/desktops */
+    gap: 3rem;
   }
 }
 
-/* GRID LAYOUT AT TABLET+ */
 @media (min-width: 600px) {
   main {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  #site-links {
+    grid-column: 1 / -1;
+    justify-self: center;
+    max-width: 800px;
+    width: 100%;
+  }
 }
 
-/* ANIMATIONS */
 @keyframes fadeInBody {
-  to { opacity: 1; }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
 
-/* Center the “Site Links” card under the two-column grid */
-@media (min-width: 600px) {
-  #site-links {
-    grid-column: 1 / -1;      /* span both tracks */
-    justify-self: center;     /* center it */
-    max-width: 800px;         /* don’t let it grow too wide */
-    width: 100%;              /* but fill its max-width */
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
